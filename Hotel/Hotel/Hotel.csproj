@@ -64,6 +64,12 @@
     <Compile Include="All user control\UC_CheckOut.Designer.cs">
       <DependentUpon>UC_CheckOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="All user control\UC_CustomerDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All user control\UC_CustomerDetail.Designer.cs">
+      <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="All user control\UC_CustomerRes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_CheckOut.resx">
       <DependentUpon>UC_CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All user control\UC_CustomerDetail.resx">
+      <DependentUpon>UC_CustomerDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_CustomerRes.resx">
       <DependentUpon>UC_CustomerRes.cs</DependentUpon>
