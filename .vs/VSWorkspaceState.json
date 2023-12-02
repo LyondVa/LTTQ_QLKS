@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Hotel",
+    "\\Hotel\\Hotel",
+    "\\Hotel\\Hotel\\All user control"
   ],
+  "SelectedNode": "\\Hotel\\Hotel\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

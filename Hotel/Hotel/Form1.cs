@@ -12,6 +12,9 @@ namespace Hotel
 {
     public partial class Form1 : Form
     {
+        function fn = new function();
+        string query;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,12 +32,23 @@ namespace Hotel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txbUsername.Text == "admin" && txbPassword.Text == "admin")
+            query = "select username, pass from employee where username = '" + txbUsername.Text + "' and pass = '" + txbPassword.Text + "'";
+            DataSet ds = fn.getData(query);
+            string query1 = "select position from employee where username = '" + txbUsername.Text + "' and pass = '" + txbPassword.Text + "'";
+            DataSet ds1 = fn.getData(query1);
+            int position = 0;
+            if (ds.Tables[0].Rows.Count !=0 || (txbUsername.Text=="admin"&&txbPassword.Text =="admin"))
             {
                 labelError.Visible = false;
-                Dashboard ds = new Dashboard();
+                if (ds1.Tables[0].Rows.Count > 0)
+                {
+                    position = Convert.ToInt32(ds1.Tables[0].Rows[0]["position"]);
+                }
+                if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
+                    position = 1;
+                Dashboard dash = new Dashboard(position);
                 this.Hide();
-                ds.Show();
+                dash.Show();
             }
             else
             {

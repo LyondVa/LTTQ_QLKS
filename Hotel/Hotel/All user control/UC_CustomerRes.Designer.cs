@@ -271,6 +271,7 @@
             this.txtIDProof.Size = new System.Drawing.Size(504, 72);
             this.txtIDProof.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtIDProof.TabIndex = 12;
+            this.txtIDProof.TextChanged += new System.EventHandler(this.txtIDProof_TextChanged);
             // 
             // label8
             // 

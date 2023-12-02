@@ -37,27 +37,7 @@ namespace Hotel.All_user_control
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            if(txtAddress.Text != "" && txtIDProof.Text != "" && txtNationality.Text !="" && txtPhoneNumber.Text!=""&& txtPhoneNumber.Text!=""&& cbGender.Text !=""&& txtBirth.Text!="" && txtName.Text != "" && txtChecking.Text!=""&&txtPrice.Text!="")
-            {
-                String name = txtName.Text;
-                Int64 mobile = Int64.Parse(txtPhoneNumber.Text);    
-                String national = txtNationality.Text;
-                String gender = cbGender.Text;
-                String dob = txtBirth.Text;
-                String idproof = txtIDProof.Text;
-                String address = txtAddress.Text;
-                String checkin = txtChecking.Text;
-                query = "insert into customer (cname, mobile,nationality, gender, dob, idproof, address, checkin, room id) values ('"+name +"',"+mobile+"',"+national+"','"+gender +"','"+dob+"','"+idproof+"','"+address +"','"+checkin +"',"+rid+") udate rooms set booked = 'YES'where roomNo = '"+cbRoomNum.Text+"'";
-                fn.setData(query," Số phòng"+ cbRoomNum.Text+"Đăng ký khách hàng thành công.");
-                clearAll();
-            }
-            else
-            {
-                MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin.","Thông tin ",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-        }
+        
         public void clearAll()
         {
             txtAddress.Clear();
@@ -71,7 +51,7 @@ namespace Hotel.All_user_control
             txtPrice.Clear();
             cbBed.SelectedItem = -1;
             cbGender.SelectedItem = -1;
-            cbRoomNum.SelectedItem = -1;
+            cbRoomNum.Items.Clear();
             cbRoomType.SelectedItem = -1;
 
         }
@@ -92,7 +72,8 @@ namespace Hotel.All_user_control
 
         private void cbRoomNum_SelectedIndexChanged(object sender, EventArgs e)
         {
-            query = "select price, roomid from  rooms where roomNo = '" + cbRoomNum.Text + "'";
+            
+            query = "select price, roomid from rooms where roomNo = '" + cbRoomNum.Text + "'";
             DataSet ds = fn.getData(query);
             txtPrice.Text = ds.Tables[0].Rows[0][0].ToString();
             rid = int.Parse(ds.Tables[0].Rows[0][1].ToString());
@@ -101,6 +82,33 @@ namespace Hotel.All_user_control
         private void UC_CustomerRes_Leave(object sender, EventArgs e)
         {
             clearAll();
+        }
+
+        private void txtIDProof_TextChanged(object sender, EventArgs e)
+        {
+                
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+           if(txtName.Text != ""&& txtPhoneNumber.Text !="" && txtNationality.Text != "" && cbGender.Text != "" && txtBirth.Text != "" && txtIDProof.Text != "" && txtAddress.Text != "" && txtChecking.Text != "" && txtPrice.Text != "")
+            {
+                String name = txtName.Text;
+                Int64 mobile = Int64.Parse(txtPhoneNumber.Text);
+                String national = txtNationality.Text;
+                String gender = cbGender.Text;
+                String dob = txtBirth.Text;
+                String idproof = txtIDProof.Text;
+                String address = txtAddress.Text;
+                String checkin = txtChecking.Text;
+                query = "insert into customer (cname, mobile, nationality, gender, dob, idproof, address, checkin, roomid) values('"+name+"',"+mobile +",'"+national+"','"+gender+"','"+dob+"','"+idproof+"','"+address+"','"+checkin+"',"+rid+") update rooms set booked ='YES' where roomNo = '"+cbRoomNum.Text+"'";
+                fn.setData(query, "Số Phòng " + cbRoomNum.Text + "Đăng ký khách hàng thành công.");
+                clearAll();
+           }
+            else
+            {
+                MessageBox.Show("Xin vui lòng nhập đầy đủ thông tin.", "Thông Tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
