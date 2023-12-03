@@ -17,3 +17,23 @@ C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.csproj.Co
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.exe
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.pdb
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\bin\Debug\Hotel.pdb
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\bin\Debug\Hotel.exe.config
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\bin\Debug\Hotel.exe
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\bin\Debug\Hotel.pdb
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\bin\Debug\Guna.UI2.dll
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.csproj.AssemblyReference.cache
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_Addroom.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_CheckOut.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_CustomerDetail.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_CustomerRes.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_Employee.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.Dashboard.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.Form1.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.Properties.Resources.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.SmallForm.EmployeeInformation.resources
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.csproj.GenerateResource.cache
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.csproj.CoreCompileInputs.cache
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.csproj.CopyComplete
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.exe
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.pdb
+C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_RoomManagement.resources
