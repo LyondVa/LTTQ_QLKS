@@ -38,6 +38,8 @@
             this.Th = new System.Windows.Forms.Label();
             this.tabEmployee = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtPosition = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,8 +64,8 @@
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.txtPosition = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabEmployee.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -122,6 +124,34 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Đăng Ký Nhân Viên";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.BackColor = System.Drawing.Color.Transparent;
+            this.txtPosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtPosition.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.txtPosition.ItemHeight = 30;
+            this.txtPosition.Items.AddRange(new object[] {
+            "Quản Lý",
+            "Nhân Viên"});
+            this.txtPosition.Location = new System.Drawing.Point(764, 358);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(606, 36);
+            this.txtPosition.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(759, 318);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 25);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Chức vụ";
             // 
             // guna2Button1
             // 
@@ -350,6 +380,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.guna2Button2);
             this.tabPage2.Controls.Add(this.guna2DataGridView1);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 37);
@@ -552,33 +583,24 @@
             this.guna2Elipse1.BorderRadius = 30;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // txtPosition
+            // guna2Button2
             // 
-            this.txtPosition.BackColor = System.Drawing.Color.Transparent;
-            this.txtPosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtPosition.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtPosition.ItemHeight = 30;
-            this.txtPosition.Items.AddRange(new object[] {
-            "Quản Lý",
-            "Nhân Viên"});
-            this.txtPosition.Location = new System.Drawing.Point(764, 358);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(606, 36);
-            this.txtPosition.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(759, 318);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 25);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Chức vụ";
+            this.guna2Button2.BorderRadius = 18;
+            this.guna2Button2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.MediumPurple;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(1246, 6);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(176, 93);
+            this.guna2Button2.TabIndex = 25;
+            this.guna2Button2.Text = "Xuất File Excel";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // UC_Employee
             // 
@@ -636,5 +658,7 @@
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2ComboBox txtPosition;
         private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

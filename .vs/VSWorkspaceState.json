@@ -3,8 +3,9 @@
     "",
     "\\Hotel",
     "\\Hotel\\Hotel",
-    "\\Hotel\\Hotel\\All user control"
+    "\\Hotel\\Hotel\\All user control",
+    "\\Hotel\\Hotel\\SmallForm"
   ],
-  "SelectedNode": "\\Hotel\\Hotel\\Program.cs",
+  "SelectedNode": "\\Hotel\\Hotel\\SmallForm\\receipt.cs",
   "PreviewInSolutionExplorer": false
 }

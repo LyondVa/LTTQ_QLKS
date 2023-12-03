@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace Hotel
 {
@@ -34,10 +35,10 @@ namespace Hotel
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             con.Open();
-            cmd.CommandText= query;
+            cmd.CommandText = query;
             cmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show(message,"Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         public SqlDataReader getForCombo(String query)
@@ -50,5 +51,69 @@ namespace Hotel
             SqlDataReader sdr = cmd.ExecuteReader();
             return sdr;
         }
+        public void ToExcel(DataGridView dataGridView, string fileName)
+        {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Workbook workbook = null;
+            Worksheet worksheet = null;
+
+            try
+            {
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+
+                workbook = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Worksheet)workbook.Sheets["Sheet1"];
+                worksheet.Name = "Quản lý khách hàng";
+
+                for (int i = 0; i < dataGridView.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = dataGridView.Columns[i].HeaderText;
+                }
+
+                for (int i = 0; i < dataGridView.RowCount; i++)
+                {
+                    for (int j = 0; j < dataGridView.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value?.ToString() ?? "";
+                    }
+                }
+
+                workbook.SaveAs(fileName);
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xuất dữ liệu ra Excel thất bại!\n" + ex.Message);
+            }
+            finally
+            {
+                workbook?.Close();
+                excel.Quit();
+
+                ReleaseObject(worksheet);
+                ReleaseObject(workbook);
+                ReleaseObject(excel);
+            }
+        }
+
+        private void ReleaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
     }
 }

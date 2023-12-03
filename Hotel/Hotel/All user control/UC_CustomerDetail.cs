@@ -43,5 +43,13 @@ namespace Hotel.All_user_control
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
+            }
+        }
     }
 }
