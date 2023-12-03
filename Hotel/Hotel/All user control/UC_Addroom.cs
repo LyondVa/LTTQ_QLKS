@@ -68,5 +68,13 @@ namespace Hotel.All_user_control
         {
             UC_Addroom_Load(this, null);
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                fn.ToExcel(dataGridView1, saveFileDialog1.FileName);
+            }
+        }
     }
 }
