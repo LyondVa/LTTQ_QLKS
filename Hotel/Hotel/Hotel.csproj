@@ -291,6 +291,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\login.png" />
+    <Content Include="Resources\dangnhap.jpg" />
+    <Content Include="Resources\dangNhap1.png" />
     <Content Include="Resources\sửa đăng nhập.png" />
     <Content Include="Resources\hóa đơn.png" />
     <None Include="Resources\Thiết kế chưa có tên.png" />
