@@ -71,3 +71,5 @@ C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\bin\Debug\System.Numerics
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\bin\Debug\System.ValueTuple.xml
+C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_User.resources
+C:\Users\PC\source\repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.SmallForm.EditUserName.resources

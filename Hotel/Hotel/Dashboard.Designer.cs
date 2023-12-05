@@ -41,10 +41,13 @@
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnMinisize = new Guna.UI2.WinForms.Guna2Button();
-            this.btExit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelMoving = new Guna.UI2.WinForms.Guna2Panel();
+            this.btUser = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMinisize = new Guna.UI2.WinForms.Guna2Button();
+            this.btExit = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_User1 = new Hotel.All_user_control.UC_User();
             this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
             this.uC_CustomerDetail1 = new Hotel.All_user_control.UC_CustomerDetail();
             this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
@@ -68,7 +71,7 @@
             this.btEmploy.Name = "btEmploy";
             this.btEmploy.Size = new System.Drawing.Size(284, 116);
             this.btEmploy.TabIndex = 4;
-            this.btEmploy.Text = "Nhân Viên";
+            this.btEmploy.Text = "Thông Tin Nhân Viên";
             this.btEmploy.EnabledChanged += new System.EventHandler(this.btEmploy_EnabledChanged);
             this.btEmploy.Click += new System.EventHandler(this.btEmploy_Click);
             // 
@@ -147,6 +150,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.uC_User1);
             this.panel2.Controls.Add(this.uC_Employee1);
             this.panel2.Controls.Add(this.uC_CustomerDetail1);
             this.panel2.Controls.Add(this.uC_CheckOut1);
@@ -172,6 +176,37 @@
             // guna2Elipse5
             // 
             this.guna2Elipse5.TargetControl = this;
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.BorderRadius = 30;
+            this.guna2Elipse6.TargetControl = this;
+            // 
+            // panelMoving
+            // 
+            this.panelMoving.BackColor = System.Drawing.Color.Aqua;
+            this.panelMoving.Location = new System.Drawing.Point(-2, 340);
+            this.panelMoving.Name = "panelMoving";
+            this.panelMoving.Size = new System.Drawing.Size(284, 10);
+            this.panelMoving.TabIndex = 4;
+            // 
+            // btUser
+            // 
+            this.btUser.BorderRadius = 25;
+            this.btUser.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btUser.FillColor = System.Drawing.Color.SlateBlue;
+            this.btUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUser.ForeColor = System.Drawing.Color.White;
+            this.btUser.Location = new System.Drawing.Point(-2, 680);
+            this.btUser.Name = "btUser";
+            this.btUser.Size = new System.Drawing.Size(284, 116);
+            this.btUser.TabIndex = 5;
+            this.btUser.Text = "Quản Lý Tài Khoản";
+            this.btUser.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // btnMinisize
             // 
@@ -206,18 +241,18 @@
             this.btExit.TabIndex = 0;
             this.btExit.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2Elipse6
+            // guna2Elipse7
             // 
-            this.guna2Elipse6.BorderRadius = 30;
-            this.guna2Elipse6.TargetControl = this;
+            this.guna2Elipse7.BorderRadius = 30;
+            this.guna2Elipse7.TargetControl = this;
             // 
-            // panelMoving
+            // uC_User1
             // 
-            this.panelMoving.BackColor = System.Drawing.Color.Aqua;
-            this.panelMoving.Location = new System.Drawing.Point(-2, 340);
-            this.panelMoving.Name = "panelMoving";
-            this.panelMoving.Size = new System.Drawing.Size(284, 10);
-            this.panelMoving.TabIndex = 4;
+            this.uC_User1.BackColor = System.Drawing.Color.White;
+            this.uC_User1.Location = new System.Drawing.Point(-1, -1);
+            this.uC_User1.Name = "uC_User1";
+            this.uC_User1.Size = new System.Drawing.Size(1478, 853);
+            this.uC_User1.TabIndex = 5;
             // 
             // uC_Employee1
             // 
@@ -269,6 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1946, 1106);
+            this.Controls.Add(this.btUser);
             this.Controls.Add(this.btEmploy);
             this.Controls.Add(this.panelMoving);
             this.Controls.Add(this.btCustomerDetail);
@@ -311,5 +347,8 @@
         private All_user_control.UC_Employee uC_Employee1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private Guna.UI2.WinForms.Guna2Panel panelMoving;
+        private Guna.UI2.WinForms.Guna2Button btUser;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private All_user_control.UC_User uC_User1;
     }
 }

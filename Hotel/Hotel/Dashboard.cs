@@ -25,6 +25,7 @@ namespace Hotel
             uC_CustomerRes1.Visible = false;
             uC_CustomerDetail1.Visible = false;
             uC_Employee1.Visible= false;
+            uC_User1.Visible = false;
             btAddroom.PerformClick();
             Position();
         }
@@ -34,6 +35,7 @@ namespace Hotel
             if(position == 2)
             {
                 btEmploy.Enabled = false;
+                btUser.Enabled = false;
             }
         }
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -96,6 +98,12 @@ namespace Hotel
         private void btEmploy_EnabledChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            uC_User1.Visible = true;
+            uC_User1.BringToFront();
         }
     }
 }
