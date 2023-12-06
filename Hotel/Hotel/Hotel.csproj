@@ -106,6 +106,7 @@
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -197,6 +198,18 @@
     <Compile Include="RoomControls\UC_RoomManagement.Designer.cs">
       <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="All user control\UC_Employee2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All user control\UC_Employee2.Designer.cs">
+      <DependentUpon>UC_Employee2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="All user control\UC_User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All user control\UC_User.Designer.cs">
+      <DependentUpon>UC_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +225,18 @@
     <Compile Include="function.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmallForm\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmallForm\EditUserName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\EditUserName.Designer.cs">
+      <DependentUpon>EditUserName.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\EmployeeInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +276,12 @@
     <EmbeddedResource Include="RoomControls\UC_RoomManagement.resx">
       <DependentUpon>UC_RoomManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="All user control\UC_Employee2.resx">
+      <DependentUpon>UC_Employee2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="All user control\UC_User.resx">
+      <DependentUpon>UC_User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +300,12 @@
     </Compile>
     <EmbeddedResource Include="RoomControls\UC_RoomUnitAvailable.resx">
       <DependentUpon>UC_RoomUnitAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\EditUserName.resx">
+      <DependentUpon>EditUserName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EmployeeInformation.resx">
       <DependentUpon>EmployeeInformation.cs</DependentUpon>
@@ -334,7 +371,12 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Vàng Ảnh Nhà hàng Hiện đại Doanh nghiệp Hóa đơn.png" />
+    <None Include="Resources\login.png" />
+    <Content Include="Resources\dangnhap.jpg" />
+    <Content Include="Resources\dangNhap1.png" />
+    <Content Include="Resources\sửa đăng nhập.png" />
+    <Content Include="Resources\hóa đơn.png" />
+    <None Include="Resources\Thiết kế chưa có tên.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

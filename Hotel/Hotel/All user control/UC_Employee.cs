@@ -118,7 +118,9 @@ namespace Hotel.All_user_control
 
                 // Hiển thị form mới và chuyển dữ liệu nếu cần
                 EmployeeInformation form = new EmployeeInformation(x1, x2, x3, x4, x5, x6, x7);
+                
                 form.Show();
+
             }
         }
 
@@ -141,6 +143,11 @@ namespace Hotel.All_user_control
         }
 
         private void saveFileDialog2_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
         {
 
         }
