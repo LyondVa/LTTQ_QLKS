@@ -13,30 +13,42 @@ namespace Hotel.RoomControls
 {
     public partial class F_UpdateRoom : Form
     {
+        DataSet ds;
         string query;
         function fn = new function();
-        public F_UpdateRoom()
+        RoomFunction rFn = new RoomFunction();
+        public F_UpdateRoom(DataSet ds)
         {
             InitializeComponent();
+            this.ds = ds;
         }
-
         private void bTExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void bTUpdate_Click(object sender, EventArgs e)
         {
-            if (tBRoomID.Text == "" || tBRoomType.Text == "" || textBox.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox3.Text == "")
+            if (cBRoomID.Text == "" || tBRoomType.Text == "" || tBStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                query = "update rooms set roomNo = '" + textBox.Text + "',roomType = '" + tBRoomType.Text + "',bed='" + textBox3.Text + "',price='" + textBox4.Text + "',booked='" + textBox5.Text + "' where roomid='" + tBRoomID.Text + "'";
-                string msg = "Cập nhật Thành công";
-                fn.setData(query, msg);
+
+                string column = "MAPHG";
+                if (!rFn.FindInDataset(ds, cBRoomID.Text, column))
+                {
+                    MessageBox.Show("Không tìm thấy mã phòng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    query = "update PHONG set MALOAIPHG = '" + tBRoomType.Text + "', TRANGTHAI = '" + tBStatus.Text + "' where MAPHG = '" + cBRoomID.Text + "'";
+                    string msg = "Cập nhật Thành công";
+                    fn.setData(query, msg);
+                    EventHub.OnDatabaseUpdated();
+                    this.Close();
+                }
             }
         }
     }

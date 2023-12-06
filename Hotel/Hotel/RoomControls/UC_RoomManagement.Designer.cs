@@ -42,10 +42,14 @@
             this.tSLUpdate = new System.Windows.Forms.ToolStripLabel();
             this.tSLDelete = new System.Windows.Forms.ToolStripLabel();
             this.dGVRoom = new System.Windows.Forms.DataGridView();
+            this.tP_tBNote = new System.Windows.Forms.TextBox();
+            this.tP_tBService = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.gBSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tCNote.SuspendLayout();
+            this.tPNote.SuspendLayout();
+            this.tPService.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVRoom)).BeginInit();
@@ -86,6 +90,8 @@
             this.tBSearch.Name = "tBSearch";
             this.tBSearch.Size = new System.Drawing.Size(100, 22);
             this.tBSearch.TabIndex = 0;
+            this.tBSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tBSearch.TextChanged += new System.EventHandler(this.tBSearch_TextChanged);
             // 
             // panel1
             // 
@@ -109,6 +115,7 @@
             // 
             // tPNote
             // 
+            this.tPNote.Controls.Add(this.tP_tBNote);
             this.tPNote.Location = new System.Drawing.Point(4, 25);
             this.tPNote.Name = "tPNote";
             this.tPNote.Padding = new System.Windows.Forms.Padding(3);
@@ -119,6 +126,7 @@
             // 
             // tPService
             // 
+            this.tPService.Controls.Add(this.tP_tBService);
             this.tPService.Location = new System.Drawing.Point(4, 25);
             this.tPService.Name = "tPService";
             this.tPService.Padding = new System.Windows.Forms.Padding(3);
@@ -146,7 +154,7 @@
             this.tSLDelete});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(201, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(162, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -173,14 +181,36 @@
             // 
             // dGVRoom
             // 
+            this.dGVRoom.AllowUserToAddRows = false;
+            this.dGVRoom.AllowUserToDeleteRows = false;
             this.dGVRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGVRoom.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dGVRoom.Location = new System.Drawing.Point(0, 78);
+            this.dGVRoom.MultiSelect = false;
             this.dGVRoom.Name = "dGVRoom";
+            this.dGVRoom.ReadOnly = true;
             this.dGVRoom.RowHeadersWidth = 51;
             this.dGVRoom.RowTemplate.Height = 24;
             this.dGVRoom.Size = new System.Drawing.Size(879, 400);
             this.dGVRoom.TabIndex = 4;
+            this.dGVRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVRoom_CellClick);
+            // 
+            // tP_tBNote
+            // 
+            this.tP_tBNote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tP_tBNote.Location = new System.Drawing.Point(3, 3);
+            this.tP_tBNote.Name = "tP_tBNote";
+            this.tP_tBNote.Size = new System.Drawing.Size(865, 22);
+            this.tP_tBNote.TabIndex = 0;
+            // 
+            // tP_tBService
+            // 
+            this.tP_tBService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tP_tBService.Location = new System.Drawing.Point(3, 3);
+            this.tP_tBService.Name = "tP_tBService";
+            this.tP_tBService.Size = new System.Drawing.Size(865, 22);
+            this.tP_tBService.TabIndex = 0;
             // 
             // UC_RoomManagement
             // 
@@ -197,13 +227,17 @@
             this.gBSearch.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.tCNote.ResumeLayout(false);
+            this.tPNote.ResumeLayout(false);
+            this.tPNote.PerformLayout();
+            this.tPService.ResumeLayout(false);
+            this.tPService.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVRoom)).EndInit();
             this.ResumeLayout(false);
-            this.Load += UC_RoomManagement_Load;
+
         }
 
         #endregion
@@ -221,5 +255,7 @@
         private System.Windows.Forms.ToolStripLabel tSLUpdate;
         private System.Windows.Forms.ToolStripLabel tSLDelete;
         private System.Windows.Forms.DataGridView dGVRoom;
+        private System.Windows.Forms.TextBox tP_tBNote;
+        private System.Windows.Forms.TextBox tP_tBService;
     }
 }

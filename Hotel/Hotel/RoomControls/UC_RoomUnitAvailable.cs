@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel.RoomControls
 {
-    public partial class UC_AddRoom : UserControl
+    public partial class UC_RoomUnitAvailable : UserControl
     {
-        public UC_AddRoom()
+        public UC_RoomUnitAvailable()
         {
             InitializeComponent();
-        }
-
-        private void bTExit_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
