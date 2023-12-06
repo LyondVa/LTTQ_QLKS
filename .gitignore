@@ -400,3 +400,13 @@ FodyWeavers.xsd
 bin/
 obj/
 Debug/
+/Hotel/.vs/Hotel/v17/.suo
+/Hotel/Hotel/bin/Debug/Hotel.exe
+/Hotel/Hotel/bin/Debug/Hotel.pdb
+/Hotel/Hotel/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Hotel/Hotel/obj/Debug/Hotel.csproj.AssemblyReference.cache
+/Hotel/Hotel/obj/Debug/Hotel.csproj.CoreCompileInputs.cache
+/Hotel/Hotel/obj/Debug/Hotel.csproj.FileListAbsolute.txt
+/Hotel/Hotel/obj/Debug/Hotel.csproj.GenerateResource.cache
+/Hotel/Hotel/obj/Debug/Hotel.exe
+/Hotel/Hotel/obj/Debug/Hotel.pdb

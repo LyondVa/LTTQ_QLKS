@@ -21,7 +21,7 @@ namespace Hotel
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            uC_Addroom1.Visible = false;
+            //uC_Addroom1.Visible = false;
             uC_CustomerRes1.Visible = false;
             uC_CustomerDetail1.Visible = false;
             uC_Employee1.Visible= false;
@@ -43,9 +43,8 @@ namespace Hotel
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btAddroom.Left + 50;
-            uC_Addroom1.Visible = true;
-            uC_Addroom1.BringToFront();
+            uC_RoomManagement1.Show();
+            uC_RoomManagement1.BringToFront();
         }
 
         

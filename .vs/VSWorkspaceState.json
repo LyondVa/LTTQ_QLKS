@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Database",
-    "\\Hotel",
-    "\\Hotel\\Hotel",
-    "\\Hotel\\Hotel\\All user control",
-    "\\Hotel\\Hotel\\SmallForm"
+    ""
   ],
-  "SelectedNode": "\\Hotel\\Hotel\\All user control\\UC_AddRoomType.cs",
+  "SelectedNode": "\\HotelManagement.sln",
   "PreviewInSolutionExplorer": false
 }
