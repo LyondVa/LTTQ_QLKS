@@ -9,34 +9,41 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hotel.RoomControls
-{
+{ 
     public partial class F_AddRoom : Form
     {
+        DataSet ds;
         string query;
         function fn = new function();
-        public F_AddRoom()
+        RoomFunction rFn = new RoomFunction();
+        public F_AddRoom(DataSet ds)
         {
             InitializeComponent();
+            this.ds = ds;
         }
-
         private void bTExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void bTAdd_Click(object sender, EventArgs e)
         {
-            if(tBRoomID.Text == "" || tBRoomType.Text == "" || textBox.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox3.Text == "")
+            if(tBRoomType.Text == "" || tBStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
             }
             else
             {
-                query = "insert into rooms values(/*'" + tBRoomID.Text + "',*/'" + textBox.Text + "','" + tBRoomType.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
+                query = "insert into PHONG values('P" + dUDFloor.Text + dUDRoomID.Text + "','" + tBRoomType.Text + "','" + tBStatus.Text + "','" + Convert.ToByte(dUDFloor.Text) + "')";
                 string msg = "Thêm Thành công";
                 fn.setData(query, msg);
+                EventHub.OnDatabaseUpdated();
+                this.Close();
             }
+        }
+
+        private void dUDFloor_SelectedItemChanged(object sender, EventArgs e)
+        {
+            rFn.SetRoomID(dUDRoomID, ds, dUDFloor.Text);
         }
     }
 }

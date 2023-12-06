@@ -154,12 +154,7 @@
     <Compile Include="RoomControls\F_UpdateRoom.Designer.cs">
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="RoomControls\UC_AddRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RoomControls\UC_AddRoom.Designer.cs">
-      <DependentUpon>UC_AddRoom.cs</DependentUpon>
-    </Compile>
+    <Compile Include="RoomControls\RoomFunction.cs" />
     <Compile Include="RoomControls\UC_AddRoomType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +184,12 @@
     </Compile>
     <Compile Include="All user control\UC_Employee.Designer.cs">
       <DependentUpon>UC_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomControls\UC_RoomUnitAvailable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoomControls\UC_RoomUnitAvailable.Designer.cs">
+      <DependentUpon>UC_RoomUnitAvailable.cs</DependentUpon>
     </Compile>
     <Compile Include="RoomControls\UC_RoomManagement.cs">
       <SubType>UserControl</SubType>
@@ -232,9 +233,6 @@
     <EmbeddedResource Include="RoomControls\F_UpdateRoom.resx">
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\UC_AddRoom.resx">
-      <DependentUpon>UC_AddRoom.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\UC_AddRoomType.resx">
       <DependentUpon>UC_AddRoomType.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +267,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RoomControls\UC_RoomUnitAvailable.resx">
+      <DependentUpon>UC_RoomUnitAvailable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EmployeeInformation.resx">
       <DependentUpon>EmployeeInformation.cs</DependentUpon>
     </EmbeddedResource>

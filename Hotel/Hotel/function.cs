@@ -116,4 +116,18 @@ namespace Hotel
         }
 
     }
+    public static class EventHub
+    {
+        // Define the delegate for the event
+        public delegate void DatabaseUpdatedEventHandler();
+        // Define the static event based on the delegate
+        public static event DatabaseUpdatedEventHandler DatabaseUpdated;
+
+        // Static method to raise the event
+        public static void OnDatabaseUpdated()
+        {
+            DatabaseUpdated?.Invoke();
+        }
+    }
+
 }
