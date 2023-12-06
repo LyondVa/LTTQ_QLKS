@@ -42,11 +42,13 @@
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.panelMoving = new Guna.UI2.WinForms.Guna2Panel();
             this.btUser = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinisize = new Guna.UI2.WinForms.Guna2Button();
             this.btExit = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
             this.uC_User1 = new Hotel.All_user_control.UC_User();
             this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
             this.uC_CustomerDetail1 = new Hotel.All_user_control.UC_CustomerDetail();
@@ -54,22 +56,23 @@
             this.uC_CustomerRes1 = new Hotel.All_user_control.UC_CustomerRes();
             this.uC_Addroom1 = new Hotel.All_user_control.UC_Addroom();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btEmploy
             // 
-            this.btEmploy.BorderRadius = 25;
             this.btEmploy.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btEmploy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btEmploy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btEmploy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btEmploy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btEmploy.Dock = System.Windows.Forms.DockStyle.Top;
             this.btEmploy.FillColor = System.Drawing.Color.SlateBlue;
             this.btEmploy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEmploy.ForeColor = System.Drawing.Color.White;
-            this.btEmploy.Location = new System.Drawing.Point(-2, 568);
+            this.btEmploy.Location = new System.Drawing.Point(0, 450);
             this.btEmploy.Name = "btEmploy";
-            this.btEmploy.Size = new System.Drawing.Size(284, 116);
+            this.btEmploy.Size = new System.Drawing.Size(328, 90);
             this.btEmploy.TabIndex = 4;
             this.btEmploy.Text = "Thông Tin Nhân Viên";
             this.btEmploy.EnabledChanged += new System.EventHandler(this.btEmploy_EnabledChanged);
@@ -77,72 +80,73 @@
             // 
             // btCustomerDetail
             // 
-            this.btCustomerDetail.BorderRadius = 25;
             this.btCustomerDetail.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btCustomerDetail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btCustomerDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btCustomerDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btCustomerDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btCustomerDetail.Dock = System.Windows.Forms.DockStyle.Top;
             this.btCustomerDetail.FillColor = System.Drawing.Color.SlateBlue;
             this.btCustomerDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCustomerDetail.ForeColor = System.Drawing.Color.White;
-            this.btCustomerDetail.Location = new System.Drawing.Point(1, 456);
+            this.btCustomerDetail.Location = new System.Drawing.Point(0, 270);
             this.btCustomerDetail.Name = "btCustomerDetail";
-            this.btCustomerDetail.Size = new System.Drawing.Size(284, 116);
+            this.btCustomerDetail.Size = new System.Drawing.Size(328, 90);
             this.btCustomerDetail.TabIndex = 3;
             this.btCustomerDetail.Text = "Chi Tiết Khách Hàng";
             this.btCustomerDetail.Click += new System.EventHandler(this.btCustomerDetail_Click);
             // 
             // btCheckOut
             // 
-            this.btCheckOut.BorderRadius = 25;
             this.btCheckOut.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btCheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btCheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btCheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btCheckOut.Dock = System.Windows.Forms.DockStyle.Top;
             this.btCheckOut.FillColor = System.Drawing.Color.SlateBlue;
             this.btCheckOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btCheckOut.Location = new System.Drawing.Point(1, 343);
+            this.btCheckOut.Location = new System.Drawing.Point(0, 360);
             this.btCheckOut.Name = "btCheckOut";
-            this.btCheckOut.Size = new System.Drawing.Size(284, 116);
+            this.btCheckOut.Size = new System.Drawing.Size(328, 90);
             this.btCheckOut.TabIndex = 2;
             this.btCheckOut.Text = "Thanh Toán";
             this.btCheckOut.Click += new System.EventHandler(this.btCheckOut_Click);
             // 
             // btCustomerReg
             // 
-            this.btCustomerReg.BorderRadius = 25;
             this.btCustomerReg.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btCustomerReg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btCustomerReg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btCustomerReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btCustomerReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btCustomerReg.Dock = System.Windows.Forms.DockStyle.Top;
             this.btCustomerReg.FillColor = System.Drawing.Color.SlateBlue;
-            this.btCustomerReg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCustomerReg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btCustomerReg.ForeColor = System.Drawing.Color.White;
-            this.btCustomerReg.Location = new System.Drawing.Point(-2, 234);
+            this.btCustomerReg.Location = new System.Drawing.Point(0, 180);
             this.btCustomerReg.Name = "btCustomerReg";
-            this.btCustomerReg.Size = new System.Drawing.Size(284, 116);
+            this.btCustomerReg.Size = new System.Drawing.Size(328, 90);
             this.btCustomerReg.TabIndex = 1;
             this.btCustomerReg.Text = "Đăng Ký Khách Hàng";
             this.btCustomerReg.Click += new System.EventHandler(this.btCustomerReg_Click);
             // 
             // btAddroom
             // 
-            this.btAddroom.BorderRadius = 25;
+            this.btAddroom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
             this.btAddroom.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btAddroom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btAddroom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btAddroom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btAddroom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btAddroom.Dock = System.Windows.Forms.DockStyle.Top;
             this.btAddroom.FillColor = System.Drawing.Color.SlateBlue;
             this.btAddroom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddroom.ForeColor = System.Drawing.Color.White;
-            this.btAddroom.Location = new System.Drawing.Point(-2, 112);
+            this.btAddroom.Location = new System.Drawing.Point(0, 90);
             this.btAddroom.Name = "btAddroom";
-            this.btAddroom.Size = new System.Drawing.Size(284, 116);
+            this.btAddroom.Size = new System.Drawing.Size(328, 90);
             this.btAddroom.TabIndex = 0;
             this.btAddroom.Text = "Thêm Phòng";
             this.btAddroom.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -150,6 +154,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.uC_Employee21);
             this.panel2.Controls.Add(this.uC_User1);
             this.panel2.Controls.Add(this.uC_Employee1);
             this.panel2.Controls.Add(this.uC_CustomerDetail1);
@@ -182,31 +187,59 @@
             this.guna2Elipse6.BorderRadius = 30;
             this.guna2Elipse6.TargetControl = this;
             // 
-            // panelMoving
-            // 
-            this.panelMoving.BackColor = System.Drawing.Color.Aqua;
-            this.panelMoving.Location = new System.Drawing.Point(-2, 340);
-            this.panelMoving.Name = "panelMoving";
-            this.panelMoving.Size = new System.Drawing.Size(284, 10);
-            this.panelMoving.TabIndex = 4;
-            // 
             // btUser
             // 
-            this.btUser.BorderRadius = 25;
             this.btUser.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.btUser.FillColor = System.Drawing.Color.SlateBlue;
             this.btUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btUser.ForeColor = System.Drawing.Color.White;
-            this.btUser.Location = new System.Drawing.Point(-2, 680);
+            this.btUser.Location = new System.Drawing.Point(0, 540);
             this.btUser.Name = "btUser";
-            this.btUser.Size = new System.Drawing.Size(284, 116);
+            this.btUser.Size = new System.Drawing.Size(328, 90);
             this.btUser.TabIndex = 5;
             this.btUser.Text = "Quản Lý Tài Khoản";
             this.btUser.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            // 
+            // guna2Elipse7
+            // 
+            this.guna2Elipse7.BorderRadius = 30;
+            this.guna2Elipse7.TargetControl = this;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btUser);
+            this.panel1.Controls.Add(this.btEmploy);
+            this.panel1.Controls.Add(this.btCheckOut);
+            this.panel1.Controls.Add(this.btCustomerDetail);
+            this.panel1.Controls.Add(this.btCustomerReg);
+            this.panel1.Controls.Add(this.btAddroom);
+            this.panel1.Controls.Add(this.guna2Button2);
+            this.panel1.Location = new System.Drawing.Point(1, 171);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(328, 763);
+            this.panel1.TabIndex = 6;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button2.FillColor = System.Drawing.Color.SlateBlue;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(328, 90);
+            this.guna2Button2.TabIndex = 7;
+            this.guna2Button2.Text = "Trang Chủ";
             // 
             // btnMinisize
             // 
@@ -241,10 +274,13 @@
             this.btExit.TabIndex = 0;
             this.btExit.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2Elipse7
+            // uC_Employee21
             // 
-            this.guna2Elipse7.BorderRadius = 30;
-            this.guna2Elipse7.TargetControl = this;
+            this.uC_Employee21.BackColor = System.Drawing.Color.White;
+            this.uC_Employee21.Location = new System.Drawing.Point(-1, -1);
+            this.uC_Employee21.Name = "uC_Employee21";
+            this.uC_Employee21.Size = new System.Drawing.Size(1478, 853);
+            this.uC_Employee21.TabIndex = 6;
             // 
             // uC_User1
             // 
@@ -304,15 +340,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1946, 1106);
-            this.Controls.Add(this.btUser);
-            this.Controls.Add(this.btEmploy);
-            this.Controls.Add(this.panelMoving);
-            this.Controls.Add(this.btCustomerDetail);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btCheckOut);
-            this.Controls.Add(this.btCustomerReg);
             this.Controls.Add(this.btnMinisize);
-            this.Controls.Add(this.btAddroom);
             this.Controls.Add(this.btExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
@@ -321,6 +351,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -346,9 +377,11 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private All_user_control.UC_Employee uC_Employee1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
-        private Guna.UI2.WinForms.Guna2Panel panelMoving;
         private Guna.UI2.WinForms.Guna2Button btUser;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
         private All_user_control.UC_User uC_User1;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private All_user_control.UC_Employee2 uC_Employee21;
     }
 }

@@ -34,8 +34,8 @@ namespace Hotel
         {
             if(position == 2)
             {
-                btEmploy.Enabled = false;
-                btUser.Enabled = false;
+                btEmploy.Visible= false;
+                btUser.Visible = false;
             }
         }
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -45,7 +45,6 @@ namespace Hotel
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btAddroom.Left + 50;
             uC_Addroom1.Visible = true;
             uC_Addroom1.BringToFront();
         }
@@ -58,21 +57,18 @@ namespace Hotel
 
         private void btCustomerReg_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btCustomerReg.Left + 60;
             uC_CustomerRes1.Visible = true;
             uC_CustomerRes1.BringToFront();
         }
 
         private void btCheckOut_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btCheckOut.Left + 50; 
             uC_CheckOut1.Visible = true;
             uC_CheckOut1.BringToFront();
         }
 
         private void btCustomerDetail_Click(object sender, EventArgs e)
         {
-            panelMoving.Left = btCustomerDetail.Left + 60;
             uC_CustomerDetail1.Visible = true;
             uC_CustomerDetail1.BringToFront();
         }
@@ -85,9 +81,8 @@ namespace Hotel
         private void btEmploy_Click(object sender, EventArgs e)
         {
             
-            panelMoving.Left = btEmploy.Left + 60;
-            uC_Employee1.Visible = true;
-            uC_Employee1.BringToFront();
+            uC_Employee21.Visible = true;
+            uC_Employee21.BringToFront();
         }
 
         private void uC_Employee1_Load(object sender, EventArgs e)

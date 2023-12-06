@@ -65,5 +65,16 @@ namespace Hotel.All_user_control
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            AddEmployee ae = new AddEmployee();
+            ae.ShowDialog();
+        }
     }
 }

@@ -52,5 +52,20 @@ namespace Hotel.SmallForm
             fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

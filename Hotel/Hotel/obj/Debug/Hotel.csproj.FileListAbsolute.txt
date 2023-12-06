@@ -73,3 +73,5 @@ C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\bin\Debug\System.Threadin
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\bin\Debug\System.ValueTuple.xml
 C:\Users\PC\Source\Repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_User.resources
 C:\Users\PC\source\repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.SmallForm.EditUserName.resources
+C:\Users\PC\source\repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.All_user_control.UC_Employee2.resources
+C:\Users\PC\source\repos\LyondVa\LTTQ_QLKS\Hotel\Hotel\obj\Debug\Hotel.SmallForm.AddEmployee.resources
