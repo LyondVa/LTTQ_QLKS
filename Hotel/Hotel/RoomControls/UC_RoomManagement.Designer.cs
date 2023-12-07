@@ -35,15 +35,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tCNote = new System.Windows.Forms.TabControl();
             this.tPNote = new System.Windows.Forms.TabPage();
+            this.tP_tBNote = new System.Windows.Forms.TextBox();
             this.tPService = new System.Windows.Forms.TabPage();
+            this.tP_tBService = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tSLAdd = new System.Windows.Forms.ToolStripLabel();
             this.tSLUpdate = new System.Windows.Forms.ToolStripLabel();
             this.tSLDelete = new System.Windows.Forms.ToolStripLabel();
             this.dGVRoom = new System.Windows.Forms.DataGridView();
-            this.tP_tBNote = new System.Windows.Forms.TextBox();
-            this.tP_tBService = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.gBSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -124,6 +124,14 @@
             this.tPNote.Text = "Ghi chú";
             this.tPNote.UseVisualStyleBackColor = true;
             // 
+            // tP_tBNote
+            // 
+            this.tP_tBNote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tP_tBNote.Location = new System.Drawing.Point(3, 3);
+            this.tP_tBNote.Name = "tP_tBNote";
+            this.tP_tBNote.Size = new System.Drawing.Size(865, 22);
+            this.tP_tBNote.TabIndex = 0;
+            // 
             // tPService
             // 
             this.tPService.Controls.Add(this.tP_tBService);
@@ -134,6 +142,14 @@
             this.tPService.TabIndex = 1;
             this.tPService.Text = "Dịch vụ";
             this.tPService.UseVisualStyleBackColor = true;
+            // 
+            // tP_tBService
+            // 
+            this.tP_tBService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tP_tBService.Location = new System.Drawing.Point(3, 3);
+            this.tP_tBService.Name = "tP_tBService";
+            this.tP_tBService.Size = new System.Drawing.Size(865, 22);
+            this.tP_tBService.TabIndex = 0;
             // 
             // flowLayoutPanel2
             // 
@@ -195,22 +211,6 @@
             this.dGVRoom.Size = new System.Drawing.Size(879, 400);
             this.dGVRoom.TabIndex = 4;
             this.dGVRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVRoom_CellClick);
-            // 
-            // tP_tBNote
-            // 
-            this.tP_tBNote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tP_tBNote.Location = new System.Drawing.Point(3, 3);
-            this.tP_tBNote.Name = "tP_tBNote";
-            this.tP_tBNote.Size = new System.Drawing.Size(865, 22);
-            this.tP_tBNote.TabIndex = 0;
-            // 
-            // tP_tBService
-            // 
-            this.tP_tBService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tP_tBService.Location = new System.Drawing.Point(3, 3);
-            this.tP_tBService.Name = "tP_tBService";
-            this.tP_tBService.Size = new System.Drawing.Size(865, 22);
-            this.tP_tBService.TabIndex = 0;
             // 
             // UC_RoomManagement
             // 

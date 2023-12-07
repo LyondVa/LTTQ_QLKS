@@ -36,5 +36,11 @@ namespace Hotel.RoomControls
             }
             return false;
         }
+        public void UnitClick()
+        {
+            RoomInfo roomInfo = new RoomInfo();
+            roomInfo.Show();
+            roomInfo.Focus();
+        }
     }
 }

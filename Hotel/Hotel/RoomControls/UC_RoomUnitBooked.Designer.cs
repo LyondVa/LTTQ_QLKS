@@ -1,6 +1,6 @@
 ﻿namespace Hotel.RoomControls
 {
-    partial class UC_RoomUnitAvailable
+    partial class UC_RoomUnitBooked
     {
         /// <summary> 
         /// Required designer variable.
@@ -48,7 +48,7 @@
             this.lBRoomID.Size = new System.Drawing.Size(44, 16);
             this.lBRoomID.TabIndex = 0;
             this.lBRoomID.Text = "label1";
-            this.lBRoomID.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            this.lBRoomID.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
             // lBRoomTypeID
             // 
@@ -58,7 +58,7 @@
             this.lBRoomTypeID.Size = new System.Drawing.Size(44, 16);
             this.lBRoomTypeID.TabIndex = 1;
             this.lBRoomTypeID.Text = "label2";
-            this.lBRoomTypeID.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            this.lBRoomTypeID.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
             // panel1
             // 
@@ -70,8 +70,8 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(72, 130);
-            this.panel1.TabIndex = 5;
-            this.panel1.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            this.panel1.TabIndex = 7;
+            this.panel1.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
             // pBCleanStatus
             // 
@@ -80,7 +80,7 @@
             this.pBCleanStatus.Size = new System.Drawing.Size(28, 28);
             this.pBCleanStatus.TabIndex = 3;
             this.pBCleanStatus.TabStop = false;
-            this.pBCleanStatus.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            this.pBCleanStatus.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
             // pBClean
             // 
@@ -89,26 +89,26 @@
             this.pBClean.Size = new System.Drawing.Size(28, 28);
             this.pBClean.TabIndex = 2;
             this.pBClean.TabStop = false;
-            this.pBClean.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            this.pBClean.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
             // pBRoomStatus
             // 
-            this.pBRoomStatus.Location = new System.Drawing.Point(106, 12);
+            this.pBRoomStatus.Location = new System.Drawing.Point(100, 21);
             this.pBRoomStatus.Name = "pBRoomStatus";
             this.pBRoomStatus.Size = new System.Drawing.Size(100, 100);
-            this.pBRoomStatus.TabIndex = 4;
+            this.pBRoomStatus.TabIndex = 6;
             this.pBRoomStatus.TabStop = false;
-            this.pBRoomStatus.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            this.pBRoomStatus.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
-            // UC_RoomUnitAvailable
+            // UC_RoomUnitBooked
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pBRoomStatus);
-            this.Name = "UC_RoomUnitAvailable";
+            this.Name = "UC_RoomUnitBooked";
             this.Size = new System.Drawing.Size(230, 130);
-            this.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            this.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).EndInit();
@@ -122,9 +122,9 @@
 
         private System.Windows.Forms.Label lBRoomID;
         private System.Windows.Forms.Label lBRoomTypeID;
-        private System.Windows.Forms.PictureBox pBRoomStatus;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pBCleanStatus;
         private System.Windows.Forms.PictureBox pBClean;
+        private System.Windows.Forms.PictureBox pBRoomStatus;
     }
 }
