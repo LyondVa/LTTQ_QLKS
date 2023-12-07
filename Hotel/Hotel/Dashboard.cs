@@ -1,4 +1,5 @@
-﻿using Hotel.All_user_control;
+﻿using Guna.UI2.WinForms;
+using Hotel.All_user_control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,9 +82,9 @@ namespace Hotel
 
         private void btEmploy_Click(object sender, EventArgs e)
         {
-            
             uC_Employee21.Visible = true;
             uC_Employee21.BringToFront();
+            this.Load += uC_Employee1_Load;
         }
 
         private void uC_Employee1_Load(object sender, EventArgs e)

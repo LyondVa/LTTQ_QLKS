@@ -120,7 +120,7 @@
             this.tbSearch.Size = new System.Drawing.Size(286, 39);
             this.tbSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbSearch.TabIndex = 1;
-            this.tbSearch.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // guna2Button1
             // 

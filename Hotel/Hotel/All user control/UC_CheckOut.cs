@@ -19,6 +19,7 @@ namespace Hotel.All_user_control
         public UC_CheckOut()
         {
             InitializeComponent();
+            txtCheckOutDate.Value = DateTime.Now;
         }
 
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace Hotel.All_user_control
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "SELECT eid as 'Mã Nhân Viên', ename as 'Tên Nhân Viên', username as 'Username', pass as 'Password', position as'Cấp Độ Quyền' FROM employee";
+            query = "SELECT eid as 'Mã Nhân Viên', ename as 'Tên Nhân Viên', username as 'Username', pass as 'Password', chucVu as 'Chức Vụ' FROM employee";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
@@ -51,10 +51,10 @@ namespace Hotel.All_user_control
 
             edun.ShowDialog();
             edun.Focus();
-
+            setEmployee(guna2DataGridView1);
         }
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        private void tbSearch_TextChanged(object sender, EventArgs e)
         {
             query = "select eid, ename, username, pass, position from employee where ename like '" + tbSearch.Text + "%'";
             DataSet ds = fn.getData(query);
@@ -70,11 +70,12 @@ namespace Hotel.All_user_control
         {
 
         }
-
+        //
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             AddEmployee ae = new AddEmployee();
             ae.ShowDialog();
+            setEmployee(guna2DataGridView1);
         }
     }
 }

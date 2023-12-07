@@ -36,13 +36,6 @@
             this.btCustomerReg = new Guna.UI2.WinForms.Guna2Button();
             this.btAddroom = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
-            this.uC_User1 = new Hotel.All_user_control.UC_User();
-            this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
-            this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
-            this.uC_CustomerDetail1 = new Hotel.All_user_control.UC_CustomerDetail();
-            this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
-            this.uC_CustomerRes1 = new Hotel.All_user_control.UC_CustomerRes();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -55,6 +48,13 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinisize = new Guna.UI2.WinForms.Guna2Button();
             this.btExit = new Guna.UI2.WinForms.Guna2Button();
+            this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
+            this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
+            this.uC_CustomerDetail1 = new Hotel.All_user_control.UC_CustomerDetail();
+            this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
+            this.uC_CustomerRes1 = new Hotel.All_user_control.UC_CustomerRes();
+            this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
+            this.uC_User1 = new Hotel.All_user_control.UC_User();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -172,71 +172,6 @@
             this.panel2.Size = new System.Drawing.Size(1436, 805);
             this.panel2.TabIndex = 3;
             // 
-            // uC_Employee21
-            // 
-            this.uC_Employee21.BackColor = System.Drawing.Color.White;
-            this.uC_Employee21.Location = new System.Drawing.Point(-1, -1);
-            this.uC_Employee21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Employee21.Name = "uC_Employee21";
-            this.uC_Employee21.Size = new System.Drawing.Size(1478, 853);
-            this.uC_Employee21.TabIndex = 6;
-            // 
-            // uC_User1
-            // 
-            this.uC_User1.BackColor = System.Drawing.Color.White;
-            this.uC_User1.Location = new System.Drawing.Point(-1, -1);
-            this.uC_User1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_User1.Name = "uC_User1";
-            this.uC_User1.Size = new System.Drawing.Size(1478, 853);
-            this.uC_User1.TabIndex = 5;
-            // 
-            // uC_RoomManagement1
-            // 
-            this.uC_RoomManagement1.BackColor = System.Drawing.Color.White;
-            this.uC_RoomManagement1.Location = new System.Drawing.Point(-4, 2);
-            this.uC_RoomManagement1.Name = "uC_RoomManagement1";
-            this.uC_RoomManagement1.Size = new System.Drawing.Size(1313, 682);
-            this.uC_RoomManagement1.TabIndex = 5;
-            // 
-            // uC_Employee1
-            // 
-            this.uC_Employee1.BackColor = System.Drawing.Color.White;
-            this.uC_Employee1.ForeColor = System.Drawing.Color.Black;
-            this.uC_Employee1.Location = new System.Drawing.Point(-4, 2);
-            this.uC_Employee1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Employee1.Name = "uC_Employee1";
-            this.uC_Employee1.Size = new System.Drawing.Size(1315, 599);
-            this.uC_Employee1.TabIndex = 4;
-            this.uC_Employee1.Load += new System.EventHandler(this.uC_Employee1_Load);
-            // 
-            // uC_CustomerDetail1
-            // 
-            this.uC_CustomerDetail1.BackColor = System.Drawing.Color.White;
-            this.uC_CustomerDetail1.Location = new System.Drawing.Point(-1, 2);
-            this.uC_CustomerDetail1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_CustomerDetail1.Name = "uC_CustomerDetail1";
-            this.uC_CustomerDetail1.Size = new System.Drawing.Size(1314, 679);
-            this.uC_CustomerDetail1.TabIndex = 3;
-            this.uC_CustomerDetail1.Load += new System.EventHandler(this.uC_CustomerDetail1_Load);
-            // 
-            // uC_CheckOut1
-            // 
-            this.uC_CheckOut1.BackColor = System.Drawing.Color.White;
-            this.uC_CheckOut1.Location = new System.Drawing.Point(-4, 2);
-            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_CheckOut1.Name = "uC_CheckOut1";
-            this.uC_CheckOut1.Size = new System.Drawing.Size(1314, 679);
-            this.uC_CheckOut1.TabIndex = 2;
-            // 
-            // uC_CustomerRes1
-            // 
-            this.uC_CustomerRes1.BackColor = System.Drawing.Color.White;
-            this.uC_CustomerRes1.Location = new System.Drawing.Point(3, 2);
-            this.uC_CustomerRes1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_CustomerRes1.Name = "uC_CustomerRes1";
-            this.uC_CustomerRes1.Size = new System.Drawing.Size(1306, 682);
-            this.uC_CustomerRes1.TabIndex = 1;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
@@ -273,7 +208,7 @@
             this.btUser.Name = "btUser";
             this.btUser.Size = new System.Drawing.Size(328, 90);
             this.btUser.TabIndex = 5;
-            this.btUser.Text = "Quản Lý Tài Khoản";
+            this.btUser.Text = "Quản Lý Nhân Viên";
             this.btUser.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // guna2Elipse7
@@ -346,6 +281,71 @@
             this.btExit.Size = new System.Drawing.Size(44, 36);
             this.btExit.TabIndex = 0;
             this.btExit.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // uC_RoomManagement1
+            // 
+            this.uC_RoomManagement1.BackColor = System.Drawing.Color.White;
+            this.uC_RoomManagement1.Location = new System.Drawing.Point(-4, 2);
+            this.uC_RoomManagement1.Name = "uC_RoomManagement1";
+            this.uC_RoomManagement1.Size = new System.Drawing.Size(1313, 682);
+            this.uC_RoomManagement1.TabIndex = 5;
+            // 
+            // uC_Employee1
+            // 
+            this.uC_Employee1.BackColor = System.Drawing.Color.White;
+            this.uC_Employee1.ForeColor = System.Drawing.Color.Black;
+            this.uC_Employee1.Location = new System.Drawing.Point(-4, 2);
+            this.uC_Employee1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Employee1.Name = "uC_Employee1";
+            this.uC_Employee1.Size = new System.Drawing.Size(1315, 599);
+            this.uC_Employee1.TabIndex = 4;
+            this.uC_Employee1.Load += new System.EventHandler(this.uC_Employee1_Load);
+            // 
+            // uC_CustomerDetail1
+            // 
+            this.uC_CustomerDetail1.BackColor = System.Drawing.Color.White;
+            this.uC_CustomerDetail1.Location = new System.Drawing.Point(-1, 2);
+            this.uC_CustomerDetail1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_CustomerDetail1.Name = "uC_CustomerDetail1";
+            this.uC_CustomerDetail1.Size = new System.Drawing.Size(1314, 679);
+            this.uC_CustomerDetail1.TabIndex = 3;
+            this.uC_CustomerDetail1.Load += new System.EventHandler(this.uC_CustomerDetail1_Load);
+            // 
+            // uC_CheckOut1
+            // 
+            this.uC_CheckOut1.BackColor = System.Drawing.Color.White;
+            this.uC_CheckOut1.Location = new System.Drawing.Point(-4, 2);
+            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_CheckOut1.Name = "uC_CheckOut1";
+            this.uC_CheckOut1.Size = new System.Drawing.Size(1314, 679);
+            this.uC_CheckOut1.TabIndex = 2;
+            // 
+            // uC_CustomerRes1
+            // 
+            this.uC_CustomerRes1.BackColor = System.Drawing.Color.White;
+            this.uC_CustomerRes1.Location = new System.Drawing.Point(3, 2);
+            this.uC_CustomerRes1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_CustomerRes1.Name = "uC_CustomerRes1";
+            this.uC_CustomerRes1.Size = new System.Drawing.Size(1306, 682);
+            this.uC_CustomerRes1.TabIndex = 1;
+            // 
+            // uC_Employee21
+            // 
+            this.uC_Employee21.BackColor = System.Drawing.Color.White;
+            this.uC_Employee21.Location = new System.Drawing.Point(-1, -1);
+            this.uC_Employee21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Employee21.Name = "uC_Employee21";
+            this.uC_Employee21.Size = new System.Drawing.Size(1478, 853);
+            this.uC_Employee21.TabIndex = 6;
+            // 
+            // uC_User1
+            // 
+            this.uC_User1.BackColor = System.Drawing.Color.White;
+            this.uC_User1.Location = new System.Drawing.Point(-1, -1);
+            this.uC_User1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_User1.Name = "uC_User1";
+            this.uC_User1.Size = new System.Drawing.Size(1478, 853);
+            this.uC_User1.TabIndex = 5;
             // 
             // Dashboard
             // 
