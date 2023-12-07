@@ -31,14 +31,20 @@ namespace Hotel.SmallForm
                 string password = txtPassword.Text;
                 string gender = cbGender.Text;
                 int position;
+                string cv = txtPosition.Text;
                 if (txtPosition.Text == "Quản Lý")
                     position = 1;
                 else
                     position = 2;
-                query = "insert into employee (ename, mobile, gender, emailid, username, pass, position) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','" + position + "')";
+                query = "insert into employee (ename, mobile, gender, emailid, username, pass, position, chucVu) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','" + position + "','" + cv + "')";
                 fn.setData(query, "Thêm Nhân Viên Thành Công!");
                 this.Close();
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

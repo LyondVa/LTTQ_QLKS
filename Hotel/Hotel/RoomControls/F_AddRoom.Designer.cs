@@ -118,7 +118,6 @@
             this.dUDFloor.Items.Add("4");
             this.dUDFloor.Location = new System.Drawing.Point(15, 38);
             this.dUDFloor.Name = "dUDFloor";
-            this.dUDFloor.ReadOnly = true;
             this.dUDFloor.Size = new System.Drawing.Size(100, 22);
             this.dUDFloor.Sorted = true;
             this.dUDFloor.TabIndex = 31;
@@ -128,7 +127,6 @@
             // 
             this.dUDRoomID.Location = new System.Drawing.Point(162, 38);
             this.dUDRoomID.Name = "dUDRoomID";
-            this.dUDRoomID.ReadOnly = true;
             this.dUDRoomID.Size = new System.Drawing.Size(100, 22);
             this.dUDRoomID.TabIndex = 32;
             // 

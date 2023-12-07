@@ -26,6 +26,7 @@ namespace Hotel
             uC_CustomerDetail1.Visible = false;
             uC_Employee1.Visible= false;
             uC_User1.Visible = false;
+            uC_RoomManagement1.Visible = false;
             btAddroom.PerformClick();
             Position();
         }
