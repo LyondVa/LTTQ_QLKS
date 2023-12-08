@@ -10,20 +10,21 @@ using System.Windows.Forms;
 
 namespace Hotel.RoomControls
 {
-    public partial class UC_RoomUnitAvailable : UserControl
+    public partial class RoomGrid : UserControl
     {
-        RoomFunction rFn = new RoomFunction();
-        public UC_RoomUnitAvailable()
+        public RoomGrid()
         {
             InitializeComponent();
         }
 
-        #region Unit Click
-        private void UC_RoomUnitAvailable_Click(object sender, EventArgs e)
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            rFn.UnitClick();
+
         }
 
-        #endregion
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

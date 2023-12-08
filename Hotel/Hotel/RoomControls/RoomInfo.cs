@@ -10,20 +10,16 @@ using System.Windows.Forms;
 
 namespace Hotel.RoomControls
 {
-    public partial class UC_RoomUnitAvailable : UserControl
+    public partial class RoomInfo : Form
     {
-        RoomFunction rFn = new RoomFunction();
-        public UC_RoomUnitAvailable()
+        public RoomInfo()
         {
             InitializeComponent();
         }
 
-        #region Unit Click
-        private void UC_RoomUnitAvailable_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            rFn.UnitClick();
-        }
 
-        #endregion
+        }
     }
 }
