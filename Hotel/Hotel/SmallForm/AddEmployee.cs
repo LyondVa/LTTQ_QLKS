@@ -19,30 +19,30 @@ namespace Hotel.SmallForm
         public AddEmployee()
         {
             InitializeComponent();
+            txtBirth.Value = DateTime.Now;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != "" && txtMobile.Text != "" && txtEmail.Text != "" && cbGender.Text != "" && txtUsername.Text != "" && txtPassword.Text != "" && txtPosition.Text != "" && txtSalary.Text != "")
+            if (txtID.Text != "" && txtName.Text != "" && txtCCCD.Text != "" && cbGender.Text != "" && txtBirth.Text != "" && txtMobile.Text != "" && txtAddress.Text != "" && txtEmail.Text != "" && txtUsername.Text != "" && txtPassword.Text != "" && txtPosition.Text != "" && txtSalary.Text != "")
             {
                 string id = txtID.Text;
                 string name = txtName.Text;
-                Int64 mobile = Convert.ToInt64(txtMobile.Text);
+                string cccd = txtCCCD.Text;
+                string gender = cbGender.Text;
+                string dob = txtBirth.Text;
+                string mobile = txtMobile.Text;
+                string address = txtAddress.Text;
                 string email = txtEmail.Text;
                 string username = txtUsername.Text;
                 string password = txtPassword.Text;
-                string gender = cbGender.Text;
-                int position;
-                string cv = txtPosition.Text;
-                if (txtPosition.Text == "Quản Lý")
-                    position = 1;
-                else
-                    position = 2;
+                string position = txtPosition.Text;
                 Int64 salary = Convert.ToInt64(txtSalary.Text);
-                query = "insert into NHANVIEN (MANV, NHOTEN, NSDT, NGIOITINH, NEMAIL, POSITION, CHUCVU, LUONG) values ('" + id + "," + name + "'," + mobile + ",'" + gender + "','" + email + "','" + position + "','" + cv + "','" + salary + "')";
+                query = "insert into NHANVIEN (MANV, NHOTEN, NCCCD, NGIOITINH, NNGSINH, NSDT, NDIACHI, NEMAIL, CHUCVU, LUONG) values "
+                      + "('" + id + "','" + name + "','" + cccd + "','" + gender + "','" + dob + "','" + mobile + "','" + address + "','" + email + "','" + position + "'," + salary + ")";
                 fn.setData(query, "Thêm Nhân Viên Thành Công!");
                 query = "insert into TAIKHOAN (MANV, TENTK, MATKHAU) values ('" + id + "','" + username + "','" + password + "')";
-                fn.setData(query, "Thêm tài khoản thành công");
+                fn.setData(query, "Thêm Tài Khoản Thành Công!");
                 this.Close();
             }
             else

@@ -1,4 +1,5 @@
 ﻿using Hotel.SmallForm;
+using iText.Layout.Element;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,15 +42,26 @@ namespace Hotel.All_user_control
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow selectedRow = guna2DataGridView1.Rows[e.RowIndex];
-
-            // Lấy dữ liệu từ hàng được chọn (ví dụ: cột đầu tiên)
-            string x1 = selectedRow.Cells[0].Value.ToString();
-            string x2 = selectedRow.Cells[1].Value.ToString();
-            string x3 = selectedRow.Cells[2].Value.ToString();
-            string x4 = selectedRow.Cells[3].Value.ToString();
-            string x5 = selectedRow.Cells[4].Value.ToString();
-           
-            EditUserName edun = new EditUserName(x1,x2,x3,x4,x5);
+            string id = selectedRow.Cells[0].Value.ToString();
+            query = "SELECT NHANVIEN.MANV, NHOTEN, NCCCD, NGIOITINH, NNGSINH, NSDT, NDIACHI, NEMAIL, TENTK, MATKHAU, CHUCVU, LUONG" +
+                    " FROM NHANVIEN, TAIKHOAN WHERE NHANVIEN.MANV = '" + id + "' AND TAIKHOAN.MANV = '" + id + "'";
+            DataSet ds = fn.getData(query);
+            DataGridView dgv = new DataGridView();
+            dgv = guna2DataGridView2;
+            dgv.DataSource = ds.Tables[0];
+            string name = dgv.Rows[0].Cells[1].Value.ToString();
+            string cccd = dgv.Rows[0].Cells[2].Value.ToString();
+            string gender = dgv.Rows[0].Cells[3].Value.ToString();
+            string dob = dgv.Rows[0].Cells[4].Value.ToString();
+            string mobile = dgv.Rows[0].Cells[5].Value.ToString();
+            string address = dgv.Rows[0].Cells[6].Value.ToString();
+            string email = dgv.Rows[0].Cells[7].Value.ToString();
+            string username = dgv.Rows[0].Cells[8].Value.ToString();
+            string password = dgv.Rows[0].Cells[9].Value.ToString();
+            string position = dgv.Rows[0].Cells[10].Value.ToString();
+            Int64 sal = Convert.ToInt64(dgv.Rows[0].Cells[11].Value);
+            string salary = sal.ToString();
+            EditUserName edun = new EditUserName(id, name, cccd, gender, dob, mobile, address, email, username, password, position, salary);
 
             edun.ShowDialog();
             edun.Focus();
@@ -59,9 +71,8 @@ namespace Hotel.All_user_control
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
             query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
-                    "from NHANVIEN, TAIKHOAN" +
-                    "where NHANVIEN.MANV = TAIKHOAN.MANV" + 
-                    "and '" + tbSearch.Text + "%'";
+                    "from NHANVIEN, TAIKHOAN " +
+                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like '" + tbSearch.Text + "%'";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
