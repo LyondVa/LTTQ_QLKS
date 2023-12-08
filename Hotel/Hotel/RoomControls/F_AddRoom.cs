@@ -41,7 +41,7 @@ namespace Hotel.RoomControls
             }
         }
 
-        private void dUDFloor_SelectedItemChanged(object sender, EventArgs e)
+        private void cBFloor_SelectedItemChanged(object sender, EventArgs e)
         {
             rFn.SetRoomID(cBRoomID, ds, cBFloor.Text);
         }

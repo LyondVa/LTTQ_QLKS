@@ -120,10 +120,17 @@
             this.cBFloor.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cBFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBFloor.ItemHeight = 30;
+            this.cBFloor.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.cBFloor.Location = new System.Drawing.Point(15, 38);
             this.cBFloor.Name = "cBFloor";
             this.cBFloor.Size = new System.Drawing.Size(100, 36);
             this.cBFloor.TabIndex = 33;
+            this.cBFloor.SelectedIndexChanged += new System.EventHandler(this.cBFloor_SelectedItemChanged);
             // 
             // cBRoomID
             // 
