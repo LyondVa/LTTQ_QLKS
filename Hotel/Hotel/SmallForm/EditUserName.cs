@@ -38,7 +38,7 @@ namespace Hotel.SmallForm
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn không", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.OK) 
+            if (MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
             {
                 query = "delete from employee where eid = " + tbId.Text + "";
                 fn.setData(query, "Thông Tin Nhân Viên Đã Được Xóa!");
@@ -48,11 +48,19 @@ namespace Hotel.SmallForm
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            query = "update employee set username = '" + tbUsername.Text + "', pass = '"+tbPass.Text+"', position = "+int.Parse(cbPosition.Text)+" where eid = "+int.Parse(tbId.Text);
+            string cv;
+            if (int.Parse(cbPosition.Text) == 2)
+                cv = "Nhân Viên";
+            else
+                cv = "Quản Lý";
+            query = "update employee set mobile = '" + tbMobile.Text + "', gender = '" + cbGender.Text + "', emailid = '"
+                + tbEmail.Text + "', username = '" + tbUsername.Text + "', pass = '" + tbPass.Text + "', position = " 
+                + int.Parse(cbPosition.Text) + ", chucVu = '" + cv + "', LUONG = " + int.Parse(tbSalary.Text) 
+                + " where eid = " + int.Parse(tbId.Text);
             fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
             this.Close();
         }
-
+        
         private void label3_Click(object sender, EventArgs e)
         {
 

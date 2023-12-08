@@ -28,7 +28,7 @@ namespace Hotel.All_user_control
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "SELECT eid as 'Mã Nhân Viên', ename as 'Tên Nhân Viên', gender as 'Giới Tính', mobile as 'Số Điện Thoại', emailid as'Email', chucVu as 'Chức Vụ' FROM employee";
+            query = "SELECT eid as 'Mã Nhân Viên', ename as 'Tên Nhân Viên', gender as 'Giới Tính', mobile as 'Số Điện Thoại', emailid as'Email', chucVu as 'Chức Vụ', LUONG as 'Lương' FROM employee";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
@@ -61,6 +61,11 @@ namespace Hotel.All_user_control
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void UC_Employee2_Load(object sender, EventArgs e)
+        {
+            setEmployee(guna2DataGridView1);
         }
     }
 }

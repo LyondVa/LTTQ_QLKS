@@ -18,6 +18,8 @@ namespace Hotel.All_user_control
         public UC_CustomerRes()
         {
             InitializeComponent();
+            txtBirth.Value = DateTime.Now;
+            txtChecking.Value = DateTime.Now;
         }
 
         public void setComboBox(String query,ComboBox cb)
