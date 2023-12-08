@@ -38,7 +38,7 @@ namespace Hotel.SmallForm
                 else
                     position = 2;
                 Int64 salary = Convert.ToInt64(txtSalary.Text);
-                query = "insert into employee (ename, mobile, gender, emailid, username, pass, position, chucVu, LUONG) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','" + position + "','" + cv + "','" + salary + "')";
+                query = "insert into employee (NHOTEN, NSDT, NGIOITINH, NEMAIL, username, pass, POSITION, CHUCVU, LUONG) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','" + position + "','" + cv + "','" + salary + "')";
                 fn.setData(query, "Thêm Nhân Viên Thành Công!");
                 this.Close();
             }

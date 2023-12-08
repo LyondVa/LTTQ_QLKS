@@ -31,7 +31,7 @@ namespace Hotel.All_user_control
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "SELECT eid as 'Mã Nhân Viên', ename as 'Tên Nhân Viên', username as 'Username', pass as 'Password', chucVu as 'Chức Vụ' FROM employee";
+            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', username as 'Username', pass as 'Password', CHUCVU as 'Chức Vụ' FROM employee";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
@@ -56,7 +56,7 @@ namespace Hotel.All_user_control
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "select eid, ename, username, pass, position from employee where ename like '" + tbSearch.Text + "%'";
+            query = "select MANV, NHOTEN, username, pass, POSITION from employee where NHOTEN like '" + tbSearch.Text + "%'";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }

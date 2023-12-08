@@ -35,7 +35,7 @@ namespace Hotel.All_user_control
                     position = 1;
                 else
                     position = 2;
-                query = "insert into employee (ename, mobile, gender, emailid, username, pass, position) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','"+position + "')";
+                query = "insert into employee (NHOTEN, NSDT, NGIOITINH, NEMAIL, username, pass, POSITION) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','"+position + "')";
                 fn.setData(query, "Đăng Ký Nhân Viên Thành Công!!");
                 clearAll();
                 getMaxID();
@@ -56,7 +56,7 @@ namespace Hotel.All_user_control
         }
         public void getMaxID()
         {
-            query = "select max(eid) from employee";
+            query = "select max(MANV) from employee";
             DataSet ds = fn.getData(query);
             if (ds.Tables[0].Rows[0][0].ToString() != "")
             {
@@ -88,7 +88,7 @@ namespace Hotel.All_user_control
             {
                 if (MessageBox.Show("Bạn có chắc chắn không", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    query = "delete from employee where eid = " + txtID.Text + "";
+                    query = "delete from employee where MANV = " + txtID.Text + "";
                     fn.setData(query, "Thông Tin Nhân Viên Đã Được Xóa!");
                     tabEmployee_SelectedIndexChanged(this, null);
                 }

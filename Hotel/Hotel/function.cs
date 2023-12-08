@@ -15,7 +15,7 @@ namespace Hotel
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=DESKTOP-PKTFB3K;Initial Catalog=dbMyHotel;Integrated Security=True";
+            con.ConnectionString = @"Data Source=DESKTOP-LYON;Initial Catalog=QLKS;Integrated Security=True";
             return con;
         }
         public DataSet getData(string query)

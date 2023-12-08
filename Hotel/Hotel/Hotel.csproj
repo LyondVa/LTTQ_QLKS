@@ -138,11 +138,6 @@
     <Compile Include="All user control\UC_Addroom.Designer.cs">
       <DependentUpon>UC_Addroom.cs</DependentUpon>
     </Compile>
-    <Compile Include="dbMyHotelDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbMyHotelDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="RoomControls\F_AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,17 +344,6 @@
     <EmbeddedResource Include="SmallForm\receipt.resx">
       <DependentUpon>receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="dbMyHotelDataSet.xsc">
-      <DependentUpon>dbMyHotelDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="dbMyHotelDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dbMyHotelDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dbMyHotelDataSet.xss">
-      <DependentUpon>dbMyHotelDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

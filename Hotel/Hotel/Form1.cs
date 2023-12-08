@@ -34,7 +34,7 @@ namespace Hotel
         {
             query = "select username, pass from employee where username = '" + txbUsername.Text + "' and pass = '" + txbPassword.Text + "'";
             DataSet ds = fn.getData(query);
-            string query1 = "select position from employee where username = '" + txbUsername.Text + "' and pass = '" + txbPassword.Text + "'";
+            string query1 = "select POSITION from employee where username = '" + txbUsername.Text + "' and pass = '" + txbPassword.Text + "'";
             DataSet ds1 = fn.getData(query1);
             int position = 0;
             if (ds.Tables[0].Rows.Count !=0 || (txbUsername.Text=="admin"&&txbPassword.Text =="admin"))
@@ -42,7 +42,7 @@ namespace Hotel
                 labelError.Visible = false;
                 if (ds1.Tables[0].Rows.Count > 0)
                 {
-                    position = Convert.ToInt32(ds1.Tables[0].Rows[0]["position"]);
+                    position = Convert.ToInt32(ds1.Tables[0].Rows[0]["POSITION"]);
                 }
                 if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
                     position = 1;

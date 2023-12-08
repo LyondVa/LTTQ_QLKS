@@ -103,7 +103,7 @@ namespace Hotel.All_user_control
                 String idproof = txtIDProof.Text;
                 String address = txtAddress.Text;
                 String checkin = txtChecking.Text;
-                query = "insert into customer (cname, mobile, nationality, gender, dob, idproof, address, checkin, roomid) values('"+name+"',"+mobile +",'"+national+"','"+gender+"','"+dob+"','"+idproof+"','"+address+"','"+checkin+"',"+rid+") update rooms set booked ='YES' where roomNo = '"+cbRoomNum.Text+"'";
+                query = "insert into customer (KHOTEN, KSDT, QUOCTICH, KGIOTINH, KNGSINH, KCCCD, KDIACHI, checkin, roomid) values('"+name+"',"+mobile +",'"+national+"','"+gender+"','"+dob+"','"+idproof+"','"+address+"','"+checkin+"',"+rid+") update rooms set booked ='YES' where roomNo = '"+cbRoomNum.Text+"'";
                 fn.setData(query, "Số Phòng " + cbRoomNum.Text + "Đăng ký khách hàng thành công.");
                 clearAll();
            }

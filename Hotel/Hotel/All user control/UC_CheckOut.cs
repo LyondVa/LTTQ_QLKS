@@ -29,14 +29,14 @@ namespace Hotel.All_user_control
 
         private void UC_CheckOut_Load(object sender, EventArgs e)
         {
-            query = "select customer.cid, customer.cname, customer.mobile, customer.nationality, customer.gender, customer.dob, customer.idproof, customer.address, customer.address, customer.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid where chekout ='NO'";
+            query = "select customer.MAKH, customer.KHOTEN, customer.KSDT, customer.QUOCTICH, customer.KGIOTINH, customer.KNGSINH, customer.KCCCD, customer.KDIACHI, customer.KDIACHI, customer.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid where chekout ='NO'";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            query = "select customer.cid, customer.cname, customer.mobile, customer.nationality, customer.gender, customer.dob, customer.idproof, customer.address, customer.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid where cname like '"+txtName.Text +"%' and chekout = 'NO'";
+            query = "select customer.MAKH, customer.KHOTEN, customer.KSDT, customer.QUOCTICH, customer.KGIOTINH, customer.KNGSINH, customer.KCCCD, customer.KDIACHI, customer.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid where KHOTEN like '"+txtName.Text +"%' and chekout = 'NO'";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
 
@@ -59,7 +59,7 @@ namespace Hotel.All_user_control
                 if(MessageBox.Show("Bạn có chắc chắn không?","Xác Nhận",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     String cdate = txtCheckOutDate.Text;
-                    query = "update customer set chekout = 'YES', checkout ='" + cdate + "'where cid = " + id + "update rooms set booked ='NO' where roomNo = '" + txtRoom.Text + "'";
+                    query = "update customer set chekout = 'YES', checkout ='" + cdate + "'where MAKH = " + id + "update rooms set booked ='NO' where roomNo = '" + txtRoom.Text + "'";
                     fn.setData(query, "Thanh Toán Thành Công");
                     receipt rc = new receipt();
                     rc.Show();

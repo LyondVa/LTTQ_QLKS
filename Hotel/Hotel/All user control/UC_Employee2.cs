@@ -28,14 +28,14 @@ namespace Hotel.All_user_control
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "SELECT eid as 'Mã Nhân Viên', ename as 'Tên Nhân Viên', gender as 'Giới Tính', mobile as 'Số Điện Thoại', emailid as'Email', chucVu as 'Chức Vụ', LUONG as 'Lương' FROM employee";
+            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', NGIOITINH as 'Giới Tính', NSDT as 'Số Điện Thoại', NEMAIL as'Email', CHUCVU as 'Chức Vụ', LUONG as 'Lương' FROM employee";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "SELECT eid as 'Mã Nhân Viên', ename as 'Tên Nhân Viên', gender as 'Giới Tính', mobile as 'Số Điện Thoại', emailid as'Email', chucVu as 'Chức Vụ' from employee where ename like '" + tbSearch.Text + "%'";
+            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', NGIOITINH as 'Giới Tính', NSDT as 'Số Điện Thoại', NEMAIL as'Email', CHUCVU as 'Chức Vụ' from employee where NHOTEN like '" + tbSearch.Text + "%'";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
