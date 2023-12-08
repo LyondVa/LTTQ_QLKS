@@ -33,7 +33,7 @@ namespace Hotel.RoomControls
             }
             else
             {
-                query = "insert into PHONG values('P" + dUDFloor.Text + dUDRoomID.Text + "','" + tBRoomType.Text + "','" + tBStatus.Text + "','" + Convert.ToByte(dUDFloor.Text) + "')";
+                query = "insert into PHONG values('P" + dUDFloor.Text + dUDRoomID.Text + "','" + tBRoomType.Text + "','" + tBStatus.Text + "'," + Convert.ToByte(dUDFloor.Text) + ")";
                 string msg = "Thêm Thành công";
                 fn.setData(query, msg);
                 EventHub.OnDatabaseUpdated();

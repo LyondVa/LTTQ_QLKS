@@ -32,7 +32,7 @@ namespace Hotel.All_user_control
         public void setEmployee(DataGridView dgv)
         {
             query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
-                    "from NHANVIEN, TAIKHOAN" +
+                    "from NHANVIEN, TAIKHOAN " +
                     "where NHANVIEN.MANV = TAIKHOAN.MANV";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];

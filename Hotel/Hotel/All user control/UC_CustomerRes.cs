@@ -95,6 +95,7 @@ namespace Hotel.All_user_control
         {
            if(txtName.Text != ""&& txtPhoneNumber.Text !="" && txtNationality.Text != "" && cbGender.Text != "" && txtBirth.Text != "" && txtIDProof.Text != "" && txtAddress.Text != "" && txtChecking.Text != "")
             {
+                string id = txtID.Text;
                 String name = txtName.Text;
                 Int64 mobile = Int64.Parse(txtPhoneNumber.Text);
                 String national = txtNationality.Text;
@@ -102,7 +103,7 @@ namespace Hotel.All_user_control
                 String dob = txtBirth.Text;
                 String idproof = txtIDProof.Text;
                 String address = txtAddress.Text;
-                query = "insert into KHACHHANG (KHOTEN, KSDT, QUOCTICH, KGIOTINH, KNGSINH, KCCCD, KDIACHI) values('" + name + "'," + mobile + ",'" + national + "','" + gender + "','" + dob + "','" + idproof + "','" + address + ")";
+                query = "insert into KHACHHANG (MAKH, KHOTEN, KSDT, QUOCTICH, KGIOITINH, KNGSINH, KCCCD, KDIACHI) values('" + id + "','" + name + "'," + mobile + ",'" + national + "','" + gender + "','" + dob + "','" + idproof + "','" + address + "')";
                 fn.setData(query,"Đăng ký khách hàng thành công.");
                 clearAll();
            }

@@ -23,25 +23,33 @@ namespace Hotel.All_user_control
         {
             if(txtSearch.SelectedIndex == 0)
             {
-                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, KHACHHANG.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from KHACHHANG inner join rooms on KHACHHANG.roomid = rooms.roomid ";
+                query = query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
+                    "from KHACHHANG " +
+                    "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG ";
                 getRecord(query);
             }
             else if(txtSearch.SelectedIndex == 1)
             {
-                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, KHACHHANG.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from KHACHHANG inner join rooms on KHACHHANG.roomid = rooms.roomid where checkout is null";
-                getRecord(query);
-            }
-            else if( txtSearch.SelectedIndex == 2)
-            {
-                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, KHACHHANG.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from KHACHHANG inner join rooms on KHACHHANG.roomid = rooms.roomid where checkout is not null";
-                getRecord(query);
-            }
-            /*query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHONG " +
+                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
-                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD" +
-                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG" +
-                    "where CHECKEDOUT = 0";*/
+                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where CHECKEDOUT = 0";
+                getRecord(query);
+            }
+            else if (txtSearch.SelectedIndex == 2)
+            {
+                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
+                    "from KHACHHANG " +
+                    "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where CHECKEDOUT = 1";
+                getRecord(query);
+            }
 
         }
         private void getRecord (string query)
