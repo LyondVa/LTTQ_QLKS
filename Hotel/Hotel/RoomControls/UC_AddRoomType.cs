@@ -21,7 +21,7 @@ namespace Hotel.All_user_control
 
         private void bTAdd_Click(object sender, EventArgs e)
         {
-            string query = "insert into LOAIPHONG values ('" + tBRoomTypeID.Text + "','" + tBRoomTypeName.Text + "'," + Convert.ToInt16(tBPricePerNight.Text) + "," + Convert.ToInt16(dUDMaxAdult.Text) + "," + Convert.ToInt16(dUDMaxChild.Text) + "," + Convert.ToInt16(dUDMaxInfant.Text) + ")";
+            string query = "insert into LOAIPHONG values ('" + tBRoomTypeID.Text + "','" + tBRoomTypeName.Text + "'," + Convert.ToInt16(tBPricePerNight.Text) + ","+ Convert.ToUInt16(dUDCapacity.Text) + "," + Convert.ToInt16(dUDBedNumber.Text) +")";
             string message = "Thêm thành công";
             fn.setData(query, message);
         }

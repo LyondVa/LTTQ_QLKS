@@ -50,36 +50,36 @@ namespace Hotel.All_user_control
             txtBirth.ResetText();
             txtChecking.ResetText();
             txtIDProof.Clear();
-            txtPrice.Clear();
-            cbBed.SelectedItem = -1;
+            //txtPrice.Clear();
+            //cbBed.SelectedItem = -1;
             cbGender.SelectedItem = -1;
-            cbRoomNum.Items.Clear();
-            cbRoomType.SelectedItem = -1;
+            //cbRoomNum.Items.Clear();
+            //cbRoomType.SelectedItem = -1;
 
         }
 
-        private void cbBed_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbRoomType.SelectedIndex = -1;
-            cbRoomNum.Items.Clear();
-            txtPrice.Clear();
-        }
-        int rid;
-        private void cbRoomType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbRoomNum.Items.Clear();
-            query = "select roomNo from rooms where bed = '" + cbBed.Text + "' and roomType = '" + cbRoomType.Text + "' and booked = 'NO'";
-            setComboBox(query, cbRoomNum);
-        }
+        //private void cbBed_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    cbRoomType.SelectedIndex = -1;
+        //    cbRoomNum.Items.Clear();
+        //    txtPrice.Clear();
+        //}
+        //int rid;
+        //private void cbRoomType_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    cbRoomNum.Items.Clear();
+        //    query = "select roomNo from rooms where bed = '" + cbBed.Text + "' and roomType = '" + cbRoomType.Text + "' and booked = 'NO'";
+        //    setComboBox(query, cbRoomNum);
+        //}
 
-        private void cbRoomNum_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //private void cbRoomNum_SelectedIndexChanged(object sender, EventArgs e)
+        //{
             
-            query = "select price, roomid from rooms where roomNo = '" + cbRoomNum.Text + "'";
-            DataSet ds = fn.getData(query);
-            txtPrice.Text = ds.Tables[0].Rows[0][0].ToString();
-            rid = int.Parse(ds.Tables[0].Rows[0][1].ToString());
-        }
+        //    query = "select price, roomid from rooms where roomNo = '" + cbRoomNum.Text + "'";
+        //    DataSet ds = fn.getData(query);
+        //    txtPrice.Text = ds.Tables[0].Rows[0][0].ToString();
+        //    rid = int.Parse(ds.Tables[0].Rows[0][1].ToString());
+        //}
 
         private void UC_CustomerRes_Leave(object sender, EventArgs e)
         {
@@ -93,7 +93,7 @@ namespace Hotel.All_user_control
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-           if(txtName.Text != ""&& txtPhoneNumber.Text !="" && txtNationality.Text != "" && cbGender.Text != "" && txtBirth.Text != "" && txtIDProof.Text != "" && txtAddress.Text != "" && txtChecking.Text != "" && txtPrice.Text != "")
+           if(txtName.Text != ""&& txtPhoneNumber.Text !="" && txtNationality.Text != "" && cbGender.Text != "" && txtBirth.Text != "" && txtIDProof.Text != "" && txtAddress.Text != "" && txtChecking.Text != "")
             {
                 String name = txtName.Text;
                 Int64 mobile = Int64.Parse(txtPhoneNumber.Text);
@@ -102,9 +102,8 @@ namespace Hotel.All_user_control
                 String dob = txtBirth.Text;
                 String idproof = txtIDProof.Text;
                 String address = txtAddress.Text;
-                String checkin = txtChecking.Text;
-                query = "insert into customer (KHOTEN, KSDT, QUOCTICH, KGIOTINH, KNGSINH, KCCCD, KDIACHI, checkin, roomid) values('"+name+"',"+mobile +",'"+national+"','"+gender+"','"+dob+"','"+idproof+"','"+address+"','"+checkin+"',"+rid+") update rooms set booked ='YES' where roomNo = '"+cbRoomNum.Text+"'";
-                fn.setData(query, "Số Phòng " + cbRoomNum.Text + "Đăng ký khách hàng thành công.");
+                query = "insert into KHACHHANG (KHOTEN, KSDT, QUOCTICH, KGIOTINH, KNGSINH, KCCCD, KDIACHI) values('" + name + "'," + mobile + ",'" + national + "','" + gender + "','" + dob + "','" + idproof + "','" + address + ")";
+                fn.setData(query,"Đăng ký khách hàng thành công.");
                 clearAll();
            }
             else

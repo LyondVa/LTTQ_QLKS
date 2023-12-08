@@ -32,9 +32,13 @@ namespace Hotel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            query = "select username, pass from employee where username = '" + txbUsername.Text + "' and pass = '" + txbPassword.Text + "'";
+            query = "select TENTK, MATKHAU " +
+                    "from TAIKHOAN where TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
             DataSet ds = fn.getData(query);
-            string query1 = "select POSITION from employee where username = '" + txbUsername.Text + "' and pass = '" + txbPassword.Text + "'";
+            string query1 = "select POSITION " +
+                            "from NHANVIEN, TAIKHOAN " +
+                            "where NHANVIEN.MANV = TAIKHOAN.MANV " +
+                            "and TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
             DataSet ds1 = fn.getData(query1);
             int position = 0;
             if (ds.Tables[0].Rows.Count !=0 || (txbUsername.Text=="admin"&&txbPassword.Text =="admin"))

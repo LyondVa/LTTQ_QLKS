@@ -43,7 +43,9 @@ namespace Hotel.RoomControls
                 }
                 else
                 {
-                    query = "update PHONG set MALOAIPHG = '" + tBRoomType.Text + "', TRANGTHAI = '" + tBStatus.Text + "' where MAPHG = '" + cBRoomID.Text + "'";
+                    query = "update PHONG " +
+                            "set MALOAIPHG = '" + tBRoomType.Text + "', TRANGTHAI = '" + tBStatus.Text + "' " +
+                            "where MAPHG = '" + cBRoomID.Text + "'";
                     string msg = "Cập nhật Thành công";
                     fn.setData(query, msg);
                     EventHub.OnDatabaseUpdated();

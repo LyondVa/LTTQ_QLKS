@@ -25,6 +25,7 @@ namespace Hotel.SmallForm
         {
             if (txtName.Text != "" && txtMobile.Text != "" && txtEmail.Text != "" && cbGender.Text != "" && txtUsername.Text != "" && txtPassword.Text != "" && txtPosition.Text != "" && txtSalary.Text != "")
             {
+                string id = txtID.Text;
                 string name = txtName.Text;
                 Int64 mobile = Convert.ToInt64(txtMobile.Text);
                 string email = txtEmail.Text;
@@ -38,7 +39,8 @@ namespace Hotel.SmallForm
                 else
                     position = 2;
                 Int64 salary = Convert.ToInt64(txtSalary.Text);
-                query = "insert into employee (NHOTEN, NSDT, NGIOITINH, NEMAIL, username, pass, POSITION, CHUCVU, LUONG) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','" + position + "','" + cv + "','" + salary + "')";
+                query = "insert into NHANVIEN (MANV, NHOTEN, NSDT, NGIOITINH, NEMAIL, POSITION, CHUCVU, LUONG) values ('" + id + "," + name + "'," + mobile + ",'" + gender + "','" + email + "','" + position + "','" + cv + "','" + salary + "');" +
+                        "insert into TAIKHOAN (MANV, TENTK, MATKHAU) values ('" + id + "','" + username + "','" + password + "')";
                 fn.setData(query, "Thêm Nhân Viên Thành Công!");
                 this.Close();
             }
@@ -53,5 +55,5 @@ namespace Hotel.SmallForm
             this.Close();
         }
     }
-    }
+}
 

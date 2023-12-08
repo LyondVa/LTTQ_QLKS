@@ -23,20 +23,26 @@ namespace Hotel.All_user_control
         {
             if(txtSearch.SelectedIndex == 0)
             {
-                query = "select customer.MAKH, customer.KHOTEN, customer.KSDT, customer.QUOCTICH, customer.KGIOTINH, customer.KNGSINH, customer.KCCCD, customer.KDIACHI, customer.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid ";
+                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, KHACHHANG.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from KHACHHANG inner join rooms on KHACHHANG.roomid = rooms.roomid ";
                 getRecord(query);
             }
             else if(txtSearch.SelectedIndex == 1)
             {
-                query = "select customer.MAKH, customer.KHOTEN, customer.KSDT, customer.QUOCTICH, customer.KGIOTINH, customer.KNGSINH, customer.KCCCD, customer.KDIACHI, customer.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid where checkout is null";
+                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, KHACHHANG.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from KHACHHANG inner join rooms on KHACHHANG.roomid = rooms.roomid where checkout is null";
                 getRecord(query);
             }
             else if( txtSearch.SelectedIndex == 2)
             {
-                query = "select customer.MAKH, customer.KHOTEN, customer.KSDT, customer.QUOCTICH, customer.KGIOTINH, customer.KNGSINH, customer.KCCCD, customer.KDIACHI, customer.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from customer inner join rooms on customer.roomid = rooms.roomid where checkout is not null";
+                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, KHACHHANG.checkin, rooms.roomNo, rooms.roomType, rooms.bed, rooms.price from KHACHHANG inner join rooms on KHACHHANG.roomid = rooms.roomid where checkout is not null";
                 getRecord(query);
             }
-            
+            /*query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOTINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHONG " +
+                    "from KHACHHANG " +
+                    "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD" +
+                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG" +
+                    "where CHECKEDOUT = 0";*/
+
         }
         private void getRecord (string query)
         {

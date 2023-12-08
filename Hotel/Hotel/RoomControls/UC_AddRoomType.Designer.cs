@@ -31,18 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.tBRoomTypeID = new System.Windows.Forms.TextBox();
             this.tBRoomTypeName = new System.Windows.Forms.TextBox();
             this.tBPricePerNight = new System.Windows.Forms.TextBox();
-            this.dUDMaxAdult = new System.Windows.Forms.DomainUpDown();
-            this.dUDMaxChild = new System.Windows.Forms.DomainUpDown();
-            this.dUDMaxInfant = new System.Windows.Forms.DomainUpDown();
+            this.dUDCapacity = new System.Windows.Forms.DomainUpDown();
             this.bTAdd = new System.Windows.Forms.Button();
             this.bTExit = new System.Windows.Forms.Button();
+            this.dUDBedNumber = new System.Windows.Forms.DomainUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -75,16 +73,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Giá trên đêm:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 199);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Số thiếu nhi";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -101,21 +89,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(306, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(172, 20);
+            this.label6.Size = new System.Drawing.Size(125, 20);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Số người trường thành";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(306, 199);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Số trẻ sơ sinh";
+            this.label6.Text = "Số người tối đa:";
             // 
             // tBRoomTypeID
             // 
@@ -138,44 +114,18 @@
             this.tBPricePerNight.Size = new System.Drawing.Size(174, 22);
             this.tBPricePerNight.TabIndex = 9;
             // 
-            // dUDMaxAdult
+            // dUDCapacity
             // 
-            this.dUDMaxAdult.Items.Add("1");
-            this.dUDMaxAdult.Items.Add("2");
-            this.dUDMaxAdult.Items.Add("3");
-            this.dUDMaxAdult.Items.Add("4");
-            this.dUDMaxAdult.Items.Add("5");
-            this.dUDMaxAdult.Location = new System.Drawing.Point(310, 167);
-            this.dUDMaxAdult.Name = "dUDMaxAdult";
-            this.dUDMaxAdult.Size = new System.Drawing.Size(174, 22);
-            this.dUDMaxAdult.TabIndex = 10;
-            this.dUDMaxAdult.Text = "domainUpDown1";
-            // 
-            // dUDMaxChild
-            // 
-            this.dUDMaxChild.Items.Add("1");
-            this.dUDMaxChild.Items.Add("2");
-            this.dUDMaxChild.Items.Add("3");
-            this.dUDMaxChild.Items.Add("4");
-            this.dUDMaxChild.Items.Add("5");
-            this.dUDMaxChild.Location = new System.Drawing.Point(37, 222);
-            this.dUDMaxChild.Name = "dUDMaxChild";
-            this.dUDMaxChild.Size = new System.Drawing.Size(174, 22);
-            this.dUDMaxChild.TabIndex = 11;
-            this.dUDMaxChild.Text = "domainUpDown2";
-            // 
-            // dUDMaxInfant
-            // 
-            this.dUDMaxInfant.Items.Add("1");
-            this.dUDMaxInfant.Items.Add("2");
-            this.dUDMaxInfant.Items.Add("3");
-            this.dUDMaxInfant.Items.Add("4");
-            this.dUDMaxInfant.Items.Add("5");
-            this.dUDMaxInfant.Location = new System.Drawing.Point(310, 222);
-            this.dUDMaxInfant.Name = "dUDMaxInfant";
-            this.dUDMaxInfant.Size = new System.Drawing.Size(174, 22);
-            this.dUDMaxInfant.TabIndex = 12;
-            this.dUDMaxInfant.Text = "domainUpDown3";
+            this.dUDCapacity.Items.Add("1");
+            this.dUDCapacity.Items.Add("2");
+            this.dUDCapacity.Items.Add("3");
+            this.dUDCapacity.Items.Add("4");
+            this.dUDCapacity.Items.Add("5");
+            this.dUDCapacity.Location = new System.Drawing.Point(310, 167);
+            this.dUDCapacity.Name = "dUDCapacity";
+            this.dUDCapacity.Size = new System.Drawing.Size(174, 22);
+            this.dUDCapacity.TabIndex = 10;
+            this.dUDCapacity.Text = "domainUpDown1";
             // 
             // bTAdd
             // 
@@ -196,22 +146,43 @@
             this.bTExit.Text = "Thoát";
             this.bTExit.UseVisualStyleBackColor = true;
             // 
+            // dUDBedNumber
+            // 
+            this.dUDBedNumber.Items.Add("1");
+            this.dUDBedNumber.Items.Add("2");
+            this.dUDBedNumber.Items.Add("3");
+            this.dUDBedNumber.Items.Add("4");
+            this.dUDBedNumber.Items.Add("5");
+            this.dUDBedNumber.Location = new System.Drawing.Point(37, 227);
+            this.dUDBedNumber.Name = "dUDBedNumber";
+            this.dUDBedNumber.Size = new System.Drawing.Size(174, 22);
+            this.dUDBedNumber.TabIndex = 16;
+            this.dUDBedNumber.Text = "domainUpDown1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(33, 204);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Số giường:";
+            // 
             // UC_AddRoomType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dUDBedNumber);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.bTExit);
             this.Controls.Add(this.bTAdd);
-            this.Controls.Add(this.dUDMaxInfant);
-            this.Controls.Add(this.dUDMaxChild);
-            this.Controls.Add(this.dUDMaxAdult);
+            this.Controls.Add(this.dUDCapacity);
             this.Controls.Add(this.tBPricePerNight);
             this.Controls.Add(this.tBRoomTypeName);
             this.Controls.Add(this.tBRoomTypeID);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -227,17 +198,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tBRoomTypeID;
         private System.Windows.Forms.TextBox tBRoomTypeName;
         private System.Windows.Forms.TextBox tBPricePerNight;
-        private System.Windows.Forms.DomainUpDown dUDMaxAdult;
-        private System.Windows.Forms.DomainUpDown dUDMaxChild;
-        private System.Windows.Forms.DomainUpDown dUDMaxInfant;
+        private System.Windows.Forms.DomainUpDown dUDCapacity;
         private System.Windows.Forms.Button bTAdd;
         private System.Windows.Forms.Button bTExit;
+        private System.Windows.Forms.DomainUpDown dUDBedNumber;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -40,7 +40,8 @@ namespace Hotel.SmallForm
         {
             if (MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
             {
-                query = "delete from employee where MANV = " + tbId.Text + "";
+                query = "delete from NHANVIEN " +
+                        "where MANV = '" + tbId.Text + "'";
                 fn.setData(query, "Thông Tin Nhân Viên Đã Được Xóa!");
                 this.Close();
             }
@@ -53,10 +54,11 @@ namespace Hotel.SmallForm
                 cv = "Nhân Viên";
             else
                 cv = "Quản Lý";
-            query = "update employee set NSDT = '" + tbMobile.Text + "', NGIOITINH = '" + cbGender.Text + "', NEMAIL = '"
-                + tbEmail.Text + "', username = '" + tbUsername.Text + "', pass = '" + tbPass.Text + "', POSITION = " 
-                + int.Parse(cbPosition.Text) + ", CHUCVU = '" + cv + "', LUONG = " + int.Parse(tbSalary.Text) 
-                + " where MANV = " + int.Parse(tbId.Text);
+            query = "update NHANVIEN " +
+                    "set NSDT = '" + tbMobile.Text + "', NGIOITINH = '" + cbGender.Text + "', NEMAIL = '" 
+                                   + tbEmail.Text + "', username = '" + tbUsername.Text + "', pass = '" + tbPass.Text + "', POSITION = " 
+                                   + int.Parse(cbPosition.Text) + ", CHUCVU = '" + cv + "', LUONG = " + int.Parse(tbSalary.Text) + 
+                    " where MANV = '" + (tbId.Text) +"'";
             fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
             this.Close();
         }

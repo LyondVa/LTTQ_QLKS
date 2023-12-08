@@ -22,8 +22,9 @@ namespace Hotel.All_user_control
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if(txtName.Text!="" && txtMobile.Text!="" && txtEmail.Text!=""&& cbGender.Text != "" && txtUsername.Text !="" && txtPassword.Text !="" && txtPosition.Text !="")
+            if (txtName.Text != "" && txtMobile.Text != "" && txtEmail.Text != "" && cbGender.Text != "" && txtUsername.Text != "" && txtPassword.Text != "" && txtPosition.Text != "")
             {
+                string id = txtEmID.Text;
                 string name = txtName.Text;
                 Int64 mobile = Convert.ToInt64(txtMobile.Text);
                 string email = txtEmail.Text;
@@ -35,7 +36,9 @@ namespace Hotel.All_user_control
                     position = 1;
                 else
                     position = 2;
-                query = "insert into employee (NHOTEN, NSDT, NGIOITINH, NEMAIL, username, pass, POSITION) values ('" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + username + "','" + password + "','"+position + "')";
+                query = "insert into NHANVIEN (MANV, NHOTEN, NSDT, NGIOITINH, NEMAIL, POSITION) values ('" + id + "','" + name + "'," + mobile + ",'" + gender + "','" + email + "','" + position + "');" +
+                        "insert into TAIKHOAN (MANV, TENTK, MATKHAU) values ('" + id + "','" + username + "','" + password + "')";
+
                 fn.setData(query, "Đăng Ký Nhân Viên Thành Công!!");
                 clearAll();
                 getMaxID();
@@ -52,22 +55,22 @@ namespace Hotel.All_user_control
         }
         private void UC_Employee_Load(object sender, EventArgs e)
         {
-            
+
         }
         public void getMaxID()
         {
-            query = "select max(MANV) from employee";
+            query = "select max(MANV) from NHANVIEN";
             DataSet ds = fn.getData(query);
             if (ds.Tables[0].Rows[0][0].ToString() != "")
             {
                 Int64 num = Int64.Parse(ds.Tables[0].Rows[0][0].ToString());
-                lbToSet.Text = (num+1).ToString();
+                lbToSet.Text = (num + 1).ToString();
             }
         }
 
         private void tabEmployee_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabEmployee.SelectedIndex == 1)
+            if (tabEmployee.SelectedIndex == 1)
             {
                 setEmployee(guna2DataGridView1);
             }
@@ -78,7 +81,7 @@ namespace Hotel.All_user_control
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "select * from employee";
+            query = "select * from NHANVIEN";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
@@ -88,7 +91,7 @@ namespace Hotel.All_user_control
             {
                 if (MessageBox.Show("Bạn có chắc chắn không", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    query = "delete from employee where MANV = " + txtID.Text + "";
+                    query = "delete from NHANVIEN where MANV = " + txtID.Text + "";
                     fn.setData(query, "Thông Tin Nhân Viên Đã Được Xóa!");
                     tabEmployee_SelectedIndexChanged(this, null);
                 }
@@ -118,7 +121,7 @@ namespace Hotel.All_user_control
 
                 // Hiển thị form mới và chuyển dữ liệu nếu cần
                 EmployeeInformation form = new EmployeeInformation(x1, x2, x3, x4, x5, x6, x7);
-                
+
                 form.Show();
 
             }
@@ -126,12 +129,12 @@ namespace Hotel.All_user_control
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
