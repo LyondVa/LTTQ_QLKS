@@ -36,13 +36,13 @@
             this.lBRoomTypeID = new System.Windows.Forms.Label();
             this.lBRoomID = new System.Windows.Forms.Label();
             this.lBFloor = new System.Windows.Forms.Label();
-            this.dUDFloor = new System.Windows.Forms.DomainUpDown();
-            this.dUDRoomID = new System.Windows.Forms.DomainUpDown();
+            this.cBFloor = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cBRoomID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // bTExit
             // 
-            this.bTExit.Location = new System.Drawing.Point(187, 146);
+            this.bTExit.Location = new System.Drawing.Point(212, 176);
             this.bTExit.Name = "bTExit";
             this.bTExit.Size = new System.Drawing.Size(75, 23);
             this.bTExit.TabIndex = 29;
@@ -52,7 +52,7 @@
             // 
             // bTAdd
             // 
-            this.bTAdd.Location = new System.Drawing.Point(106, 146);
+            this.bTAdd.Location = new System.Drawing.Point(131, 176);
             this.bTAdd.Name = "bTAdd";
             this.bTAdd.Size = new System.Drawing.Size(75, 23);
             this.bTAdd.TabIndex = 28;
@@ -62,14 +62,14 @@
             // 
             // tBStatus
             // 
-            this.tBStatus.Location = new System.Drawing.Point(162, 99);
+            this.tBStatus.Location = new System.Drawing.Point(187, 124);
             this.tBStatus.Name = "tBStatus";
             this.tBStatus.Size = new System.Drawing.Size(100, 22);
             this.tBStatus.TabIndex = 27;
             // 
             // tBRoomType
             // 
-            this.tBRoomType.Location = new System.Drawing.Point(15, 99);
+            this.tBRoomType.Location = new System.Drawing.Point(15, 124);
             this.tBRoomType.Name = "tBRoomType";
             this.tBRoomType.Size = new System.Drawing.Size(100, 22);
             this.tBRoomType.TabIndex = 24;
@@ -77,7 +77,7 @@
             // lBStatus
             // 
             this.lBStatus.AutoSize = true;
-            this.lBStatus.Location = new System.Drawing.Point(159, 80);
+            this.lBStatus.Location = new System.Drawing.Point(184, 105);
             this.lBStatus.Name = "lBStatus";
             this.lBStatus.Size = new System.Drawing.Size(67, 16);
             this.lBStatus.TabIndex = 21;
@@ -86,7 +86,7 @@
             // lBRoomTypeID
             // 
             this.lBRoomTypeID.AutoSize = true;
-            this.lBRoomTypeID.Location = new System.Drawing.Point(12, 80);
+            this.lBRoomTypeID.Location = new System.Drawing.Point(12, 105);
             this.lBRoomTypeID.Name = "lBRoomTypeID";
             this.lBRoomTypeID.Size = new System.Drawing.Size(92, 16);
             this.lBRoomTypeID.TabIndex = 17;
@@ -95,7 +95,7 @@
             // lBRoomID
             // 
             this.lBRoomID.AutoSize = true;
-            this.lBRoomID.Location = new System.Drawing.Point(159, 18);
+            this.lBRoomID.Location = new System.Drawing.Point(184, 18);
             this.lBRoomID.Name = "lBRoomID";
             this.lBRoomID.Size = new System.Drawing.Size(67, 16);
             this.lBRoomID.TabIndex = 16;
@@ -110,33 +110,44 @@
             this.lBFloor.TabIndex = 30;
             this.lBFloor.Text = "Tầng";
             // 
-            // dUDFloor
+            // cBFloor
             // 
-            this.dUDFloor.Items.Add("1");
-            this.dUDFloor.Items.Add("2");
-            this.dUDFloor.Items.Add("3");
-            this.dUDFloor.Items.Add("4");
-            this.dUDFloor.Location = new System.Drawing.Point(15, 38);
-            this.dUDFloor.Name = "dUDFloor";
-            this.dUDFloor.Size = new System.Drawing.Size(100, 22);
-            this.dUDFloor.Sorted = true;
-            this.dUDFloor.TabIndex = 31;
-            this.dUDFloor.SelectedItemChanged += new System.EventHandler(this.dUDFloor_SelectedItemChanged);
+            this.cBFloor.BackColor = System.Drawing.Color.Transparent;
+            this.cBFloor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cBFloor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBFloor.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBFloor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBFloor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cBFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cBFloor.ItemHeight = 30;
+            this.cBFloor.Location = new System.Drawing.Point(15, 38);
+            this.cBFloor.Name = "cBFloor";
+            this.cBFloor.Size = new System.Drawing.Size(100, 36);
+            this.cBFloor.TabIndex = 33;
             // 
-            // dUDRoomID
+            // cBRoomID
             // 
-            this.dUDRoomID.Location = new System.Drawing.Point(162, 38);
-            this.dUDRoomID.Name = "dUDRoomID";
-            this.dUDRoomID.Size = new System.Drawing.Size(100, 22);
-            this.dUDRoomID.TabIndex = 32;
+            this.cBRoomID.BackColor = System.Drawing.Color.Transparent;
+            this.cBRoomID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cBRoomID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBRoomID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBRoomID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBRoomID.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cBRoomID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cBRoomID.ItemHeight = 30;
+            this.cBRoomID.Location = new System.Drawing.Point(187, 38);
+            this.cBRoomID.Name = "cBRoomID";
+            this.cBRoomID.Size = new System.Drawing.Size(100, 36);
+            this.cBRoomID.TabIndex = 34;
             // 
             // F_AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 177);
-            this.Controls.Add(this.dUDRoomID);
-            this.Controls.Add(this.dUDFloor);
+            this.ClientSize = new System.Drawing.Size(317, 230);
+            this.ControlBox = false;
+            this.Controls.Add(this.cBRoomID);
+            this.Controls.Add(this.cBFloor);
             this.Controls.Add(this.lBFloor);
             this.Controls.Add(this.bTExit);
             this.Controls.Add(this.bTAdd);
@@ -162,7 +173,7 @@
         private System.Windows.Forms.Label lBRoomTypeID;
         private System.Windows.Forms.Label lBRoomID;
         private System.Windows.Forms.Label lBFloor;
-        private System.Windows.Forms.DomainUpDown dUDFloor;
-        private System.Windows.Forms.DomainUpDown dUDRoomID;
+        private Guna.UI2.WinForms.Guna2ComboBox cBFloor;
+        private Guna.UI2.WinForms.Guna2ComboBox cBRoomID;
     }
 }

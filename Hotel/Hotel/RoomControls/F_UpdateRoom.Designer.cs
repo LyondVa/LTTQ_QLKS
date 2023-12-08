@@ -35,7 +35,7 @@
             this.lBStatus = new System.Windows.Forms.Label();
             this.lBRoomTypeID = new System.Windows.Forms.Label();
             this.lBRoomID = new System.Windows.Forms.Label();
-            this.cBRoomID = new System.Windows.Forms.ComboBox();
+            this.cBRoomID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // bTExit
@@ -60,7 +60,7 @@
             // 
             // tBStatus
             // 
-            this.tBStatus.Location = new System.Drawing.Point(15, 92);
+            this.tBStatus.Location = new System.Drawing.Point(15, 106);
             this.tBStatus.Name = "tBStatus";
             this.tBStatus.Size = new System.Drawing.Size(100, 22);
             this.tBStatus.TabIndex = 42;
@@ -76,7 +76,7 @@
             // lBStatus
             // 
             this.lBStatus.AutoSize = true;
-            this.lBStatus.Location = new System.Drawing.Point(12, 73);
+            this.lBStatus.Location = new System.Drawing.Point(12, 87);
             this.lBStatus.Name = "lBStatus";
             this.lBStatus.Size = new System.Drawing.Size(67, 16);
             this.lBStatus.TabIndex = 36;
@@ -102,10 +102,17 @@
             // 
             // cBRoomID
             // 
-            this.cBRoomID.FormattingEnabled = true;
+            this.cBRoomID.BackColor = System.Drawing.Color.Transparent;
+            this.cBRoomID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cBRoomID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBRoomID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBRoomID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBRoomID.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cBRoomID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cBRoomID.ItemHeight = 30;
             this.cBRoomID.Location = new System.Drawing.Point(15, 37);
             this.cBRoomID.Name = "cBRoomID";
-            this.cBRoomID.Size = new System.Drawing.Size(100, 24);
+            this.cBRoomID.Size = new System.Drawing.Size(100, 36);
             this.cBRoomID.TabIndex = 45;
             // 
             // F_UpdateRoom
@@ -137,6 +144,6 @@
         private System.Windows.Forms.Label lBStatus;
         private System.Windows.Forms.Label lBRoomTypeID;
         private System.Windows.Forms.Label lBRoomID;
-        private System.Windows.Forms.ComboBox cBRoomID;
+        private Guna.UI2.WinForms.Guna2ComboBox cBRoomID;
     }
 }

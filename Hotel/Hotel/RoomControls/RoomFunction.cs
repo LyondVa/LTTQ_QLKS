@@ -1,4 +1,5 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using Guna.UI2.WinForms;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,10 +13,10 @@ namespace Hotel.RoomControls
 {
     internal class RoomFunction
     {
-        public void SetRoomID(DomainUpDown dUD, DataSet ds, string floor)
+        public void SetRoomID(Guna2ComboBox cB, DataSet ds, string floor)
         {
             DataRow[] dr;
-            dUD.Items.Clear();
+            cB.Items.Clear();
             for (int i = 0; i < 9; i++)
             {
                 dr = ds.Tables[0].Select("MAPHG = 'P" + floor + "0"+ (i+1) +"'");
@@ -23,7 +24,7 @@ namespace Hotel.RoomControls
                 {
                     continue;
                 }
-                dUD.Items.Add("0" +(i + 1));
+                cB.Items.Add("0" +(i + 1));
             }
         }
         public bool FindInDataset(DataSet ds, string subject, string column)
