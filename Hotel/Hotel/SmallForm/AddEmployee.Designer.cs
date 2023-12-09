@@ -69,7 +69,10 @@
             this.txtPosition.ItemHeight = 30;
             this.txtPosition.Items.AddRange(new object[] {
             "Quản Lý",
-            "Nhân Viên"});
+            "Lễ Tân",
+            "Nhân Viên Kĩ Thuật",
+            "Bảo Vệ",
+            "Tạp Vụ"});
             this.txtPosition.Location = new System.Drawing.Point(669, 468);
             this.txtPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPosition.Name = "txtPosition";

@@ -271,7 +271,10 @@
             this.cbPosition.ItemHeight = 30;
             this.cbPosition.Items.AddRange(new object[] {
             "Quản Lý",
-            "Nhân Viên"});
+            "Lễ Tân",
+            "Nhân Viên Kĩ Thuật",
+            "Bảo Vệ",
+            "Tạp Vụ"});
             this.cbPosition.Location = new System.Drawing.Point(468, 383);
             this.cbPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPosition.Name = "cbPosition";

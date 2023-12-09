@@ -20,22 +20,14 @@ namespace Hotel.SmallForm
             tbId.Text = id;
             tbName.Text = name;
             tbCCCD.Text = cccd;
-            if (gender == "Nam")
-                cbGender.SelectedIndex = 0;
-            else if (gender == "Khác")
-                cbGender.SelectedIndex = 2;
-            else
-                cbGender.SelectedIndex = 1;
+            cbGender.Text = gender;
             tpBirth.Text = dob;
             tbMobile.Text = mobile;
             tbAddress.Text = address;
             tbEmail.Text = email;
             tbUsername.Text = username;
             tbPassword.Text = password;
-            if (position == "Nhân Viên")
-                cbPosition.SelectedIndex = 1;
-            else
-                cbPosition.SelectedIndex = 0;
+            cbPosition.Text = position;
             tbSalary.Text = salary;
         }
 
