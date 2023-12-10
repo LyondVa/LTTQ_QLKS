@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Room;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,15 +15,65 @@ namespace Hotel.RoomControls
     {
         DataSet dS = new DataSet();
         string query;
-        //List<>
+        function fn = new function();
+        List<UC_RoomUnitBase> rooms = new List<UC_RoomUnitBase>();
         public UC_RoomGrid()
         {
             InitializeComponent();
+            EventHub.DatabaseUpdated += PopulateGrid;
         }
 
         private void PopulateGrid()
         {
-
+            rooms.Clear();
+            RefreshDataSet();
+            foreach (DataRow dR in dS.Tables[0].Rows)
+            {
+                if (dR["TRANGTHAI"].ToString() == "Trống")
+                {
+                    UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["FLOOR"].ToString());
+                    rooms.Add(roomA);
+                }
+                else if (dR["TRANGTHAI"].ToString() == "Bảo trì")
+                {
+                    UC_RoomUnitMaintenance roomM = new UC_RoomUnitMaintenance(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["FLOOR"].ToString());
+                    rooms.Add(roomM);
+                }
+                else if (dR["TRANGTHAI"].ToString() == "Không trống")
+                {
+                    if (dR["CHECKEDIN"].ToString() == "0")
+                    {
+                        UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["FLOOR"].ToString());
+                        rooms.Add(roomB);
+                    }
+                    else
+                    {
+                        UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["FLOOR"].ToString());
+                        rooms.Add(roomO);
+                    }
+                }
+            }
+            foreach(UC_RoomUnitBase roomUnit in rooms)
+            {
+                switch(roomUnit.GetFloor())
+                {
+                    case "1":
+                        fLPFloor1.Controls.Add(roomUnit); 
+                        break;
+                    case "2":
+                        fLPFloor2.Controls.Add(roomUnit);
+                        break;
+                    case "3":
+                        fLPFloor3.Controls.Add(roomUnit);
+                        break;
+                    case "4":
+                        fLPFloor4.Controls.Add(roomUnit);
+                        break;
+                    case "5":
+                        fLPFloor5.Controls.Add(roomUnit);
+                        break;
+                }
+            }
         }
 
         private void RefreshDataSet()
@@ -30,10 +81,27 @@ namespace Hotel.RoomControls
 
             try
             {
-                query = "select MAPHG, MALOAIPHG, DONDEP, TRANGTHAI,  " +
-                        "from ";
+                query = "select PHONG.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, FLOOR " +
+                        "from PHONG A " +
+                        "inner join CTPHG on MAPHG " +
+                        "inner join HOADON on MAHD " +
+                        "where HOADON.MAHD = (" +
+                                            "select top 1 MAHD " +
+                                            "from HOADON " +
+                                            "inner join CTPHG " +
+                                            "where A.MAPHG = CTPHG.MAPHG " +
+                                            "order by MAHD desc " +
+                                            ")";
+                dS = fn.getData(query);
             }
-            catch(Exception ex) { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void UC_RoomGrid_load(object sender, EventArgs e)
+        {
+            PopulateGrid();
         }
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

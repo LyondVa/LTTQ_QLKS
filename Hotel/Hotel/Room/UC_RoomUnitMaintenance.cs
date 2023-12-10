@@ -17,6 +17,10 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
         }
+        public UC_RoomUnitMaintenance(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor) : base(roomID, roomTypeID, cleanStatus, roomStatus, floor)
+        {
+
+        }
         #region Unit Click
         private void UC_RoomUnitMaintenance_Click(object sender, EventArgs e)
         {

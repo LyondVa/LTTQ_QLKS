@@ -270,6 +270,12 @@
     <Compile Include="Room\UC_RoomUnitMaintenance.Designer.cs">
       <DependentUpon>UC_RoomUnitMaintenance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Room\UC_RoomUnitOccupied.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Room\UC_RoomUnitOccupied.Designer.cs">
+      <DependentUpon>UC_RoomUnitOccupied.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -354,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Room\UC_RoomUnitMaintenance.resx">
       <DependentUpon>UC_RoomUnitMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Room\UC_RoomUnitOccupied.resx">
+      <DependentUpon>UC_RoomUnitOccupied.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>

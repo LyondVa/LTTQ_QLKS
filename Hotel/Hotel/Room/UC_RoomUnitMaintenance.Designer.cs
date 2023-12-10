@@ -33,11 +33,11 @@
             this.pBRoomStatus = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pBCleanStatus = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pBClean = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pBRoomStatus)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBClean)).BeginInit();
             this.SuspendLayout();
             // 
             // lBRoomID
@@ -73,7 +73,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.pBCleanStatus);
-            this.panel1.Controls.Add(this.guna2PictureBox2);
+            this.panel1.Controls.Add(this.pBClean);
             this.panel1.Controls.Add(this.lBRoomID);
             this.panel1.Controls.Add(this.lBRoomTypeID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -93,15 +93,15 @@
             this.pBCleanStatus.TabStop = false;
             this.pBCleanStatus.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
             // 
-            // guna2PictureBox2
+            // pBClean
             // 
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(3, 99);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox2.TabIndex = 7;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
+            this.pBClean.ImageRotate = 0F;
+            this.pBClean.Location = new System.Drawing.Point(3, 99);
+            this.pBClean.Name = "pBClean";
+            this.pBClean.Size = new System.Drawing.Size(28, 28);
+            this.pBClean.TabIndex = 7;
+            this.pBClean.TabStop = false;
+            this.pBClean.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
             // 
             // UC_RoomUnitMaintenance
             // 
@@ -116,7 +116,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBClean)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,6 +128,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox pBRoomStatus;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2PictureBox pBCleanStatus;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox pBClean;
     }
 }
