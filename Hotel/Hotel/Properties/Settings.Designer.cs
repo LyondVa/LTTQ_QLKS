@@ -26,11 +26,22 @@ namespace Hotel.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LYON;Initial Catalog=dbMyHotel;Integrated Security=True;TrustServerCe" +
-            "rtificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KDIACHI;Initial Catalog=dbMyHotel;Integrated Security=True;TrustServe" +
+            "rCertificate=True")]
         public string dbMyHotelConnectionString {
             get {
                 return ((string)(this["dbMyHotelConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database\\QLKS" +
+            ".mdf;Integrated Security=True")]
+        public string QLKSConnectionString {
+            get {
+                return ((string)(this["QLKSConnectionString"]));
             }
         }
     }
