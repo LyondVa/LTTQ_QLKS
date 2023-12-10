@@ -28,7 +28,7 @@ namespace Hotel.RoomControls
         }
         private void bTUpdate_Click(object sender, EventArgs e)
         {
-            if (cBRoomID.Text == "" || tBRoomType.Text == "" || tBStatus.Text == "")
+            if (cBRoomID.Text == "" || tBRoomTypeID.Text == "" || tBRoomStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -44,7 +44,7 @@ namespace Hotel.RoomControls
                 else
                 {
                     query = "update PHONG " +
-                            "set MALOAIPHG = '" + tBRoomType.Text + "', TRANGTHAI = '" + tBStatus.Text + "' " +
+                            "set MALOAIPHG = '" + tBRoomTypeID.Text + "', TRANGTHAI = '" + tBRoomStatus.Text + "' " +
                             "where MAPHG = '" + cBRoomID.Text + "'";
                     string msg = "Cập nhật Thành công";
                     fn.setData(query, msg);

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Hotel.RoomControls
 {
-    public partial class UC_RoomUnitAvailable : UserControl
+    public partial class UC_RoomUnitAvailable : UC_RoomUnitBase
     {
         RoomFunction rFn = new RoomFunction();
         public UC_RoomUnitAvailable()

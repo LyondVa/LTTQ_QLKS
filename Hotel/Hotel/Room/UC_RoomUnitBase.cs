@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel.RoomControls
 {
-    public partial class RoomInfo : Form
+    public partial class UC_RoomUnitBase : UserControl
     {
-        public RoomInfo()
+        public UC_RoomUnitBase()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

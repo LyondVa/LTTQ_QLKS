@@ -39,7 +39,7 @@ namespace Hotel.RoomControls
         }
         public void UnitClick()
         {
-            RoomInfo roomInfo = new RoomInfo();
+            F_RoomInfo roomInfo = new F_RoomInfo();
             roomInfo.Show();
             roomInfo.Focus();
         }

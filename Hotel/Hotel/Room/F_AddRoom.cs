@@ -27,13 +27,13 @@ namespace Hotel.RoomControls
         }
         private void bTAdd_Click(object sender, EventArgs e)
         {
-            if(tBRoomType.Text == "" || tBStatus.Text == "")
+            if(tBRoomTypeID.Text == "" || tBRoomStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                query = "insert into PHONG values('P" + cBFloor.Text + cBRoomID.Text + "','" + tBRoomType.Text + "','" + tBStatus.Text + "'," + Convert.ToInt16(cBFloor.Text) + ", '')";
+                query = "insert into PHONG values('P" + cBFloor.Text + cBRoomID.Text + "','" + tBRoomTypeID.Text + "','" + tBRoomStatus.Text + "'," + Convert.ToInt16(cBFloor.Text) + ", '')";
                 string msg = "Thêm Thành công";
                 fn.setData(query, msg);
                 EventHub.OnDatabaseUpdated();

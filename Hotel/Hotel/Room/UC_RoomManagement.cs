@@ -15,7 +15,6 @@ namespace Hotel.All_user_control
     {
         string query, message;
         function fn = new function();
-        RoomFunction rFn = new RoomFunction();
         DataSet ds = new DataSet();
         public UC_RoomManagement()
         {

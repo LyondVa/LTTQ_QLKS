@@ -10,13 +10,30 @@ using System.Windows.Forms;
 
 namespace Hotel.RoomControls
 {
-    public partial class RoomGrid : UserControl
+    public partial class UC_RoomGrid : UserControl
     {
-        public RoomGrid()
+        DataSet dS = new DataSet();
+        string query;
+        List<>
+        public UC_RoomGrid()
         {
             InitializeComponent();
         }
 
+        private void PopulateGrid()
+        {
+
+        }
+
+        private void RefreshDataSet()
+        {
+
+            try
+            {
+                query = "select MAPHG, MALOAIPHG, DONDEP, TRANGTHAI,  " +
+                        "from ";
+            }
+        }
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
