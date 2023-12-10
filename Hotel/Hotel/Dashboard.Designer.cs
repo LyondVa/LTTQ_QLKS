@@ -46,6 +46,7 @@
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btService = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinisize = new Guna.UI2.WinForms.Guna2Button();
             this.btExit = new Guna.UI2.WinForms.Guna2Button();
             this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
@@ -55,6 +56,7 @@
             this.uC_CustomerRes1 = new Hotel.All_user_control.UC_CustomerRes();
             this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
             this.uC_User1 = new Hotel.All_user_control.UC_User();
+            this.uC_Service1 = new Hotel.All_user_control.UC_Service();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -159,6 +161,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.uC_Service1);
             this.panel2.Controls.Add(this.uC_RoomManagement1);
             this.panel2.Controls.Add(this.uC_Employee1);
             this.panel2.Controls.Add(this.uC_CustomerDetail1);
@@ -218,6 +221,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btService);
             this.panel1.Controls.Add(this.btUser);
             this.panel1.Controls.Add(this.btEmploy);
             this.panel1.Controls.Add(this.btCheckOut);
@@ -227,7 +231,7 @@
             this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Location = new System.Drawing.Point(1, 171);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 763);
+            this.panel1.Size = new System.Drawing.Size(328, 835);
             this.panel1.TabIndex = 6;
             // 
             // guna2Button2
@@ -246,6 +250,24 @@
             this.guna2Button2.Size = new System.Drawing.Size(328, 90);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Trang Chủ";
+            // 
+            // btService
+            // 
+            this.btService.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btService.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btService.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btService.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btService.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btService.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btService.FillColor = System.Drawing.Color.SlateBlue;
+            this.btService.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btService.ForeColor = System.Drawing.Color.White;
+            this.btService.Location = new System.Drawing.Point(0, 645);
+            this.btService.Name = "btService";
+            this.btService.Size = new System.Drawing.Size(328, 90);
+            this.btService.TabIndex = 8;
+            this.btService.Text = "Dịch Vụ";
+            this.btService.Click += new System.EventHandler(this.btService_Click);
             // 
             // btnMinisize
             // 
@@ -347,12 +369,21 @@
             this.uC_User1.Size = new System.Drawing.Size(1478, 853);
             this.uC_User1.TabIndex = 5;
             // 
+            // uC_Service1
+            // 
+            this.uC_Service1.BackColor = System.Drawing.Color.White;
+            this.uC_Service1.Location = new System.Drawing.Point(29, 1);
+            this.uC_Service1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Service1.Name = "uC_Service1";
+            this.uC_Service1.Size = new System.Drawing.Size(1673, 682);
+            this.uC_Service1.TabIndex = 7;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(112)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1726, 882);
+            this.ClientSize = new System.Drawing.Size(1726, 1011);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnMinisize);
@@ -397,5 +428,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private All_user_control.UC_Employee2 uC_Employee21;
         private All_user_control.UC_RoomManagement uC_RoomManagement1;
+        private Guna.UI2.WinForms.Guna2Button btService;
+        private All_user_control.UC_Service uC_Service1;
     }
 }

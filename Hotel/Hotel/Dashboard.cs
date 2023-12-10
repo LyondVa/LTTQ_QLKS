@@ -28,6 +28,8 @@ namespace Hotel
             uC_Employee1.Visible= false;
             uC_User1.Visible = false;
             uC_RoomManagement1.Visible = false;
+            uC_Employee21.Visible = false;
+            uC_Service1.Visible = false;
             btAddroom.PerformClick();
             Position();
         }
@@ -101,6 +103,12 @@ namespace Hotel
         {
             uC_User1.Visible = true;
             uC_User1.BringToFront();
+        }
+
+        private void btService_Click(object sender, EventArgs e)
+        {
+            uC_Service1.Visible = true;
+            uC_Service1.BringToFront();
         }
     }
 }

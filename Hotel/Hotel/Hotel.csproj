@@ -132,6 +132,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All user control\UC_Service.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All user control\UC_Service.Designer.cs">
+      <DependentUpon>UC_Service.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomControls\F_AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,18 @@
     <Compile Include="SmallForm\AddEmployee.Designer.cs">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="SmallForm\AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmallForm\EditService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\EditService.Designer.cs">
+      <DependentUpon>EditService.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\EditUserName.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +280,9 @@
     <Compile Include="SmallForm\receipt.Designer.cs">
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="All user control\UC_Service.resx">
+      <DependentUpon>UC_Service.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\F_AddRoom.resx">
       <DependentUpon>F_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\EditService.resx">
+      <DependentUpon>EditService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EditUserName.resx">
       <DependentUpon>EditUserName.cs</DependentUpon>
