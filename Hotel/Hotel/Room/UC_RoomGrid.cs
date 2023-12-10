@@ -14,7 +14,7 @@ namespace Hotel.RoomControls
     {
         DataSet dS = new DataSet();
         string query;
-        List<>
+        //List<>
         public UC_RoomGrid()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace Hotel.RoomControls
                 query = "select MAPHG, MALOAIPHG, DONDEP, TRANGTHAI,  " +
                         "from ";
             }
+            catch(Exception ex) { }
         }
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
