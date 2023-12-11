@@ -15,6 +15,7 @@ namespace Hotel.All_user_control
     {
         function fn = new function();
         string query;
+        string query2;
         public UC_Chartt()
         {
             InitializeComponent();
@@ -39,23 +40,43 @@ namespace Hotel.All_user_control
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             query = "select thang, tienPhong, tienDichVu, tienLuong, tongNhap, tienDoanhThu from doanhthu where nam ='"+cbNam.Text+"'";
-            chart1.DataSource = fn.getData(query);
+            string query2 = "select tienPhong, tienDichVu from doanhthu where thang = '" + cbThang.Text + "' and nam = '" + cbNam.Text + "'";
+            DataSet ds = fn.getData(query2);
 
-            // Sử dụng chuỗi đầu tiên trong SeriesCollection
-            chart1.Series[0].XValueMember = "thang";
-            chart1.Series[0].YValueMembers = "tienPhong";
-            // Sử dụng chuỗi đầu tiên trong SeriesCollection
-            chart1.Series[1].XValueMember = "thang";
-            chart1.Series[1].YValueMembers = "tienDichVu";
-            chart1.Series[1].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            chart1.Series[1].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
-            // Nếu bạn muốn thiết lập kiểu dữ liệu cho trục x và y, bạn có thể sử dụng những dòng sau đây
-            chart1.Series[0].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            chart1.Series[0].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                // Đảm bảo rằng cả hai cột đều tồn tại
+                if (ds.Tables[0].Columns.Contains("tienPhong") && ds.Tables[0].Columns.Contains("tienDichVu"))
+                {
+                    chart1.Series.Clear(); // Xóa các chuỗi có sẵn để sử dụng biểu đồ tròn
 
-            chart1.DataBind();
+                    // Tạo chuỗi cho biểu đồ tròn
+                    chart1.Series.Add("Doanh Thu");
 
+                    // Thiết lập kiểu biểu đồ tròn
+                    chart1.Series["Doanh Thu"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+
+                    // Gán giá trị từ cột "tienPhong" và "tienDichVu" cho biểu đồ tròn
+                    chart1.Series["Doanh Thu"].Points.AddXY("Tiền Phòng", ds.Tables[0].Rows[0]["tienPhong"]);
+                    chart1.Series["Doanh Thu"].Points.AddXY("Tiền Dịch Vụ", ds.Tables[0].Rows[0]["tienDichVu"]);
+
+                    // Hiển thị giá trị phần trăm bên trong mỗi phần tử của biểu đồ tròn
+                    chart1.Series["Doanh Thu"].IsValueShownAsLabel = false;
+                    chart1.Series["Doanh Thu"].Label = "#PERCENT{P0}";
+
+                    chart1.DataBind();
+                }
+                else
+                {
+                    MessageBox.Show("Không có cột 'tienPhong' hoặc 'tienDichVu' trong kết quả truy vấn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu trả về từ truy vấn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
+
             chart2.DataSource = fn.getData(query);
 
             // Sử dụng chuỗi đầu tiên trong SeriesCollection
