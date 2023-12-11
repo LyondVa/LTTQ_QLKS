@@ -121,6 +121,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -132,6 +133,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All user control\UC_Chartt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All user control\UC_Chartt.Designer.cs">
+      <DependentUpon>UC_Chartt.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomControls\F_AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,7 +230,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="function.cs" />
+    <Compile Include="SourceCode\function.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomControls\UC_RoomUnitBooked.cs">
@@ -262,6 +269,9 @@
     <Compile Include="SmallForm\receipt.Designer.cs">
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="All user control\UC_Chartt.resx">
+      <DependentUpon>UC_Chartt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\F_AddRoom.resx">
       <DependentUpon>F_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +393,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
+    <None Include="Resources\Blue and Black Modern Illustration UI Login Page Desktop Prototype.png" />
+    <None Include="Resources\80e9279d123d9b280146456603b1ebcd.jpg" />
+    <None Include="Resources\Blue and Black Modern Illustration UI Login Page Desktop Prototype %281%29.png" />
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />
     <Content Include="Resources\sửa đăng nhập.png" />
