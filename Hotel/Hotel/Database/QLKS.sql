@@ -126,7 +126,8 @@ INSERT INTO DICHVU (MADV, TENDV, GIADV) VALUES
 -- Revised sample data for CTDV table
 INSERT INTO CTDV (MAHD, MADV, SOLUONG, THOIGIANSD) VALUES
 ('HD00001', 'DV01', 2, '2023-12-08 07:30:00'),
-('HD00002', 'DV02', 1, '2023-12-09 09:00:00');
+('HD00002', 'DV02', 1, '2023-12-09 09:00:00'),
+('HD00001', 'DV02', 1, '2023-12-09 09:00:00');
 
 -- Revised sample data for TAIKHOAN table
 INSERT INTO TAIKHOAN (MANV, TENTK, MATKHAU) VALUES
@@ -146,3 +147,24 @@ ALTER TABLE PHONG ADD DONDEP NVARCHAR(20)
 ALTER TABLE HOADON ADD CHECKEDIN BIT
 ALTER TABLE HOADON ADD CHECKEDOUT BIT
 
+ALTER TABLE PHONG DROP COLUMN FLOOR
+
+INSERT INTO PHONG (MAPHG, MALOAIPHG, TRANGTHAI, TANG, GHICHU, DONDEP)
+VALUES
+('P403', 'LP01', 'Trong', 1, 'Phong moi sua chua', 'Đã dọn'),
+('P205', 'LP02', 'Bao tri', 2, 'Can thay ga trai giuong', 'Chưa dọn');
+
+select * from PHONG
+update PHONG set TANG = 4 where MAPHG = 'P403'
+
+update PHONG set TRANGTHAI = N'Bảo trì' where TRANGTHAI = 'Bao tri'
+
+ select MALOAIPHG, TRANGTHAI, DONDEP, GHICHU, KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt'    
+                         from PHONG   
+                         left join CTPHG on PHONG.MAPHG = CTPHG.MAPHG  
+                         left join HOADON on CTPHG.MAHD = HOADON.MAHD    
+                         left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH    
+                         left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV    
+                         left join CTDV on HOADON.MAHD = CTDV.MAHD    
+                         left join DICHVU on CTDV.MADV = DICHVU.MADV   
+                         where PHONG.MAPHG = 'P101' ;

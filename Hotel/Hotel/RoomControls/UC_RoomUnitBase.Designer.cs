@@ -28,8 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // UC_RoomUnitBase
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Name = "UC_RoomUnitBase";
+            this.Size = new System.Drawing.Size(230, 130);
+            this.Load += new System.EventHandler(this.UC_RoomUnitBase_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

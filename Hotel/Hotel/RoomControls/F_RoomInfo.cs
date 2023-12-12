@@ -12,33 +12,32 @@ namespace Hotel.RoomControls
 {
     public partial class F_RoomInfo : Form
     {
-        string roomID, esCheckOutTime, guestName, employeeName, roomStatus, note, cleanStatus;
         string query;
-        DataSet dS;
+        DataSet dS = new DataSet();
         function fn = new function();
+        string roomID;
         public F_RoomInfo()
         {
             InitializeComponent();
         }
-        public F_RoomInfo(string roomID, string esCheckoutTime, string guestName, string employeeName, string roomStatus, string note, string cleanStatus)
+        public F_RoomInfo(string roomID)
         {
             InitializeComponent();
             this.roomID = roomID;
-            this.esCheckOutTime = esCheckoutTime;
-            this.guestName = guestName;
-            this.employeeName = employeeName;
-            this.roomStatus = roomStatus;
-            this.note = note;
-            this.cleanStatus = cleanStatus;
-            TempServiceLoad();
-        }
-        private void F_RoomInfo_Load(object sender, EventArgs e)
-        {
+            PropertiesLoad();
+            dGVService.DataSource = dS.Tables[0];
+            dGVService.Columns["MALOAIPHG"].Visible = false;
+            dGVService.Columns["TRANGTHAI"].Visible = false;
+            dGVService.Columns["DONDEP"].Visible = false;
+            dGVService.Columns["GHICHU"].Visible = false;
+            dGVService.Columns["KHOTEN"].Visible = false;
+            dGVService.Columns["NHOTEN"].Visible = false;
             lBRoomID.Text = roomID;
-            lBEsCheckoutTime.Text = esCheckOutTime;
-            lBBookClient.Text = guestName;
-            lBBookEmployee.Text = employeeName;
-            if (roomStatus == "Trống")
+            lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
+            lBBookEmployee.Text = dS.Tables[0].Rows[0]["NHOTEN"].ToString();
+            lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
+            tBNote.Text = dS.Tables[0].Rows[0]["GHICHU"].ToString();
+            if (dS.Tables[0].Rows[0]["TRANGTHAI"].ToString() == "Trống")
             {
                 cBRoomStatus.SelectedIndex = 0;
             }
@@ -46,8 +45,7 @@ namespace Hotel.RoomControls
             {
                 cBRoomStatus.SelectedIndex = 1;
             }
-            tBNote.Text = note;
-            if (cleanStatus == "Đã dọn dẹp")
+            if (dS.Tables[0].Rows[0]["DONDEP"].ToString() == "Đã dọn dẹp")
             {
                 cBCleanStatus.SelectedIndex = 0;
             }
@@ -55,19 +53,26 @@ namespace Hotel.RoomControls
             {
                 cBCleanStatus.SelectedIndex = 1;
             }
-            dGVService.DataSource = dS;
         }
-        private void TempServiceLoad()
+        private void F_RoomInfo_Load(object sender, EventArgs e)
+        {
+        }
+        private void PropertiesLoad()
         {
             try
             {
-                query = "select TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt' " +
-                    "from CTDV, DICHVU, CTPHG " +
-                    "where TENDV.MADV = CTDV.MADV and CTDV.MAHD = CTPHG.MAHD " +
-                    "and MAPHG = '" + roomID + "'";
+                query = "select MALOAIPHG, TRANGTHAI, DONDEP, GHICHU, KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt' " +
+                        "from PHONG " +
+                        "left join CTPHG on PHONG.MAPHG = CTPHG.MAPHG " +
+                        "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
+                        "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
+                        "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
+                        "left join CTDV on HOADON.MAHD = CTDV.MAHD " +
+                        "left join DICHVU on CTDV.MADV = DICHVU.MADV " +
+                        "where PHONG.MAPHG = '" + roomID +"'";
                 dS = fn.getData(query);
             }
-            catch (Exception ex)
+            catch(Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }
@@ -91,7 +96,7 @@ namespace Hotel.RoomControls
                 try
                 {
                     query = "update PHONG " +
-                            "set TRANGTHAI = '" + roomStatus + "', DONDEP ='" + cleanStatus + "' " +
+                            "set TRANGTHAI = '" + cBRoomStatus.Text + "', DONDEP ='" + cBCleanStatus.Text + "' " +
                             "where MAPHG = '" + roomID + "'";
                     fn.setData(query, "Cập nhật thành công");
                     EventHub.OnDatabaseUpdated();
@@ -126,7 +131,7 @@ namespace Hotel.RoomControls
 
         private void bTCheckOut_Click(object sender, EventArgs e)
         {
-            DialogResult dR = MessageBox.Show("Xác nhận nhận phòng?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dR = MessageBox.Show("Xác nhận thanh toán?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dR == DialogResult.Yes)
             {
                 try
@@ -162,7 +167,7 @@ namespace Hotel.RoomControls
                     query = "select MAHD " +
                             "from HOADON " +
                             "inner join CTPHG " +
-                            "where CTPHG.MAPHG = '" + roomID +"'";
+                            "where CTPHG.MAPHG = '" + roomID + "'";
                     dSC = fn.getData(query);
                     tempMAHD = dSC.Tables[0].Rows[0]["MAHD"].ToString();
                     query = "delete from CTDV " +

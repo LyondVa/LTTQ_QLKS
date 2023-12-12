@@ -15,31 +15,45 @@ namespace Hotel
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\QLKS.mdf;Integrated Security=True";
+            con.ConnectionString = @"Data Source=LYON;Initial Catalog=QLKS;Integrated Security=True";
             return con;
-        }
+        }//Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\QLKS.mdf;Integrated Security=True
         public DataSet getData(string query)
         {
-            SqlConnection con = getConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = query;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
+            try
+            {
+                SqlConnection con = getConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = query;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
         public void setData(string query, string message)
         {
-            SqlConnection con = getConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            con.Open();
-            cmd.CommandText = query;
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show(message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            try
+            {
+                SqlConnection con = getConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                con.Open();
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show(message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public SqlDataReader getForCombo(String query)
         {

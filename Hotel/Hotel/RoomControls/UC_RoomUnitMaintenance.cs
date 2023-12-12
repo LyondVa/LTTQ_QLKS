@@ -19,12 +19,22 @@ namespace Hotel.RoomControls
         }
         public UC_RoomUnitMaintenance(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor) : base(roomID, roomTypeID, cleanStatus, roomStatus, floor)
         {
-
+            InitializeComponent();
+            this.lBRoomID.Text = roomID;
+            this.lBRoomTypeID.Text = roomTypeID;
+            if (cleanStatus == "Đã dọn")
+            {
+                pBCleanStatus.Image = imageList[0];
+            }
+            else
+            {
+                pBCleanStatus.Image = imageList[1];
+            }
         }
         #region Unit Click
         private void UC_RoomUnitMaintenance_Click(object sender, EventArgs e)
         {
-            rFn.UnitClick();
+            rFn.UnitClick(roomID);
         }
 
         #endregion

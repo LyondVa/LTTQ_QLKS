@@ -27,6 +27,11 @@ namespace Hotel.All_user_control
             query = "select * from PHONG";
             ds = fn.getData(query);
             dGVRoom.DataSource = ds.Tables[0];
+            dGVRoom.Columns["MAPHG"].HeaderText = "Mã phòng";
+            dGVRoom.Columns["MALOAIPHG"].HeaderText = "Mã loại phòng";
+            dGVRoom.Columns["TRANGTHAI"].HeaderText = "Trạng thái";
+            dGVRoom.Columns["TANG"].HeaderText = "Tầng";
+            dGVRoom.Columns["DONDEP"].HeaderText = "Dọn dẹp";
             dGVRoom.Columns["GHICHU"].Visible = false;
         }
         private void UC_RoomManagement_Load(object sender, EventArgs e)
@@ -42,7 +47,7 @@ namespace Hotel.All_user_control
 
         private void tSLUpdate_Click(object sender, EventArgs e)
         {
-            F_UpdateRoom form = new F_UpdateRoom(ds);
+            F_UpdateRoom form = new F_UpdateRoom(ds, dGVRoom);
             form.Show();
         }
 

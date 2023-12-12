@@ -1,5 +1,4 @@
-﻿using Hotel.RoomControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hotel.Room
+namespace Hotel.RoomControls
 {
     public partial class UC_RoomUnitOccupied : UC_RoomUnitBase
     {
@@ -20,12 +19,22 @@ namespace Hotel.Room
         }
         public UC_RoomUnitOccupied(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor) : base(roomID, roomTypeID, cleanStatus, roomStatus, floor)
         {
-
+            InitializeComponent();
+            this.lBRoomID.Text = roomID;
+            this.lBRoomTypeID.Text = roomTypeID;
+            if (cleanStatus == "Đã dọn")
+            {
+                pBCleanStatus.Image = imageList[0];
+            }
+            else
+            {
+                pBCleanStatus.Image = imageList[1];
+            }
         }
         #region Unit Click
         private void UC_RoomUnitOccupied_Click(object sender, EventArgs e)
         {
-            rFn.UnitClick();
+            rFn.UnitClick(roomID);
         }
 
         #endregion

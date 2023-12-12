@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hotel.RoomControls
-{ 
+{
     public partial class F_AddRoom : Form
     {
         DataSet ds;
@@ -20,6 +20,7 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
             this.ds = ds;
+            rFn.SetRoomTypeID(cBRoomTypeID);
         }
         private void bTExit_Click(object sender, EventArgs e)
         {
@@ -27,13 +28,13 @@ namespace Hotel.RoomControls
         }
         private void bTAdd_Click(object sender, EventArgs e)
         {
-            if(tBRoomTypeID.Text == "" || tBRoomStatus.Text == "")
+            if (cBRoomTypeID.Text == "" || cBRoomStatus.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                query = "insert into PHONG values('P" + cBFloor.Text + cBRoomID.Text + "','" + tBRoomTypeID.Text + "','" + tBRoomStatus.Text + "'," + Convert.ToInt16(cBFloor.Text) + ", '')";
+                query = "insert into PHONG values('P" + cBFloor.Text + cBRoomID.Text + "','" + cBRoomTypeID.Text + "','" + cBRoomStatus.Text + "','" + Convert.ToInt16(cBFloor.Text) + "','','" + cBCleanStatus.Text + "')";
                 string msg = "Thêm Thành công";
                 fn.setData(query, msg);
                 EventHub.OnDatabaseUpdated();
@@ -43,7 +44,7 @@ namespace Hotel.RoomControls
 
         private void cBFloor_SelectedItemChanged(object sender, EventArgs e)
         {
-            rFn.SetRoomID(cBRoomID, ds, cBFloor.Text);
+            rFn.SetRoomID(0, cBRoomID, ds, cBFloor.Text);
         }
     }
 }
