@@ -51,15 +51,15 @@ namespace Hotel.RoomControls
                 cB.Items.Add(dR[0].ToString());
             }
         }
-        public bool FindInDataset(DataSet ds, string subject, string column)
+        public DataRow[] FindInDataset(DataSet ds, string subject, string column)
         {
             DataRow[] dr;
             dr = ds.Tables[0].Select(column + "='" + subject + "'");
             if (dr.Length != 0)
             {
-                return true;
+                return dr;
             }
-            return false;
+            return null;
         }
         public void UnitClick(string roomID)
         {

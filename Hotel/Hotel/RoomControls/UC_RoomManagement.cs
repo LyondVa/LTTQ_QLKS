@@ -15,7 +15,7 @@ namespace Hotel.All_user_control
     {
         string query, message;
         function fn = new function();
-        DataSet ds = new DataSet();
+        DataSet dS = new DataSet();
         public UC_RoomManagement()
         {
             InitializeComponent();
@@ -25,8 +25,8 @@ namespace Hotel.All_user_control
         private void RefreshDataGridView()
         {
             query = "select * from PHONG";
-            ds = fn.getData(query);
-            dGVRoom.DataSource = ds.Tables[0];
+            dS = fn.getData(query);
+            dGVRoom.DataSource = dS.Tables[0];
             dGVRoom.Columns["MAPHG"].HeaderText = "Mã phòng";
             dGVRoom.Columns["MALOAIPHG"].HeaderText = "Mã loại phòng";
             dGVRoom.Columns["TRANGTHAI"].HeaderText = "Trạng thái";
@@ -41,13 +41,13 @@ namespace Hotel.All_user_control
 
         private void tSLAdd_Click(object sender, EventArgs e)
         {
-            F_AddRoom form = new F_AddRoom(ds);
+            F_AddRoom form = new F_AddRoom(dS);
             form.Show();
         }
 
         private void tSLUpdate_Click(object sender, EventArgs e)
         {
-            F_UpdateRoom form = new F_UpdateRoom(ds, dGVRoom);
+            F_UpdateRoom form = new F_UpdateRoom(dS, dGVRoom);
             form.Show();
         }
 

@@ -133,6 +133,16 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PlusMark {
+            get {
+                object obj = ResourceManager.GetObject("PlusMark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Thiết_kế_chưa_có_tên {
             get {
                 object obj = ResourceManager.GetObject("Thiết kế chưa có tên", resourceCulture);

@@ -14,13 +14,14 @@ namespace Hotel.RoomControls
     {
         string query;
         DataSet dS = new DataSet();
+        DataSet dSGTemp = new DataSet();
         function fn = new function();
         string roomID;
         public F_RoomInfo()
         {
             InitializeComponent();
         }
-        public F_RoomInfo(string roomID)
+        public F_RoomInfo(string roomID, DataSet dSGTemp = null)
         {
             InitializeComponent();
             this.roomID = roomID;
@@ -53,6 +54,7 @@ namespace Hotel.RoomControls
             {
                 cBCleanStatus.SelectedIndex = 1;
             }
+            this.dSGTemp = dSGTemp;
         }
         private void F_RoomInfo_Load(object sender, EventArgs e)
         {

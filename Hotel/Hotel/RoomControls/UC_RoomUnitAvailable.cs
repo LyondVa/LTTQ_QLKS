@@ -14,6 +14,7 @@ namespace Hotel.RoomControls
     public partial class UC_RoomUnitAvailable : UC_RoomUnitBase
     {
         RoomFunction rFn = new RoomFunction();
+        DataSet dS = new DataSet();
         public UC_RoomUnitAvailable()
         {
             InitializeComponent();

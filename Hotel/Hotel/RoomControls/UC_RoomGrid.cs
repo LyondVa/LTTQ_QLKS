@@ -92,7 +92,8 @@ namespace Hotel.RoomControls
                          "union " +
                          "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
                          "from PHONG A " +
-                         "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
+                         "left join CTPHG o" +
+                         "n A.MAPHG = CTPHG.MAPHG " +
                          "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
                          "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
                          "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +

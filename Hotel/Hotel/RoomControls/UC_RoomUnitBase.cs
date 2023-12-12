@@ -25,7 +25,7 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
         }
-        public UC_RoomUnitBase(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor)
+        public UC_RoomUnitBase(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor, DataSet dSGTemp = null)
         {
             InitializeComponent();
             this.roomID = roomID;

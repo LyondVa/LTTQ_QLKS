@@ -39,7 +39,7 @@ namespace Hotel.RoomControls
             else
             {
                 string column = "MAPHG";
-                if (!rFn.FindInDataset(ds, cBRoomID.Text, column))
+                if (rFn.FindInDataset(ds, cBRoomID.Text, column) == null)
                 {
                     MessageBox.Show("Không tìm thấy mã phòng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

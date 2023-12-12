@@ -13,6 +13,7 @@ namespace Hotel.RoomControls
     public partial class UC_RoomUnitBooked : UC_RoomUnitBase
     {
         RoomFunction rFn = new RoomFunction();
+        DataSet dS = new DataSet();
         public UC_RoomUnitBooked()
         {
             InitializeComponent();

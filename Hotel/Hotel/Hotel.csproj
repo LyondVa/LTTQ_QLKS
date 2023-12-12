@@ -305,6 +305,9 @@
     <EmbeddedResource Include="RoomControls\F_AddRoom.resx">
       <DependentUpon>F_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RoomControls\F_BookRoom.resx">
+      <DependentUpon>F_BookRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\F_UpdateRoom.resx">
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -453,6 +456,7 @@
     <Content Include="Resources\Clean.png" />
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />
+    <None Include="Resources\PlusMark.png" />
     <Content Include="Resources\sửa đăng nhập.png" />
     <Content Include="Resources\hóa đơn.png" />
     <None Include="Resources\Thiết kế chưa có tên.png" />
