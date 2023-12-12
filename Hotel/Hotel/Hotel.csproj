@@ -230,6 +230,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="SmallForm\Profit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\Profit.Designer.cs">
+      <DependentUpon>Profit.cs</DependentUpon>
+    </Compile>
     <Compile Include="SourceCode\function.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EmployeeInformation.resx">
       <DependentUpon>EmployeeInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\Profit.resx">
+      <DependentUpon>Profit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\receipt.resx">
       <DependentUpon>receipt.cs</DependentUpon>

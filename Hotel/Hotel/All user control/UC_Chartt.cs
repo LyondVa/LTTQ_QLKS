@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.SmallForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -130,6 +131,13 @@ namespace Hotel.All_user_control
         private void cbNam_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Profit pf = new Profit();
+            pf.ShowDialog();
+            pf.Focus();
         }
     }
 }
