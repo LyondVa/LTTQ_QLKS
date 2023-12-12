@@ -34,7 +34,8 @@ namespace Hotel.All_user_control
         {
             query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
-                    "where NHANVIEN.MANV = TAIKHOAN.MANV";
+                    "where NHANVIEN.MANV = TAIKHOAN.MANV " +
+                    "order by NHANVIEN.MANV ASC";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
@@ -72,7 +73,8 @@ namespace Hotel.All_user_control
         {
             query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
-                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like '" + tbSearch.Text + "%'";
+                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like '" + tbSearch.Text + "%' " +
+                    "order by NHANVIEN.MANV asc";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }

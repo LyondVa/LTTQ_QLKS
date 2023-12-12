@@ -26,7 +26,7 @@ namespace Hotel.SmallForm
                 string id = txtID.Text;
                 string name = txtName.Text;
                 Int64 price = Convert.ToInt64(txtPrice.Text);
-                query = "INSERT INTO DICHVU (MADV, TENDV, GIADV) VALUES ('" + id + "', '" + name + "', " + price + ")";
+                query = "INSERT INTO DICHVU (MADV, TENDV, GIADV) VALUES ('" + id + "', N'" + name + "', " + price + ")";
                 fn.setData(query, "Thêm Dịch Vụ Thành Công!");
                 this.Close();
             }

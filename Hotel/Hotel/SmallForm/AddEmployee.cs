@@ -39,7 +39,7 @@ namespace Hotel.SmallForm
                 string position = txtPosition.Text;
                 Int64 salary = Convert.ToInt64(txtSalary.Text);
                 query = "insert into NHANVIEN (MANV, NHOTEN, NCCCD, NGIOITINH, NNGSINH, NSDT, NDIACHI, NEMAIL, CHUCVU, LUONG) values "
-                      + "('" + id + "','" + name + "','" + cccd + "','" + gender + "','" + dob + "','" + mobile + "','" + address + "','" + email + "','" + position + "'," + salary + ")";
+                      + "('" + id + "',N'" + name + "','" + cccd + "',N'" + gender + "','" + dob + "','" + mobile + "',N'" + address + "',N'" + email + "',N'" + position + "'," + salary + ")";
                 fn.setData(query, "Thêm Nhân Viên Thành Công!");
                 query = "insert into TAIKHOAN (MANV, TENTK, MATKHAU) values ('" + id + "','" + username + "','" + password + "')";
                 fn.setData(query, "Thêm Tài Khoản Thành Công!");

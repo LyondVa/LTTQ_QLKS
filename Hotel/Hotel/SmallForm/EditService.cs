@@ -27,7 +27,7 @@ namespace Hotel.SmallForm
             if (txtID.Text != "" && txtName.Text != "" && txtPrice.Text != "")
             {
                 query = "UPDATE DICHVU " +
-                        "SET TENDV = '" + txtName.Text + "', GIADV = " + Convert.ToInt64(txtPrice.Text) + 
+                        "SET TENDV = N'" + txtName.Text + "', GIADV = " + Convert.ToInt64(txtPrice.Text) + 
                         " WHERE MADV = '" + txtID.Text + "'";
                 fn.setData(query, "Sửa Thông Tin Dịch Vụ Thành Công!");
                 this.Close();

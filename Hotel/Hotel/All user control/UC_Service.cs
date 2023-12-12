@@ -25,7 +25,8 @@ namespace Hotel.All_user_control
         public void setService(DataGridView dgv)
         {
             query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', GIADV as 'Giá'" +
-                    "FROM DICHVU";
+                    "FROM DICHVU " +
+                    "ORDER BY MADV ASC";
             DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
@@ -48,7 +49,8 @@ namespace Hotel.All_user_control
         {
             query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', GIADV as 'Giá' " +
                     "FROM DICHVU " +
-                    "WHERE TENDV like '%" + tbSearch.Text + "%'";
+                    "WHERE TENDV like '%" + tbSearch.Text + "%' " +
+                    "ORDER BY MADV ASC";
             DataSet ds = fn.getData(query);
             dgvServiceInfo.DataSource = ds.Tables[0];
         }

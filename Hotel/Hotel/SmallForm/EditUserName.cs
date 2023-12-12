@@ -54,9 +54,9 @@ namespace Hotel.SmallForm
             if (tbId.Text != "" && tbName.Text != "" && tbCCCD.Text != "" && cbGender.Text != "" && tpBirth.Text != "" && tbMobile.Text != "" && tbAddress.Text != "" && tbEmail.Text != "" && tbUsername.Text != "" && tbPassword.Text != "" && cbPosition.Text != "" && tbSalary.Text != "")
             {
                 query = "UPDATE NHANVIEN " +
-                        "SET NHOTEN = '" + tbName.Text + "', NCCCD = '" + tbCCCD.Text + "', NGIOITINH = '" + cbGender.Text +
-                        "', NNGSINH = '" + tpBirth.Text + "', NSDT = '" + tbMobile.Text + "', NDIACHI = '" + tbAddress.Text +
-                        "', NEMAIL = '" + tbEmail.Text + "', CHUCVU = '" + cbPosition.Text + "', LUONG = " + Convert.ToInt64(tbSalary.Text) +
+                        "SET NHOTEN = N'" + tbName.Text + "', NCCCD = '" + tbCCCD.Text + "', NGIOITINH = N'" + cbGender.Text +
+                        "', NNGSINH = '" + tpBirth.Text + "', NSDT = '" + tbMobile.Text + "', NDIACHI = N'" + tbAddress.Text +
+                        "', NEMAIL = N'" + tbEmail.Text + "', CHUCVU = N'" + cbPosition.Text + "', LUONG = " + Convert.ToInt64(tbSalary.Text) +
                         " WHERE MANV = '" + tbId.Text + "'\n" +
                         "UPDATE TAIKHOAN " +
                         "SET TENTK = '" + tbUsername.Text + "', MATKHAU = '" + tbPassword.Text +
