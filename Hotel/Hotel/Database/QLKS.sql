@@ -152,7 +152,11 @@ VALUES
 ('P201', 'LP01', N'Bảo trì', 2, N'Phòng VIP có bồn tắm nằm', N'Đã dọn'),
 ('P202', 'LP02', N'Trống', 2, N'Phòng Deluxe có tủ lạnh mini', N'Đã dọn'),
 ('P203', 'LP03', N'Trống', 2, N'Phòng Standard có bàn làm việc', N'Đã dọn'),
-('P204', 'LP04', N'Không trống', 2, N'Phòng Economy có bàn ghế', N'Đã dọn');
+('P304', 'LP04', N'Trống', 3, N'Phòng Economy có bàn ghế', N'Đã dọn'),
+('P401', 'LP01', N'Bảo trì', 4, N'Phòng VIP có bồn tắm nằm', N'Đã dọn'),
+('P402', 'LP02', N'Trống', 4, N'Phòng Deluxe có tủ lạnh mini', N'Đã dọn'),
+('P403', 'LP03', N'Trống', 4, N'Phòng Standard có bàn làm việc', N'Đã dọn'),
+('P504', 'LP04', N'Trống', 5, N'Phòng Economy có bàn ghế', N'Đã dọn');
 
 -- Sample data for CTPHG table
 INSERT INTO CTPHG (MAPHG, MAHD, NGNHANPHG, NGTRPHG, TIENDATPHG)
@@ -216,7 +220,7 @@ select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN
                           left join HOADON on CTPHG.MAHD = HOADON.MAHD    
                           left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH    
                           left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV    
-						  WHERE TRANGTHAI = 'Trống'
+						  WHERE TRANGTHAI = N'Trống'
                           union    
                           select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN    
                           from PHONG A    
@@ -230,7 +234,7 @@ select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN
                                               from HOADON    
                                               inner join CTPHG on CTPHG.MAHD = HOADON.MAHD    
                                               where A.MAPHG = CTPHG.MAPHG  
-											  AND TRANGTHAI = 'Trống'
+											  --AND TRANGTHAI = 'Trống'
                                               order by MAHD desc    
                                               ) 
 DBCC CHECKIDENT ('KHACHHANG', RESEED, 0);

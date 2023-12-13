@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,33 +23,38 @@ namespace Hotel.RoomControls
         public UC_RoomGrid()
         {
             InitializeComponent();
-            EventHub.DatabaseUpdated += PopulateGrid;
+            TableLayoutPanelScrollbars();
         }
 
-        private void PopulateGrid()
+        private void PopulateGrid(int criterion = 0)
         {
             rooms.Clear();
+            fLPFloor1.Controls.Clear();
+            fLPFloor2.Controls.Clear();
+            fLPFloor3.Controls.Clear();
+            fLPFloor4.Controls.Clear();
+            fLPFloor5.Controls.Clear();
             RefreshDataSet();
             foreach (DataRow dR in dS.Tables[0].Rows)
             {
-                if (dR["TRANGTHAI"].ToString() == "Trống")
+                if (dR["TRANGTHAI"].ToString() == "Trống" && (criterion == 1 || criterion == 0))
                 {
                     UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString());
                     rooms.Add(roomA);
                 }
-                else if (dR["TRANGTHAI"].ToString() == "Bảo trì")
+                else if (dR["TRANGTHAI"].ToString() == "Bảo trì" && (criterion == 2 || criterion == 0))
                 {
                     UC_RoomUnitMaintenance roomM = new UC_RoomUnitMaintenance(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString());
                     rooms.Add(roomM);
                 }
-                else if (dR["TRANGTHAI"].ToString() == "Không trống")
+                else if (dR["TRANGTHAI"].ToString() == "Không trống" && (criterion != 1 && criterion != 2))
                 {
-                    if (dR["CHECKEDIN"].ToString() == "0")
+                    if (dR["CHECKEDIN"].ToString() == "False" && (criterion == 3 || criterion == 0))
                     {
                         UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString());
                         rooms.Add(roomB);
                     }
-                    else
+                    else if (dR["CHECKEDIN"].ToString() == "True" && (criterion == 4 || criterion == 0))
                     {
                         UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString());
                         rooms.Add(roomO);
@@ -77,13 +83,19 @@ namespace Hotel.RoomControls
                 }
             }
         }
-
+        void TableLayoutPanelScrollbars()
+        {
+            tLPFloors.HorizontalScroll.Maximum = 0;
+            tLPFloors.AutoScroll = false;
+            tLPFloors.VerticalScroll.Visible = false;
+            tLPFloors.AutoScroll = true;
+        }
         private void RefreshDataSet()
         {
 
             try
             {
-                query =  "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
+                query = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
                          "from PHONG A " +
                          "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
                          "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
@@ -113,11 +125,11 @@ namespace Hotel.RoomControls
         }
         private void PanelControlAdd(object sender, ControlEventArgs e)
         {
-            FlowLayoutPanel panel = sender as FlowLayoutPanel;
-            if (panel.Controls.Count % 3 == 0)
-            {
-                panel.SetFlowBreak(e.Control as Control, true);
-            }
+            //FlowLayoutPanel panel = sender as FlowLayoutPanel;
+            //if (panel.Controls.Count % 3 == 0)
+            //{
+            //    panel.SetFlowBreak(e.Control as Control, true);
+            //}
         }
         private void UC_RoomGrid_load(object sender, EventArgs e)
         {
@@ -136,6 +148,49 @@ namespace Hotel.RoomControls
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rBTRoomStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender == rBTEmpty)
+            {
+                rooms = rooms.Where(r => r.RoomStatus == "Trống").ToList();
+            }
+            else if (sender == rBTMaintenance)
+            {
+                rooms = rooms.Where(r => r.RoomStatus == "Bảo trì").ToList();
+            }
+            else if (sender == rBTBooked)
+            {
+                rooms = rooms.Where(r => r.RoomStatus == "Không trống").ToList();
+            }
+            else if (sender == rBTOccupied)
+            {
+                rooms = rooms.Where(r => r.RoomStatus == "Trống").ToList();
+            }
+            //else
+            //{
+            //    PopulateGrid(0);
+            //}
+        }
+
+        private void bTRemoveFilter_Click(object sender, EventArgs e)
+        {
+            foreach(Guna2RadioButton rBT in gBRoomStatusFilter.Controls)
+            {
+                if (rBT.Checked)
+                {
+                    rBT.Checked = false;
+                }
+            }
+            foreach (Guna2RadioButton rBT in gBRoomTypeFilter.Controls)
+            {
+                if (rBT.Checked)
+                {
+                    rBT.Checked = false;
+                }
+            }
+            PopulateGrid();
         }
     }
 }

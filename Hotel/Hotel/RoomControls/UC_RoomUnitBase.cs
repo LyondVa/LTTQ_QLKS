@@ -14,7 +14,12 @@ namespace Hotel.RoomControls
 {
     public partial class UC_RoomUnitBase : UserControl
     {
-        protected string roomID, roomTypeID, cleanStatus, roomStatus, floor;
+        protected string roomID, roomTypeID, cleanStatus, roomStatus, floor, checkInStatus;
+        public string RoomTypeID { get { return roomTypeID; } set { roomTypeID = value; } }
+        public string CleanStatus { get { return cleanStatus;}set { cleanStatus = value; } }
+        public string RoomStatus { get { return roomStatus; } set { roomStatus = value; } }
+        public string CheckInStatus { get { return roomStatus; } set { roomStatus = value; } }
+
         protected List<Image> imageList = new List<Image>();
         private void UC_RoomUnitBase_Load(object sender, EventArgs e)
         {
