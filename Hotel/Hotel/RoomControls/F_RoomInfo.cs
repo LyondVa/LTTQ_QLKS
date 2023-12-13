@@ -140,8 +140,8 @@ namespace Hotel.RoomControls
                 {
                     query = "update HOADON " +
                             "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
-                            "set CHECKEDOUT = 1 " +
-                            "where CHECKEDOUT = 0 and CTPHG.MAPHG = '" + roomID + "'";
+                            "set CHECKEDOUT = 0 " +
+                            "where CHECKEDOUT = 1 and CTPHG.MAPHG = '" + roomID + "'";
                     fn.setData(query, "Thành công");
                     EventHub.OnDatabaseUpdated();
                 }
@@ -154,7 +154,14 @@ namespace Hotel.RoomControls
 
         private void bTService_Click(object sender, EventArgs e)
         {
-
+            Form serviceForm = new Form();
+            serviceForm.Size = new System.Drawing.Size(1050, 650);
+            serviceForm.Text = "Thêm dịch vụ";
+            /*UC_ServiceAdd serviceUC= new UC_ServiceAdd(roomID);
+            serviceForm.Controls.Add(serviceUC);
+            serviceForm.Controls[0].Dock = DockStyle.Fill;
+            serviceForm.Show();
+            serviceForm.Focus();*/
         }
 
         private void bTCancel_Click(object sender, EventArgs e)

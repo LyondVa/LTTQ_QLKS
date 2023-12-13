@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bTExit = new Guna.UI2.WinForms.Guna2Button();
-            this.dGVCheckInDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dTPCheckInDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dTPCheckOutDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,18 +68,18 @@
             this.bTExit.Text = "Thoát";
             this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
             // 
-            // dGVCheckInDate
+            // dTPCheckInDate
             // 
-            this.dGVCheckInDate.Checked = true;
-            this.dGVCheckInDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dGVCheckInDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dGVCheckInDate.Location = new System.Drawing.Point(336, 47);
-            this.dGVCheckInDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dGVCheckInDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dGVCheckInDate.Name = "dGVCheckInDate";
-            this.dGVCheckInDate.Size = new System.Drawing.Size(193, 48);
-            this.dGVCheckInDate.TabIndex = 3;
-            this.dGVCheckInDate.Value = new System.DateTime(2023, 12, 12, 9, 3, 55, 546);
+            this.dTPCheckInDate.Checked = true;
+            this.dTPCheckInDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dTPCheckInDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dTPCheckInDate.Location = new System.Drawing.Point(336, 47);
+            this.dTPCheckInDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dTPCheckInDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dTPCheckInDate.Name = "dTPCheckInDate";
+            this.dTPCheckInDate.Size = new System.Drawing.Size(193, 48);
+            this.dTPCheckInDate.TabIndex = 3;
+            this.dTPCheckInDate.Value = new System.DateTime(2023, 12, 12, 9, 3, 55, 546);
             // 
             // dTPCheckOutDate
             // 
@@ -188,6 +188,7 @@
             this.bTClientRegistration.Size = new System.Drawing.Size(177, 48);
             this.bTClientRegistration.TabIndex = 13;
             this.bTClientRegistration.Text = "Đăng ký khách hàng";
+            this.bTClientRegistration.Click += new System.EventHandler(this.bTClientRegistration_Click);
             // 
             // dGVAvailableRoom
             // 
@@ -196,7 +197,6 @@
             this.dGVAvailableRoom.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dGVAvailableRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dGVAvailableRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +206,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dGVAvailableRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVAvailableRoom.ColumnHeadersHeight = 20;
-            this.dGVAvailableRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,9 +217,9 @@
             this.dGVAvailableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dGVAvailableRoom.Location = new System.Drawing.Point(12, 238);
             this.dGVAvailableRoom.Name = "dGVAvailableRoom";
-            this.dGVAvailableRoom.RowHeadersVisible = false;
             this.dGVAvailableRoom.RowHeadersWidth = 51;
             this.dGVAvailableRoom.RowTemplate.Height = 24;
+            this.dGVAvailableRoom.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dGVAvailableRoom.Size = new System.Drawing.Size(274, 111);
             this.dGVAvailableRoom.TabIndex = 15;
             this.dGVAvailableRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -234,7 +233,7 @@
             this.dGVAvailableRoom.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dGVAvailableRoom.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dGVAvailableRoom.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dGVAvailableRoom.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dGVAvailableRoom.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dGVAvailableRoom.ThemeStyle.HeaderStyle.Height = 20;
             this.dGVAvailableRoom.ThemeStyle.ReadOnly = false;
             this.dGVAvailableRoom.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -350,7 +349,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bTExit);
             this.Controls.Add(this.dTPCheckOutDate);
-            this.Controls.Add(this.dGVCheckInDate);
+            this.Controls.Add(this.dTPCheckInDate);
             this.Controls.Add(this.bTAdd);
             this.Name = "F_BookRoom";
             this.Text = "BookRoom";
@@ -364,7 +363,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button bTExit;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dGVCheckInDate;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dTPCheckInDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dTPCheckOutDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

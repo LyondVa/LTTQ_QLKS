@@ -32,7 +32,7 @@ namespace Hotel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            query = "select TENTK, MATKHAU " +
+            query = "select TENTK, MATKHAU, MANV " +
                     "from TAIKHOAN where TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
             DataSet ds = fn.getData(query);
             string query1 = "select POSITION " +
@@ -53,6 +53,7 @@ namespace Hotel
                 Dashboard dash = new Dashboard(position);
                 this.Hide();
                 dash.Show();
+                Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();
             }
             else
             {

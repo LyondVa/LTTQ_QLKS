@@ -1,5 +1,9 @@
-﻿CREATE TABLE NHANVIEN(
-	MANV NVARCHAR(4) NOT NULL PRIMARY KEY,
+﻿CREATE DATABASE QLKS
+USE QLKS
+
+CREATE TABLE NHANVIEN(
+	MSNV INT NOT NULL IDENTITY(01,1),
+	MANV AS N'NV'   RIGHT(N'00'   CAST(MSNV AS NVARCHAR(2)), 2) PERSISTED NOT NULL PRIMARY KEY,
 	NHOTEN NVARCHAR(50) NOT NULL,
 	NSDT NVARCHAR(10) NOT NULL,
 	NGIOITINH NVARCHAR(4) NOT NULL,
@@ -25,7 +29,8 @@ CREATE TABLE LOAIPHONG(
 )
 
 CREATE TABLE KHACHHANG(
-	MAKH NVARCHAR(4) NOT NULL PRIMARY KEY,
+	MSKH INT NOT NULL IDENTITY(01,1),
+	MAKH AS N'KH'   RIGHT(N'00'   CAST(MSKH AS NVARCHAR(2)), 2) PERSISTED NOT NULL PRIMARY KEY,
 	KHOTEN NVARCHAR(50) NOT NULL,
 	KSDT NVARCHAR(10) NOT NULL,
 	QUOCTICH NVARCHAR(50) NOT NULL,
@@ -34,7 +39,7 @@ CREATE TABLE KHACHHANG(
 	KCCCD NVARCHAR(12) NOT NULL,
 	KDIACHI NVARCHAR(100) NOT NULL,
 	KEMAIL NVARCHAR(50), /*NEW*/
-	CHECKEDOUT BIT /*NEW*/
+	STAYING BIT /*NEW*/
 	/*XOA COT:
 	CHECKIN
 	CHECKOUT
@@ -43,13 +48,16 @@ CREATE TABLE KHACHHANG(
 )
 
 CREATE TABLE HOADON(
-	MAHD NVARCHAR(7) NOT NULL PRIMARY KEY,
+	MSHD INT NOT NULL IDENTITY(1,1),
+	MAHD AS N'HD'   RIGHT(N'00000'   CAST(MSHD AS NVARCHAR(5)), 5) PERSISTED NOT NULL PRIMARY KEY,
 	MAKH NVARCHAR(4) NOT NULL FOREIGN KEY REFERENCES KHACHHANG(MAKH),
 	MANV NVARCHAR(4) NOT NULL FOREIGN KEY REFERENCES NHANVIEN(MANV),
-	TONGTIEN MONEY NOT NULL,
-	PHGTHUC NVARCHAR(50) NOT NULL,
-	NGTHANHTOAN SMALLDATETIME NOT NULL,
-	NGXUATHD SMALLDATETIME NOT NULL,
+	TONGTIEN MONEY,
+	PHGTHUC NVARCHAR(50),
+	NGTHANHTOAN SMALLDATETIME,
+	NGXUATHD SMALLDATETIME,
+	CHECKEDIN BIT,
+	CHECKEDOUT BIT
 ) 
 
 CREATE TABLE PHONG(
@@ -57,7 +65,8 @@ CREATE TABLE PHONG(
 	MALOAIPHG NVARCHAR(4) NOT NULL FOREIGN KEY REFERENCES LOAIPHONG(MALOAIPHG),
 	TRANGTHAI NVARCHAR(50) NOT NULL,
 	TANG TINYINT NOT NULL,
-	GHICHU TEXT
+	GHICHU NVARCHAR(250),
+	DONDEP NVARCHAR(20) NOT NULL
 	/*XOA COT MAKS*/
 )
 
@@ -88,83 +97,143 @@ CREATE TABLE TAIKHOAN(
 	MATKHAU NVARCHAR(250) NOT NULL
 ) /*NEW*/
 
--- Revised sample data for NHANVIEN table
-INSERT INTO NHANVIEN (MANV, NHOTEN, NSDT, NGIOITINH, NEMAIL, POSITION, CHUCVU, LUONG, NCCCD, NDIACHI, NNGSINH) VALUES
-('NV01', 'Nguyen Van A', '0000000000', 'Nam', 'nva@example.com', 1, 'Quan ly', 15000000, 'ABC123456', 'XYZ Street, Fantasy City', '1980-01-01'),
-('NV02', 'Tran Thi B', '1111111111', 'Nu', 'ttb@example.com', 2, 'Nhan vien', 8000000, 'DEF987654', 'ABC Avenue, Imaginary Town', '1990-02-02');
+CREATE TABLE DOANHTHU (
+    THANG NVARCHAR(50) NOT NULL,
+    NAM NVARCHAR(50) NOT NULL,
+    TIENPHONG DECIMAL NULL,
+    TIENDICHVU DECIMAL NULL,
+    TIENLUONG DECIMAL NULL,
+	TONGNHAP AS (ISNULL(TIENPHONG, 0)   ISNULL(TIENDICHVU, 0)),
+    TIENDOANHTHU AS (ISNULL(TIENPHONG, 0)   ISNULL(TIENDICHVU, 0) - ISNULL(TIENLUONG, 0)),
+    --PRIMARY KEY (THANG, NAM)
+)
+-- Sample data for NHANVIEN table
+INSERT INTO NHANVIEN (NHOTEN, NSDT, NGIOITINH, NEMAIL, POSITION, CHUCVU, LUONG, NCCCD, NDIACHI, NNGSINH)
+VALUES
+(N'Nguyễn Văn A', '0987654321', 'Nam', 'nguyenvana@gmail.com', 1, N'Giám đốc', 20000000, '123456789', N'Số 1, Đường 1, Quận 1, TP.HCM', '1980-01-01'),
+(N'Trần Thị B', '0912345678', N'Nữ', 'tranb@gmail.com', 2, N'Phó giám đốc', 15000000, '987654321', N'Số 2, Đường 2, Quận 2, TP.HCM', '1982-02-02'),
+(N'Lê Văn C', '0934567890', 'Nam', 'levanc@gmail.com', 3, N'Quản lý', 10000000, '456789123', N'Số 3, Đường 3, Quận 3, TP.HCM', '1984-03-03'),
+(N'Phạm Thị D', '0967890123', N'Nữ', 'phamd@gmail.com', 4, N'Nhân viên', 7000000, '789123456', N'Số 4, Đường 4, Quận 4, TP.HCM', '1986-04-04'),
+(N'Hoàng Văn E', '0923456789', 'Nam', 'hoange@gmail.com', 4, N'Nhân viên', 7000000, '345678912', N'Số 5, Đường 5, Quận 5, TP.HCM', '1988-05-05');
 
--- Revised sample data for LOAIPHONG table
-INSERT INTO LOAIPHONG (MALOAIPHG, TENLOAIPHG, GIADEM, SUCCHUA, SOGIUONG) VALUES
-('VP01', 'VIP', 2000000, 2, 1),
-('NM02', 'STD', 1000000, 4, 2);
+-- Sample data for LOAIPHONG table
+INSERT INTO LOAIPHONG (MALOAIPHG, TENLOAIPHG, GIADEM, SUCCHUA, SOGIUONG)
+VALUES
+('LP01', 'VIP', 1000000, 4, 2),
+('LP02', 'Deluxe', 500000, 2, 1),
+('LP03', 'Standard', 300000, 2, 1),
+('LP04', 'Economy', 200000, 2, 1);
 
--- Revised sample data for KHACHHANG table
-INSERT INTO KHACHHANG (MAKH, KHOTEN, KSDT, QUOCTICH, KGIOITINH, KNGSINH, KCCCD, KDIACHI, KEMAIL, CHECKEDOUT) VALUES
-('KH01', 'John Smith', '2222222222', 'USA', 'Nam', '1985-03-03', 'GHI123456', 'LMN Street, Nowhere City', 'jsmith@example.com', 0),
-('KH02', 'Le Thi C', '3333333333', 'Vietnam', 'Nu', '1995-04-04', 'JKL987654', 'OPQ Road, Neverland', 'ltc@example.com', 1);
+-- Sample data for KHACHHANG table
+INSERT INTO KHACHHANG (KHOTEN, KSDT, QUOCTICH, KGIOITINH, KNGSINH, KCCCD, KDIACHI, KEMAIL, STAYING)
+VALUES
+('John Smith', '0123456789', 'USA', 'Nam', '1990-01-01', 'US123456', '123 Main Street, New York, USA', 'johnsmith@gmail.com', 1),
+('Mary Jones', '0987654321', 'UK', N'Nữ', '1991-02-02', 'UK987654', '456 High Street, London, UK', 'maryjones@gmail.com', 1),
+('David Lee', '0345678901', 'Singapore', 'Nam', '1992-03-03', 'SG345678', '789 Orchard Road, Singapore', 'davidlee@gmail.com', 0),
+('Anna Nguyen', '0567890123', 'Vietnam', N'Nữ', '1993-04-04', 'VN567890', N'12 Lê Lợi, Quận 1, TP.HCM', 'annanguyen@gmail.com', 0),
+('Peter Tran', '0789012345', 'Australia', 'Nam', '1994-05-05', 'AU789012', '34 Sydney Road, Melbourne, Australia', 'petertran@gmail.com', 1);
 
--- Revised sample data for HOADON table
-INSERT INTO HOADON (MAHD, MAKH, MANV, TONGTIEN, PHGTHUC, NGTHANHTOAN, NGXUATHD) VALUES
-('HD00001', 'KH01', 'NV01', 3000000, 'Tien mat', '2023-12-08 10:00:00', '2023-12-08 10:05:00'),
-('HD00002', 'KH02', 'NV02', 1500000, 'The tin dung', '2023-12-09 11:00:00', '2023-12-09 11:05:00');
+-- Sample data for HOADON table
+INSERT INTO HOADON (MAKH, MANV, TONGTIEN, PHGTHUC, NGTHANHTOAN, NGXUATHD, CHECKEDIN, CHECKEDOUT)
+VALUES
+('KH01', 'NV01', 3000000, 'Tiền mặt', '2023-12-01 10:00:00', '2023-12-01 10:00:00', 1, 0),
+('KH02', 'NV02', 1500000, 'Thẻ tín dụng', '2023-12-02 11:00:00', '2023-12-02 11:00:00', 1, 0),
+('KH03', 'NV03', 900000, 'Tiền mặt', '2023-12-03 12:00:00', '2023-12-03 12:00:00', 0, 1),
+('KH04', 'NV04', 600000, 'Thẻ tín dụng', '2023-12-04 13:00:00', '2023-12-04 13:00:00', 0, 1),
+('KH05', 'NV05', 2000000, 'Tiền mặt', '2023-12-05 14:00:00', '2023-12-05 14:00:00', 1, 0);
 
--- Revised sample data for PHONG table
-INSERT INTO PHONG (MAPHG, MALOAIPHG, TRANGTHAI, TANG, GHICHU) VALUES
-('P101', 'NM02', 'Trong', 1, 'Phong moi sua chua xong'),
-('P102', 'VP01', 'Dang su dung', 1, 'Phong co view dep');
-
--- Revised sample data for CTPHG table
-INSERT INTO CTPHG (MAPHG, MAHD, NGNHANPHG, NGTRPHG, TIENDATPHG) VALUES
-('P101', 'HD00001', '2023-12-07 14:00:00', '2023-12-08 12:00:00', 500000),
-('P102', 'HD00002', '2023-12-09 13:00:00', '2023-12-10 11:00:00', 300000);
-
--- Revised sample data for DICHVU table
-INSERT INTO DICHVU (MADV, TENDV, GIADV) VALUES
-('DV01', 'An sang', 50000),
-('DV02', 'Giat ui', 100000);
-
--- Revised sample data for CTDV table
-INSERT INTO CTDV (MAHD, MADV, SOLUONG, THOIGIANSD) VALUES
-('HD00001', 'DV01', 2, '2023-12-08 07:30:00'),
-('HD00002', 'DV02', 1, '2023-12-09 09:00:00'),
-('HD00001', 'DV02', 1, '2023-12-09 09:00:00');
-
--- Revised sample data for TAIKHOAN table
-INSERT INTO TAIKHOAN (MANV, TENTK, MATKHAU) VALUES
-('NV01', '', ''),
-('NV02', 'admin', 'admin');
-
---  Position not null → null
-ALTER TABLE NHANVIEN ALTER COLUMN POSITION TINYINT
-
-ALTER TABLE PHONG ALTER COLUMN GHICHU NVARCHAR(250)
-
---UPDATE PHONG
---SET TANG = 1 WHERE MAPHG = 'P102'
-
-ALTER TABLE PHONG ADD DONDEP NVARCHAR(20)
-
-ALTER TABLE HOADON ADD CHECKEDIN BIT
-ALTER TABLE HOADON ADD CHECKEDOUT BIT
-
-ALTER TABLE PHONG DROP COLUMN FLOOR
-
+-- Sample data for PHONG table
 INSERT INTO PHONG (MAPHG, MALOAIPHG, TRANGTHAI, TANG, GHICHU, DONDEP)
 VALUES
-('P403', 'LP01', 'Trong', 1, 'Phong moi sua chua', 'Đã dọn'),
-('P205', 'LP02', 'Bao tri', 2, 'Can thay ga trai giuong', 'Chưa dọn');
+('P101', 'LP01', N'Không trống', 1, N'Phòng VIP có ban công nhìn ra hồ bơi', N'Đã dọn'),
+('P102', 'LP02', N'Bảo trì', 1, N'Phòng Deluxe có tivi màn hình cong', N'Đã dọn'),
+('P103', 'LP03', N'Trống', 1, N'Phòng Standard có máy lạnh', N'Đã dọn'),
+('P104', 'LP04', N'Trống', 1, N'Phòng Economy có quạt', N'Đã dọn'),
+('P201', 'LP01', N'Bảo trì', 2, N'Phòng VIP có bồn tắm nằm', N'Đã dọn'),
+('P202', 'LP02', N'Trống', 2, N'Phòng Deluxe có tủ lạnh mini', N'Đã dọn'),
+('P203', 'LP03', N'Trống', 2, N'Phòng Standard có bàn làm việc', N'Đã dọn'),
+('P204', 'LP04', N'Không trống', 2, N'Phòng Economy có bàn ghế', N'Đã dọn');
 
+-- Sample data for CTPHG table
+INSERT INTO CTPHG (MAPHG, MAHD, NGNHANPHG, NGTRPHG, TIENDATPHG)
+VALUES
+('P101', 'HD00001', '2023-12-01 10:00:00', '2023-12-04 10:00:00', 1000000),
+('P102', 'HD00002', '2023-12-02 11:00:00', '2023-12-03 11:00:00', 500000),
+('P104', 'HD00003', '2023-12-03 12:00:00', '2023-12-04 12:00:00', 200000),
+('P201', 'HD00004', '2023-12-04 13:00:00', '2023-12-06 13:00:00', 1000000),
+('P204', 'HD00005', '2023-12-05 14:00:00', '2023-12-07 14:00:00', 200000);
+
+-- Sample data for DICHVU table
+INSERT INTO DICHVU (MADV, TENDV, GIADV)
+VALUES
+('DV01', N'Ăn sáng', 50000),
+('DV02', N'Ăn trưa', 100000),
+('DV03', N'Ăn tối', 150000),
+('DV04', N'Giặt ủi', 20000),
+('DV05', N'Xe đưa đón', 500000);
+
+-- Sample data for CTDV table
+INSERT INTO CTDV (MAHD, MADV, SOLUONG, THOIGIANSD)
+VALUES
+('HD00001', 'DV01', 2, '2023-12-02 07:00:00'),
+('HD00001', 'DV02', 2, '2023-12-02 12:00:00'),
+('HD00001', 'DV03', 2, '2023-12-02 18:00:00'),
+('HD00002', 'DV01', 1, '2023-12-03 08:00:00'),
+('HD00002', 'DV04', 5, '2023-12-03 09:00:00'),
+('HD00003', 'DV02', 1, '2023-12-04 13:00:00'),
+('HD00003', 'DV05', 1, '2023-12-04 05:00:00')
+
+-- sample data for TAIKHOAN table
+INSERT INTO TAIKHOAN(MANV, TENTK, MATKHAU)
+VALUES
+('NV01', '', '')
+
+select * from KHACHHANG
+select * from HOADON
+ALTER TABLE HOADON
+ALTER COLUMN TONGTIEN MONEY NULL
+ALTER TABLE HOADON
+ALTER COLUMN PHGTHUC NVARCHAR(50) NULL
+ALTER TABLE HOADON
+ALTER COLUMN NGTHANHTOAN SMALLDATETIME NULL
+ALTER TABLE HOADON
+ALTER COLUMN NGXUATHD NVARCHAR(50) NULL
+ALTER TABLE CTPHG
+ALTER COLUMN TONGTIEN MONEY NULL
+
+SELECT TOP 1 MAHD
+FROM HOADON    
+INNER JOIN KHACHHANG ON KHACHHANG.MAKH = HOADON.MAKH  
+WHERE KCCCD = '077204001739'   
+ORDER BY MAHD DESC 
+INSERT INTO CTPHG(MAPHG, MAHD, NGNHANPHG, NGTRPHG) VALUES ('P101','HD00016',12-12-2023 09:03:55,12-12-2023 09:03:55)
+select * from CTPHG
 select * from PHONG
-update PHONG set TANG = 4 where MAPHG = 'P403'
 
-update PHONG set TRANGTHAI = N'Bảo trì' where TRANGTHAI = 'Bao tri'
-
- select MALOAIPHG, TRANGTHAI, DONDEP, GHICHU, KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt'    
-                         from PHONG   
-                         left join CTPHG on PHONG.MAPHG = CTPHG.MAPHG  
-                         left join HOADON on CTPHG.MAHD = HOADON.MAHD    
-                         left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH    
-                         left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV    
-                         left join CTDV on HOADON.MAHD = CTDV.MAHD    
-                         left join DICHVU on CTDV.MADV = DICHVU.MADV   
-                         where PHONG.MAPHG = 'P101' ;
+select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN    
+                          from PHONG A    
+                          left join CTPHG on A.MAPHG = CTPHG.MAPHG    
+                          left join HOADON on CTPHG.MAHD = HOADON.MAHD    
+                          left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH    
+                          left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV    
+						  WHERE TRANGTHAI = 'Trống'
+                          union    
+                          select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN    
+                          from PHONG A    
+                          left join CTPHG on    
+                          A.MAPHG = CTPHG.MAPHG    
+                          left join HOADON on CTPHG.MAHD = HOADON.MAHD    
+                          left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH    
+                          left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV    
+                          where HOADON.MAHD = (    
+                                              select top 1 HOADON.MAHD    
+                                              from HOADON    
+                                              inner join CTPHG on CTPHG.MAHD = HOADON.MAHD    
+                                              where A.MAPHG = CTPHG.MAPHG  
+											  AND TRANGTHAI = 'Trống'
+                                              order by MAHD desc    
+                                              ) 
+DBCC CHECKIDENT ('KHACHHANG', RESEED, 0);
+GO
+DBCC CHECKIDENT ('HOADON', RESEED, 0);
+GO

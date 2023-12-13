@@ -1,4 +1,5 @@
-﻿using Hotel.Properties;
+﻿using Hotel.All_user_control;
+using Hotel.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +28,12 @@ namespace Hotel.RoomControls
                          "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
                          "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
                          "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
+                         "where TRANGTHAI = N'Trống' "+
                          "union " +
                          "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
                          "from PHONG A " +
-                         "left join CTPHG o" +
-                         "n A.MAPHG = CTPHG.MAPHG " +
+                         "left join CTPHG on " +
+                         "A.MAPHG = CTPHG.MAPHG " +
                          "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
                          "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
                          "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
@@ -40,6 +42,7 @@ namespace Hotel.RoomControls
                                              "from HOADON " +
                                              "inner join CTPHG on CTPHG.MAHD = HOADON.MAHD " +
                                              "where A.MAPHG = CTPHG.MAPHG " +
+                                             "and TRANGTHAI = N'Trống' " +
                                              "order by MAHD desc " +
                                              ")";
         string queryC = "select KCCCD, KHOTEN from KHACHHANG";
@@ -51,8 +54,9 @@ namespace Hotel.RoomControls
             dSS.Tables.Add();
             dSS.Tables[0].Columns.Add("MAPHG", typeof(string));
             dSS.Tables[0].Columns.Add("MALOAIPHG", typeof(string));
-            dSC = fn.getData(queryC);
             InitializeGridViews();
+            dTPCheckInDate.MinDate = DateTime.Now;
+            dTPCheckOutDate.MinDate = DateTime.Now;
         }
         private void InitializeGridViews()
         {
@@ -129,11 +133,29 @@ namespace Hotel.RoomControls
         }
         private void bTAdd_Click(object sender, EventArgs e)
         {
-            query = 
+            int returnInt = 1;
+            DataSet dSTemp1 = new DataSet();
+            DataSet dSTemp2 = new DataSet();
+            query = "SELECT MAKH FROM KHACHHANG WHERE KCCCD = '" + tBClientID.Text + "'";
+            dSTemp1 = fn.getData(query);
+            query = "INSERT INTO HOADON(MAKH, MANV) VALUES ('" + dSTemp1.Tables[0].Rows[0]["MAKH"].ToString() + "','" + Global.globalEmID + "')";
+            fn.setData(query, "1");
+            query = "SELECT TOP 1 MAHD " +
+                    "FROM HOADON " +
+                    "INNER JOIN KHACHHANG ON KHACHHANG.MAKH = HOADON.MAKH " +
+                    "WHERE KCCCD = '" + tBClientID.Text + "' " +
+                    "ORDER BY MAHD DESC";
+            dSTemp2 = fn.getData(query);
+            foreach(DataRow dR in dSS.Tables[0].Rows)
+            {
+                query = "INSERT INTO CTPHG(MAPHG, MAHD, NGNHANPHG, NGTRPHG, TIENDATPHG) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString() + "','" + dTPCheckInDate.Value.ToString("dd'-'MM'-'yyyy hh':'mm':'ss") + "','" + dTPCheckOutDate.Value.ToString("dd'-'MM'-'yyyy hh':'mm':'ss") +"',"+ 7000 +")";
+                fn.setData(query, "2" + returnInt++);
+            }
         }
 
         private void tBClientID_TextChanged(object sender, EventArgs e)
         {
+            dSC = fn.getData(queryC);
             tBClientName.Clear();
             DataRow[] dR = rFn.FindInDataset(dSC, tBClientID.Text, "KCCCD");
             if (tBClientID.Text.Length > 0)
@@ -141,8 +163,22 @@ namespace Hotel.RoomControls
                 if ( dR != null)
                 {
                     tBClientName.Text = dR[0]["KHOTEN"].ToString();
+                    bTClientRegistration.Enabled = false;
                 }
             }
+        }
+
+        private void bTClientRegistration_Click(object sender, EventArgs e)
+        {
+            Form cusResForm = new Form();
+            UC_CustomerRes customerRes = new UC_CustomerRes(tBClientID.Text);
+            cusResForm.Size = new System.Drawing.Size(1050,650);
+            cusResForm.Text = "Thêm khách hàng";
+            cusResForm.Controls.Add(customerRes);
+            cusResForm.Controls[0].Dock = DockStyle.Fill;
+            cusResForm.Show();
+            cusResForm.Focus();
+            //query = 
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 0";
+                    "where KHACHHANG.STAYING = 1";
                 getRecord(query);
             }
             else if (txtSearch.SelectedIndex == 2)
@@ -47,7 +47,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 1";
+                    "where KHACHHANG.STAYING = 0";
                 getRecord(query);
             }
 

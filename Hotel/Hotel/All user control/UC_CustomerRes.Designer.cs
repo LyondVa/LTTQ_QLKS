@@ -48,8 +48,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 230);
+            this.label2.Location = new System.Drawing.Point(57, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 23);
             this.label2.TabIndex = 1;
@@ -84,7 +82,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtName.Location = new System.Drawing.Point(37, 257);
+            this.txtName.Location = new System.Drawing.Point(61, 145);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
@@ -106,7 +104,7 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(37, 370);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(61, 258);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PasswordChar = '\0';
@@ -120,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 342);
+            this.label3.Location = new System.Drawing.Point(57, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 23);
             this.label3.TabIndex = 3;
@@ -138,7 +136,7 @@
             this.txtNationality.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtNationality.ForeColor = System.Drawing.Color.Black;
             this.txtNationality.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNationality.Location = new System.Drawing.Point(37, 485);
+            this.txtNationality.Location = new System.Drawing.Point(61, 373);
             this.txtNationality.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.PasswordChar = '\0';
@@ -152,7 +150,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 458);
+            this.label4.Location = new System.Drawing.Point(57, 346);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 23);
             this.label4.TabIndex = 5;
@@ -162,7 +160,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 559);
+            this.label5.Location = new System.Drawing.Point(57, 447);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 23);
             this.label5.TabIndex = 7;
@@ -182,7 +180,7 @@
             "Nam ",
             "Nữ ",
             "Khác"});
-            this.cbGender.Location = new System.Drawing.Point(37, 584);
+            this.cbGender.Location = new System.Drawing.Point(61, 472);
             this.cbGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(448, 36);
@@ -331,44 +329,10 @@
             this.guna2Elipse1.BorderRadius = 30;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // txtID
-            // 
-            this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtID.DefaultText = "";
-            this.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtID.ForeColor = System.Drawing.Color.Black;
-            this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Location = new System.Drawing.Point(37, 145);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtID.Name = "txtID";
-            this.txtID.PasswordChar = '\0';
-            this.txtID.PlaceholderText = "Enter Name";
-            this.txtID.SelectedText = "";
-            this.txtID.Size = new System.Drawing.Size(448, 58);
-            this.txtID.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtID.TabIndex = 28;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(33, 118);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 23);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Mã khách hàng";
-            // 
             // UC_CustomerRes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.txtChecking);
             this.Controls.Add(this.label9);
@@ -389,7 +353,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_CustomerRes";
-            this.Size = new System.Drawing.Size(1673, 682);
+            this.Size = new System.Drawing.Size(1050, 650);
             this.Leave += new System.EventHandler(this.UC_CustomerRes_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -417,7 +381,5 @@
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2TextBox txtID;
-        private System.Windows.Forms.Label label10;
     }
 }
