@@ -17,37 +17,41 @@ namespace Hotel.All_user_control
         public UC_CustomerDetail()
         {
             InitializeComponent();
+            setCDetail(guna2DataGridView1);
         }
 
         private void txtSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(txtSearch.SelectedIndex == 0)
             {
-                query = query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên Khách Hàng', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
-                    "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG ";
+                    "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
             else if(txtSearch.SelectedIndex == 1)
             {
-                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên Khách Hàng', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 0";
+                    "where KHACHHANG.CHECKEDOUT = 0 " +
+                    "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
             else if (txtSearch.SelectedIndex == 2)
             {
-                query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, CTPHG.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên Khách Hàng', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 1";
+                    "where KHACHHANG.CHECKEDOUT = 1 " +
+                    "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
 
@@ -58,11 +62,60 @@ namespace Hotel.All_user_control
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
+        private void setCDetail(DataGridView dgv)
+        {
+            txtSearch.SelectedIndex = 0;
+            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên Khách Hàng', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                    "from KHACHHANG " +
+                    "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "order by KHACHHANG.MAKH ASC";
+            getRecord(query);
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
+            }
+        }
+
+        private void tbNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSearch.SelectedIndex == 0)
+            {
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên Khách Hàng', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                    "from KHACHHANG " +
+                    "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "order by KHACHHANG.MAKH ASC";
+                getRecord(query);
+            }
+            else if (txtSearch.SelectedIndex == 1)
+            {
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên Khách Hàng', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                    "from KHACHHANG " +
+                    "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where KHACHHANG.CHECKEDOUT = 0 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "order by KHACHHANG.MAKH ASC";
+                getRecord(query);
+            }
+            else if (txtSearch.SelectedIndex == 2)
+            {
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên Khách Hàng', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                    "from KHACHHANG " +
+                    "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where KHACHHANG.CHECKEDOUT = 1 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "order by KHACHHANG.MAKH ASC";
+                getRecord(query);
             }
         }
     }

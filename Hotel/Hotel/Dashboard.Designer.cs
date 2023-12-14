@@ -36,6 +36,14 @@
             this.btCustomerReg = new Guna.UI2.WinForms.Guna2Button();
             this.btAddroom = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.uC_Service1 = new Hotel.All_user_control.UC_Service();
+            this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
+            this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
+            this.uC_CustomerDetail1 = new Hotel.All_user_control.UC_CustomerDetail();
+            this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
+            this.uC_CustomerRes1 = new Hotel.All_user_control.UC_CustomerRes();
+            this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
+            this.uC_User1 = new Hotel.All_user_control.UC_User();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -45,18 +53,10 @@
             this.btUser = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btService = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnMinisize = new Guna.UI2.WinForms.Guna2Button();
             this.btExit = new Guna.UI2.WinForms.Guna2Button();
-            this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
-            this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
-            this.uC_CustomerDetail1 = new Hotel.All_user_control.UC_CustomerDetail();
-            this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
-            this.uC_CustomerRes1 = new Hotel.All_user_control.UC_CustomerRes();
-            this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
-            this.uC_User1 = new Hotel.All_user_control.UC_User();
-            this.uC_Service1 = new Hotel.All_user_control.UC_Service();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -161,19 +161,93 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.uC_Service1);
-            this.panel2.Controls.Add(this.uC_RoomManagement1);
-            this.panel2.Controls.Add(this.uC_Employee1);
             this.panel2.Controls.Add(this.uC_CustomerDetail1);
             this.panel2.Controls.Add(this.uC_CheckOut1);
             this.panel2.Controls.Add(this.uC_CustomerRes1);
             this.panel2.Controls.Add(this.uC_Employee21);
             this.panel2.Controls.Add(this.uC_User1);
+            this.panel2.Controls.Add(this.uC_Service1);
+            this.panel2.Controls.Add(this.uC_RoomManagement1);
+            this.panel2.Controls.Add(this.uC_Employee1);
             this.panel2.Location = new System.Drawing.Point(294, 42);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1436, 805);
             this.panel2.TabIndex = 3;
+            // 
+            // uC_Service1
+            // 
+            this.uC_Service1.BackColor = System.Drawing.Color.White;
+            this.uC_Service1.Location = new System.Drawing.Point(25, -4);
+            this.uC_Service1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Service1.Name = "uC_Service1";
+            this.uC_Service1.Size = new System.Drawing.Size(1673, 682);
+            this.uC_Service1.TabIndex = 7;
+            // 
+            // uC_RoomManagement1
+            // 
+            this.uC_RoomManagement1.BackColor = System.Drawing.Color.White;
+            this.uC_RoomManagement1.Location = new System.Drawing.Point(26, 1);
+            this.uC_RoomManagement1.Name = "uC_RoomManagement1";
+            this.uC_RoomManagement1.Size = new System.Drawing.Size(1313, 682);
+            this.uC_RoomManagement1.TabIndex = 5;
+            // 
+            // uC_Employee1
+            // 
+            this.uC_Employee1.BackColor = System.Drawing.Color.White;
+            this.uC_Employee1.ForeColor = System.Drawing.Color.Black;
+            this.uC_Employee1.Location = new System.Drawing.Point(26, -2);
+            this.uC_Employee1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Employee1.Name = "uC_Employee1";
+            this.uC_Employee1.Size = new System.Drawing.Size(1315, 599);
+            this.uC_Employee1.TabIndex = 4;
+            this.uC_Employee1.Load += new System.EventHandler(this.uC_Employee1_Load);
+            // 
+            // uC_CustomerDetail1
+            // 
+            this.uC_CustomerDetail1.BackColor = System.Drawing.Color.White;
+            this.uC_CustomerDetail1.Location = new System.Drawing.Point(3, 5);
+            this.uC_CustomerDetail1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_CustomerDetail1.Name = "uC_CustomerDetail1";
+            this.uC_CustomerDetail1.Size = new System.Drawing.Size(1624, 679);
+            this.uC_CustomerDetail1.TabIndex = 3;
+            this.uC_CustomerDetail1.Load += new System.EventHandler(this.uC_CustomerDetail1_Load);
+            // 
+            // uC_CheckOut1
+            // 
+            this.uC_CheckOut1.BackColor = System.Drawing.Color.White;
+            this.uC_CheckOut1.Location = new System.Drawing.Point(-4, 2);
+            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_CheckOut1.Name = "uC_CheckOut1";
+            this.uC_CheckOut1.Size = new System.Drawing.Size(1314, 679);
+            this.uC_CheckOut1.TabIndex = 2;
+            // 
+            // uC_CustomerRes1
+            // 
+            this.uC_CustomerRes1.BackColor = System.Drawing.Color.White;
+            this.uC_CustomerRes1.Location = new System.Drawing.Point(3, 2);
+            this.uC_CustomerRes1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_CustomerRes1.Name = "uC_CustomerRes1";
+            this.uC_CustomerRes1.Size = new System.Drawing.Size(1306, 682);
+            this.uC_CustomerRes1.TabIndex = 1;
+            // 
+            // uC_Employee21
+            // 
+            this.uC_Employee21.BackColor = System.Drawing.Color.White;
+            this.uC_Employee21.Location = new System.Drawing.Point(-28, 2);
+            this.uC_Employee21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_Employee21.Name = "uC_Employee21";
+            this.uC_Employee21.Size = new System.Drawing.Size(1478, 853);
+            this.uC_Employee21.TabIndex = 6;
+            // 
+            // uC_User1
+            // 
+            this.uC_User1.BackColor = System.Drawing.Color.White;
+            this.uC_User1.Location = new System.Drawing.Point(-1, -1);
+            this.uC_User1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uC_User1.Name = "uC_User1";
+            this.uC_User1.Size = new System.Drawing.Size(1478, 853);
+            this.uC_User1.TabIndex = 5;
             // 
             // guna2Elipse1
             // 
@@ -234,23 +308,6 @@
             this.panel1.Size = new System.Drawing.Size(328, 835);
             this.panel1.TabIndex = 6;
             // 
-            // guna2Button2
-            // 
-            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button2.FillColor = System.Drawing.Color.SlateBlue;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(328, 90);
-            this.guna2Button2.TabIndex = 7;
-            this.guna2Button2.Text = "Trang Chủ";
-            // 
             // btService
             // 
             this.btService.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
@@ -268,6 +325,23 @@
             this.btService.TabIndex = 8;
             this.btService.Text = "Dịch Vụ";
             this.btService.Click += new System.EventHandler(this.btService_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button2.FillColor = System.Drawing.Color.SlateBlue;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(328, 90);
+            this.guna2Button2.TabIndex = 7;
+            this.guna2Button2.Text = "Trang Chủ";
             // 
             // btnMinisize
             // 
@@ -303,80 +377,6 @@
             this.btExit.Size = new System.Drawing.Size(44, 36);
             this.btExit.TabIndex = 0;
             this.btExit.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // uC_RoomManagement1
-            // 
-            this.uC_RoomManagement1.BackColor = System.Drawing.Color.White;
-            this.uC_RoomManagement1.Location = new System.Drawing.Point(-4, 2);
-            this.uC_RoomManagement1.Name = "uC_RoomManagement1";
-            this.uC_RoomManagement1.Size = new System.Drawing.Size(1313, 682);
-            this.uC_RoomManagement1.TabIndex = 5;
-            // 
-            // uC_Employee1
-            // 
-            this.uC_Employee1.BackColor = System.Drawing.Color.White;
-            this.uC_Employee1.ForeColor = System.Drawing.Color.Black;
-            this.uC_Employee1.Location = new System.Drawing.Point(-4, 2);
-            this.uC_Employee1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Employee1.Name = "uC_Employee1";
-            this.uC_Employee1.Size = new System.Drawing.Size(1315, 599);
-            this.uC_Employee1.TabIndex = 4;
-            this.uC_Employee1.Load += new System.EventHandler(this.uC_Employee1_Load);
-            // 
-            // uC_CustomerDetail1
-            // 
-            this.uC_CustomerDetail1.BackColor = System.Drawing.Color.White;
-            this.uC_CustomerDetail1.Location = new System.Drawing.Point(-1, 2);
-            this.uC_CustomerDetail1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_CustomerDetail1.Name = "uC_CustomerDetail1";
-            this.uC_CustomerDetail1.Size = new System.Drawing.Size(1314, 679);
-            this.uC_CustomerDetail1.TabIndex = 3;
-            this.uC_CustomerDetail1.Load += new System.EventHandler(this.uC_CustomerDetail1_Load);
-            // 
-            // uC_CheckOut1
-            // 
-            this.uC_CheckOut1.BackColor = System.Drawing.Color.White;
-            this.uC_CheckOut1.Location = new System.Drawing.Point(-4, 2);
-            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_CheckOut1.Name = "uC_CheckOut1";
-            this.uC_CheckOut1.Size = new System.Drawing.Size(1314, 679);
-            this.uC_CheckOut1.TabIndex = 2;
-            // 
-            // uC_CustomerRes1
-            // 
-            this.uC_CustomerRes1.BackColor = System.Drawing.Color.White;
-            this.uC_CustomerRes1.Location = new System.Drawing.Point(3, 2);
-            this.uC_CustomerRes1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_CustomerRes1.Name = "uC_CustomerRes1";
-            this.uC_CustomerRes1.Size = new System.Drawing.Size(1306, 682);
-            this.uC_CustomerRes1.TabIndex = 1;
-            // 
-            // uC_Employee21
-            // 
-            this.uC_Employee21.BackColor = System.Drawing.Color.White;
-            this.uC_Employee21.Location = new System.Drawing.Point(-1, -1);
-            this.uC_Employee21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Employee21.Name = "uC_Employee21";
-            this.uC_Employee21.Size = new System.Drawing.Size(1478, 853);
-            this.uC_Employee21.TabIndex = 6;
-            // 
-            // uC_User1
-            // 
-            this.uC_User1.BackColor = System.Drawing.Color.White;
-            this.uC_User1.Location = new System.Drawing.Point(-1, -1);
-            this.uC_User1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_User1.Name = "uC_User1";
-            this.uC_User1.Size = new System.Drawing.Size(1478, 853);
-            this.uC_User1.TabIndex = 5;
-            // 
-            // uC_Service1
-            // 
-            this.uC_Service1.BackColor = System.Drawing.Color.White;
-            this.uC_Service1.Location = new System.Drawing.Point(29, 1);
-            this.uC_Service1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Service1.Name = "uC_Service1";
-            this.uC_Service1.Size = new System.Drawing.Size(1673, 682);
-            this.uC_Service1.TabIndex = 7;
             // 
             // Dashboard
             // 
