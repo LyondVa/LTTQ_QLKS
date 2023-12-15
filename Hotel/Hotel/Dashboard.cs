@@ -109,5 +109,11 @@ namespace Hotel
             uC_Chartt1.Visible = true;
             uC_Chartt1.BringToFront();
         }
+
+        private void bTRoomGrid_Click(object sender, EventArgs e)
+        {
+            uC_RoomGrid1.Visible = true;
+            uC_RoomGrid1.BringToFront();
+        }
     }
 }

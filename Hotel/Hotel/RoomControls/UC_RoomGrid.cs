@@ -364,5 +364,10 @@ namespace Hotel.RoomControls
             LoadRoomCleanStatus();
             PopulateGrid();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

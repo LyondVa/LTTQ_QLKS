@@ -293,6 +293,7 @@
     <Compile Include="SmallForm\receipt.Designer.cs">
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="SourceCode\Global.cs" />
     <EmbeddedResource Include="All user control\UC_Chartt.resx">
       <DependentUpon>UC_Chartt.cs</DependentUpon>
     </EmbeddedResource>
