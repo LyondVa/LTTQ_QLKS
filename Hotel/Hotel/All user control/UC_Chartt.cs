@@ -20,8 +20,6 @@ namespace Hotel.All_user_control
         public UC_Chartt()
         {
             InitializeComponent();
-            //setLabel();
-            //macDinh();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,9 +35,7 @@ namespace Hotel.All_user_control
         private void UC_Chartt_Load(object sender, EventArgs e)
         {
             cbNam.SelectedIndex = 0;
-            setLabel();
-            macDinh();
-            guna2Button1.PerformClick();
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -101,7 +97,6 @@ namespace Hotel.All_user_control
             chart2.Series[2].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
 
             chart2.DataBind();
-            setLabel();
 
         }
         private void SetupChart()
@@ -135,7 +130,7 @@ namespace Hotel.All_user_control
         }
         private void cbNam_SelectedIndexChanged(object sender, EventArgs e)
         {
-           //guna2Button1.PerformClick();
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -143,26 +138,6 @@ namespace Hotel.All_user_control
             Profit pf = new Profit();
             pf.ShowDialog();
             pf.Focus();
-            setLabel();
-        }
-        public void setLabel()
-        {
-            query = "SELECT MAX(tienPhong)  FROM doanhthu WHERE nam = '" + cbNam.Text + "'";
-            label4.Text = fn.getData2(query);
-            query = "SELECT MAX(tienDichVu)  FROM doanhthu WHERE nam = '" + cbNam.Text + "'";
-            label5.Text = fn.getData2(query);
-            query = "SELECT MAX(tienLuong) FROM doanhthu WHERE nam = '" + cbNam.Text + "'";
-            label6.Text = fn.getData2(query);
-        }
-
-        private void cbThang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           // guna2Button1.PerformClick();
-        }
-        private void macDinh()
-        {
-            cbNam.Text = "Năm 2021";
-            cbThang.Text = "Tháng 1";
         }
     }
 }
