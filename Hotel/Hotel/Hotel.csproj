@@ -487,8 +487,12 @@
     <None Include="Resources\Blue and Black Modern Illustration UI Login Page Desktop Prototype.png" />
     <None Include="Resources\80e9279d123d9b280146456603b1ebcd.jpg" />
     <None Include="Resources\Blue and Black Modern Illustration UI Login Page Desktop Prototype %281%29.png" />
+    <None Include="Resources\CheckMark.png" />
+    <None Include="Resources\CrossMark.png" />
+    <None Include="Resources\Clean.png" />
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />
+    <None Include="Resources\PlusMark.png" />
     <Content Include="Resources\sửa đăng nhập.png" />
     <Content Include="Resources\hóa đơn.png" />
     <None Include="Resources\Thiết kế chưa có tên.png" />
