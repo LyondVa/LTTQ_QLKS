@@ -47,7 +47,7 @@ namespace Hotel.RoomControls
                 switch (roomUnit.GetFloor())
                 {
                     case "1":
-                        fLPFloor1.Controls.Add(roomUnit);
+                        fLPFloor1.Controls.Add(roomUnit); 
                         break;
                     case "2":
                         fLPFloor2.Controls.Add(roomUnit);
