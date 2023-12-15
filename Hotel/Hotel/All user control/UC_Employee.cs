@@ -154,5 +154,10 @@ namespace Hotel.All_user_control
         {
 
         }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

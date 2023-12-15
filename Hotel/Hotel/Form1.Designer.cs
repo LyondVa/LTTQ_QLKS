@@ -44,7 +44,7 @@
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnLogin.FillColor = System.Drawing.Color.Goldenrod;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(103, 366);
@@ -57,8 +57,9 @@
             // labelError
             // 
             this.labelError.AutoSize = true;
+            this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(158, 478);
+            this.labelError.Location = new System.Drawing.Point(159, 477);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(228, 20);
             this.labelError.TabIndex = 6;
@@ -67,6 +68,7 @@
             // 
             // txbPassword
             // 
+            this.txbPassword.BackColor = System.Drawing.Color.Transparent;
             this.txbPassword.BorderRadius = 18;
             this.txbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbPassword.DefaultText = "";
@@ -92,7 +94,8 @@
             // 
             // txbUsername
             // 
-            this.txbUsername.BorderRadius = 18;
+            this.txbUsername.BackColor = System.Drawing.Color.Transparent;
+            this.txbUsername.BorderRadius = 15;
             this.txbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbUsername.DefaultText = "";
             this.txbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -140,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Hotel.Properties.Resources.login;
+            this.BackgroundImage = global::Hotel.Properties.Resources.Blue_and_Black_Modern_Illustration_UI_Login_Page_Desktop_Prototype__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1125, 550);
             this.Controls.Add(this.btnExit);

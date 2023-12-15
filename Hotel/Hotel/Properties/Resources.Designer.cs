@@ -63,6 +63,36 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _80e9279d123d9b280146456603b1ebcd {
+            get {
+                object obj = ResourceManager.GetObject("80e9279d123d9b280146456603b1ebcd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_and_Black_Modern_Illustration_UI_Login_Page_Desktop_Prototype {
+            get {
+                object obj = ResourceManager.GetObject("Blue and Black Modern Illustration UI Login Page Desktop Prototype", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue_and_Black_Modern_Illustration_UI_Login_Page_Desktop_Prototype__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Blue and Black Modern Illustration UI Login Page Desktop Prototype (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_50px {
             get {
                 object obj = ResourceManager.GetObject("cancel_50px", resourceCulture);

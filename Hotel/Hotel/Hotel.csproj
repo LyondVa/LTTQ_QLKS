@@ -12,21 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -108,9 +93,7 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -138,6 +121,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -149,17 +133,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.cs" />
-    <Compile Include="QLKSDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLKSDataSet.xsd</DependentUpon>
+    <Compile Include="All user control\UC_Chartt.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RoomControls\F_BookRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RoomControls\F_BookRoom.Designer.cs">
-      <DependentUpon>F_BookRoom.cs</DependentUpon>
+    <Compile Include="All user control\UC_Chartt.Designer.cs">
+      <DependentUpon>UC_Chartt.cs</DependentUpon>
     </Compile>
     <Compile Include="RoomControls\F_AddRoom.cs">
       <SubType>Form</SubType>
@@ -174,17 +152,17 @@
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="RoomControls\RoomFunction.cs" />
-    <Compile Include="RoomControls\UC_RoomGrid.cs">
+    <Compile Include="RoomControls\RoomGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RoomControls\UC_RoomGrid.Designer.cs">
-      <DependentUpon>UC_RoomGrid.cs</DependentUpon>
+    <Compile Include="RoomControls\RoomGrid.Designer.cs">
+      <DependentUpon>RoomGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="RoomControls\F_RoomInfo.cs">
+    <Compile Include="RoomControls\RoomInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RoomControls\F_RoomInfo.Designer.cs">
-      <DependentUpon>F_RoomInfo.cs</DependentUpon>
+    <Compile Include="RoomControls\RoomInfo.Designer.cs">
+      <DependentUpon>RoomInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="RoomControls\UC_AddRoomType.cs">
       <SubType>UserControl</SubType>
@@ -252,15 +230,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="function.cs" />
+    <Compile Include="SmallForm\Profit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\Profit.Designer.cs">
+      <DependentUpon>Profit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCode\function.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomControls\UC_RoomUnitBase.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RoomControls\UC_RoomUnitBase.Designer.cs">
-      <DependentUpon>UC_RoomUnitBase.cs</DependentUpon>
-    </Compile>
     <Compile Include="RoomControls\UC_RoomUnitBooked.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,12 +250,6 @@
     </Compile>
     <Compile Include="RoomControls\UC_RoomUnitMaintenance.Designer.cs">
       <DependentUpon>UC_RoomUnitMaintenance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RoomControls\UC_RoomUnitOccupied.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RoomControls\UC_RoomUnitOccupied.Designer.cs">
-      <DependentUpon>UC_RoomUnitOccupied.cs</DependentUpon>
     </Compile>
     <Compile Include="SmallForm\AddEmployee.cs">
       <SubType>Form</SubType>
@@ -303,20 +275,20 @@
     <Compile Include="SmallForm\receipt.Designer.cs">
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="All user control\UC_Chartt.resx">
+      <DependentUpon>UC_Chartt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\F_AddRoom.resx">
       <DependentUpon>F_AddRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\F_BookRoom.resx">
-      <DependentUpon>F_BookRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\F_UpdateRoom.resx">
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\UC_RoomGrid.resx">
-      <DependentUpon>UC_RoomGrid.cs</DependentUpon>
+    <EmbeddedResource Include="RoomControls\RoomGrid.resx">
+      <DependentUpon>RoomGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\F_RoomInfo.resx">
-      <DependentUpon>F_RoomInfo.cs</DependentUpon>
+    <EmbeddedResource Include="RoomControls\RoomInfo.resx">
+      <DependentUpon>RoomInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\UC_AddRoomType.resx">
       <DependentUpon>UC_AddRoomType.cs</DependentUpon>
@@ -361,17 +333,11 @@
     <EmbeddedResource Include="RoomControls\UC_RoomUnitAvailable.resx">
       <DependentUpon>UC_RoomUnitAvailable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\UC_RoomUnitBase.resx">
-      <DependentUpon>UC_RoomUnitBase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\UC_RoomUnitBooked.resx">
       <DependentUpon>UC_RoomUnitBooked.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\UC_RoomUnitMaintenance.resx">
       <DependentUpon>UC_RoomUnitMaintenance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\UC_RoomUnitOccupied.resx">
-      <DependentUpon>UC_RoomUnitOccupied.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
@@ -381,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EmployeeInformation.resx">
       <DependentUpon>EmployeeInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\Profit.resx">
+      <DependentUpon>Profit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\receipt.resx">
       <DependentUpon>receipt.cs</DependentUpon>
@@ -400,20 +369,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QLKSDataSet.xsc">
-      <DependentUpon>QLKSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLKSDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLKSDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLKSDataSet.xss">
-      <DependentUpon>QLKSDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\cancel_50px.png" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -444,35 +419,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
-    <Content Include="Database\QLKS.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\QLKS.sql" />
-    <Content Include="Database\QLKS_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLKS.mdf</DependentUpon>
-    </Content>
-    <Content Include="Resources\CrossMark.png" />
-    <Content Include="Resources\CheckMark.png" />
-    <Content Include="Resources\Clean.png" />
+    <None Include="Resources\Blue and Black Modern Illustration UI Login Page Desktop Prototype.png" />
+    <None Include="Resources\80e9279d123d9b280146456603b1ebcd.jpg" />
+    <None Include="Resources\Blue and Black Modern Illustration UI Login Page Desktop Prototype %281%29.png" />
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />
-    <None Include="Resources\PlusMark.png" />
     <Content Include="Resources\sửa đăng nhập.png" />
     <Content Include="Resources\hóa đơn.png" />
     <None Include="Resources\Thiết kế chưa có tên.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

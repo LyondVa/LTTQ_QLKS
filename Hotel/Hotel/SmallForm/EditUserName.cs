@@ -77,5 +77,10 @@ namespace Hotel.SmallForm
         {
 
         }
+
+        private void tbId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
