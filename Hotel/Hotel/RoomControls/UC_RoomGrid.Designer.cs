@@ -29,13 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dTPFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.bTRemoveFilter = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gBCleanStatusFilter = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rBTCleanStatusAll = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rBTUnclean = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rBTClean = new Guna.UI2.WinForms.Guna2RadioButton();
             this.gBRoomTypeFilter = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rBTRoomTypeAll = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rBTEconomy = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rBTStandard = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rBTDeluxed = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rBTVIP = new Guna.UI2.WinForms.Guna2RadioButton();
             this.gBRoomStatusFilter = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rBTRoomStatusAll = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rBTMaintenance = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rBTOccupied = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rBTEmpty = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -51,14 +61,10 @@
             this.fLPFloor5 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.bTRemoveFilter = new Guna.UI2.WinForms.Guna2Button();
-            this.rBTVIP = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rBTDeluxed = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rTBStandard = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rTBEconomy = new Guna.UI2.WinForms.Guna2RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.gBCleanStatusFilter.SuspendLayout();
             this.gBRoomTypeFilter.SuspendLayout();
             this.gBRoomStatusFilter.SuspendLayout();
             this.tLPFloors.SuspendLayout();
@@ -66,16 +72,44 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dTPFilter);
             this.panel1.Controls.Add(this.bTRemoveFilter);
             this.panel1.Controls.Add(this.guna2PictureBox1);
             this.panel1.Controls.Add(this.guna2TextBox1);
-            this.panel1.Controls.Add(this.guna2ComboBox3);
-            this.panel1.Controls.Add(this.guna2ComboBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1043, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // dTPFilter
+            // 
+            this.dTPFilter.Checked = true;
+            this.dTPFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dTPFilter.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dTPFilter.Location = new System.Drawing.Point(272, 33);
+            this.dTPFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dTPFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dTPFilter.Name = "dTPFilter";
+            this.dTPFilter.Size = new System.Drawing.Size(175, 36);
+            this.dTPFilter.TabIndex = 6;
+            this.dTPFilter.Value = new System.DateTime(2023, 12, 14, 20, 51, 54, 957);
+            this.dTPFilter.ValueChanged += new System.EventHandler(this.Filter_Changed);
+            // 
+            // bTRemoveFilter
+            // 
+            this.bTRemoveFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTRemoveFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTRemoveFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTRemoveFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTRemoveFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTRemoveFilter.ForeColor = System.Drawing.Color.White;
+            this.bTRemoveFilter.Location = new System.Drawing.Point(51, 58);
+            this.bTRemoveFilter.Name = "bTRemoveFilter";
+            this.bTRemoveFilter.Size = new System.Drawing.Size(100, 36);
+            this.bTRemoveFilter.TabIndex = 5;
+            this.bTRemoveFilter.Text = "Xóa lọc";
+            this.bTRemoveFilter.Click += new System.EventHandler(this.bTRemoveFilter_Click);
             // 
             // guna2PictureBox1
             // 
@@ -106,62 +140,200 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(205, 36);
             this.guna2TextBox1.TabIndex = 3;
             // 
-            // guna2ComboBox3
-            // 
-            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox3.ItemHeight = 30;
-            this.guna2ComboBox3.Location = new System.Drawing.Point(335, 33);
-            this.guna2ComboBox3.Name = "guna2ComboBox3";
-            this.guna2ComboBox3.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox3.TabIndex = 2;
-            // 
-            // guna2ComboBox2
-            // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(189, 33);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(140, 36);
-            this.guna2ComboBox2.TabIndex = 1;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.gBCleanStatusFilter);
             this.panel2.Controls.Add(this.gBRoomTypeFilter);
             this.panel2.Controls.Add(this.gBRoomStatusFilter);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(245, 521);
+            this.panel2.Size = new System.Drawing.Size(245, 581);
             this.panel2.TabIndex = 1;
+            // 
+            // gBCleanStatusFilter
+            // 
+            this.gBCleanStatusFilter.Controls.Add(this.rBTCleanStatusAll);
+            this.gBCleanStatusFilter.Controls.Add(this.rBTUnclean);
+            this.gBCleanStatusFilter.Controls.Add(this.rBTClean);
+            this.gBCleanStatusFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gBCleanStatusFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.gBCleanStatusFilter.Location = new System.Drawing.Point(29, 434);
+            this.gBCleanStatusFilter.Name = "gBCleanStatusFilter";
+            this.gBCleanStatusFilter.Size = new System.Drawing.Size(191, 139);
+            this.gBCleanStatusFilter.TabIndex = 4;
+            this.gBCleanStatusFilter.Text = "Dọn dẹp";
+            // 
+            // rBTCleanStatusAll
+            // 
+            this.rBTCleanStatusAll.AutoSize = true;
+            this.rBTCleanStatusAll.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTCleanStatusAll.CheckedState.BorderThickness = 0;
+            this.rBTCleanStatusAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTCleanStatusAll.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTCleanStatusAll.CheckedState.InnerOffset = -4;
+            this.rBTCleanStatusAll.Location = new System.Drawing.Point(10, 103);
+            this.rBTCleanStatusAll.Name = "rBTCleanStatusAll";
+            this.rBTCleanStatusAll.Size = new System.Drawing.Size(143, 24);
+            this.rBTCleanStatusAll.TabIndex = 6;
+            this.rBTCleanStatusAll.Text = "Tất cả các phòng";
+            this.rBTCleanStatusAll.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTCleanStatusAll.UncheckedState.BorderThickness = 2;
+            this.rBTCleanStatusAll.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTCleanStatusAll.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTCleanStatusAll.CheckedChanged += new System.EventHandler(this.Filter_Changed);
+            // 
+            // rBTUnclean
+            // 
+            this.rBTUnclean.AutoSize = true;
+            this.rBTUnclean.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTUnclean.CheckedState.BorderThickness = 0;
+            this.rBTUnclean.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTUnclean.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTUnclean.CheckedState.InnerOffset = -4;
+            this.rBTUnclean.Location = new System.Drawing.Point(10, 73);
+            this.rBTUnclean.Name = "rBTUnclean";
+            this.rBTUnclean.Size = new System.Drawing.Size(138, 24);
+            this.rBTUnclean.TabIndex = 5;
+            this.rBTUnclean.Text = "Phòng chưa dọn";
+            this.rBTUnclean.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTUnclean.UncheckedState.BorderThickness = 2;
+            this.rBTUnclean.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTUnclean.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTUnclean.CheckedChanged += new System.EventHandler(this.Filter_Changed);
+            // 
+            // rBTClean
+            // 
+            this.rBTClean.AutoSize = true;
+            this.rBTClean.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTClean.CheckedState.BorderThickness = 0;
+            this.rBTClean.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTClean.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTClean.CheckedState.InnerOffset = -4;
+            this.rBTClean.Location = new System.Drawing.Point(10, 43);
+            this.rBTClean.Name = "rBTClean";
+            this.rBTClean.Size = new System.Drawing.Size(123, 24);
+            this.rBTClean.TabIndex = 4;
+            this.rBTClean.Text = "Phòng đã dọn";
+            this.rBTClean.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTClean.UncheckedState.BorderThickness = 2;
+            this.rBTClean.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTClean.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTClean.CheckedChanged += new System.EventHandler(this.Filter_Changed);
             // 
             // gBRoomTypeFilter
             // 
-            this.gBRoomTypeFilter.Controls.Add(this.rTBEconomy);
-            this.gBRoomTypeFilter.Controls.Add(this.rTBStandard);
+            this.gBRoomTypeFilter.Controls.Add(this.rBTRoomTypeAll);
+            this.gBRoomTypeFilter.Controls.Add(this.rBTEconomy);
+            this.gBRoomTypeFilter.Controls.Add(this.rBTStandard);
             this.gBRoomTypeFilter.Controls.Add(this.rBTDeluxed);
             this.gBRoomTypeFilter.Controls.Add(this.rBTVIP);
             this.gBRoomTypeFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.gBRoomTypeFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.gBRoomTypeFilter.Location = new System.Drawing.Point(29, 229);
             this.gBRoomTypeFilter.Name = "gBRoomTypeFilter";
-            this.gBRoomTypeFilter.Size = new System.Drawing.Size(191, 187);
+            this.gBRoomTypeFilter.Size = new System.Drawing.Size(191, 199);
             this.gBRoomTypeFilter.TabIndex = 3;
             this.gBRoomTypeFilter.Text = "Loại phòng";
             // 
+            // rBTRoomTypeAll
+            // 
+            this.rBTRoomTypeAll.AutoSize = true;
+            this.rBTRoomTypeAll.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTRoomTypeAll.CheckedState.BorderThickness = 0;
+            this.rBTRoomTypeAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTRoomTypeAll.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTRoomTypeAll.CheckedState.InnerOffset = -4;
+            this.rBTRoomTypeAll.Location = new System.Drawing.Point(10, 163);
+            this.rBTRoomTypeAll.Name = "rBTRoomTypeAll";
+            this.rBTRoomTypeAll.Size = new System.Drawing.Size(143, 24);
+            this.rBTRoomTypeAll.TabIndex = 7;
+            this.rBTRoomTypeAll.Text = "Tất cả các phòng";
+            this.rBTRoomTypeAll.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTRoomTypeAll.UncheckedState.BorderThickness = 2;
+            this.rBTRoomTypeAll.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTRoomTypeAll.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTRoomTypeAll.CheckedChanged += new System.EventHandler(this.Filter_Changed);
+            // 
+            // rBTEconomy
+            // 
+            this.rBTEconomy.AutoSize = true;
+            this.rBTEconomy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTEconomy.CheckedState.BorderThickness = 0;
+            this.rBTEconomy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTEconomy.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTEconomy.CheckedState.InnerOffset = -4;
+            this.rBTEconomy.Location = new System.Drawing.Point(10, 133);
+            this.rBTEconomy.Name = "rBTEconomy";
+            this.rBTEconomy.Size = new System.Drawing.Size(137, 24);
+            this.rBTEconomy.TabIndex = 6;
+            this.rBTEconomy.Text = "Phòng Economy";
+            this.rBTEconomy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTEconomy.UncheckedState.BorderThickness = 2;
+            this.rBTEconomy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTEconomy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTEconomy.CheckedChanged += new System.EventHandler(this.Filter_Changed);
+            // 
+            // rBTStandard
+            // 
+            this.rBTStandard.AutoSize = true;
+            this.rBTStandard.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTStandard.CheckedState.BorderThickness = 0;
+            this.rBTStandard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTStandard.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTStandard.CheckedState.InnerOffset = -4;
+            this.rBTStandard.Location = new System.Drawing.Point(10, 103);
+            this.rBTStandard.Name = "rBTStandard";
+            this.rBTStandard.Size = new System.Drawing.Size(136, 24);
+            this.rBTStandard.TabIndex = 5;
+            this.rBTStandard.Text = "Phòng Standard";
+            this.rBTStandard.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTStandard.UncheckedState.BorderThickness = 2;
+            this.rBTStandard.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTStandard.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTStandard.CheckedChanged += new System.EventHandler(this.Filter_Changed);
+            // 
+            // rBTDeluxed
+            // 
+            this.rBTDeluxed.AutoSize = true;
+            this.rBTDeluxed.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTDeluxed.CheckedState.BorderThickness = 0;
+            this.rBTDeluxed.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTDeluxed.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTDeluxed.CheckedState.InnerOffset = -4;
+            this.rBTDeluxed.Location = new System.Drawing.Point(10, 73);
+            this.rBTDeluxed.Name = "rBTDeluxed";
+            this.rBTDeluxed.Size = new System.Drawing.Size(131, 24);
+            this.rBTDeluxed.TabIndex = 4;
+            this.rBTDeluxed.Text = "Phòng Deluxed";
+            this.rBTDeluxed.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTDeluxed.UncheckedState.BorderThickness = 2;
+            this.rBTDeluxed.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTDeluxed.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTDeluxed.CheckedChanged += new System.EventHandler(this.Filter_Changed);
+            // 
+            // rBTVIP
+            // 
+            this.rBTVIP.AutoSize = true;
+            this.rBTVIP.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTVIP.CheckedState.BorderThickness = 0;
+            this.rBTVIP.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTVIP.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTVIP.CheckedState.InnerOffset = -4;
+            this.rBTVIP.Location = new System.Drawing.Point(10, 43);
+            this.rBTVIP.Name = "rBTVIP";
+            this.rBTVIP.Size = new System.Drawing.Size(97, 24);
+            this.rBTVIP.TabIndex = 3;
+            this.rBTVIP.Text = "Phòng VIP";
+            this.rBTVIP.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTVIP.UncheckedState.BorderThickness = 2;
+            this.rBTVIP.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTVIP.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTVIP.CheckedChanged += new System.EventHandler(this.Filter_Changed);
+            // 
             // gBRoomStatusFilter
             // 
+            this.gBRoomStatusFilter.Controls.Add(this.rBTRoomStatusAll);
             this.gBRoomStatusFilter.Controls.Add(this.rBTMaintenance);
             this.gBRoomStatusFilter.Controls.Add(this.rBTOccupied);
             this.gBRoomStatusFilter.Controls.Add(this.rBTEmpty);
@@ -173,7 +345,25 @@
             this.gBRoomStatusFilter.Size = new System.Drawing.Size(191, 200);
             this.gBRoomStatusFilter.TabIndex = 2;
             this.gBRoomStatusFilter.Text = "Trạng thái phòng";
-            this.gBRoomStatusFilter.Click += new System.EventHandler(this.guna2GroupBox1_Click);
+            // 
+            // rBTRoomStatusAll
+            // 
+            this.rBTRoomStatusAll.AutoSize = true;
+            this.rBTRoomStatusAll.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTRoomStatusAll.CheckedState.BorderThickness = 0;
+            this.rBTRoomStatusAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rBTRoomStatusAll.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rBTRoomStatusAll.CheckedState.InnerOffset = -4;
+            this.rBTRoomStatusAll.Location = new System.Drawing.Point(10, 163);
+            this.rBTRoomStatusAll.Name = "rBTRoomStatusAll";
+            this.rBTRoomStatusAll.Size = new System.Drawing.Size(143, 24);
+            this.rBTRoomStatusAll.TabIndex = 4;
+            this.rBTRoomStatusAll.Text = "Tất cả các phòng";
+            this.rBTRoomStatusAll.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rBTRoomStatusAll.UncheckedState.BorderThickness = 2;
+            this.rBTRoomStatusAll.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rBTRoomStatusAll.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rBTRoomStatusAll.CheckedChanged += new System.EventHandler(this.Filter_Changed);
             // 
             // rBTMaintenance
             // 
@@ -192,7 +382,7 @@
             this.rBTMaintenance.UncheckedState.BorderThickness = 2;
             this.rBTMaintenance.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rBTMaintenance.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rBTMaintenance.CheckedChanged += new System.EventHandler(this.rBTRoomStatus_CheckedChanged);
+            this.rBTMaintenance.CheckedChanged += new System.EventHandler(this.Filter_Changed);
             // 
             // rBTOccupied
             // 
@@ -211,7 +401,7 @@
             this.rBTOccupied.UncheckedState.BorderThickness = 2;
             this.rBTOccupied.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rBTOccupied.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rBTOccupied.CheckedChanged += new System.EventHandler(this.rBTRoomStatus_CheckedChanged);
+            this.rBTOccupied.CheckedChanged += new System.EventHandler(this.Filter_Changed);
             // 
             // rBTEmpty
             // 
@@ -230,7 +420,7 @@
             this.rBTEmpty.UncheckedState.BorderThickness = 2;
             this.rBTEmpty.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rBTEmpty.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rBTEmpty.CheckedChanged += new System.EventHandler(this.rBTRoomStatus_CheckedChanged);
+            this.rBTEmpty.CheckedChanged += new System.EventHandler(this.Filter_Changed);
             // 
             // rBTBooked
             // 
@@ -249,7 +439,7 @@
             this.rBTBooked.UncheckedState.BorderThickness = 2;
             this.rBTBooked.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rBTBooked.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rBTBooked.CheckedChanged += new System.EventHandler(this.rBTRoomStatus_CheckedChanged);
+            this.rBTBooked.CheckedChanged += new System.EventHandler(this.Filter_Changed);
             // 
             // tLPFloors
             // 
@@ -280,7 +470,7 @@
             this.tLPFloors.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tLPFloors.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tLPFloors.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tLPFloors.Size = new System.Drawing.Size(798, 521);
+            this.tLPFloors.Size = new System.Drawing.Size(798, 581);
             this.tLPFloors.TabIndex = 7;
             // 
             // label5
@@ -361,7 +551,7 @@
             this.fLPFloor5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fLPFloor5.Location = new System.Drawing.Point(3, 107);
             this.fLPFloor5.Name = "fLPFloor5";
-            this.fLPFloor5.Size = new System.Drawing.Size(792, 411);
+            this.fLPFloor5.Size = new System.Drawing.Size(792, 471);
             this.fLPFloor5.TabIndex = 3;
             this.fLPFloor5.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelControlAdd);
             // 
@@ -383,93 +573,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Tầng 2";
             // 
-            // bTRemoveFilter
-            // 
-            this.bTRemoveFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTRemoveFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTRemoveFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTRemoveFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTRemoveFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTRemoveFilter.ForeColor = System.Drawing.Color.White;
-            this.bTRemoveFilter.Location = new System.Drawing.Point(51, 58);
-            this.bTRemoveFilter.Name = "bTRemoveFilter";
-            this.bTRemoveFilter.Size = new System.Drawing.Size(100, 36);
-            this.bTRemoveFilter.TabIndex = 5;
-            this.bTRemoveFilter.Text = "Xóa lọc";
-            this.bTRemoveFilter.Click += new System.EventHandler(this.bTRemoveFilter_Click);
-            // 
-            // rBTVIP
-            // 
-            this.rBTVIP.AutoSize = true;
-            this.rBTVIP.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rBTVIP.CheckedState.BorderThickness = 0;
-            this.rBTVIP.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rBTVIP.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rBTVIP.CheckedState.InnerOffset = -4;
-            this.rBTVIP.Location = new System.Drawing.Point(10, 43);
-            this.rBTVIP.Name = "rBTVIP";
-            this.rBTVIP.Size = new System.Drawing.Size(97, 24);
-            this.rBTVIP.TabIndex = 3;
-            this.rBTVIP.Text = "Phòng VIP";
-            this.rBTVIP.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rBTVIP.UncheckedState.BorderThickness = 2;
-            this.rBTVIP.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rBTVIP.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rBTDeluxed
-            // 
-            this.rBTDeluxed.AutoSize = true;
-            this.rBTDeluxed.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rBTDeluxed.CheckedState.BorderThickness = 0;
-            this.rBTDeluxed.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rBTDeluxed.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rBTDeluxed.CheckedState.InnerOffset = -4;
-            this.rBTDeluxed.Location = new System.Drawing.Point(10, 73);
-            this.rBTDeluxed.Name = "rBTDeluxed";
-            this.rBTDeluxed.Size = new System.Drawing.Size(131, 24);
-            this.rBTDeluxed.TabIndex = 4;
-            this.rBTDeluxed.Text = "Phòng Deluxed";
-            this.rBTDeluxed.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rBTDeluxed.UncheckedState.BorderThickness = 2;
-            this.rBTDeluxed.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rBTDeluxed.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rTBStandard
-            // 
-            this.rTBStandard.AutoSize = true;
-            this.rTBStandard.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rTBStandard.CheckedState.BorderThickness = 0;
-            this.rTBStandard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rTBStandard.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rTBStandard.CheckedState.InnerOffset = -4;
-            this.rTBStandard.Location = new System.Drawing.Point(10, 103);
-            this.rTBStandard.Name = "rTBStandard";
-            this.rTBStandard.Size = new System.Drawing.Size(136, 24);
-            this.rTBStandard.TabIndex = 5;
-            this.rTBStandard.Text = "Phòng Standard";
-            this.rTBStandard.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rTBStandard.UncheckedState.BorderThickness = 2;
-            this.rTBStandard.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rTBStandard.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rTBEconomy
-            // 
-            this.rTBEconomy.AutoSize = true;
-            this.rTBEconomy.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rTBEconomy.CheckedState.BorderThickness = 0;
-            this.rTBEconomy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rTBEconomy.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rTBEconomy.CheckedState.InnerOffset = -4;
-            this.rTBEconomy.Location = new System.Drawing.Point(10, 133);
-            this.rTBEconomy.Name = "rTBEconomy";
-            this.rTBEconomy.Size = new System.Drawing.Size(137, 24);
-            this.rTBEconomy.TabIndex = 6;
-            this.rTBEconomy.Text = "Phòng Economy";
-            this.rTBEconomy.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rTBEconomy.UncheckedState.BorderThickness = 2;
-            this.rTBEconomy.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rTBEconomy.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
             // UC_RoomGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -480,11 +583,13 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "UC_RoomGrid";
-            this.Size = new System.Drawing.Size(1043, 621);
+            this.Size = new System.Drawing.Size(1043, 681);
             this.Load += new System.EventHandler(this.UC_RoomGrid_load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.gBCleanStatusFilter.ResumeLayout(false);
+            this.gBCleanStatusFilter.PerformLayout();
             this.gBRoomTypeFilter.ResumeLayout(false);
             this.gBRoomTypeFilter.PerformLayout();
             this.gBRoomStatusFilter.ResumeLayout(false);
@@ -499,8 +604,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Panel panel2;
@@ -522,9 +625,16 @@
         private Guna.UI2.WinForms.Guna2RadioButton rBTBooked;
         private Guna.UI2.WinForms.Guna2RadioButton rBTOccupied;
         private Guna.UI2.WinForms.Guna2Button bTRemoveFilter;
-        private Guna.UI2.WinForms.Guna2RadioButton rTBEconomy;
-        private Guna.UI2.WinForms.Guna2RadioButton rTBStandard;
+        private Guna.UI2.WinForms.Guna2RadioButton rBTEconomy;
+        private Guna.UI2.WinForms.Guna2RadioButton rBTStandard;
         private Guna.UI2.WinForms.Guna2RadioButton rBTDeluxed;
         private Guna.UI2.WinForms.Guna2RadioButton rBTVIP;
+        private Guna.UI2.WinForms.Guna2GroupBox gBCleanStatusFilter;
+        private Guna.UI2.WinForms.Guna2RadioButton rBTUnclean;
+        private Guna.UI2.WinForms.Guna2RadioButton rBTClean;
+        private Guna.UI2.WinForms.Guna2RadioButton rBTCleanStatusAll;
+        private Guna.UI2.WinForms.Guna2RadioButton rBTRoomTypeAll;
+        private Guna.UI2.WinForms.Guna2RadioButton rBTRoomStatusAll;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dTPFilter;
     }
 }

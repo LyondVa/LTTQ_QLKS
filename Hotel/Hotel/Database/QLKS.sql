@@ -234,7 +234,7 @@ select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN
                                               from HOADON    
                                               inner join CTPHG on CTPHG.MAHD = HOADON.MAHD    
                                               where A.MAPHG = CTPHG.MAPHG  
-											  --AND TRANGTHAI = 'Trống'
+											  --AND TRANGTHAI = N'Trống'
                                               order by MAHD desc    
                                               ) 
 DBCC CHECKIDENT ('KHACHHANG', RESEED, 0);
