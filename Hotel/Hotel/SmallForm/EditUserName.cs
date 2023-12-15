@@ -14,21 +14,21 @@ namespace Hotel.SmallForm
     {
         function fn = new function();
         string query;
-        public EditUserName(string x1, string x2, string x3, string x4, string x5)
+        public EditUserName(string id, string name, string cccd, string gender, string dob, string mobile, string address, string email, string username, string password, string position, string salary)
         {
             InitializeComponent();
-            tbId.Text = x1;
-            tbName.Text = x2;
-            tbUsername.Text = x3;
-            tbPass.Text = x4;
-            if (x5 == "1")
-            {
-                cbPosition.SelectedIndex = 0;
-            }
-            else
-            {
-                cbPosition.SelectedIndex = 1;
-            }
+            tbId.Text = id;
+            tbName.Text = name;
+            tbCCCD.Text = cccd;
+            cbGender.Text = gender;
+            tpBirth.Text = dob;
+            tbMobile.Text = mobile;
+            tbAddress.Text = address;
+            tbEmail.Text = email;
+            tbUsername.Text = username;
+            tbPassword.Text = password;
+            cbPosition.Text = position;
+            tbSalary.Text = salary;
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -40,7 +40,9 @@ namespace Hotel.SmallForm
         {
             if (MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
             {
-                query = "delete from NHANVIEN " +
+                query = "DELETE FROM TAIKHOAN " +
+                        "WHERE MANV = '" + tbId.Text + "'\n" +
+                        "Delete from NHANVIEN " +
                         "where MANV = '" + tbId.Text + "'";
                 fn.setData(query, "Thông Tin Nhân Viên Đã Được Xóa!");
                 this.Close();
@@ -49,18 +51,23 @@ namespace Hotel.SmallForm
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string cv;
-            if (int.Parse(cbPosition.Text) == 2)
-                cv = "Nhân Viên";
+            if (tbId.Text != "" && tbName.Text != "" && tbCCCD.Text != "" && cbGender.Text != "" && tpBirth.Text != "" && tbMobile.Text != "" && tbAddress.Text != "" && tbEmail.Text != "" && tbUsername.Text != "" && tbPassword.Text != "" && cbPosition.Text != "" && tbSalary.Text != "")
+            {
+                query = "UPDATE NHANVIEN " +
+                        "SET NHOTEN = N'" + tbName.Text + "', NCCCD = '" + tbCCCD.Text + "', NGIOITINH = N'" + cbGender.Text +
+                        "', NNGSINH = '" + tpBirth.Text + "', NSDT = '" + tbMobile.Text + "', NDIACHI = N'" + tbAddress.Text +
+                        "', NEMAIL = N'" + tbEmail.Text + "', CHUCVU = N'" + cbPosition.Text + "', LUONG = " + Convert.ToInt64(tbSalary.Text) +
+                        " WHERE MANV = '" + tbId.Text + "'\n" +
+                        "UPDATE TAIKHOAN " +
+                        "SET TENTK = '" + tbUsername.Text + "', MATKHAU = '" + tbPassword.Text +
+                        "' WHERE MANV = '" + tbId.Text + "'";
+                fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
+                this.Close();
+            }
             else
-                cv = "Quản Lý";
-            query = "update NHANVIEN " +
-                    "set NSDT = '" + tbMobile.Text + "', NGIOITINH = '" + cbGender.Text + "', NEMAIL = '" 
-                                   + tbEmail.Text + "', username = '" + tbUsername.Text + "', pass = '" + tbPass.Text + "', POSITION = " 
-                                   + int.Parse(cbPosition.Text) + ", CHUCVU = '" + cv + "', LUONG = " + int.Parse(tbSalary.Text) + 
-                    " where MANV = '" + (tbId.Text) +"'";
-            fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
-            this.Close();
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
         }
         
         private void label3_Click(object sender, EventArgs e)
