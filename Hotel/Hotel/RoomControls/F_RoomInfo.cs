@@ -14,17 +14,16 @@ namespace Hotel.RoomControls
     {
         string query;
         DataSet dS = new DataSet();
-        DataSet dSGTemp = new DataSet();
         function fn = new function();
         string roomID;
         public F_RoomInfo()
         {
             InitializeComponent();
         }
-        public F_RoomInfo(string roomID, DataSet dSGTemp = null)
+        public F_RoomInfo(UC_RoomUnitBase room)
         {
             InitializeComponent();
-            this.roomID = roomID;
+            this.roomID = room.RoomID;
             PropertiesLoad();
             dGVService.DataSource = dS.Tables[0];
             dGVService.Columns["MALOAIPHG"].Visible = false;
@@ -54,7 +53,6 @@ namespace Hotel.RoomControls
             {
                 cBCleanStatus.SelectedIndex = 1;
             }
-            this.dSGTemp = dSGTemp;
         }
         private void F_RoomInfo_Load(object sender, EventArgs e)
         {

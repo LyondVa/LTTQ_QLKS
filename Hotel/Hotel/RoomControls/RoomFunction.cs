@@ -61,9 +61,9 @@ namespace Hotel.RoomControls
             }
             return null;
         }
-        public void UnitClick(string roomID)
+        public void UnitClick(UC_RoomUnitBase room)
         {
-            F_RoomInfo roomInfo = new F_RoomInfo(roomID);
+            F_RoomInfo roomInfo = new F_RoomInfo(room);
             roomInfo.Show();
             roomInfo.Focus();
         }

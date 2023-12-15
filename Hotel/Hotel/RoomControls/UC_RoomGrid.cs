@@ -20,11 +20,13 @@ namespace Hotel.RoomControls
         string query;
         function fn = new function();
         List<UC_RoomUnitBase> rooms = new List<UC_RoomUnitBase>();
+        DateTime searchTime/* = DateTime.Parse("Dec 3, 2023")*/;
         public UC_RoomGrid()
         {
             InitializeComponent();
             TableLayoutPanelScrollbars();
             PopulateList(1);
+            //dTPFilter.Value = searchTime;
         }
         private void UC_RoomGrid_load(object sender, EventArgs e)
         {
@@ -65,75 +67,75 @@ namespace Hotel.RoomControls
             }
         }
         #region DataSetter
-        private void RefreshDataSet()
-        {
+        //private void RefreshDataSet()
+        //{
 
-            try
-            {
-                query = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN, NGNHANPHG, NGTRPHG " +
-                         "from PHONG A " +
-                         "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
-                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
-                         "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
-                         "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
-                         "union " +
-                         "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN, NGNHANPHG, NGTRPHG " +
-                         "from PHONG A " +
-                         "left join CTPHG o" +
-                         "n A.MAPHG = CTPHG.MAPHG " +
-                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
-                         "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
-                         "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
-                         "where HOADON.MAHD = ( " +
-                                             "select top 1 HOADON.MAHD " +
-                                             "from HOADON " +
-                                             "inner join CTPHG on CTPHG.MAHD = HOADON.MAHD " +
-                                             "where A.MAPHG = CTPHG.MAPHG " +
-                                             "order by MAHD desc " +
-                                             ")";
-                dS = fn.getData(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void PopulateList(int criterion = 0)
-        {
-            rooms.Clear();
-            if (criterion == 1)
-            {
-                RefreshDataSet();
-            }
-            foreach (DataRow dR in dS.Tables[0].Rows)
-            {
-                if (dR["TRANGTHAI"].ToString() == "Trống")
-                {
-                    UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
-                    rooms.Add(roomA);
-                }
-                else if (dR["TRANGTHAI"].ToString() == "Bảo trì")
-                {
-                    UC_RoomUnitMaintenance roomM = new UC_RoomUnitMaintenance(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
-                    rooms.Add(roomM);
-                }
-                else if (dR["TRANGTHAI"].ToString() == "Không trống")
-                {
-                    if (dR["CHECKEDIN"].ToString() == "False")
-                    {
-                        UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
-                        rooms.Add(roomB);
-                    }
-                    else if (dR["CHECKEDIN"].ToString() == "True")
-                    {
-                        UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
-                        rooms.Add(roomO);
-                    }
-                }
-            }
-        }
+        //    try
+        //    {
+        //        query = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN, NGNHANPHG, NGTRPHG " +
+        //                 "from PHONG A " +
+        //                 "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
+        //                 "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
+        //                 "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
+        //                 "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
+        //                 "union " +
+        //                 "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN, NGNHANPHG, NGTRPHG " +
+        //                 "from PHONG A " +
+        //                 "left join CTPHG o" +
+        //                 "n A.MAPHG = CTPHG.MAPHG " +
+        //                 "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
+        //                 "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
+        //                 "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
+        //                 "where HOADON.MAHD = ( " +
+        //                                     "select top 1 HOADON.MAHD " +
+        //                                     "from HOADON " +
+        //                                     "inner join CTPHG on CTPHG.MAHD = HOADON.MAHD " +
+        //                                     "where A.MAPHG = CTPHG.MAPHG " +
+        //                                     "order by MAHD desc " +
+        //                                     ")";
+        //        dS = fn.getData(query);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
+        //private void PopulateList(int criterion = 0)
+        //{
+        //    rooms.Clear();
+        //    if (criterion == 1)
+        //    {
+        //        RefreshDataSet();
+        //    }
+        //    foreach (DataRow dR in dS.Tables[0].Rows)
+        //    {
+        //        if (dR["TRANGTHAI"].ToString() == "Trống")
+        //        {
+        //            UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
+        //            rooms.Add(roomA);
+        //        }
+        //        else if (dR["TRANGTHAI"].ToString() == "Bảo trì")
+        //        {
+        //            UC_RoomUnitMaintenance roomM = new UC_RoomUnitMaintenance(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
+        //            rooms.Add(roomM);
+        //        }
+        //        else if (dR["TRANGTHAI"].ToString() == "Không trống")
+        //        {
+        //            if (dR["CHECKEDIN"].ToString() == "False")
+        //            {
+        //                UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
+        //                rooms.Add(roomB);
+        //            }
+        //            else if (dR["CHECKEDIN"].ToString() == "True")
+        //            {
+        //                UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dR["MAPHG"].ToString(), dR["MALOAIPHG"].ToString(), dR["DONDEP"].ToString(), dR["TRANGTHAI"].ToString(), dR["TANG"].ToString(), dR["CHECKEDIN"].ToString());
+        //                rooms.Add(roomO);
+        //            }
+        //        }
+        //    }
+        //}
         #endregion
-        /*#region testing
+        #region testing
         private void RefreshDataSet()
         {
             try
@@ -180,17 +182,17 @@ namespace Hotel.RoomControls
                 }
                 else if (dRT[i]["NGNHANPHG"] != DBNull.Value && dRT[i]["NGTRPHG"] != DBNull.Value)
                 {
-                    if (Convert.ToDateTime(dRT[i]["NGNHANPHG"]) < dTPFilter.Value && Convert.ToDateTime(dRT[i]["NGNHANPHG"]) > dTPFilter.Value)
+                    if (Convert.ToDateTime(dRT[i]["NGNHANPHG"]) < searchTime && Convert.ToDateTime(dRT[i]["NGTRPHG"]) > searchTime)
                     {
                         if (dRT[i]["CHECKEDIN"].ToString() == "True")
                         {
-                            UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString());
+                            UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
                             rooms.Add(roomO);
                             roomFlag = 1;
                         }
                         else
                         {
-                            UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString());
+                            UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
                             rooms.Add(roomB);
                             roomFlag = 1;
                         }
@@ -202,13 +204,6 @@ namespace Hotel.RoomControls
                     roomA.CheckInStatus = "N/a";
                     rooms.Add(roomA);
                     roomFlag = 1;
-                    //if (dRT[i]["TRANGTHAI"].ToString() == "Bình thường")
-                    //{
-                    //    UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString());
-                    //    roomA.CheckInStatus = "N/a";
-                    //    rooms.Add(roomA);
-                    //    roomFlag = 1;
-                    //}
                 }
                 if (i < dRT.Count - 1 && dRT[i + 1]["MAPHG"].ToString() != tRoomID && roomFlag == 0)
                 {
@@ -219,11 +214,11 @@ namespace Hotel.RoomControls
                 }
             }
         }
-        #endregion*/
+        #endregion
         #region RadioButtonCheck prerequisites
         private void LoadRoomEmpty()
         {
-            rooms = rooms.Where(r => r.RoomStatus == "Bình thường"/* && r.CheckInStatus == "N/a"*/).ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInStatus == "N/a").ToList();
         }
         private void LoadRoomManitenance()
         {
@@ -231,12 +226,11 @@ namespace Hotel.RoomControls
         }
         private void LoadRoomBooked()
         {
-            rooms = rooms.Where(r => r.RoomStatus == "Không trống"/* && r.CheckInStatus == "False"*/).ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Không trống" && r.CheckInStatus == "False").ToList();
         }
         private void LoadRoomOccupied()
         {
-            Debug.WriteLine(rooms[0].CheckInStatus);
-            rooms = rooms.Where(r => r.RoomStatus == "Không trống" /*&& r.CheckInStatus == "True"*/).ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Không trống" && r.CheckInStatus == "True").ToList();
         }
         private void LoadRoomStatus()
         {
@@ -339,24 +333,6 @@ namespace Hotel.RoomControls
             PopulateGrid();
         }
         #region Micellaneous
-        private void bTRemoveFilter_Click(object sender, EventArgs e)
-        {
-            foreach (Guna2RadioButton rBT in gBRoomStatusFilter.Controls)
-            {
-                if (rBT.Checked)
-                {
-                    rBT.Checked = false;
-                }
-            }
-            foreach (Guna2RadioButton rBT in gBRoomTypeFilter.Controls)
-            {
-                if (rBT.Checked)
-                {
-                    rBT.Checked = false;
-                }
-            }
-            PopulateGrid();
-        }
         private void PanelControlAdd(object sender, ControlEventArgs e)
         {
             //FlowLayoutPanel panel = sender as FlowLayoutPanel;
@@ -373,5 +349,20 @@ namespace Hotel.RoomControls
             tLPFloors.AutoScroll = true;
         }
         #endregion
+
+        private void dTPFilter_ValueChanged(object sender, EventArgs e)
+        {
+            //DO NOT debug by setting breakpoints in this method!!!!
+            searchTime = dTPFilter.Value;
+            tBSearch.Text = dTPFilter.Text;
+            guna2TextBox1.Text = dS.Tables[0].Rows[0]["NGNHANPHG"].ToString();
+            guna2TextBox2.Text = dS.Tables[0].Rows[0]["NGTRPHG"].ToString();
+            guna2TextBox3.Text = (Convert.ToDateTime(dS.Tables[0].Rows[0]["NGNHANPHG"]) < searchTime && Convert.ToDateTime(dS.Tables[0].Rows[0]["NGTRPHG"]) > searchTime).ToString();
+            PopulateList();
+            LoadRoomStatus();
+            LoadRoomType();
+            LoadRoomCleanStatus();
+            PopulateGrid();
+        }
     }
 }

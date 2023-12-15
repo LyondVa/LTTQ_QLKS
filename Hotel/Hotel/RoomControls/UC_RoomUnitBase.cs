@@ -31,7 +31,7 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
         }
-        public UC_RoomUnitBase(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor, string checkInStatus)
+        public UC_RoomUnitBase(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor, string checkInStatus, string checkInDate = "", string checkOutDate = "")
         {
             InitializeComponent();
             this.roomID = roomID;
