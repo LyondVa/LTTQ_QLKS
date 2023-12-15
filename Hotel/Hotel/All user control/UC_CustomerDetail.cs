@@ -39,7 +39,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 0 " +
+                    "where KHACHHANG.STAYING = 1 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -50,7 +50,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 1 " +
+                    "where KHACHHANG.STAYING = 0 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -102,7 +102,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 0 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "where KHACHHANG.STAYING = 1 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -113,7 +113,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 1 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "where KHACHHANG.STAYING = 0 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }

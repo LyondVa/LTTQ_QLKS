@@ -34,7 +34,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.CHECKEDOUT = 0";
+                    "where KHACHHANG.STAYING = 1";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
@@ -46,7 +46,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.CHECKEDOUT = 0";
+                    "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.STAYING = 1";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
 
@@ -70,7 +70,7 @@ namespace Hotel.All_user_control
                 {
                     String cdate = txtCheckOutDate.Text;
                     query = "update KHACHHANG " +
-                            "set KHACHHANG.CHECKEDOUT = 1" +
+                            "set KHACHHANG.STAYING = 0" +
                             "where KHOTEN = '" + txtCName.Text + "'; " +
                             "update HOADON " +
                             "set NGTHANHTOAN = '" + cdate + "'" +
