@@ -50,8 +50,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 0";
-                    "where KHACHHANG.STAYING = 0 " +
+                    "where KHACHHANG.STAYING = 0" +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
