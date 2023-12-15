@@ -132,6 +132,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All user control\UC_CustomerInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="All user control\UC_CustomerInfo.Designer.cs">
+      <DependentUpon>UC_CustomerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="All user control\UC_Service.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,6 +250,12 @@
     <Compile Include="RoomControls\UC_RoomUnitMaintenance.Designer.cs">
       <DependentUpon>UC_RoomUnitMaintenance.cs</DependentUpon>
     </Compile>
+    <Compile Include="SmallForm\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +267,12 @@
     </Compile>
     <Compile Include="SmallForm\AddService.Designer.cs">
       <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmallForm\EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="SmallForm\EditService.cs">
       <SubType>Form</SubType>
@@ -280,6 +298,9 @@
     <Compile Include="SmallForm\receipt.Designer.cs">
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="All user control\UC_CustomerInfo.resx">
+      <DependentUpon>UC_CustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_Service.resx">
       <DependentUpon>UC_Service.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,11 +365,17 @@
     <EmbeddedResource Include="RoomControls\UC_RoomUnitMaintenance.resx">
       <DependentUpon>UC_RoomUnitMaintenance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EditService.resx">
       <DependentUpon>EditService.cs</DependentUpon>

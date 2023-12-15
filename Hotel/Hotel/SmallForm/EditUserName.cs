@@ -64,6 +64,10 @@ namespace Hotel.SmallForm
                 fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
         }
         
         private void label3_Click(object sender, EventArgs e)

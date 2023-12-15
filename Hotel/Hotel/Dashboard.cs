@@ -23,7 +23,7 @@ namespace Hotel
         private void Dashboard_Load(object sender, EventArgs e)
         {
             //uC_Addroom1.Visible = false;
-            uC_CustomerRes1.Visible = false;
+            uC_CustomerInfo1.Visible = false;
             uC_CustomerDetail1.Visible = false;
             uC_Employee1.Visible= false;
             uC_User1.Visible = false;
@@ -61,8 +61,8 @@ namespace Hotel
 
         private void btCustomerReg_Click(object sender, EventArgs e)
         {
-            uC_CustomerRes1.Visible = true;
-            uC_CustomerRes1.BringToFront();
+            uC_CustomerInfo1.Visible = true;
+            uC_CustomerInfo1.BringToFront();
         }
 
         private void btCheckOut_Click(object sender, EventArgs e)

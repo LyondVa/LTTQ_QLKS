@@ -32,6 +32,10 @@ namespace Hotel.SmallForm
                 fn.setData(query, "Sửa Thông Tin Dịch Vụ Thành Công!");
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            }
         }
 
         private void btDelete_Click(object sender, EventArgs e)
