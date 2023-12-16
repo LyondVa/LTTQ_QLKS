@@ -19,6 +19,7 @@ namespace Hotel
         {
             InitializeComponent();
             position = x;
+            this.Size = new Size(1000, 650);
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -102,8 +103,8 @@ namespace Hotel
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            uC_User1.Visible = true;
-            uC_User1.BringToFront();
+            this.Close();
+            Application.ExitThread();
         }
 
         private void btMoney_Click(object sender, EventArgs e)
