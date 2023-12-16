@@ -241,9 +241,23 @@ DBCC CHECKIDENT ('KHACHHANG', RESEED, 0);
 GO
 DBCC CHECKIDENT ('HOADON', RESEED, 0);
 GO
-select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN, NGNHANPHG, NGTRPHG    
+select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI,TANG, GHICHU, CTPHG.MAHD, CHECKEDIN, NGNHANPHG, NGTRPHG    
                           from PHONG A    
                           left join CTPHG on A.MAPHG = CTPHG.MAPHG    
                           left join HOADON on CTPHG.MAHD = HOADON.MAHD    
-                          left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH    
-                          left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV  
+
+UPDATE PHONG SET GHICHU = N'' WHERE GHICHU IS NULL
+
+select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI,TANG, GHICHU, CTPHG.MAHD, CHECKEDIN, NGNHANPHG, NGTRPHG    
+                          from PHONG A    
+                          left join CTPHG on A.MAPHG = CTPHG.MAPHG    
+                          left join HOADON on CTPHG.MAHD = HOADON.MAHD 
+select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI,TANG, GHICHU, CTPHG.MAHD, CHECKEDIN, NGNHANPHG, NGTRPHG    
+                          from PHONG A    
+                          left join CTPHG on A.MAPHG = CTPHG.MAPHG    
+                          left join HOADON on CTPHG.MAHD = HOADON.MAHD   
+						  where (HOADON.MAHD is null) OR NOT EXISTS(
+							SELECT MAHD
+							FROM CTPHG
+							WHERE CTPHG.MAPHG = A.MAPHG AND NGNHANPHG > '2023-12-03 14:00:00.000' AND NGTRPHG < '2023-12-03 12:00:00.000'
+							)

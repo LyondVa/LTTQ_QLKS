@@ -18,7 +18,7 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
         }
-        public UC_RoomUnitMaintenance(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor, string checkInStatus, string checkInDate = "", string checkOutDate = "") : base(roomID, roomTypeID, cleanStatus, roomStatus, floor, checkInStatus, checkInDate, checkOutDate)
+        public UC_RoomUnitMaintenance(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor, string note) : base(roomID, roomTypeID, cleanStatus, roomStatus, floor, note)
         {
             InitializeComponent();
             this.lBRoomID.Text = roomID;

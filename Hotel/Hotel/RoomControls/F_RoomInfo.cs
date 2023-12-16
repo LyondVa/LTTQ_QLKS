@@ -15,7 +15,7 @@ namespace Hotel.RoomControls
         string query;
         DataSet dS = new DataSet();
         function fn = new function();
-        string roomID;
+        string roomID, reservationID, cleanStatus, roomStatus;
         public F_RoomInfo()
         {
             InitializeComponent();
@@ -24,20 +24,22 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
             this.roomID = room.RoomID;
+            this.reservationID = room.ReservationID;
+            this.cleanStatus = room.CleanStatus;
+            this.roomStatus = room.RoomStatus;
             PropertiesLoad();
             dGVService.DataSource = dS.Tables[0];
-            dGVService.Columns["MALOAIPHG"].Visible = false;
-            dGVService.Columns["TRANGTHAI"].Visible = false;
-            dGVService.Columns["DONDEP"].Visible = false;
+        }
+        private void F_RoomInfo_Load(object sender, EventArgs e)
+        {
             dGVService.Columns["GHICHU"].Visible = false;
             dGVService.Columns["KHOTEN"].Visible = false;
             dGVService.Columns["NHOTEN"].Visible = false;
-            lBRoomID.Text = roomID;
             lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
             lBBookEmployee.Text = dS.Tables[0].Rows[0]["NHOTEN"].ToString();
-            lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
             tBNote.Text = dS.Tables[0].Rows[0]["GHICHU"].ToString();
-            if (dS.Tables[0].Rows[0]["TRANGTHAI"].ToString() == "Trống")
+            lBRoomID.Text = roomID;
+            if (roomStatus == "Bình thường")
             {
                 cBRoomStatus.SelectedIndex = 0;
             }
@@ -45,7 +47,7 @@ namespace Hotel.RoomControls
             {
                 cBRoomStatus.SelectedIndex = 1;
             }
-            if (dS.Tables[0].Rows[0]["DONDEP"].ToString() == "Đã dọn dẹp")
+            if (cleanStatus == "Đã dọn")
             {
                 cBCleanStatus.SelectedIndex = 0;
             }
@@ -54,14 +56,11 @@ namespace Hotel.RoomControls
                 cBCleanStatus.SelectedIndex = 1;
             }
         }
-        private void F_RoomInfo_Load(object sender, EventArgs e)
-        {
-        }
         private void PropertiesLoad()
         {
             try
             {
-                query = "select MALOAIPHG, TRANGTHAI, DONDEP, GHICHU, KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt' " +
+                query = "select GHICHU, KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt' " +
                         "from PHONG " +
                         "left join CTPHG on PHONG.MAPHG = CTPHG.MAPHG " +
                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +

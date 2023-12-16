@@ -43,9 +43,10 @@ namespace Hotel
                 btUser.Visible = false;
             }
         }
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.ExitThread();
+            Application.Exit();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)

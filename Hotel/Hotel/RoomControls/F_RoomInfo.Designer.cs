@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pBBookEmployee = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBBookEmployee = new System.Windows.Forms.Label();
             this.pBBookClient = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBBookClient = new System.Windows.Forms.Label();
             this.pBBookDate = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lBEsCheckoutTime = new System.Windows.Forms.Label();
+            this.lBCheckInTime = new System.Windows.Forms.Label();
             this.pBRoomID = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBRoomID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,6 +56,8 @@
             this.dGVService = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cBCleanStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lBCheckOutTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookClient)).BeginInit();
@@ -64,16 +66,19 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.guna2PictureBox1);
+            this.panel1.Controls.Add(this.lBCheckOutTime);
             this.panel1.Controls.Add(this.pBBookEmployee);
             this.panel1.Controls.Add(this.lBBookEmployee);
             this.panel1.Controls.Add(this.pBBookClient);
             this.panel1.Controls.Add(this.lBBookClient);
             this.panel1.Controls.Add(this.pBBookDate);
-            this.panel1.Controls.Add(this.lBEsCheckoutTime);
+            this.panel1.Controls.Add(this.lBCheckInTime);
             this.panel1.Controls.Add(this.pBRoomID);
             this.panel1.Controls.Add(this.lBRoomID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -85,7 +90,7 @@
             // pBBookEmployee
             // 
             this.pBBookEmployee.ImageRotate = 0F;
-            this.pBBookEmployee.Location = new System.Drawing.Point(603, 32);
+            this.pBBookEmployee.Location = new System.Drawing.Point(669, 32);
             this.pBBookEmployee.Name = "pBBookEmployee";
             this.pBBookEmployee.Size = new System.Drawing.Size(22, 22);
             this.pBBookEmployee.TabIndex = 9;
@@ -94,7 +99,7 @@
             // lBBookEmployee
             // 
             this.lBBookEmployee.AutoSize = true;
-            this.lBBookEmployee.Location = new System.Drawing.Point(631, 38);
+            this.lBBookEmployee.Location = new System.Drawing.Point(697, 38);
             this.lBBookEmployee.Name = "lBBookEmployee";
             this.lBBookEmployee.Size = new System.Drawing.Size(91, 16);
             this.lBBookEmployee.TabIndex = 12;
@@ -103,7 +108,7 @@
             // pBBookClient
             // 
             this.pBBookClient.ImageRotate = 0F;
-            this.pBBookClient.Location = new System.Drawing.Point(409, 32);
+            this.pBBookClient.Location = new System.Drawing.Point(503, 32);
             this.pBBookClient.Name = "pBBookClient";
             this.pBBookClient.Size = new System.Drawing.Size(22, 22);
             this.pBBookClient.TabIndex = 8;
@@ -112,7 +117,7 @@
             // lBBookClient
             // 
             this.lBBookClient.AutoSize = true;
-            this.lBBookClient.Location = new System.Drawing.Point(437, 38);
+            this.lBBookClient.Location = new System.Drawing.Point(531, 38);
             this.lBBookClient.Name = "lBBookClient";
             this.lBBookClient.Size = new System.Drawing.Size(92, 16);
             this.lBBookClient.TabIndex = 11;
@@ -121,25 +126,25 @@
             // pBBookDate
             // 
             this.pBBookDate.ImageRotate = 0F;
-            this.pBBookDate.Location = new System.Drawing.Point(228, 32);
+            this.pBBookDate.Location = new System.Drawing.Point(143, 32);
             this.pBBookDate.Name = "pBBookDate";
             this.pBBookDate.Size = new System.Drawing.Size(22, 22);
             this.pBBookDate.TabIndex = 7;
             this.pBBookDate.TabStop = false;
             // 
-            // lBEsCheckoutTime
+            // lBCheckInTime
             // 
-            this.lBEsCheckoutTime.AutoSize = true;
-            this.lBEsCheckoutTime.Location = new System.Drawing.Point(256, 38);
-            this.lBEsCheckoutTime.Name = "lBEsCheckoutTime";
-            this.lBEsCheckoutTime.Size = new System.Drawing.Size(108, 16);
-            this.lBEsCheckoutTime.TabIndex = 10;
-            this.lBEsCheckoutTime.Text = "Ngày hết hạn đặt";
+            this.lBCheckInTime.AutoSize = true;
+            this.lBCheckInTime.Location = new System.Drawing.Point(171, 38);
+            this.lBCheckInTime.Name = "lBCheckInTime";
+            this.lBCheckInTime.Size = new System.Drawing.Size(113, 16);
+            this.lBCheckInTime.TabIndex = 10;
+            this.lBCheckInTime.Text = "Ngày nhận phòng";
             // 
             // pBRoomID
             // 
             this.pBRoomID.ImageRotate = 0F;
-            this.pBRoomID.Location = new System.Drawing.Point(41, 32);
+            this.pBRoomID.Location = new System.Drawing.Point(12, 32);
             this.pBRoomID.Name = "pBRoomID";
             this.pBRoomID.Size = new System.Drawing.Size(22, 22);
             this.pBRoomID.TabIndex = 6;
@@ -148,7 +153,7 @@
             // lBRoomID
             // 
             this.lBRoomID.AutoSize = true;
-            this.lBRoomID.Location = new System.Drawing.Point(69, 38);
+            this.lBRoomID.Location = new System.Drawing.Point(40, 38);
             this.lBRoomID.Name = "lBRoomID";
             this.lBRoomID.Size = new System.Drawing.Size(68, 16);
             this.lBRoomID.TabIndex = 9;
@@ -158,9 +163,9 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tBNote);
-            this.panel2.Location = new System.Drawing.Point(452, 263);
+            this.panel2.Location = new System.Drawing.Point(476, 263);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(295, 111);
+            this.panel2.Size = new System.Drawing.Size(271, 111);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -184,14 +189,14 @@
             this.tBNote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBNote.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBNote.Location = new System.Drawing.Point(73, 4);
+            this.tBNote.Location = new System.Drawing.Point(63, 4);
             this.tBNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tBNote.Name = "tBNote";
             this.tBNote.Padding = new System.Windows.Forms.Padding(3);
             this.tBNote.PasswordChar = '\0';
             this.tBNote.PlaceholderText = "";
             this.tBNote.SelectedText = "";
-            this.tBNote.Size = new System.Drawing.Size(219, 103);
+            this.tBNote.Size = new System.Drawing.Size(205, 103);
             this.tBNote.TabIndex = 0;
             // 
             // panel3
@@ -343,25 +348,25 @@
             // 
             // dGVService
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVService.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVService.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVService.DefaultCellStyle = dataGridViewCellStyle3;
             this.dGVService.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dGVService.Location = new System.Drawing.Point(52, 139);
             this.dGVService.Name = "dGVService";
@@ -419,6 +424,24 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Tình trạng dọn dẹp:";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(321, 32);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(22, 22);
+            this.guna2PictureBox1.TabIndex = 13;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // lBCheckOutTime
+            // 
+            this.lBCheckOutTime.AutoSize = true;
+            this.lBCheckOutTime.Location = new System.Drawing.Point(349, 38);
+            this.lBCheckOutTime.Name = "lBCheckOutTime";
+            this.lBCheckOutTime.Size = new System.Drawing.Size(99, 16);
+            this.lBCheckOutTime.TabIndex = 14;
+            this.lBCheckOutTime.Text = "Ngày trả phòng";
+            // 
             // F_RoomInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -444,6 +467,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,7 +482,7 @@
         private System.Windows.Forms.Label lBRoomID;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lBEsCheckoutTime;
+        private System.Windows.Forms.Label lBCheckInTime;
         private Guna.UI2.WinForms.Guna2PictureBox pBBookEmployee;
         private Guna.UI2.WinForms.Guna2PictureBox pBBookClient;
         private Guna.UI2.WinForms.Guna2PictureBox pBBookDate;
@@ -476,5 +500,7 @@
         private Guna.UI2.WinForms.Guna2Button bTCancel;
         private Guna.UI2.WinForms.Guna2ComboBox cBCleanStatus;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label lBCheckOutTime;
     }
 }

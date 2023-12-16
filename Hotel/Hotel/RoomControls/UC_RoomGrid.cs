@@ -140,12 +140,10 @@ namespace Hotel.RoomControls
         {
             try
             {
-                query = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN, NGNHANPHG, NGTRPHG " +
+                query = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, TANG, GHICHU, CTPHG.MAHD, CHECKEDIN, NGNHANPHG, NGTRPHG " +
                          "from PHONG A " +
                          "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
-                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
-                         "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
-                         "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV ";
+                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD ";
                 dS = fn.getData(query);
             }
             catch (Exception ex)
@@ -176,7 +174,7 @@ namespace Hotel.RoomControls
                 tRoomID = dRT[i]["MAPHG"].ToString();
                 if (dRT[i]["TRANGTHAI"].ToString() == "Bảo trì")
                 {
-                    UC_RoomUnitMaintenance roomM = new UC_RoomUnitMaintenance(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString());
+                    UC_RoomUnitMaintenance roomM = new UC_RoomUnitMaintenance(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(),  dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString());
                     rooms.Add(roomM);
                     roomFlag = 1;
                 }
@@ -186,13 +184,13 @@ namespace Hotel.RoomControls
                     {
                         if (dRT[i]["CHECKEDIN"].ToString() == "True")
                         {
-                            UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
+                            UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString(), dRT[i]["MAHD"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
                             rooms.Add(roomO);
                             roomFlag = 1;
                         }
                         else
                         {
-                            UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
+                            UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString(), dRT[i]["MAHD"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
                             rooms.Add(roomB);
                             roomFlag = 1;
                         }
@@ -200,14 +198,14 @@ namespace Hotel.RoomControls
                 }
                 else
                 {
-                    UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString());
+                    UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString());
                     roomA.CheckInStatus = "N/a";
                     rooms.Add(roomA);
                     roomFlag = 1;
                 }
                 if (i < dRT.Count - 1 && dRT[i + 1]["MAPHG"].ToString() != tRoomID && roomFlag == 0)
                 {
-                    UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["CHECKEDIN"].ToString());
+                    UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString());
                     roomA.CheckInStatus = "N/a";
                     rooms.Add(roomA);
                     roomFlag = 1;

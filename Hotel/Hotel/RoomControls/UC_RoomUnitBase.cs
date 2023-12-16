@@ -14,13 +14,13 @@ namespace Hotel.RoomControls
 {
     public partial class UC_RoomUnitBase : UserControl
     {
-        protected string roomID, roomTypeID, cleanStatus, roomStatus, floor, checkInStatus;
+        protected string roomID, roomTypeID, cleanStatus, roomStatus, floor, checkInStatus, reservationID;
         public string RoomID { get { return roomID; } set { roomID = value; } }
         public string RoomTypeID { get { return roomTypeID; } set { roomTypeID = value; } }
         public string CleanStatus { get { return cleanStatus; } set { cleanStatus = value; } }
         public string RoomStatus { get { return roomStatus; } set { roomStatus = value; } }
         public string CheckInStatus { get { return checkInStatus; } set { checkInStatus = value; } }
-
+        public string ReservationID { get { return reservationID; } set { reservationID = value; } }
         protected List<Image> imageList = new List<Image>();
         private void UC_RoomUnitBase_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
         }
-        public UC_RoomUnitBase(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor, string checkInStatus, string checkInDate = "", string checkOutDate = "")
+        public UC_RoomUnitBase(string roomID, string roomTypeID, string cleanStatus, string roomStatus, string floor, string note, string reservationID = "", string checkInStatus = "", string checkInDate = "", string checkOutDate = "")
         {
             InitializeComponent();
             this.roomID = roomID;
@@ -40,6 +40,7 @@ namespace Hotel.RoomControls
             this.roomStatus = roomStatus;
             this.floor = floor;
             this.checkInStatus = checkInStatus;
+            this.reservationID = reservationID;
             imageList.Add(Resources.CheckMark);
             imageList.Add(Resources.CrossMark);
         }
