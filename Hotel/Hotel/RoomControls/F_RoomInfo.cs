@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hotel.All_user_control;
 
 namespace Hotel.RoomControls
 {
@@ -14,11 +15,13 @@ namespace Hotel.RoomControls
     {
         string query;
         DataSet dS = new DataSet();
+        DataSet dSService = new DataSet();
         function fn = new function();
         string roomID, reservationID, cleanStatus, roomStatus, note;
         public F_RoomInfo()
         {
             InitializeComponent();
+            EventHub.ServicesUpdated += ServicesLoad;
         }
         public F_RoomInfo(UC_RoomUnitBase room)
         {
@@ -32,13 +35,16 @@ namespace Hotel.RoomControls
             if (room is UC_RoomUnitBooked || room is UC_RoomUnitOccupied)
             {
                 PropertiesLoad();
-                dGVService.DataSource = dS.Tables[0];
-                dGVService.Columns["KHOTEN"].Visible = false;
-                dGVService.Columns["NHOTEN"].Visible = false;
                 lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
                 lBBookEmployee.Text = dS.Tables[0].Rows[0]["NHOTEN"].ToString();
                 lBcheckInDate.Text = room.CheckInDate.Substring(0, 10);
                 lBCheckOutTime.Text = room.CheckOutDate.Substring(0, 10);
+
+                ServicesLoad();
+                dGVService.DataSource = dSService.Tables[0];
+                dGVService.Columns["TENDV"].HeaderText = "Tên dịch vụ";
+                dGVService.Columns["SOLUONG"].HeaderText = "Số lượng";
+                dGVService.Columns["THOIGIANSD"].HeaderText = "thời gian sử dụng";
             }
             else
             {
@@ -71,22 +77,21 @@ namespace Hotel.RoomControls
         }
         private void PropertiesLoad()
         {
-            try
-            {
-                query = "select KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt' " +
-                        "from CTPHG " +
-                        "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
-                        "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
-                        "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
-                        "left join CTDV on HOADON.MAHD = CTDV.MAHD " +
-                        "left join DICHVU on CTDV.MADV = DICHVU.MADV " +
-                        "where CTPHG.MAHD = '" + reservationID + "'";
-                dS = fn.getData(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            query = "select KHOTEN, NHOTEN " +
+                    "from CTPHG " +
+                    "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
+                    "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
+                    "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
+                    "where CTPHG.MAHD = '" + reservationID + "'";
+            dS = fn.getData(query);
+        }
+        private void ServicesLoad()
+        {
+            query = "select TENDV, SOLUONG, THOIGIANSD " +
+                    "from CTDV " +
+                    "inner join DICHVU on CTDV.MADV = DICHVU.MADV " +
+                    "where CTDV.MAHD = '" + reservationID + "' and CTDV.MAPHG = '" + roomID + "'";
+            dSService = fn.getData(query);
         }
         private void ButtonSet(UC_RoomUnitBase room)
         {
@@ -147,12 +152,6 @@ namespace Hotel.RoomControls
                 }
             }
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void bTCheckIn_Click(object sender, EventArgs e)
         {
             DialogResult dR = MessageBox.Show("Xác nhận nhận phòng?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -201,12 +200,7 @@ namespace Hotel.RoomControls
 
         private void bTService_Click(object sender, EventArgs e)
         {
-            Form serviceForm = new Form();
-            serviceForm.Size = new System.Drawing.Size(1050, 650);
-            serviceForm.Text = "Thêm dịch vụ";
-            F_AddService serviceF = new F_AddService(reservationID);
-            serviceForm.Controls.Add(serviceF);
-            serviceForm.Controls[0].Dock = DockStyle.Fill;
+            F_AddService serviceForm = new F_AddService(roomID, reservationID);
             serviceForm.Show();
             serviceForm.Focus();
         }

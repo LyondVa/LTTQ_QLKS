@@ -154,11 +154,16 @@ namespace Hotel
         public delegate void DatabaseUpdatedEventHandler();
         // Define the static event based on the delegate
         public static event DatabaseUpdatedEventHandler DatabaseUpdated;
+        public static event DatabaseUpdatedEventHandler ServicesUpdated;
 
         // Static method to raise the event
         public static void OnDatabaseUpdated()
         {
             DatabaseUpdated?.Invoke();
+        }
+        public static void OnServicesUpdated()
+        {
+            ServicesUpdated?.Invoke();
         }
     }
 

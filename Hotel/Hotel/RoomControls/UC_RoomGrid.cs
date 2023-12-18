@@ -182,7 +182,7 @@ namespace Hotel.RoomControls
                 }
                 else if (dRT[i]["NGNHANPHG"] != DBNull.Value && dRT[i]["NGTRPHG"] != DBNull.Value)
                 {
-                    if (Convert.ToDateTime(dRT[i]["NGNHANPHG"]) < searchTime && Convert.ToDateTime(dRT[i]["NGTRPHG"]) > searchTime && dRT[i]["CHECKEDOUT"].ToString() == "False")
+                    if (Convert.ToDateTime(dRT[i]["NGNHANPHG"]) < searchTime && Convert.ToDateTime(dRT[i]["NGTRPHG"]) > searchTime /*&& dRT[i]["CHECKEDOUT"].ToString() == "False"*/)
                     {
                         if (dRT[i]["CHECKEDIN"].ToString() == "True")
                         {
