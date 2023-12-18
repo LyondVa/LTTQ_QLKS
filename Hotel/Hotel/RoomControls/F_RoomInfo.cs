@@ -15,7 +15,7 @@ namespace Hotel.RoomControls
         string query;
         DataSet dS = new DataSet();
         function fn = new function();
-        string roomID, reservationID, cleanStatus, roomStatus;
+        string roomID, reservationID, cleanStatus, roomStatus, note;
         public F_RoomInfo()
         {
             InitializeComponent();
@@ -23,21 +23,34 @@ namespace Hotel.RoomControls
         public F_RoomInfo(UC_RoomUnitBase room)
         {
             InitializeComponent();
+            ButtonSet(room);
             this.roomID = room.RoomID;
             this.reservationID = room.ReservationID;
             this.cleanStatus = room.CleanStatus;
             this.roomStatus = room.RoomStatus;
-            PropertiesLoad();
-            dGVService.DataSource = dS.Tables[0];
+            this.note = room.Note;
+            if (room is UC_RoomUnitBooked || room is UC_RoomUnitOccupied)
+            {
+                PropertiesLoad();
+                dGVService.DataSource = dS.Tables[0];
+                dGVService.Columns["KHOTEN"].Visible = false;
+                dGVService.Columns["NHOTEN"].Visible = false;
+                lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
+                lBBookEmployee.Text = dS.Tables[0].Rows[0]["NHOTEN"].ToString();
+                lBcheckInDate.Text = room.CheckInDate.Substring(0, 10);
+                lBCheckOutTime.Text = room.CheckOutDate.Substring(0, 10);
+            }
+            else
+            {
+                lBBookClient.Text = "";
+                lBBookEmployee.Text = "";
+                lBcheckInDate.Text = "";
+                lBCheckOutTime.Text = "";
+            }
         }
         private void F_RoomInfo_Load(object sender, EventArgs e)
         {
-            dGVService.Columns["GHICHU"].Visible = false;
-            dGVService.Columns["KHOTEN"].Visible = false;
-            dGVService.Columns["NHOTEN"].Visible = false;
-            lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
-            lBBookEmployee.Text = dS.Tables[0].Rows[0]["NHOTEN"].ToString();
-            tBNote.Text = dS.Tables[0].Rows[0]["GHICHU"].ToString();
+            tBNote.Text = note;
             lBRoomID.Text = roomID;
             if (roomStatus == "Bình thường")
             {
@@ -60,21 +73,48 @@ namespace Hotel.RoomControls
         {
             try
             {
-                query = "select GHICHU, KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt' " +
-                        "from PHONG " +
-                        "left join CTPHG on PHONG.MAPHG = CTPHG.MAPHG " +
+                query = "select KHOTEN, NHOTEN, TENDV as 'Tên dịch vụ', SOLUONG as 'Số lượng', THOIGIANSD as 'Thời gian đặt' " +
+                        "from CTPHG " +
                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
                         "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
                         "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
                         "left join CTDV on HOADON.MAHD = CTDV.MAHD " +
                         "left join DICHVU on CTDV.MADV = DICHVU.MADV " +
-                        "where PHONG.MAPHG = '" + roomID +"'";
+                        "where CTPHG.MAHD = '" + reservationID + "'";
                 dS = fn.getData(query);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void ButtonSet(UC_RoomUnitBase room)
+        {
+            if (room is UC_RoomUnitAvailable)
+            {
+                pNBTBook.Visible = true;
+                bTBook.Visible = true;
+                pNBTBook.Dock = DockStyle.Right;
+            }
+            else if (room is UC_RoomUnitBooked)
+            {
+                pNBTCheckIn.Visible = true;
+                bTCheckIn.Visible = true;
+                pNBTCheckIn.Dock = DockStyle.Right;
+                pNBTCancel.Visible = true;
+                bTCancel.Visible = true;
+                pNBTCancel.Dock = DockStyle.Right;
+            }
+            else if (room is UC_RoomUnitOccupied)
+            {
+                pNBTCheckOut.Visible = true;
+                bTCheckOut.Visible = true;
+                pNBTCheckOut.Dock = DockStyle.Right;
+                pNBTService.Visible = true;
+                bTService.Visible = true;
+                pNBTService.Dock = DockStyle.Right;
+            }
+            this.Invalidate();
         }
         private void bTExit_Click(object sender, EventArgs e)
         {
@@ -83,6 +123,7 @@ namespace Hotel.RoomControls
         private void bTBook_Click(object sender, EventArgs e)
         {
             F_BookRoom bR = new F_BookRoom();
+            this.Close();
             bR.Show();
             bR.Focus();
         }
@@ -95,7 +136,7 @@ namespace Hotel.RoomControls
                 try
                 {
                     query = "update PHONG " +
-                            "set TRANGTHAI = '" + cBRoomStatus.Text + "', DONDEP ='" + cBCleanStatus.Text + "' " +
+                            "set TRANGTHAI = N'" + cBRoomStatus.Text + "', DONDEP = N'" + cBCleanStatus.Text + "' " +
                             "where MAPHG = '" + roomID + "'";
                     fn.setData(query, "Cập nhật thành công");
                     EventHub.OnDatabaseUpdated();
@@ -107,6 +148,11 @@ namespace Hotel.RoomControls
             }
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void bTCheckIn_Click(object sender, EventArgs e)
         {
             DialogResult dR = MessageBox.Show("Xác nhận nhận phòng?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -115,11 +161,13 @@ namespace Hotel.RoomControls
                 try
                 {
                     query = "update HOADON " +
-                            "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                             "set CHECKEDIN = 1 " +
-                            "where CHECKEDIN = 0 and CTPHG.MAPHG = '" + roomID + "'";
+                            "from HOADON " +
+                            "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                            "where CHECKEDIN = 0 or CHECKEDIN is null and CTPHG.MAPHG = '" + roomID + "' and HOADON.MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thành công");
                     EventHub.OnDatabaseUpdated();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -136,11 +184,13 @@ namespace Hotel.RoomControls
                 try
                 {
                     query = "update HOADON " +
+                            "set CHECKEDOUT = 1 " +
+                            "from HOADON " +
                             "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
-                            "set CHECKEDOUT = 0 " +
-                            "where CHECKEDOUT = 1 and CTPHG.MAPHG = '" + roomID + "'";
+                            "where CHECKEDOUT = 0 or CHECKEDOUT is null and CTPHG.MAPHG = '" + roomID + "' and HOADON.MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thành công");
                     EventHub.OnDatabaseUpdated();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -154,11 +204,11 @@ namespace Hotel.RoomControls
             Form serviceForm = new Form();
             serviceForm.Size = new System.Drawing.Size(1050, 650);
             serviceForm.Text = "Thêm dịch vụ";
-            /*UC_ServiceAdd serviceUC= new UC_ServiceAdd(roomID);
-            serviceForm.Controls.Add(serviceUC);
+            F_AddService serviceF = new F_AddService(reservationID);
+            serviceForm.Controls.Add(serviceF);
             serviceForm.Controls[0].Dock = DockStyle.Fill;
             serviceForm.Show();
-            serviceForm.Focus();*/
+            serviceForm.Focus();
         }
 
         private void bTCancel_Click(object sender, EventArgs e)

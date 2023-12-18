@@ -1,4 +1,6 @@
-﻿namespace Hotel.RoomControls
+﻿using System.Web.UI.WebControls;
+
+namespace Hotel.RoomControls
 {
     partial class F_RoomInfo
     {
@@ -28,45 +30,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lBCheckOutTime = new System.Windows.Forms.Label();
             this.pBBookEmployee = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBBookEmployee = new System.Windows.Forms.Label();
             this.pBBookClient = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBBookClient = new System.Windows.Forms.Label();
             this.pBBookDate = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lBCheckInTime = new System.Windows.Forms.Label();
+            this.lBcheckInDate = new System.Windows.Forms.Label();
             this.pBRoomID = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBRoomID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tBNote = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.bTCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.bTExit = new Guna.UI2.WinForms.Guna2Button();
-            this.bTUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.bTBook = new Guna.UI2.WinForms.Guna2Button();
-            this.bTService = new Guna.UI2.WinForms.Guna2Button();
-            this.bTCheckOut = new Guna.UI2.WinForms.Guna2Button();
-            this.bTCheckIn = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cBRoomStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dGVService = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cBCleanStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lBCheckOutTime = new System.Windows.Forms.Label();
+            this.bTCheckIn = new Guna.UI2.WinForms.Guna2Button();
+            this.bTCheckOut = new Guna.UI2.WinForms.Guna2Button();
+            this.bTService = new Guna.UI2.WinForms.Guna2Button();
+            this.bTBook = new Guna.UI2.WinForms.Guna2Button();
+            this.bTUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.bTExit = new Guna.UI2.WinForms.Guna2Button();
+            this.bTCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.pNButton = new Guna.UI2.WinForms.Guna2Panel();
+            this.pNBTCancel = new Guna.UI2.WinForms.Guna2Panel();
+            this.pNBTService = new Guna.UI2.WinForms.Guna2Panel();
+            this.pNBTCheckOut = new Guna.UI2.WinForms.Guna2Panel();
+            this.pNBTCheckIn = new Guna.UI2.WinForms.Guna2Panel();
+            this.pNBTBook = new Guna.UI2.WinForms.Guna2Panel();
+            this.pNBTUpdate = new Guna.UI2.WinForms.Guna2Panel();
+            this.pNBTExit = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRoomID)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVService)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.pNButton.SuspendLayout();
+            this.pNBTCancel.SuspendLayout();
+            this.pNBTService.SuspendLayout();
+            this.pNBTCheckOut.SuspendLayout();
+            this.pNBTCheckIn.SuspendLayout();
+            this.pNBTBook.SuspendLayout();
+            this.pNBTUpdate.SuspendLayout();
+            this.pNBTExit.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +94,7 @@
             this.panel1.Controls.Add(this.pBBookClient);
             this.panel1.Controls.Add(this.lBBookClient);
             this.panel1.Controls.Add(this.pBBookDate);
-            this.panel1.Controls.Add(this.lBCheckInTime);
+            this.panel1.Controls.Add(this.lBcheckInDate);
             this.panel1.Controls.Add(this.pBRoomID);
             this.panel1.Controls.Add(this.lBRoomID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -86,6 +102,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 80);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(321, 32);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(22, 22);
+            this.guna2PictureBox1.TabIndex = 13;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // lBCheckOutTime
+            // 
+            this.lBCheckOutTime.AutoSize = true;
+            this.lBCheckOutTime.Location = new System.Drawing.Point(349, 38);
+            this.lBCheckOutTime.Name = "lBCheckOutTime";
+            this.lBCheckOutTime.Size = new System.Drawing.Size(99, 16);
+            this.lBCheckOutTime.TabIndex = 14;
+            this.lBCheckOutTime.Text = "Ngày trả phòng";
             // 
             // pBBookEmployee
             // 
@@ -132,14 +166,14 @@
             this.pBBookDate.TabIndex = 7;
             this.pBBookDate.TabStop = false;
             // 
-            // lBCheckInTime
+            // lBcheckInDate
             // 
-            this.lBCheckInTime.AutoSize = true;
-            this.lBCheckInTime.Location = new System.Drawing.Point(171, 38);
-            this.lBCheckInTime.Name = "lBCheckInTime";
-            this.lBCheckInTime.Size = new System.Drawing.Size(113, 16);
-            this.lBCheckInTime.TabIndex = 10;
-            this.lBCheckInTime.Text = "Ngày nhận phòng";
+            this.lBcheckInDate.AutoSize = true;
+            this.lBcheckInDate.Location = new System.Drawing.Point(171, 38);
+            this.lBcheckInDate.Name = "lBcheckInDate";
+            this.lBcheckInDate.Size = new System.Drawing.Size(113, 16);
+            this.lBcheckInDate.TabIndex = 10;
+            this.lBcheckInDate.Text = "Ngày nhận phòng";
             // 
             // pBRoomID
             // 
@@ -163,9 +197,9 @@
             // 
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tBNote);
-            this.panel2.Location = new System.Drawing.Point(476, 263);
+            this.panel2.Location = new System.Drawing.Point(465, 263);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 111);
+            this.panel2.Size = new System.Drawing.Size(282, 111);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -189,135 +223,16 @@
             this.tBNote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBNote.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBNote.Location = new System.Drawing.Point(63, 4);
+            this.tBNote.Location = new System.Drawing.Point(60, 4);
             this.tBNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tBNote.Multiline = true;
             this.tBNote.Name = "tBNote";
             this.tBNote.Padding = new System.Windows.Forms.Padding(3);
             this.tBNote.PasswordChar = '\0';
             this.tBNote.PlaceholderText = "";
             this.tBNote.SelectedText = "";
-            this.tBNote.Size = new System.Drawing.Size(205, 103);
+            this.tBNote.Size = new System.Drawing.Size(197, 103);
             this.tBNote.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.bTCancel);
-            this.panel3.Controls.Add(this.bTExit);
-            this.panel3.Controls.Add(this.bTUpdate);
-            this.panel3.Controls.Add(this.bTBook);
-            this.panel3.Controls.Add(this.bTService);
-            this.panel3.Controls.Add(this.bTCheckOut);
-            this.panel3.Controls.Add(this.bTCheckIn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 392);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 58);
-            this.panel3.TabIndex = 3;
-            // 
-            // bTCancel
-            // 
-            this.bTCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTCancel.ForeColor = System.Drawing.Color.White;
-            this.bTCancel.Location = new System.Drawing.Point(52, 18);
-            this.bTCancel.Name = "bTCancel";
-            this.bTCancel.Size = new System.Drawing.Size(100, 25);
-            this.bTCancel.TabIndex = 9;
-            this.bTCancel.Text = "Hủy phòng";
-            this.bTCancel.Click += new System.EventHandler(this.bTCancel_Click);
-            // 
-            // bTExit
-            // 
-            this.bTExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTExit.ForeColor = System.Drawing.Color.White;
-            this.bTExit.Location = new System.Drawing.Point(688, 18);
-            this.bTExit.Name = "bTExit";
-            this.bTExit.Size = new System.Drawing.Size(100, 25);
-            this.bTExit.TabIndex = 8;
-            this.bTExit.Text = "Thoát";
-            this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
-            // 
-            // bTUpdate
-            // 
-            this.bTUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTUpdate.ForeColor = System.Drawing.Color.White;
-            this.bTUpdate.Location = new System.Drawing.Point(582, 18);
-            this.bTUpdate.Name = "bTUpdate";
-            this.bTUpdate.Size = new System.Drawing.Size(100, 25);
-            this.bTUpdate.TabIndex = 7;
-            this.bTUpdate.Text = "Cập nhật";
-            this.bTUpdate.Click += new System.EventHandler(this.bTUpdate_Click);
-            // 
-            // bTBook
-            // 
-            this.bTBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTBook.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTBook.ForeColor = System.Drawing.Color.White;
-            this.bTBook.Location = new System.Drawing.Point(476, 18);
-            this.bTBook.Name = "bTBook";
-            this.bTBook.Size = new System.Drawing.Size(100, 25);
-            this.bTBook.TabIndex = 6;
-            this.bTBook.Text = "Đặt";
-            this.bTBook.Click += new System.EventHandler(this.bTBook_Click);
-            // 
-            // bTService
-            // 
-            this.bTService.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTService.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTService.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTService.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTService.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTService.ForeColor = System.Drawing.Color.White;
-            this.bTService.Location = new System.Drawing.Point(158, 18);
-            this.bTService.Name = "bTService";
-            this.bTService.Size = new System.Drawing.Size(100, 25);
-            this.bTService.TabIndex = 5;
-            this.bTService.Text = "Thêm dịch vụ";
-            this.bTService.Click += new System.EventHandler(this.bTService_Click);
-            // 
-            // bTCheckOut
-            // 
-            this.bTCheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTCheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTCheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTCheckOut.ForeColor = System.Drawing.Color.White;
-            this.bTCheckOut.Location = new System.Drawing.Point(264, 18);
-            this.bTCheckOut.Name = "bTCheckOut";
-            this.bTCheckOut.Size = new System.Drawing.Size(100, 25);
-            this.bTCheckOut.TabIndex = 4;
-            this.bTCheckOut.Text = "Thanh toán";
-            this.bTCheckOut.Click += new System.EventHandler(this.bTCheckOut_Click);
-            // 
-            // bTCheckIn
-            // 
-            this.bTCheckIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTCheckIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTCheckIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTCheckIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTCheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bTCheckIn.ForeColor = System.Drawing.Color.White;
-            this.bTCheckIn.Location = new System.Drawing.Point(370, 18);
-            this.bTCheckIn.Name = "bTCheckIn";
-            this.bTCheckIn.Size = new System.Drawing.Size(100, 25);
-            this.bTCheckIn.TabIndex = 3;
-            this.bTCheckIn.Text = "Nhận phòng";
-            this.bTCheckIn.Click += new System.EventHandler(this.bTCheckIn_Click);
             // 
             // label5
             // 
@@ -339,7 +254,7 @@
             this.cBRoomStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBRoomStatus.ItemHeight = 30;
             this.cBRoomStatus.Items.AddRange(new object[] {
-            "Trống",
+            "Bình thường",
             "Bảo trì"});
             this.cBRoomStatus.Location = new System.Drawing.Point(525, 140);
             this.cBRoomStatus.Name = "cBRoomStatus";
@@ -348,25 +263,25 @@
             // 
             // dGVService
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dGVService.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVService.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVService.DefaultCellStyle = dataGridViewCellStyle6;
             this.dGVService.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dGVService.Location = new System.Drawing.Point(52, 139);
             this.dGVService.Name = "dGVService";
@@ -408,8 +323,8 @@
             this.cBCleanStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBCleanStatus.ItemHeight = 30;
             this.cBCleanStatus.Items.AddRange(new object[] {
-            "Đã dọn dẹp",
-            "Chưa dọn dẹp"});
+            "Đã dọn",
+            "Chưa dọn"});
             this.cBCleanStatus.Location = new System.Drawing.Point(525, 207);
             this.cBCleanStatus.Name = "cBCleanStatus";
             this.cBCleanStatus.Size = new System.Drawing.Size(197, 36);
@@ -424,50 +339,243 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Tình trạng dọn dẹp:";
             // 
-            // guna2PictureBox1
+            // bTCheckIn
             // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(321, 32);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(22, 22);
-            this.guna2PictureBox1.TabIndex = 13;
-            this.guna2PictureBox1.TabStop = false;
+            this.bTCheckIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTCheckIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTCheckIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTCheckIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTCheckIn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bTCheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTCheckIn.ForeColor = System.Drawing.Color.White;
+            this.bTCheckIn.Location = new System.Drawing.Point(5, 5);
+            this.bTCheckIn.Name = "bTCheckIn";
+            this.bTCheckIn.Size = new System.Drawing.Size(110, 25);
+            this.bTCheckIn.TabIndex = 3;
+            this.bTCheckIn.Text = "Nhận phòng";
+            this.bTCheckIn.Visible = false;
+            this.bTCheckIn.Click += new System.EventHandler(this.bTCheckIn_Click);
             // 
-            // lBCheckOutTime
+            // bTCheckOut
             // 
-            this.lBCheckOutTime.AutoSize = true;
-            this.lBCheckOutTime.Location = new System.Drawing.Point(349, 38);
-            this.lBCheckOutTime.Name = "lBCheckOutTime";
-            this.lBCheckOutTime.Size = new System.Drawing.Size(99, 16);
-            this.lBCheckOutTime.TabIndex = 14;
-            this.lBCheckOutTime.Text = "Ngày trả phòng";
+            this.bTCheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTCheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTCheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTCheckOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bTCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTCheckOut.ForeColor = System.Drawing.Color.White;
+            this.bTCheckOut.Location = new System.Drawing.Point(5, 5);
+            this.bTCheckOut.Name = "bTCheckOut";
+            this.bTCheckOut.Size = new System.Drawing.Size(110, 25);
+            this.bTCheckOut.TabIndex = 4;
+            this.bTCheckOut.Text = "Thanh toán";
+            this.bTCheckOut.Visible = false;
+            this.bTCheckOut.Click += new System.EventHandler(this.bTCheckOut_Click);
+            // 
+            // bTService
+            // 
+            this.bTService.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTService.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTService.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTService.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bTService.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTService.ForeColor = System.Drawing.Color.White;
+            this.bTService.Location = new System.Drawing.Point(5, 5);
+            this.bTService.Name = "bTService";
+            this.bTService.Size = new System.Drawing.Size(110, 25);
+            this.bTService.TabIndex = 5;
+            this.bTService.Text = "Thêm dịch vụ";
+            this.bTService.Visible = false;
+            this.bTService.Click += new System.EventHandler(this.bTService_Click);
+            // 
+            // bTBook
+            // 
+            this.bTBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTBook.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bTBook.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTBook.ForeColor = System.Drawing.Color.White;
+            this.bTBook.Location = new System.Drawing.Point(5, 5);
+            this.bTBook.Name = "bTBook";
+            this.bTBook.Size = new System.Drawing.Size(110, 25);
+            this.bTBook.TabIndex = 6;
+            this.bTBook.Text = "Đặt phòng";
+            this.bTBook.Visible = false;
+            this.bTBook.Click += new System.EventHandler(this.bTBook_Click);
+            // 
+            // bTUpdate
+            // 
+            this.bTUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bTUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTUpdate.ForeColor = System.Drawing.Color.White;
+            this.bTUpdate.Location = new System.Drawing.Point(5, 5);
+            this.bTUpdate.Name = "bTUpdate";
+            this.bTUpdate.Size = new System.Drawing.Size(110, 25);
+            this.bTUpdate.TabIndex = 7;
+            this.bTUpdate.Text = "Cập nhật";
+            this.bTUpdate.Click += new System.EventHandler(this.bTUpdate_Click);
+            // 
+            // bTExit
+            // 
+            this.bTExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bTExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTExit.ForeColor = System.Drawing.Color.White;
+            this.bTExit.Location = new System.Drawing.Point(5, 5);
+            this.bTExit.Margin = new System.Windows.Forms.Padding(5);
+            this.bTExit.Name = "bTExit";
+            this.bTExit.Size = new System.Drawing.Size(110, 25);
+            this.bTExit.TabIndex = 8;
+            this.bTExit.Text = "Thoát";
+            this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
+            // 
+            // bTCancel
+            // 
+            this.bTCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bTCancel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bTCancel.ForeColor = System.Drawing.Color.White;
+            this.bTCancel.Location = new System.Drawing.Point(5, 5);
+            this.bTCancel.Name = "bTCancel";
+            this.bTCancel.Size = new System.Drawing.Size(110, 25);
+            this.bTCancel.TabIndex = 9;
+            this.bTCancel.Text = "Hủy phòng";
+            this.bTCancel.Visible = false;
+            this.bTCancel.Click += new System.EventHandler(this.bTCancel_Click);
+            // 
+            // pNButton
+            // 
+            this.pNButton.Controls.Add(this.pNBTService);
+            this.pNButton.Controls.Add(this.pNBTCheckIn);
+            this.pNButton.Controls.Add(this.pNBTCancel);
+            this.pNButton.Controls.Add(this.pNBTCheckOut);
+            this.pNButton.Controls.Add(this.pNBTBook);
+            this.pNButton.Controls.Add(this.pNBTUpdate);
+            this.pNButton.Controls.Add(this.pNBTExit);
+            this.pNButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pNButton.Location = new System.Drawing.Point(0, 415);
+            this.pNButton.Name = "pNButton";
+            this.pNButton.Size = new System.Drawing.Size(800, 35);
+            this.pNButton.TabIndex = 12;
+            // 
+            // pNBTCancel
+            // 
+            this.pNBTCancel.Controls.Add(this.bTCancel);
+            this.pNBTCancel.Location = new System.Drawing.Point(3, 0);
+            this.pNBTCancel.Name = "pNBTCancel";
+            this.pNBTCancel.Padding = new System.Windows.Forms.Padding(5);
+            this.pNBTCancel.Size = new System.Drawing.Size(120, 35);
+            this.pNBTCancel.TabIndex = 17;
+            this.pNBTCancel.Visible = false;
+            // 
+            // pNBTService
+            // 
+            this.pNBTService.Controls.Add(this.bTService);
+            this.pNBTService.Location = new System.Drawing.Point(134, 0);
+            this.pNBTService.Name = "pNBTService";
+            this.pNBTService.Padding = new System.Windows.Forms.Padding(5);
+            this.pNBTService.Size = new System.Drawing.Size(120, 35);
+            this.pNBTService.TabIndex = 16;
+            this.pNBTService.Visible = false;
+            // 
+            // pNBTCheckOut
+            // 
+            this.pNBTCheckOut.Controls.Add(this.bTCheckOut);
+            this.pNBTCheckOut.Location = new System.Drawing.Point(255, 0);
+            this.pNBTCheckOut.Name = "pNBTCheckOut";
+            this.pNBTCheckOut.Padding = new System.Windows.Forms.Padding(5);
+            this.pNBTCheckOut.Size = new System.Drawing.Size(120, 35);
+            this.pNBTCheckOut.TabIndex = 15;
+            this.pNBTCheckOut.Visible = false;
+            // 
+            // pNBTCheckIn
+            // 
+            this.pNBTCheckIn.Controls.Add(this.bTCheckIn);
+            this.pNBTCheckIn.Location = new System.Drawing.Point(374, 0);
+            this.pNBTCheckIn.Name = "pNBTCheckIn";
+            this.pNBTCheckIn.Padding = new System.Windows.Forms.Padding(5);
+            this.pNBTCheckIn.Size = new System.Drawing.Size(120, 35);
+            this.pNBTCheckIn.TabIndex = 13;
+            this.pNBTCheckIn.Visible = false;
+            // 
+            // pNBTBook
+            // 
+            this.pNBTBook.Controls.Add(this.bTBook);
+            this.pNBTBook.Location = new System.Drawing.Point(500, 0);
+            this.pNBTBook.Name = "pNBTBook";
+            this.pNBTBook.Padding = new System.Windows.Forms.Padding(5);
+            this.pNBTBook.Size = new System.Drawing.Size(120, 35);
+            this.pNBTBook.TabIndex = 13;
+            this.pNBTBook.Visible = false;
+            // 
+            // pNBTUpdate
+            // 
+            this.pNBTUpdate.Controls.Add(this.bTUpdate);
+            this.pNBTUpdate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pNBTUpdate.Location = new System.Drawing.Point(560, 0);
+            this.pNBTUpdate.Name = "pNBTUpdate";
+            this.pNBTUpdate.Padding = new System.Windows.Forms.Padding(5);
+            this.pNBTUpdate.Size = new System.Drawing.Size(120, 35);
+            this.pNBTUpdate.TabIndex = 13;
+            // 
+            // pNBTExit
+            // 
+            this.pNBTExit.Controls.Add(this.bTExit);
+            this.pNBTExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pNBTExit.Location = new System.Drawing.Point(680, 0);
+            this.pNBTExit.Name = "pNBTExit";
+            this.pNBTExit.Padding = new System.Windows.Forms.Padding(5);
+            this.pNBTExit.Size = new System.Drawing.Size(120, 35);
+            this.pNBTExit.TabIndex = 14;
             // 
             // F_RoomInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pNButton);
             this.Controls.Add(this.cBCleanStatus);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dGVService);
             this.Controls.Add(this.cBRoomStatus);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "F_RoomInfo";
             this.Text = "RoomInfo";
+            this.Load += new System.EventHandler(this.F_RoomInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRoomID)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVService)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.pNButton.ResumeLayout(false);
+            this.pNBTCancel.ResumeLayout(false);
+            this.pNBTService.ResumeLayout(false);
+            this.pNBTCheckOut.ResumeLayout(false);
+            this.pNBTCheckIn.ResumeLayout(false);
+            this.pNBTBook.ResumeLayout(false);
+            this.pNBTUpdate.ResumeLayout(false);
+            this.pNBTExit.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,9 +588,8 @@
         private System.Windows.Forms.Label lBBookEmployee;
         private System.Windows.Forms.Label lBBookClient;
         private System.Windows.Forms.Label lBRoomID;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lBCheckInTime;
+        private System.Windows.Forms.Label lBcheckInDate;
         private Guna.UI2.WinForms.Guna2PictureBox pBBookEmployee;
         private Guna.UI2.WinForms.Guna2PictureBox pBBookClient;
         private Guna.UI2.WinForms.Guna2PictureBox pBBookDate;
@@ -490,17 +597,25 @@
         private Guna.UI2.WinForms.Guna2TextBox tBNote;
         private Guna.UI2.WinForms.Guna2ComboBox cBRoomStatus;
         private Guna.UI2.WinForms.Guna2DataGridView dGVService;
-        private Guna.UI2.WinForms.Guna2Button bTCheckOut;
-        private Guna.UI2.WinForms.Guna2Button bTCheckIn;
-        private Guna.UI2.WinForms.Guna2Button bTUpdate;
-        private Guna.UI2.WinForms.Guna2Button bTBook;
-        private Guna.UI2.WinForms.Guna2Button bTService;
-        private Guna.UI2.WinForms.Guna2Button bTExit;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button bTCancel;
         private Guna.UI2.WinForms.Guna2ComboBox cBCleanStatus;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label lBCheckOutTime;
+        private Guna.UI2.WinForms.Guna2Button bTCheckIn;
+        private Guna.UI2.WinForms.Guna2Button bTCheckOut;
+        private Guna.UI2.WinForms.Guna2Button bTService;
+        private Guna.UI2.WinForms.Guna2Button bTBook;
+        private Guna.UI2.WinForms.Guna2Button bTUpdate;
+        private Guna.UI2.WinForms.Guna2Button bTExit;
+        private Guna.UI2.WinForms.Guna2Button bTCancel;
+        private Guna.UI2.WinForms.Guna2Panel pNButton;
+        private Guna.UI2.WinForms.Guna2Panel pNBTUpdate;
+        private Guna.UI2.WinForms.Guna2Panel pNBTExit;
+        private Guna.UI2.WinForms.Guna2Panel pNBTCheckIn;
+        private Guna.UI2.WinForms.Guna2Panel pNBTBook;
+        private Guna.UI2.WinForms.Guna2Panel pNBTCheckOut;
+        private Guna.UI2.WinForms.Guna2Panel pNBTService;
+        private Guna.UI2.WinForms.Guna2Panel pNBTCancel;
     }
 }

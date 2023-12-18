@@ -80,6 +80,7 @@
             this.dTPCheckInDate.Size = new System.Drawing.Size(193, 48);
             this.dTPCheckInDate.TabIndex = 3;
             this.dTPCheckInDate.Value = new System.DateTime(2023, 12, 12, 9, 3, 55, 546);
+            this.dTPCheckInDate.ValueChanged += new System.EventHandler(this.dTPCheckInDate_ValueChanged);
             // 
             // dTPCheckOutDate
             // 
@@ -93,6 +94,7 @@
             this.dTPCheckOutDate.Size = new System.Drawing.Size(193, 48);
             this.dTPCheckOutDate.TabIndex = 4;
             this.dTPCheckOutDate.Value = new System.DateTime(2023, 12, 12, 9, 3, 55, 546);
+            this.dTPCheckOutDate.ValueChanged += new System.EventHandler(this.dTPCheckOutDate_ValueChanged);
             // 
             // label1
             // 
@@ -139,7 +141,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(291, 219);
+            this.label4.Location = new System.Drawing.Point(290, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 16);
             this.label4.TabIndex = 10;
@@ -217,10 +219,11 @@
             this.dGVAvailableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dGVAvailableRoom.Location = new System.Drawing.Point(12, 238);
             this.dGVAvailableRoom.Name = "dGVAvailableRoom";
+            this.dGVAvailableRoom.RowHeadersVisible = false;
             this.dGVAvailableRoom.RowHeadersWidth = 51;
             this.dGVAvailableRoom.RowTemplate.Height = 24;
-            this.dGVAvailableRoom.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dGVAvailableRoom.Size = new System.Drawing.Size(274, 111);
+            this.dGVAvailableRoom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dGVAvailableRoom.Size = new System.Drawing.Size(275, 111);
             this.dGVAvailableRoom.TabIndex = 15;
             this.dGVAvailableRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dGVAvailableRoom.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -271,12 +274,13 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dGVSelectedRoom.DefaultCellStyle = dataGridViewCellStyle6;
             this.dGVSelectedRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dGVSelectedRoom.Location = new System.Drawing.Point(294, 238);
+            this.dGVSelectedRoom.Location = new System.Drawing.Point(293, 238);
             this.dGVSelectedRoom.Name = "dGVSelectedRoom";
             this.dGVSelectedRoom.RowHeadersVisible = false;
             this.dGVSelectedRoom.RowHeadersWidth = 51;
             this.dGVSelectedRoom.RowTemplate.Height = 24;
-            this.dGVSelectedRoom.Size = new System.Drawing.Size(274, 111);
+            this.dGVSelectedRoom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dGVSelectedRoom.Size = new System.Drawing.Size(275, 111);
             this.dGVSelectedRoom.TabIndex = 16;
             this.dGVSelectedRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dGVSelectedRoom.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -309,6 +313,7 @@
             this.tBClientName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tBClientName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tBClientName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tBClientName.Enabled = false;
             this.tBClientName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBClientName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBClientName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -335,6 +340,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(580, 416);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tBClientName);

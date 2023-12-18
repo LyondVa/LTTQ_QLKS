@@ -56,6 +56,23 @@ namespace Hotel
                 MessageBox.Show(ex.Message);
             }
         }
+        public void setDataNoMsg(string query)
+        {
+            try
+            {
+                SqlConnection con = getConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                con.Open();
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public SqlDataReader getForCombo(String query)
         {
             SqlConnection con = getConnection();

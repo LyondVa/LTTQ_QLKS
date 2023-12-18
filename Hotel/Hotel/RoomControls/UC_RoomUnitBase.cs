@@ -14,14 +14,16 @@ namespace Hotel.RoomControls
 {
     public partial class UC_RoomUnitBase : UserControl
     {
-        protected string roomID, roomTypeID, cleanStatus, roomStatus, floor, checkInStatus, reservationID;
+        protected string roomID, roomTypeID, cleanStatus, roomStatus, floor, checkInStatus, reservationID, note, checkInDate, checkOutDate;
         public string RoomID { get { return roomID; } set { roomID = value; } }
         public string RoomTypeID { get { return roomTypeID; } set { roomTypeID = value; } }
         public string CleanStatus { get { return cleanStatus; } set { cleanStatus = value; } }
         public string RoomStatus { get { return roomStatus; } set { roomStatus = value; } }
         public string CheckInStatus { get { return checkInStatus; } set { checkInStatus = value; } }
         public string ReservationID { get { return reservationID; } set { reservationID = value; } }
-        protected List<Image> imageList = new List<Image>();
+        public string Note { get { return note; } set { note = value; } }
+        public string CheckInDate { get { return checkInDate; } set { checkInDate = value; } }
+        public string CheckOutDate { get { return checkOutDate; } set { checkOutDate = value; } }
         private void UC_RoomUnitBase_Load(object sender, EventArgs e)
         {
             this.Invalidate();
@@ -41,9 +43,11 @@ namespace Hotel.RoomControls
             this.floor = floor;
             this.checkInStatus = checkInStatus;
             this.reservationID = reservationID;
-            imageList.Add(Resources.CheckMark);
-            imageList.Add(Resources.CrossMark);
+            this.note = note;
+            this.checkInDate = checkInDate;
+            this.checkOutDate = checkOutDate;
         }
+
         public string GetFloor()
         {
             return floor;

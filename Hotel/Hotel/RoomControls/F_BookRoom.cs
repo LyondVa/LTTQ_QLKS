@@ -22,35 +22,35 @@ namespace Hotel.RoomControls
         RoomFunction rFn = new RoomFunction();
         #region Query
         string query;
-        string queryR = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
-                         "from PHONG A " +
-                         "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
-                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
-                         "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
-                         "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
-                         "where TRANGTHAI = N'Trống' "+
-                         "union " +
-                         "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
-                         "from PHONG A " +
-                         "left join CTPHG on " +
-                         "A.MAPHG = CTPHG.MAPHG " +
-                         "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
-                         "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
-                         "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
-                         "where HOADON.MAHD = ( " +
-                                             "select top 1 HOADON.MAHD " +
-                                             "from HOADON " +
-                                             "inner join CTPHG on CTPHG.MAHD = HOADON.MAHD " +
-                                             "where A.MAPHG = CTPHG.MAPHG " +
-                                             "and TRANGTHAI = N'Trống' " +
-                                             "order by MAHD desc " +
-                                             ")";
+        //string queryR = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
+        //                 "from PHONG A " +
+        //                 "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
+        //                 "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
+        //                 "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
+        //                 "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
+        //                 "where TRANGTHAI = N'Trống' "+
+        //                 "union " +
+        //                 "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
+        //                 "from PHONG A " +
+        //                 "left join CTPHG on " +
+        //                 "A.MAPHG = CTPHG.MAPHG " +
+        //                 "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
+        //                 "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
+        //                 "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
+        //                 "where HOADON.MAHD = ( " +
+        //                                     "select top 1 HOADON.MAHD " +
+        //                                     "from HOADON " +
+        //                                     "inner join CTPHG on CTPHG.MAHD = HOADON.MAHD " +
+        //                                     "where A.MAPHG = CTPHG.MAPHG " +
+        //                                     "and TRANGTHAI = N'Trống' " +
+        //                                     "order by MAHD desc " +
+        //                                     ")";
+
         string queryC = "select KCCCD, KHOTEN from KHACHHANG";
         #endregion
         public F_BookRoom()
         {
             InitializeComponent();
-            dSA = fn.getData(queryR);
             dSS.Tables.Add();
             dSS.Tables[0].Columns.Add("MAPHG", typeof(string));
             dSS.Tables[0].Columns.Add("MALOAIPHG", typeof(string));
@@ -60,23 +60,26 @@ namespace Hotel.RoomControls
         }
         private void InitializeGridViews()
         {
-            dGVAvailableRoom.AutoGenerateColumns = false;
-            dGVAvailableRoom.ColumnCount = 2;
+            DGVLoad();
 
-            dGVAvailableRoom.Columns[0].Name = "MAPHG";
+            //dGVAvailableRoom.AutoGenerateColumns = false;
+            //dGVAvailableRoom.ColumnCount = 2;
+
+            //dGVAvailableRoom.Columns[0].Name = "MAPHG";
             dGVAvailableRoom.Columns[0].HeaderText = "Mã phòng";
-            dGVAvailableRoom.Columns[0].DataPropertyName = "MAPHG";
+            //dGVAvailableRoom.Columns[0].DataPropertyName = "MAPHG";
 
-            dGVAvailableRoom.Columns[1].Name = "MALOAIPHG";
+            //dGVAvailableRoom.Columns[1].Name = "MALOAIPHG";
             dGVAvailableRoom.Columns[1].HeaderText = "Mã loại phòng";
-            dGVAvailableRoom.Columns[1].DataPropertyName = "MALOAIPHG";
+            //dGVAvailableRoom.Columns[1].DataPropertyName = "MALOAIPHG";
 
             DataGridViewImageColumn dGVARImgCol = new DataGridViewImageColumn();
             dGVARImgCol.Name = "ADD";
             dGVARImgCol.HeaderText = "Thêm";
-            dGVAvailableRoom.Columns.Add(dGVARImgCol);
-
-            dGVAvailableRoom.DataSource = dSA.Tables[0];
+            dGVARImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dGVARImgCol.Image = Resources.PlusMark;
+            dGVAvailableRoom.Columns.Insert(2, dGVARImgCol);
+            //DGVImageColumnIni();
 
             dGVSelectedRoom.AutoGenerateColumns = false;
             dGVSelectedRoom.ColumnCount = 2;
@@ -92,21 +95,32 @@ namespace Hotel.RoomControls
             DataGridViewImageColumn dGVSRImgCol = new DataGridViewImageColumn();
             dGVSRImgCol.Name = "REMOVE";
             dGVSRImgCol.HeaderText = "Xóa";
-            dGVSelectedRoom.Columns.Add(dGVSRImgCol);
+            dGVSRImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dGVSRImgCol.Image = Resources.CrossMark;
+            dGVSelectedRoom.Columns.Insert(2,dGVSRImgCol);
+
             dGVSelectedRoom.DataSource = dSS.Tables[0];
         }
-        private void dGVAvailableRoom_RowAdded(object sender, DataGridViewRowEventArgs e)
+        private void DGVLoad()
         {
-            for(int row = 0; row <= dGVAvailableRoom.Rows.Count - 1; row++)
-            {
-                ((DataGridViewImageCell)dGVAvailableRoom.Rows[row].Cells[2]).Value = Resources.PlusMark;
-            }
+            string queryR = "select distinct p.MAPHG , MALOAIPHG " +
+                            "from PHONG p " +
+                            "left join CTPHG c on p.MAPHG = c.MAPHG " +
+                            "where c.MAPHG is null or c.NGNHANPHG > '" + dTPCheckOutDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "' or c.NGTRPHG < '" + dTPCheckInDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "'";
+            dSA = fn.getData(queryR);
+            dGVAvailableRoom.DataSource = dSA.Tables[0];
         }
-        
         private void bTExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        //private void DGVImageColumnIni()
+        //{
+        //    for(int i = 0;i<dGVAvailableRoom.Rows.Count;i++) 
+        //    {
+        //        ((DataGridViewImageCell)dGVAvailableRoom.Rows[i].Cells["ADD"]).Value = Resources.PlusMark;
+        //    }
+        //}
         private void dGVAvailableRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dGVAvailableRoom.Columns["ADD"].Index && e.RowIndex >= 0)
@@ -133,34 +147,40 @@ namespace Hotel.RoomControls
         }
         private void bTAdd_Click(object sender, EventArgs e)
         {
-            int returnInt = 1;
             DataSet dSTemp1 = new DataSet();
             DataSet dSTemp2 = new DataSet();
             query = "SELECT MAKH FROM KHACHHANG WHERE KCCCD = '" + tBClientID.Text + "'";
             dSTemp1 = fn.getData(query);
-            query = "INSERT INTO HOADON(MAKH, MANV) VALUES ('" + dSTemp1.Tables[0].Rows[0]["MAKH"].ToString() + "','" + Global.globalEmID + "')";
-            fn.setData(query, "1");
+            if (dSTemp1.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng nhập đúng thông tin khách hàng");
+                return;
+            }
+            query = "INSERT INTO HOADON(MAKH, MANV, CHECKEDIN, CHECKEDOUT) VALUES ('" + dSTemp1.Tables[0].Rows[0]["MAKH"].ToString() + "','" + Global.globalEmID + "'," + 0 + "," + 0 +")";
+            fn.setDataNoMsg(query);
             query = "SELECT TOP 1 MAHD " +
                     "FROM HOADON " +
                     "INNER JOIN KHACHHANG ON KHACHHANG.MAKH = HOADON.MAKH " +
                     "WHERE KCCCD = '" + tBClientID.Text + "' " +
                     "ORDER BY MAHD DESC";
             dSTemp2 = fn.getData(query);
-            foreach(DataRow dR in dSS.Tables[0].Rows)
+            foreach (DataRow dR in dSS.Tables[0].Rows)
             {
-                query = "INSERT INTO CTPHG(MAPHG, MAHD, NGNHANPHG, NGTRPHG, TIENDATPHG) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString() + "','" + dTPCheckInDate.Value.ToString("dd'-'MM'-'yyyy hh':'mm':'ss") + "','" + dTPCheckOutDate.Value.ToString("dd'-'MM'-'yyyy hh':'mm':'ss") +"',"+ 7000 +")";
-                fn.setData(query, "2" + returnInt++);
+                query = "INSERT INTO CTPHG(MAPHG, MAHD, NGNHANPHG, NGTRPHG, TIENDATPHG) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString() + "','" + dTPCheckInDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "','" + dTPCheckOutDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "'," + 7000 + ")";
+                fn.setDataNoMsg(query);
             }
+            EventHub.OnDatabaseUpdated();
+            this.Close();
         }
 
         private void tBClientID_TextChanged(object sender, EventArgs e)
         {
             dSC = fn.getData(queryC);
-            tBClientName.Clear();
+            tBClientName.Text = "";
             DataRow[] dR = rFn.FindInDataset(dSC, tBClientID.Text, "KCCCD");
             if (tBClientID.Text.Length > 0)
             {
-                if ( dR != null)
+                if (dR != null)
                 {
                     tBClientName.Text = dR[0]["KHOTEN"].ToString();
                     bTClientRegistration.Enabled = false;
@@ -172,13 +192,28 @@ namespace Hotel.RoomControls
         {
             Form cusResForm = new Form();
             UC_CustomerRes customerRes = new UC_CustomerRes(tBClientID.Text);
-            cusResForm.Size = new System.Drawing.Size(1050,650);
+            cusResForm.Size = new System.Drawing.Size(1050, 650);
             cusResForm.Text = "Thêm khách hàng";
             cusResForm.Controls.Add(customerRes);
             cusResForm.Controls[0].Dock = DockStyle.Fill;
             cusResForm.Show();
             cusResForm.Focus();
             //query = 
+        }
+
+        private void dTPCheckInDate_ValueChanged(object sender, EventArgs e)
+        {
+            dTPCheckOutDate.MinDate = dTPCheckInDate.Value;
+            if (dTPCheckInDate.Value > dTPCheckOutDate.Value)
+            {
+                dTPCheckOutDate.Value = dTPCheckInDate.Value.AddDays(1);
+            }
+            DGVLoad();
+        }
+
+        private void dTPCheckOutDate_ValueChanged(object sender, EventArgs e)
+        {
+            DGVLoad();
         }
     }
 }

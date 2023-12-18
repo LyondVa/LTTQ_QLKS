@@ -133,6 +133,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="All user control\F_AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="All user control\F_AddService.Designer.cs">
+      <DependentUpon>F_AddService.cs</DependentUpon>
+    </Compile>
     <Compile Include="All user control\UC_Chartt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -330,6 +336,9 @@
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCode\Global.cs" />
+    <EmbeddedResource Include="All user control\F_AddService.resx">
+      <DependentUpon>F_AddService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_Chartt.resx">
       <DependentUpon>UC_Chartt.cs</DependentUpon>
     </EmbeddedResource>
@@ -483,6 +492,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UnClean.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\Blue and Black Modern Illustration UI Login Page Desktop Prototype.png" />
     <None Include="Resources\80e9279d123d9b280146456603b1ebcd.jpg" />

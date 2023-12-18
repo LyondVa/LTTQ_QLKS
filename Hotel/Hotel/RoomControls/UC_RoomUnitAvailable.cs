@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,13 +27,13 @@ namespace Hotel.RoomControls
             this.lBRoomTypeID.Text = roomTypeID;
             if (cleanStatus == "Đã dọn")
             {
-                pBCleanStatus.Image = imageList[0];
+                pBCleanStatus.Image = Resources.Clean;
             }
             else
             {
-                pBCleanStatus.Image = imageList[1];
+                pBCleanStatus.Image = Resources.Unclean;
             }
-            pBRoomStatus.Image = imageList[1];
+            //pBRoomStatus.Image = imageList[1];
         }
         #region Unit Click
         private void UC_RoomUnitAvailable_Click(object sender, EventArgs e)

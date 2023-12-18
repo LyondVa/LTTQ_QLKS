@@ -31,13 +31,11 @@
             this.lBRoomID = new System.Windows.Forms.Label();
             this.lBRoomTypeID = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pBCleanStatus = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pBClean = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pBRoomStatus = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pBCleanStatus = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBClean)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRoomStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // lBRoomID
@@ -63,7 +61,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.pBCleanStatus);
-            this.panel1.Controls.Add(this.pBClean);
             this.panel1.Controls.Add(this.lBRoomID);
             this.panel1.Controls.Add(this.lBRoomTypeID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -72,29 +69,6 @@
             this.panel1.Size = new System.Drawing.Size(72, 130);
             this.panel1.TabIndex = 5;
             this.panel1.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
-            // 
-            // pBCleanStatus
-            // 
-            this.pBCleanStatus.ImageRotate = 0F;
-            this.pBCleanStatus.Location = new System.Drawing.Point(41, 99);
-            this.pBCleanStatus.Name = "pBCleanStatus";
-            this.pBCleanStatus.Size = new System.Drawing.Size(28, 28);
-            this.pBCleanStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBCleanStatus.TabIndex = 8;
-            this.pBCleanStatus.TabStop = false;
-            this.pBCleanStatus.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
-            // 
-            // pBClean
-            // 
-            this.pBClean.Image = global::Hotel.Properties.Resources.Clean;
-            this.pBClean.ImageRotate = 0F;
-            this.pBClean.Location = new System.Drawing.Point(3, 99);
-            this.pBClean.Name = "pBClean";
-            this.pBClean.Size = new System.Drawing.Size(28, 28);
-            this.pBClean.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBClean.TabIndex = 7;
-            this.pBClean.TabStop = false;
-            this.pBClean.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
             // 
             // pBRoomStatus
             // 
@@ -105,6 +79,17 @@
             this.pBRoomStatus.TabIndex = 6;
             this.pBRoomStatus.TabStop = false;
             this.pBRoomStatus.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
+            // 
+            // pBCleanStatus
+            // 
+            this.pBCleanStatus.ImageRotate = 0F;
+            this.pBCleanStatus.Location = new System.Drawing.Point(15, 99);
+            this.pBCleanStatus.Name = "pBCleanStatus";
+            this.pBCleanStatus.Size = new System.Drawing.Size(28, 28);
+            this.pBCleanStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBCleanStatus.TabIndex = 8;
+            this.pBCleanStatus.TabStop = false;
+            this.pBCleanStatus.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
             // 
             // UC_RoomUnitAvailable
             // 
@@ -117,9 +102,8 @@
             this.Click += new System.EventHandler(this.UC_RoomUnitAvailable_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBClean)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRoomStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,7 +114,6 @@
         private System.Windows.Forms.Label lBRoomTypeID;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2PictureBox pBCleanStatus;
-        private Guna.UI2.WinForms.Guna2PictureBox pBClean;
         private Guna.UI2.WinForms.Guna2PictureBox pBRoomStatus;
     }
 }

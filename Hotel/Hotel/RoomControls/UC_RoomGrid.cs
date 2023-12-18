@@ -26,15 +26,16 @@ namespace Hotel.RoomControls
             InitializeComponent();
             TableLayoutPanelScrollbars();
             PopulateList(1);
-            //dTPFilter.Value = searchTime;
+            EventHub.DatabaseUpdated += UpdateGrid;
+            dTPFilter.Value = DateTime.Now;
         }
         private void UC_RoomGrid_load(object sender, EventArgs e)
         {
-            PopulateGrid();
+            PopulateGrid(1);
         }
-        private void RoomStatusCheck()
+        private void UpdateGrid()
         {
-
+            PopulateGrid(1);
         }
         private void PopulateGrid(int criterion = 0)
         {
@@ -43,6 +44,7 @@ namespace Hotel.RoomControls
             fLPFloor3.Controls.Clear();
             fLPFloor4.Controls.Clear();
             fLPFloor5.Controls.Clear();
+            PopulateList(criterion);
 
             foreach (UC_RoomUnitBase roomUnit in rooms)
             {
@@ -66,7 +68,7 @@ namespace Hotel.RoomControls
                 }
             }
         }
-        #region DataSetter
+        #region Test
         //private void RefreshDataSet()
         //{
 
@@ -135,12 +137,12 @@ namespace Hotel.RoomControls
         //    }
         //}
         #endregion
-        #region testing
+        #region DataSetter
         private void RefreshDataSet()
         {
             try
             {
-                query = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, TANG, GHICHU, CTPHG.MAHD, CHECKEDIN, NGNHANPHG, NGTRPHG " +
+                query = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, TANG, GHICHU, CTPHG.MAHD, CHECKEDIN, CHECKEDOUT, NGNHANPHG, NGTRPHG " +
                          "from PHONG A " +
                          "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
                          "left join HOADON on CTPHG.MAHD = HOADON.MAHD ";
@@ -180,17 +182,17 @@ namespace Hotel.RoomControls
                 }
                 else if (dRT[i]["NGNHANPHG"] != DBNull.Value && dRT[i]["NGTRPHG"] != DBNull.Value)
                 {
-                    if (Convert.ToDateTime(dRT[i]["NGNHANPHG"]) < searchTime && Convert.ToDateTime(dRT[i]["NGTRPHG"]) > searchTime)
+                    if (Convert.ToDateTime(dRT[i]["NGNHANPHG"]) < searchTime && Convert.ToDateTime(dRT[i]["NGTRPHG"]) > searchTime && dRT[i]["CHECKEDOUT"].ToString() == "False")
                     {
                         if (dRT[i]["CHECKEDIN"].ToString() == "True")
                         {
-                            UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString(), dRT[i]["MAHD"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
+                            UC_RoomUnitOccupied roomO = new UC_RoomUnitOccupied(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["MAHD"].ToString(),dRT[i]["GHICHU"].ToString(),  dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
                             rooms.Add(roomO);
                             roomFlag = 1;
                         }
                         else
                         {
-                            UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString(), dRT[i]["MAHD"].ToString(), dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
+                            UC_RoomUnitBooked roomB = new UC_RoomUnitBooked(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["MAHD"].ToString(),dRT[i]["GHICHU"].ToString(),  dRT[i]["CHECKEDIN"].ToString(), dRT[i]["NGNHANPHG"].ToString(), dRT[i]["NGTRPHG"].ToString());
                             rooms.Add(roomB);
                             roomFlag = 1;
                         }

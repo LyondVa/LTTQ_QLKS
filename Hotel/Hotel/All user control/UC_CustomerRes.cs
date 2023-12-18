@@ -105,7 +105,7 @@ namespace Hotel.All_user_control
                 Int64 mobile = Int64.Parse(txtPhoneNumber.Text);
                 String national = txtNationality.Text;
                 String gender = cbGender.Text;
-                String dob = txtBirth.Text;
+                String dob = txtBirth.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss");
                 String idproof = txtIDProof.Text;
                 String address = txtAddress.Text;
                 query = "insert into KHACHHANG (KHOTEN, KSDT, QUOCTICH, KGIOITINH, KNGSINH, KCCCD, KDIACHI) values(N'" + name + "'," + mobile + ",N'" + national + "',N'" + gender + "','" + dob + "','" + idproof + "',N'" + address + "')";
