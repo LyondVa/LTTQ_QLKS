@@ -29,12 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dTPFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.tBSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gBCleanStatusFilter = new Guna.UI2.WinForms.Guna2GroupBox();
             this.rBTCleanStatusAll = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -63,8 +58,8 @@
             this.fLPFloor5 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cBTime = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.gBCleanStatusFilter.SuspendLayout();
             this.gBRoomTypeFilter.SuspendLayout();
@@ -74,12 +69,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.guna2TextBox3);
-            this.panel1.Controls.Add(this.guna2TextBox2);
-            this.panel1.Controls.Add(this.guna2TextBox1);
+            this.panel1.Controls.Add(this.cBTime);
             this.panel1.Controls.Add(this.dTPFilter);
-            this.panel1.Controls.Add(this.guna2PictureBox1);
-            this.panel1.Controls.Add(this.tBSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -87,108 +78,19 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(956, 31);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(84, 36);
-            this.guna2TextBox3.TabIndex = 9;
-            // 
-            // guna2TextBox2
-            // 
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(745, 31);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(205, 36);
-            this.guna2TextBox2.TabIndex = 8;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(323, 32);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(205, 36);
-            this.guna2TextBox1.TabIndex = 7;
-            // 
             // dTPFilter
             // 
             this.dTPFilter.Checked = true;
             this.dTPFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dTPFilter.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dTPFilter.Location = new System.Drawing.Point(142, 32);
+            this.dTPFilter.Location = new System.Drawing.Point(245, 32);
             this.dTPFilter.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dTPFilter.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dTPFilter.Name = "dTPFilter";
-            this.dTPFilter.Size = new System.Drawing.Size(175, 36);
+            this.dTPFilter.Size = new System.Drawing.Size(205, 36);
             this.dTPFilter.TabIndex = 6;
             this.dTPFilter.Value = new System.DateTime(2023, 12, 14, 20, 51, 54, 957);
             this.dTPFilter.ValueChanged += new System.EventHandler(this.dTPFilter_ValueChanged);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(99, 32);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(37, 36);
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // tBSearch
-            // 
-            this.tBSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tBSearch.DefaultText = "";
-            this.tBSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tBSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tBSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tBSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tBSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tBSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBSearch.Location = new System.Drawing.Point(534, 32);
-            this.tBSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tBSearch.Name = "tBSearch";
-            this.tBSearch.PasswordChar = '\0';
-            this.tBSearch.PlaceholderText = "";
-            this.tBSearch.SelectedText = "";
-            this.tBSearch.Size = new System.Drawing.Size(205, 36);
-            this.tBSearch.TabIndex = 3;
             // 
             // panel2
             // 
@@ -629,6 +531,26 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Tầng 2";
             // 
+            // cBTime
+            // 
+            this.cBTime.BackColor = System.Drawing.Color.Transparent;
+            this.cBTime.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cBTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBTime.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cBTime.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cBTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cBTime.ItemHeight = 30;
+            this.cBTime.Items.AddRange(new object[] {
+            "Trước 12:00",
+            "Sau 14:00"});
+            this.cBTime.Location = new System.Drawing.Point(465, 32);
+            this.cBTime.Name = "cBTime";
+            this.cBTime.Size = new System.Drawing.Size(175, 36);
+            this.cBTime.StartIndex = 1;
+            this.cBTime.TabIndex = 7;
+            this.cBTime.SelectedIndexChanged += new System.EventHandler(this.cBTime_SelectedIndexChanged);
+            // 
             // UC_RoomGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -643,7 +565,6 @@
             this.Size = new System.Drawing.Size(1043, 681);
             this.Load += new System.EventHandler(this.UC_RoomGrid_load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.gBCleanStatusFilter.ResumeLayout(false);
             this.gBCleanStatusFilter.PerformLayout();
@@ -661,8 +582,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox tBSearch;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2GroupBox gBRoomStatusFilter;
         private Guna.UI2.WinForms.Guna2GroupBox gBRoomTypeFilter;
@@ -692,8 +611,6 @@
         private Guna.UI2.WinForms.Guna2RadioButton rBTRoomTypeAll;
         private Guna.UI2.WinForms.Guna2RadioButton rBTRoomStatusAll;
         private Guna.UI2.WinForms.Guna2DateTimePicker dTPFilter;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2ComboBox cBTime;
     }
 }

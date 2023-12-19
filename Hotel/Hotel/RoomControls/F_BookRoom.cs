@@ -1,5 +1,6 @@
 ﻿using Hotel.All_user_control;
 using Hotel.Properties;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace Hotel.RoomControls
         RoomFunction rFn = new RoomFunction();
         #region Query
         string query;
+        string checkInDate, checkOutDate;   
         //string queryR = "select A.MAPHG, MALOAIPHG, DONDEP, TRANGTHAI, CHECKEDIN, TANG, KHOTEN, NHOTEN " +
         //                 "from PHONG A " +
         //                 "left join CTPHG on A.MAPHG = CTPHG.MAPHG " +
@@ -54,9 +56,11 @@ namespace Hotel.RoomControls
             dSS.Tables.Add();
             dSS.Tables[0].Columns.Add("MAPHG", typeof(string));
             dSS.Tables[0].Columns.Add("MALOAIPHG", typeof(string));
-            InitializeGridViews();
             dTPCheckInDate.MinDate = DateTime.Now;
-            dTPCheckOutDate.MinDate = DateTime.Now;
+            dTPCheckOutDate.MinDate = DateTime.Now.AddDays(1);
+            checkInDate = dTPCheckInDate.Value.ToString(Global.dateFormat).Substring(0, 10) + " 14:00:00";
+            checkOutDate = dTPCheckOutDate.Value.ToString(Global.dateFormat).Substring(0, 10) + " 12:00:00";
+            InitializeGridViews();
         }
         private void InitializeGridViews()
         {
@@ -106,9 +110,11 @@ namespace Hotel.RoomControls
             string queryR = "select distinct p.MAPHG , MALOAIPHG " +
                             "from PHONG p " +
                             "left join CTPHG c on p.MAPHG = c.MAPHG " +
-                            "where c.MAPHG is null or c.NGNHANPHG > '" + dTPCheckOutDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "' or c.NGTRPHG < '" + dTPCheckInDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "'";
+                            "left join HOADON d on c.MAHD = d.MAHD " +
+                            "where c.MAPHG is null or d.NGNHANPHG > '" + checkOutDate + "' or d.NGTRPHG < '" + checkInDate + "'";
             dSA = fn.getData(queryR);
             dGVAvailableRoom.DataSource = dSA.Tables[0];
+            dSS.Tables[0].Rows.Clear();
         }
         private void bTExit_Click(object sender, EventArgs e)
         {
@@ -156,7 +162,7 @@ namespace Hotel.RoomControls
                 MessageBox.Show("Vui lòng nhập đúng thông tin khách hàng");
                 return;
             }
-            query = "INSERT INTO HOADON(MAKH, MANV, CHECKEDIN, CHECKEDOUT) VALUES ('" + dSTemp1.Tables[0].Rows[0]["MAKH"].ToString() + "','" + Global.globalEmID + "'," + 0 + "," + 0 +")";
+            query = "INSERT INTO HOADON(MAKH, MANV, NGNHANPHG, NGTRPHG) VALUES ('" + dSTemp1.Tables[0].Rows[0]["MAKH"].ToString() + "','" + Global.globalEmID +"','" + checkInDate + "','" + checkOutDate +"')";
             fn.setDataNoMsg(query);
             query = "SELECT TOP 1 MAHD " +
                     "FROM HOADON " +
@@ -166,7 +172,7 @@ namespace Hotel.RoomControls
             dSTemp2 = fn.getData(query);
             foreach (DataRow dR in dSS.Tables[0].Rows)
             {
-                query = "INSERT INTO CTPHG(MAPHG, MAHD, NGNHANPHG, NGTRPHG, TIENDATPHG) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString() + "','" + dTPCheckInDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "','" + dTPCheckOutDate.Value.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") + "'," + 7000 + ")";
+                query = "INSERT INTO CTPHG(MAPHG, MAHD, TIENDATPHG) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString()+ "'," + 7000 + ")";
                 fn.setDataNoMsg(query);
             }
             EventHub.OnDatabaseUpdated();
@@ -203,8 +209,9 @@ namespace Hotel.RoomControls
 
         private void dTPCheckInDate_ValueChanged(object sender, EventArgs e)
         {
+            checkInDate = dTPCheckInDate.Value.ToString(Global.dateFormat).Substring(0, 10) + " 14:00:00";
             dTPCheckOutDate.MinDate = dTPCheckInDate.Value;
-            if (dTPCheckInDate.Value > dTPCheckOutDate.Value)
+            if (dTPCheckInDate.Value >= dTPCheckOutDate.Value)
             {
                 dTPCheckOutDate.Value = dTPCheckInDate.Value.AddDays(1);
             }
@@ -213,6 +220,7 @@ namespace Hotel.RoomControls
 
         private void dTPCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
+            checkOutDate = dTPCheckOutDate.Value.ToString(Global.dateFormat).Substring(0, 10) + " 12:00:00";
             DGVLoad();
         }
     }

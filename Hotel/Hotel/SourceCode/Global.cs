@@ -9,6 +9,7 @@ namespace Hotel
     static class Global
     {
         private static string _globalEmID;
+        public static string dateFormat = "yyyy'-'MM'-'dd hh':'mm':'ss";
         public static string globalEmID
         {
             get { return _globalEmID; }
