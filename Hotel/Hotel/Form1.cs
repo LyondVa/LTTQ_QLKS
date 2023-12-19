@@ -50,7 +50,7 @@ namespace Hotel
                 }
                 if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
                     position = 1;
-                Dashboard dash = new Dashboard(position);
+                Home dash = new Home(position);
                 this.Hide();
                 dash.Show();
                 Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();

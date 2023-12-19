@@ -73,5 +73,10 @@ namespace Hotel.All_user_control
             ec.Focus();
             setCustomerInfo(dgvCustomerInfo);
         }
+
+        private void lBSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
