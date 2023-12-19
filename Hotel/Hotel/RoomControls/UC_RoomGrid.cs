@@ -25,13 +25,9 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
             TableLayoutPanelScrollbars();
-            PopulateList(1);
+            PopulateGrid(1);
             EventHub.DatabaseUpdated += UpdateGrid;
             dTPFilter.Value = DateTime.Now;
-        }
-        private void UC_RoomGrid_load(object sender, EventArgs e)
-        {
-            PopulateGrid(1);
         }
         private void UpdateGrid()
         {
@@ -57,7 +53,10 @@ namespace Hotel.RoomControls
             fLPFloor3.Controls.Clear();
             fLPFloor4.Controls.Clear();
             fLPFloor5.Controls.Clear();
-            PopulateList(criterion);
+            if(criterion == 1)
+            {
+                PopulateList(1);
+            }
 
             foreach (UC_RoomUnitBase roomUnit in rooms)
             {
@@ -257,11 +256,11 @@ namespace Hotel.RoomControls
         }
         private void LoadRoomBooked()
         {
-            rooms = rooms.Where(r => r.RoomStatus == "Không trống" && r.CheckInDateActual == null).ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDateActual == "").ToList();
         }
         private void LoadRoomOccupied()
         {
-            rooms = rooms.Where(r => r.RoomStatus == "Không trống" && r.CheckInDateActual != null).ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDateActual != "").ToList();
         }
         private void LoadRoomStatus()
         {
