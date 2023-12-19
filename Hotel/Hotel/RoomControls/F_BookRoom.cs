@@ -111,7 +111,7 @@ namespace Hotel.RoomControls
                             "from PHONG p " +
                             "left join CTPHG c on p.MAPHG = c.MAPHG " +
                             "left join HOADON d on c.MAHD = d.MAHD " +
-                            "where c.MAPHG is null or d.NGNHANPHG > '" + checkOutDate + "' or d.NGTRPHG < '" + checkInDate + "'";
+                            "where c.MAPHG is null or dbo.CHECKROOM(p.MAPHG, '"+checkInDate+"','"+checkOutDate+"') = 1";
             dSA = fn.getData(queryR);
             dGVAvailableRoom.DataSource = dSA.Tables[0];
             dSS.Tables[0].Rows.Clear();
@@ -210,7 +210,7 @@ namespace Hotel.RoomControls
         private void dTPCheckInDate_ValueChanged(object sender, EventArgs e)
         {
             checkInDate = dTPCheckInDate.Value.ToString(Global.dateFormat).Substring(0, 10) + " 14:00:00";
-            dTPCheckOutDate.MinDate = dTPCheckInDate.Value;
+            dTPCheckOutDate.MinDate = dTPCheckInDate.Value.AddDays(1);
             if (dTPCheckInDate.Value >= dTPCheckOutDate.Value)
             {
                 dTPCheckOutDate.Value = dTPCheckInDate.Value.AddDays(1);
