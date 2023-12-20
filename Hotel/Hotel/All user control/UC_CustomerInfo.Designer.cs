@@ -40,7 +40,6 @@
             this.btExport = new Guna.UI2.WinForms.Guna2Button();
             this.dgvCustomerInfo = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.lBSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +51,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(28, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(406, 48);
+            this.label1.Size = new System.Drawing.Size(498, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông Tin Khách Hàng";
             // 
@@ -75,7 +74,7 @@
             this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PasswordChar = '\0';
-            this.tbSearch.PlaceholderText = "Tìm Kiếm";
+            this.tbSearch.PlaceholderText = "Nhập Tên Khách Hàng";
             this.tbSearch.SelectedText = "";
             this.tbSearch.Size = new System.Drawing.Size(382, 51);
             this.tbSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -181,18 +180,6 @@
             this.btAdd.Text = "Đăng Ký Khách Hàng";
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // lBSearch
-            // 
-            this.lBSearch.AutoSize = true;
-            this.lBSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBSearch.ForeColor = System.Drawing.Color.White;
-            this.lBSearch.Location = new System.Drawing.Point(31, 164);
-            this.lBSearch.Name = "lBSearch";
-            this.lBSearch.Size = new System.Drawing.Size(169, 30);
-            this.lBSearch.TabIndex = 9;
-            this.lBSearch.Text = "Tên Khách Hàng";
-            this.lBSearch.Click += new System.EventHandler(this.lBSearch_Click);
-            // 
             // UC_CustomerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -200,7 +187,6 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.lBSearch);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dgvCustomerInfo);
             this.Controls.Add(this.btExport);
@@ -225,6 +211,5 @@
         private Guna.UI2.WinForms.Guna2Button btExport;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCustomerInfo;
         private Guna.UI2.WinForms.Guna2Button btAdd;
-        private System.Windows.Forms.Label lBSearch;
     }
 }

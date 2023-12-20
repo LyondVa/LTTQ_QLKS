@@ -40,7 +40,6 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tbNameSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lBSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,11 +47,11 @@
             // 
             this.Th.AutoSize = true;
             this.Th.BackColor = System.Drawing.Color.Transparent;
-            this.Th.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Th.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.Th.ForeColor = System.Drawing.Color.White;
             this.Th.Location = new System.Drawing.Point(28, 72);
             this.Th.Name = "Th";
-            this.Th.Size = new System.Drawing.Size(362, 48);
+            this.Th.Size = new System.Drawing.Size(445, 60);
             this.Th.TabIndex = 2;
             this.Th.Text = "Chi Tiết Khách Hàng";
             // 
@@ -86,7 +85,6 @@
             this.guna2DataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,6 +106,7 @@
             this.guna2DataGridView1.Location = new System.Drawing.Point(36, 336);
             this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
+            this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 62;
             this.guna2DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -128,7 +127,7 @@
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 34;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,23 +177,11 @@
             this.tbNameSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbNameSearch.Name = "tbNameSearch";
             this.tbNameSearch.PasswordChar = '\0';
-            this.tbNameSearch.PlaceholderText = "Tìm Kiếm ";
+            this.tbNameSearch.PlaceholderText = "Nhập Tên Khách Hàng";
             this.tbNameSearch.SelectedText = "";
             this.tbNameSearch.Size = new System.Drawing.Size(335, 56);
             this.tbNameSearch.TabIndex = 25;
             this.tbNameSearch.TextChanged += new System.EventHandler(this.tbNameSearch_TextChanged);
-            // 
-            // lBSearch
-            // 
-            this.lBSearch.AutoSize = true;
-            this.lBSearch.BackColor = System.Drawing.Color.Transparent;
-            this.lBSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBSearch.ForeColor = System.Drawing.Color.White;
-            this.lBSearch.Location = new System.Drawing.Point(31, 164);
-            this.lBSearch.Name = "lBSearch";
-            this.lBSearch.Size = new System.Drawing.Size(169, 30);
-            this.lBSearch.TabIndex = 26;
-            this.lBSearch.Text = "Tên Khách Hàng";
             // 
             // UC_CustomerDetail
             // 
@@ -203,7 +190,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.lBSearch);
             this.Controls.Add(this.tbNameSearch);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2DataGridView1);
@@ -228,6 +214,5 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private Guna.UI2.WinForms.Guna2TextBox tbNameSearch;
-        private System.Windows.Forms.Label lBSearch;
     }
 }

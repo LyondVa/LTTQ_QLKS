@@ -20,6 +20,7 @@ namespace Hotel.SmallForm
         {
             InitializeComponent();
             txtBirth.Value = DateTime.Now;
+            this.Size = new System.Drawing.Size(950, 604);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -54,6 +55,11 @@ namespace Hotel.SmallForm
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
