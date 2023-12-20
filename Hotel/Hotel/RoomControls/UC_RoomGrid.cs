@@ -35,8 +35,8 @@ namespace Hotel.RoomControls
         }
         private void SearchTimeConversion()
         {
-            string tempTime = dTPFilter.Value.ToString(Global.dateFormat).Substring(0,10);
-            if(cBTime.SelectedIndex == 0)
+            string tempTime = dTPFilter.Value.ToString(Global.dateFormat).Substring(0, 10);
+            if (cBTime.SelectedIndex == 0)
             {
                 tempTime += " 12:0:0";
             }
@@ -53,7 +53,7 @@ namespace Hotel.RoomControls
             fLPFloor3.Controls.Clear();
             fLPFloor4.Controls.Clear();
             fLPFloor5.Controls.Clear();
-            if(criterion == 1)
+            if (criterion == 1)
             {
                 PopulateList(1);
             }
@@ -231,14 +231,12 @@ namespace Hotel.RoomControls
                 else
                 {
                     UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString());
-                    roomA.CheckInDateActual = "N/a";
                     rooms.Add(roomA);
                     roomFlag = 1;
                 }
                 if (i < dRT.Count - 1 && dRT[i + 1]["MAPHG"].ToString() != tRoomID && roomFlag == 0 || i == dRT.Count - 1 && roomFlag == 0)
                 {
                     UC_RoomUnitAvailable roomA = new UC_RoomUnitAvailable(dRT[i]["MAPHG"].ToString(), dRT[i]["MALOAIPHG"].ToString(), dRT[i]["DONDEP"].ToString(), dRT[i]["TRANGTHAI"].ToString(), dRT[i]["TANG"].ToString(), dRT[i]["GHICHU"].ToString());
-                    roomA.CheckInDateActual = "N/a";
                     rooms.Add(roomA);
                     roomFlag = 1;
                 }
@@ -248,7 +246,7 @@ namespace Hotel.RoomControls
         #region RadioButtonCheck prerequisites
         private void LoadRoomEmpty()
         {
-            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDateActual == "N/a").ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDate == "").ToList();
         }
         private void LoadRoomManitenance()
         {
@@ -256,11 +254,11 @@ namespace Hotel.RoomControls
         }
         private void LoadRoomBooked()
         {
-            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDateActual == "").ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDate != "" && r.CheckInDateActual == "").ToList();
         }
         private void LoadRoomOccupied()
         {
-            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDateActual != "").ToList();
+            rooms = rooms.Where(r => r.RoomStatus == "Bình thường" && r.CheckInDate != "" && r.CheckInDateActual != "").ToList();
         }
         private void LoadRoomStatus()
         {
