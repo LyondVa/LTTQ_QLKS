@@ -49,9 +49,9 @@
             this.Th.BackColor = System.Drawing.Color.Transparent;
             this.Th.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.Th.ForeColor = System.Drawing.Color.White;
-            this.Th.Location = new System.Drawing.Point(28, 72);
+            this.Th.Location = new System.Drawing.Point(25, 58);
             this.Th.Name = "Th";
-            this.Th.Size = new System.Drawing.Size(445, 60);
+            this.Th.Size = new System.Drawing.Size(374, 50);
             this.Th.TabIndex = 2;
             this.Th.Text = "Chi Tiết Khách Hàng";
             // 
@@ -66,13 +66,13 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.ItemHeight = 30;
             this.txtSearch.Items.AddRange(new object[] {
-            "All Customers Details",
-            "In Hotel Customer",
-            "CheckOut Customer "});
-            this.txtSearch.Location = new System.Drawing.Point(528, 218);
+            "Tất cả khách hàng",
+            "Khách hàng đang thuê phòng",
+            "Khách hàng không thuê phòng"});
+            this.txtSearch.Location = new System.Drawing.Point(469, 174);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(337, 36);
+            this.txtSearch.Size = new System.Drawing.Size(358, 36);
             this.txtSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSearch.TabIndex = 4;
             this.txtSearch.SelectedIndexChanged += new System.EventHandler(this.txtSearch_SelectedIndexChanged);
@@ -103,7 +103,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(36, 336);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(32, 269);
             this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
@@ -111,7 +111,7 @@
             this.guna2DataGridView1.RowHeadersWidth = 62;
             this.guna2DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.guna2DataGridView1.RowTemplate.Height = 28;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1281, 506);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1139, 405);
             this.guna2DataGridView1.TabIndex = 5;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -154,10 +154,10 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(1071, 218);
+            this.guna2Button1.Location = new System.Drawing.Point(952, 174);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(211, 57);
+            this.guna2Button1.Size = new System.Drawing.Size(188, 46);
             this.guna2Button1.TabIndex = 24;
             this.guna2Button1.Text = "Xuất File Excel";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -173,20 +173,20 @@
             this.tbNameSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbNameSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbNameSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNameSearch.Location = new System.Drawing.Point(36, 218);
-            this.tbNameSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbNameSearch.Location = new System.Drawing.Point(32, 174);
+            this.tbNameSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbNameSearch.Name = "tbNameSearch";
             this.tbNameSearch.PasswordChar = '\0';
             this.tbNameSearch.PlaceholderText = "Nhập Tên Khách Hàng";
             this.tbNameSearch.SelectedText = "";
-            this.tbNameSearch.Size = new System.Drawing.Size(335, 56);
+            this.tbNameSearch.Size = new System.Drawing.Size(298, 45);
             this.tbNameSearch.TabIndex = 25;
             this.tbNameSearch.TextChanged += new System.EventHandler(this.tbNameSearch_TextChanged);
             // 
             // UC_CustomerDetail
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -198,7 +198,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_CustomerDetail";
-            this.Size = new System.Drawing.Size(1796, 668);
+            this.Size = new System.Drawing.Size(1596, 534);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

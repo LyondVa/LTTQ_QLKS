@@ -24,7 +24,7 @@ namespace Hotel.All_user_control
         }
         public void setService(DataGridView dgv)
         {
-            query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', GIADV as 'Giá'" +
+            query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', cast(GIADV as decimal) as 'Giá'" +
                     "FROM DICHVU " +
                     "ORDER BY MADV ASC";
             DataSet ds = fn.getData(query);
@@ -47,9 +47,9 @@ namespace Hotel.All_user_control
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', GIADV as 'Giá' " +
+            query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', cast(GIADV as decimal) as 'Giá' " +
                     "FROM DICHVU " +
-                    "WHERE TENDV like '%" + tbSearch.Text + "%' " +
+                    "WHERE TENDV like N'%" + tbSearch.Text + "%' " +
                     "ORDER BY MADV ASC";
             DataSet ds = fn.getData(query);
             dgvServiceInfo.DataSource = ds.Tables[0];

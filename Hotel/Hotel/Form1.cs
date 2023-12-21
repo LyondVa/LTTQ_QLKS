@@ -35,7 +35,7 @@ namespace Hotel
             query = "select TENTK, MATKHAU, MANV " +
                     "from TAIKHOAN where TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
             DataSet ds = fn.getData(query);
-            string query1 = "select POSITION " +
+            string query1 = "select CHUCVU " +
                             "from NHANVIEN, TAIKHOAN " +
                             "where NHANVIEN.MANV = TAIKHOAN.MANV " +
                             "and TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
@@ -46,7 +46,10 @@ namespace Hotel
                 labelError.Visible = false;
                 if (ds1.Tables[0].Rows.Count > 0)
                 {
-                    position = Convert.ToInt32(ds1.Tables[0].Rows[0]["POSITION"]);
+                    if (ds1.Tables[0].Rows[0]["CHUCVU"].ToString() == "Quản lý")
+                    {
+                        position = 1;
+                    }
                 }
                 if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
                     position = 1;
