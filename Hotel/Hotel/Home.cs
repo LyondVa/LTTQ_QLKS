@@ -123,5 +123,49 @@ namespace Hotel
             uC_RoomGrid1.Visible = true;
             uC_RoomGrid1.BringToFront();
         }
+        private bool nutTo = true;
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (nutTo == true)
+            {
+                Size s = new Size(1059, 690);
+                panel3.Location = new Point(45, 0);
+                panel3.Size = s;
+                panel1.Size = new Size(45, 730);
+                panel2.Location = new Point(-1, 44);
+                panel2.Size = new Size(45, 490);
+                pictureBox1.Size = s;
+                uC_RoomGrid1.Size = s;
+                uC_RoomManagement1.Size = s;
+                uC_Service1.Size = s;
+                uC_Chartt1.Size = s;
+                uC_Employee21.Size = s;
+                uC_CustomerInfo1.Size = s;
+                uC_CheckOut1.Size = s;
+                uC_CustomerDetail1.Size = s;
+                uC_User1.Size = s;
+                nutTo = false;
+            }
+            else
+            {
+                Size s = new Size(900, 690);
+                panel3.Location = new Point(200, 0);
+                panel3.Size = s;
+                panel1.Size = new Size(200, 730);
+                panel2.Location = new Point(-1, 174);
+                panel2.Size = new Size(200, 490);
+                pictureBox1.Size = s;
+                uC_RoomGrid1.Size = s;
+                uC_RoomManagement1.Size = s;
+                uC_Service1.Size = s;
+                uC_Chartt1.Size = s;
+                uC_Employee21.Size = s;
+                uC_CustomerInfo1.Size = s;
+                uC_CheckOut1.Size = s;
+                uC_CustomerDetail1.Size = s;
+                uC_User1.Size = s;
+                nutTo = true;
+            }
+        }
     }
 }
