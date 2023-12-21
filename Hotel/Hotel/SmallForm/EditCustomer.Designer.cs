@@ -166,7 +166,7 @@
             this.cbGender.ItemHeight = 30;
             this.cbGender.Items.AddRange(new object[] {
             "Nam",
-            "Nữ ",
+            "Nữ",
             "Khác"});
             this.cbGender.Location = new System.Drawing.Point(625, 87);
             this.cbGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -22,7 +22,18 @@ namespace Hotel.SmallForm
             tbName.Text = name;
             tbNationality.Text = nationality;
             tbCCCD.Text = cccd;
-            cbGender.Text = gender;
+            if(gender == "Nam")
+            {
+                cbGender.SelectedIndex = 0;
+            }
+            else if(gender == "Nữ")
+            {
+                cbGender.SelectedIndex = 1;
+            }
+            else
+            {
+                cbGender.SelectedIndex = 2;
+            }
             txtBirth.Text = dob;
             tbPhone.Text = phone;
             tbAddress.Text = address;
