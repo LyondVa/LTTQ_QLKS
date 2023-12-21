@@ -74,13 +74,13 @@
             this.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearch.Location = new System.Drawing.Point(48, 270);
+            this.tbSearch.Location = new System.Drawing.Point(48, 248);
             this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PasswordChar = '\0';
             this.tbSearch.PlaceholderText = "Tìm Kiếm";
             this.tbSearch.SelectedText = "";
-            this.tbSearch.Size = new System.Drawing.Size(286, 39);
+            this.tbSearch.Size = new System.Drawing.Size(336, 61);
             this.tbSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbSearch.TabIndex = 5;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);

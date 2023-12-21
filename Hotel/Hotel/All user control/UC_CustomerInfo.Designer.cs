@@ -83,6 +83,7 @@
             // 
             // btExport
             // 
+            this.btExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btExport.BorderRadius = 10;
             this.btExport.BorderThickness = 1;
             this.btExport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -92,7 +93,7 @@
             this.btExport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.btExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExport.ForeColor = System.Drawing.Color.White;
-            this.btExport.Location = new System.Drawing.Point(1078, 218);
+            this.btExport.Location = new System.Drawing.Point(1189, 218);
             this.btExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExport.Name = "btExport";
             this.btExport.Size = new System.Drawing.Size(211, 61);
@@ -109,6 +110,7 @@
             this.dgvCustomerInfo.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.dgvCustomerInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCustomerInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,7 +129,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomerInfo.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomerInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.dgvCustomerInfo.Location = new System.Drawing.Point(36, 336);
+            this.dgvCustomerInfo.Location = new System.Drawing.Point(36, 253);
             this.dgvCustomerInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCustomerInfo.Name = "dgvCustomerInfo";
             this.dgvCustomerInfo.ReadOnly = true;
@@ -135,7 +137,7 @@
             this.dgvCustomerInfo.RowHeadersWidth = 62;
             this.dgvCustomerInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvCustomerInfo.RowTemplate.Height = 28;
-            this.dgvCustomerInfo.Size = new System.Drawing.Size(1281, 506);
+            this.dgvCustomerInfo.Size = new System.Drawing.Size(1364, 589);
             this.dgvCustomerInfo.TabIndex = 8;
             this.dgvCustomerInfo.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.dgvCustomerInfo.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -163,6 +165,7 @@
             // 
             // btAdd
             // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btAdd.BorderRadius = 10;
             this.btAdd.BorderThickness = 1;
             this.btAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -172,7 +175,7 @@
             this.btAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.btAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAdd.ForeColor = System.Drawing.Color.White;
-            this.btAdd.Location = new System.Drawing.Point(1088, 912);
+            this.btAdd.Location = new System.Drawing.Point(1199, 911);
             this.btAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(201, 96);
