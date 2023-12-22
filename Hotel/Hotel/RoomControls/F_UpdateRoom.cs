@@ -55,5 +55,37 @@ namespace Hotel.RoomControls
                 }
             }
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (cBRoomID.Text == "" || cBRoomTypeID.Text == "" || cBRoomTypeID.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                string column = "MAPHG";
+                if (rFn.FindInDataset(ds, cBRoomID.Text, column) == null)
+                {
+                    MessageBox.Show("Không tìm thấy mã phòng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    query = "update PHONG " +
+                            "set MALOAIPHG = '" + cBRoomTypeID.Text + "', TRANGTHAI = '" + cBRoomStatus.Text + "' " +
+                            "where MAPHG = '" + cBRoomID.Text + "'";
+                    string msg = "Cập nhật Thành công";
+                    fn.setData(query, msg);
+                    EventHub.OnDatabaseUpdated();
+                    this.Close();
+                }
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

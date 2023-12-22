@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bTExit = new System.Windows.Forms.Button();
-            this.bTAdd = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_AddRoom));
             this.lBStatus = new System.Windows.Forms.Label();
             this.lBRoomTypeID = new System.Windows.Forms.Label();
             this.lBRoomID = new System.Windows.Forms.Label();
@@ -40,61 +40,56 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cBRoomStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cBRoomTypeID = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.SuspendLayout();
-            // 
-            // bTExit
-            // 
-            this.bTExit.Location = new System.Drawing.Point(248, 246);
-            this.bTExit.Name = "bTExit";
-            this.bTExit.Size = new System.Drawing.Size(75, 23);
-            this.bTExit.TabIndex = 29;
-            this.bTExit.Text = "Thoát";
-            this.bTExit.UseVisualStyleBackColor = true;
-            this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
-            // 
-            // bTAdd
-            // 
-            this.bTAdd.Location = new System.Drawing.Point(167, 246);
-            this.bTAdd.Name = "bTAdd";
-            this.bTAdd.Size = new System.Drawing.Size(75, 23);
-            this.bTAdd.TabIndex = 28;
-            this.bTAdd.Text = "Thêm";
-            this.bTAdd.UseVisualStyleBackColor = true;
-            this.bTAdd.Click += new System.EventHandler(this.bTAdd_Click);
             // 
             // lBStatus
             // 
             this.lBStatus.AutoSize = true;
-            this.lBStatus.Location = new System.Drawing.Point(184, 103);
+            this.lBStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lBStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBStatus.ForeColor = System.Drawing.Color.White;
+            this.lBStatus.Location = new System.Drawing.Point(233, 144);
             this.lBStatus.Name = "lBStatus";
-            this.lBStatus.Size = new System.Drawing.Size(67, 16);
+            this.lBStatus.Size = new System.Drawing.Size(120, 32);
             this.lBStatus.TabIndex = 21;
             this.lBStatus.Text = "Trạng thái";
             // 
             // lBRoomTypeID
             // 
             this.lBRoomTypeID.AutoSize = true;
-            this.lBRoomTypeID.Location = new System.Drawing.Point(12, 103);
+            this.lBRoomTypeID.BackColor = System.Drawing.Color.Transparent;
+            this.lBRoomTypeID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBRoomTypeID.ForeColor = System.Drawing.Color.White;
+            this.lBRoomTypeID.Location = new System.Drawing.Point(29, 144);
             this.lBRoomTypeID.Name = "lBRoomTypeID";
-            this.lBRoomTypeID.Size = new System.Drawing.Size(92, 16);
+            this.lBRoomTypeID.Size = new System.Drawing.Size(170, 32);
             this.lBRoomTypeID.TabIndex = 17;
             this.lBRoomTypeID.Text = "Mã loại phòng";
             // 
             // lBRoomID
             // 
             this.lBRoomID.AutoSize = true;
-            this.lBRoomID.Location = new System.Drawing.Point(184, 18);
+            this.lBRoomID.BackColor = System.Drawing.Color.Transparent;
+            this.lBRoomID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBRoomID.ForeColor = System.Drawing.Color.White;
+            this.lBRoomID.Location = new System.Drawing.Point(233, 36);
             this.lBRoomID.Name = "lBRoomID";
-            this.lBRoomID.Size = new System.Drawing.Size(67, 16);
+            this.lBRoomID.Size = new System.Drawing.Size(125, 32);
             this.lBRoomID.TabIndex = 16;
             this.lBRoomID.Text = "Mã phòng";
             // 
             // lBFloor
             // 
             this.lBFloor.AutoSize = true;
-            this.lBFloor.Location = new System.Drawing.Point(12, 18);
+            this.lBFloor.BackColor = System.Drawing.Color.Transparent;
+            this.lBFloor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBFloor.ForeColor = System.Drawing.Color.White;
+            this.lBFloor.Location = new System.Drawing.Point(29, 36);
             this.lBFloor.Name = "lBFloor";
-            this.lBFloor.Size = new System.Drawing.Size(39, 16);
+            this.lBFloor.Size = new System.Drawing.Size(67, 32);
             this.lBFloor.TabIndex = 30;
             this.lBFloor.Text = "Tầng";
             // 
@@ -114,9 +109,10 @@
             "3",
             "4",
             "5"});
-            this.cBFloor.Location = new System.Drawing.Point(15, 38);
+            this.cBFloor.Location = new System.Drawing.Point(29, 72);
+            this.cBFloor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBFloor.Name = "cBFloor";
-            this.cBFloor.Size = new System.Drawing.Size(135, 36);
+            this.cBFloor.Size = new System.Drawing.Size(151, 36);
             this.cBFloor.TabIndex = 33;
             this.cBFloor.SelectedIndexChanged += new System.EventHandler(this.cBFloor_SelectedItemChanged);
             // 
@@ -130,9 +126,10 @@
             this.cBRoomID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cBRoomID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBRoomID.ItemHeight = 30;
-            this.cBRoomID.Location = new System.Drawing.Point(187, 38);
+            this.cBRoomID.Location = new System.Drawing.Point(233, 72);
+            this.cBRoomID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBRoomID.Name = "cBRoomID";
-            this.cBRoomID.Size = new System.Drawing.Size(136, 36);
+            this.cBRoomID.Size = new System.Drawing.Size(152, 36);
             this.cBRoomID.TabIndex = 34;
             // 
             // cBCleanStatus
@@ -148,18 +145,22 @@
             this.cBCleanStatus.Items.AddRange(new object[] {
             "Đã dọn",
             "Chưa dọn"});
-            this.cBCleanStatus.Location = new System.Drawing.Point(15, 203);
+            this.cBCleanStatus.Location = new System.Drawing.Point(29, 283);
+            this.cBCleanStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBCleanStatus.Name = "cBCleanStatus";
-            this.cBCleanStatus.Size = new System.Drawing.Size(135, 36);
+            this.cBCleanStatus.Size = new System.Drawing.Size(151, 36);
             this.cBCleanStatus.StartIndex = 0;
             this.cBCleanStatus.TabIndex = 38;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 184);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(29, 249);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.Size = new System.Drawing.Size(107, 32);
             this.label1.TabIndex = 37;
             this.label1.Text = "Dọn dẹp";
             // 
@@ -176,9 +177,10 @@
             this.cBRoomStatus.Items.AddRange(new object[] {
             "Trống",
             "Bảo trì"});
-            this.cBRoomStatus.Location = new System.Drawing.Point(187, 125);
+            this.cBRoomStatus.Location = new System.Drawing.Point(233, 181);
+            this.cBRoomStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBRoomStatus.Name = "cBRoomStatus";
-            this.cBRoomStatus.Size = new System.Drawing.Size(136, 36);
+            this.cBRoomStatus.Size = new System.Drawing.Size(152, 36);
             this.cBRoomStatus.StartIndex = 0;
             this.cBRoomStatus.TabIndex = 39;
             // 
@@ -192,17 +194,63 @@
             this.cBRoomTypeID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cBRoomTypeID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBRoomTypeID.ItemHeight = 30;
-            this.cBRoomTypeID.Location = new System.Drawing.Point(15, 125);
+            this.cBRoomTypeID.Location = new System.Drawing.Point(29, 181);
+            this.cBRoomTypeID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cBRoomTypeID.Name = "cBRoomTypeID";
-            this.cBRoomTypeID.Size = new System.Drawing.Size(135, 36);
+            this.cBRoomTypeID.Size = new System.Drawing.Size(151, 36);
             this.cBRoomTypeID.TabIndex = 40;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(233, 258);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(152, 45);
+            this.guna2Button1.TabIndex = 41;
+            this.guna2Button1.Text = "Thêm";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 15;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
+            this.guna2Button2.Location = new System.Drawing.Point(233, 319);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(152, 45);
+            this.guna2Button2.TabIndex = 42;
+            this.guna2Button2.Text = "Thoát";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 15;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // F_AddRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 281);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(426, 396);
             this.ControlBox = false;
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.cBRoomTypeID);
             this.Controls.Add(this.cBRoomStatus);
             this.Controls.Add(this.cBCleanStatus);
@@ -210,12 +258,14 @@
             this.Controls.Add(this.cBRoomID);
             this.Controls.Add(this.cBFloor);
             this.Controls.Add(this.lBFloor);
-            this.Controls.Add(this.bTExit);
-            this.Controls.Add(this.bTAdd);
             this.Controls.Add(this.lBStatus);
             this.Controls.Add(this.lBRoomTypeID);
             this.Controls.Add(this.lBRoomID);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "F_AddRoom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm phòng";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,9 +273,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bTExit;
-        private System.Windows.Forms.Button bTAdd;
         private System.Windows.Forms.Label lBStatus;
         private System.Windows.Forms.Label lBRoomTypeID;
         private System.Windows.Forms.Label lBRoomID;
@@ -236,5 +283,8 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cBRoomStatus;
         private Guna.UI2.WinForms.Guna2ComboBox cBRoomTypeID;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
