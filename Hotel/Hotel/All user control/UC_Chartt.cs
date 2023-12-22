@@ -20,6 +20,8 @@ namespace Hotel.All_user_control
         public UC_Chartt()
         {
             InitializeComponent();
+            setLabel();
+            macDinh();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,20 +36,21 @@ namespace Hotel.All_user_control
 
         private void UC_Chartt_Load(object sender, EventArgs e)
         {
-            cbNam.SelectedIndex = 0;
+            setLabel();
+            macDinh();
+            guna2Button1.PerformClick();
 
         }
-
+       
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            query = "select thang, tienPhong, tienDichVu, tienLuong, tongNhap, tienDoanhThu from doanhthu where nam ='"+cbNam.Text+"'";
-            string query2 = "select tienPhong, tienDichVu from doanhthu where thang = '" + cbThang.Text + "' and nam = '" + cbNam.Text + "'";
+            query = "select THANG, TIENPHONG, TIENDICHVU, TIENLUONG, TONGNHAP, TIENDOANHTHU from DOANHTHU where NAM =N'" + cbNam.Text + "'";
+            string query2 = "select tienPhong, tienDichVu from doanhthu where thang = N'" + cbThang.Text + "' and nam = N'" + cbNam.Text + "'";
             DataSet ds = fn.getData(query2);
-
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 // Đảm bảo rằng cả hai cột đều tồn tại
-                if (ds.Tables[0].Columns.Contains("tienPhong") && ds.Tables[0].Columns.Contains("tienDichVu"))
+                if (ds.Tables[0].Columns.Contains("TIENPHONG") && ds.Tables[0].Columns.Contains("TIENDICHVU"))
                 {
                     chart1.Series.Clear(); // Xóa các chuỗi có sẵn để sử dụng biểu đồ tròn
 
@@ -58,8 +61,8 @@ namespace Hotel.All_user_control
                     chart1.Series["Doanh Thu"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
 
                     // Gán giá trị từ cột "tienPhong" và "tienDichVu" cho biểu đồ tròn
-                    chart1.Series["Doanh Thu"].Points.AddXY("Tiền Phòng", ds.Tables[0].Rows[0]["tienPhong"]);
-                    chart1.Series["Doanh Thu"].Points.AddXY("Tiền Dịch Vụ", ds.Tables[0].Rows[0]["tienDichVu"]);
+                    chart1.Series["Doanh Thu"].Points.AddXY("Tiền Phòng", ds.Tables[0].Rows[0]["TIENPHONG"]);
+                    chart1.Series["Doanh Thu"].Points.AddXY("Tiền Dịch Vụ", ds.Tables[0].Rows[0]["TIENDICHVU"]);
 
                     // Hiển thị giá trị phần trăm bên trong mỗi phần tử của biểu đồ tròn
                     chart1.Series["Doanh Thu"].IsValueShownAsLabel = false;
@@ -69,25 +72,25 @@ namespace Hotel.All_user_control
                 }
                 else
                 {
-                    MessageBox.Show("Không có cột 'tienPhong' hoặc 'tienDichVu' trong kết quả truy vấn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không có cột 'TIENPHONG' hoặc 'TIENDICHVU' trong kết quả truy vấn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 MessageBox.Show("Không có dữ liệu trả về từ truy vấn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
             chart2.DataSource = fn.getData(query);
 
             // Sử dụng chuỗi đầu tiên trong SeriesCollection
-            chart2.Series[0].XValueMember = "thang";
-            chart2.Series[0].YValueMembers = "tongNhap";
+            chart2.Series[0].XValueMember = "THANG";
+            chart2.Series[0].YValueMembers = "TONGNHAP";
             // Sử dụng chuỗi đầu tiên trong SeriesCollection
-            chart2.Series[1].XValueMember = "thang";
-            chart2.Series[1].YValueMembers = "tienLuong";
-            chart2.Series[2].XValueMember = "thang";
-            chart2.Series[2].YValueMembers = "tienDoanhThu";
+            chart2.Series[1].XValueMember = "THANG";
+            chart2.Series[1].YValueMembers = "TIENLUONG";
+            chart2.Series[2].XValueMember = "THANG";
+            chart2.Series[2].YValueMembers = "TIENDOANHTHU";
             chart2.Series[1].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             chart2.Series[1].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
             // Nếu bạn muốn thiết lập kiểu dữ liệu cho trục x và y, bạn có thể sử dụng những dòng sau đây
@@ -97,6 +100,8 @@ namespace Hotel.All_user_control
             chart2.Series[2].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64;
 
             chart2.DataBind();
+
+            setLabel();
 
         }
         private void SetupChart()
@@ -138,6 +143,27 @@ namespace Hotel.All_user_control
             Profit pf = new Profit();
             pf.ShowDialog();
             pf.Focus();
+            setLabel();
         }
+        public void setLabel()
+        {
+            query = "SELECT MAX(TIENPHONG)  FROM  DOANHTHU WHERE NAM = N'" + cbNam.Text + "'";
+            label4.Text = fn.getData2(query);
+            query = "SELECT MAX(TIENDICHVU)  FROM  DOANHTHU WHERE NAM = N'" + cbNam.Text + "'";
+            label5.Text = fn.getData2(query);
+            query = "SELECT MAX(TIENLUONG) FROM DOANHTHU WHERE NAM = N'" + cbNam.Text + "'";
+            label6.Text = fn.getData2(query);
+        }
+        
+        private void cbThang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void macDinh()
+        {
+            cbNam.Text = "Năm 2021";
+            cbThang.Text = "Tháng 1";
+        }
+
     }
 }

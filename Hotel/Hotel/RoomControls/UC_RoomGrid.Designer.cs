@@ -145,7 +145,7 @@
             this.gBCleanStatusFilter.Location = new System.Drawing.Point(33, 562);
             this.gBCleanStatusFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gBCleanStatusFilter.Name = "gBCleanStatusFilter";
-            this.gBCleanStatusFilter.Size = new System.Drawing.Size(237, 195);
+            this.gBCleanStatusFilter.Size = new System.Drawing.Size(237, 268);
             this.gBCleanStatusFilter.TabIndex = 4;
             this.gBCleanStatusFilter.Text = "Dọn dẹp";
             // 

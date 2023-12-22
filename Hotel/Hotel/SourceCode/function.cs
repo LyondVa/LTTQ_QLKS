@@ -37,7 +37,7 @@ namespace Hotel
             }
             return null;
         }
-       
+
         public void setData(string query, string message)
         {
             try
@@ -146,25 +146,63 @@ namespace Hotel
                 GC.Collect();
             }
         }
+        public string getData2(string query)
+        {
+            string result = ""; // Giá trị mặc định nếu không có dữ liệu
+
+            // Sử dụng try-catch để xử lý các lỗi có thể xảy ra
+            try
+            {
+                // Thực hiện truy vấn và lấy dữ liệu
+                // Đây là nơi bạn sử dụng ADO.NET hoặc ORM để thực hiện truy vấn
+                // Ví dụ: sử dụng SqlConnection, SqlCommand, SqlDataReader (nếu bạn sử dụng ADO.NET)
+
+                // Ví dụ ADO.NET
+                using (SqlConnection connection = getConnection())
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thực hiện truy vấn và lấy dữ liệu
+                        object queryResult = command.ExecuteScalar();
+
+                        // Kiểm tra xem có dữ liệu không trước khi gán giá trị
+                        if (queryResult != null)
+                        {
+                            // Chuyển đổi kết quả sang kiểu string và gán vào biến result
+                            result = queryResult.ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu có
+                // Có thể bạn muốn log lỗi hoặc thực hiện các hành động khác tùy thuộc vào yêu cầu của bạn
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return result;
+        }
 
     }
-    public static class EventHub
-    {
-        // Define the delegate for the event
-        public delegate void DatabaseUpdatedEventHandler();
-        // Define the static event based on the delegate
-        public static event DatabaseUpdatedEventHandler DatabaseUpdated;
-        public static event DatabaseUpdatedEventHandler ServicesUpdated;
-
-        // Static method to raise the event
-        public static void OnDatabaseUpdated()
+        public static class EventHub
         {
-            DatabaseUpdated?.Invoke();
-        }
-        public static void OnServicesUpdated()
-        {
-            ServicesUpdated?.Invoke();
-        }
-    }
+            // Define the delegate for the event
+            public delegate void DatabaseUpdatedEventHandler();
+            // Define the static event based on the delegate
+            public static event DatabaseUpdatedEventHandler DatabaseUpdated;
+            public static event DatabaseUpdatedEventHandler ServicesUpdated;
 
-}
+            // Static method to raise the event
+            public static void OnDatabaseUpdated()
+            {
+                DatabaseUpdated?.Invoke();
+            }
+            public static void OnServicesUpdated()
+            {
+                ServicesUpdated?.Invoke();
+            }
+        }
+
+    } 
