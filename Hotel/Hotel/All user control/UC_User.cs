@@ -63,10 +63,12 @@ namespace Hotel.All_user_control
             Int64 sal = Convert.ToInt64(dgv.Rows[0].Cells[11].Value);
             string salary = sal.ToString();
             EditUserName edun = new EditUserName(id, name, cccd, gender, dob, mobile, address, email, username, password, position, salary);
-
+            background br = new background();
+            br.Show();
             edun.ShowDialog();
             edun.Focus();
             setEmployee(guna2DataGridView1);
+            br.Hide();
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
@@ -92,8 +94,11 @@ namespace Hotel.All_user_control
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             AddEmployee ae = new AddEmployee();
+            background br = new background();
+            br.Show();
             ae.ShowDialog();
             setEmployee(guna2DataGridView1);
+            br.Hide() ;
         }
     }
 }

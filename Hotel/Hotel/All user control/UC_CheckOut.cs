@@ -83,9 +83,12 @@ namespace Hotel.All_user_control
                                             ")";
                     fn.setData(query, "Thanh Toán Thành Công");
                     receipt rc = new receipt();
-                    rc.Show();
+                    background br = new background();
+                    br.Show();
+                    rc.ShowDialog();
                     UC_CheckOut_Load(this, null);
                     clearAll();
+                    br.Hide();
                 }
             }
             else
@@ -113,31 +116,6 @@ namespace Hotel.All_user_control
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
                 fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtRoom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

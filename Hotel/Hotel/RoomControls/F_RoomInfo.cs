@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hotel.All_user_control;
+using Hotel.SmallForm;
 
 namespace Hotel.RoomControls
 {
@@ -129,8 +130,11 @@ namespace Hotel.RoomControls
         {
             F_BookRoom bR = new F_BookRoom();
             this.Close();
-            bR.Show();
+            background br2 = new background();
+            br2.Show();
+            bR.ShowDialog();
             bR.Focus();
+            br2.Hide();
         }
 
         private void bTUpdate_Click(object sender, EventArgs e)

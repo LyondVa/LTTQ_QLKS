@@ -170,7 +170,6 @@
             this.txtCName.Size = new System.Drawing.Size(365, 64);
             this.txtCName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtCName.TabIndex = 17;
-            this.txtCName.TextChanged += new System.EventHandler(this.txtCName_TextChanged);
             // 
             // label1
             // 
@@ -183,7 +182,6 @@
             this.label1.Size = new System.Drawing.Size(44, 28);
             this.label1.TabIndex = 16;
             this.label1.Text = "Tên";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtRoom
             // 
@@ -207,7 +205,6 @@
             this.txtRoom.Size = new System.Drawing.Size(387, 64);
             this.txtRoom.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtRoom.TabIndex = 19;
-            this.txtRoom.TextChanged += new System.EventHandler(this.txtRoom_TextChanged);
             // 
             // label2
             // 
@@ -220,7 +217,6 @@
             this.label2.Size = new System.Drawing.Size(95, 28);
             this.label2.TabIndex = 18;
             this.label2.Text = "Số Phòng";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -233,7 +229,6 @@
             this.label3.Size = new System.Drawing.Size(170, 28);
             this.label3.TabIndex = 20;
             this.label3.Text = "Ngày Thanh Toán";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtCheckOutDate
             // 

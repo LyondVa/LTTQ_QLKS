@@ -272,6 +272,12 @@
     <Compile Include="RoomControls\UC_RoomUnitOccupied.Designer.cs">
       <DependentUpon>UC_RoomUnitOccupied.cs</DependentUpon>
     </Compile>
+    <Compile Include="SmallForm\background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\background.Designer.cs">
+      <DependentUpon>background.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\Profit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\background.resx">
+      <DependentUpon>background.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>

@@ -141,9 +141,12 @@ namespace Hotel.All_user_control
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             Profit pf = new Profit();
+            background br = new background();
+            br.Show();
             pf.ShowDialog();
             pf.Focus();
             setLabel();
+            br.Hide ();
         }
         public void setLabel()
         {
