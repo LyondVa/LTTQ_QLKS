@@ -15,7 +15,7 @@ namespace Hotel.All_user_control
     {
         function fn = new function();
         string query;
-
+        string clientID, reservationID;
         public UC_CheckOut()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace Hotel.All_user_control
 
         private void UC_CheckOut_Load(object sender, EventArgs e)
         {
-            query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, HOADON.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
+            query = "select KHACHHANG.MAKH as 'Mã khách hàng', KHACHHANG.KHOTEN as 'Họ tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc tịch', KHACHHANG.KGIOITINH as 'Giới tính', KHACHHANG.KNGSINH as 'Ngày sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa chỉ', HOADON.MAHD as 'Mã hóa đơn', HOADON.NGNHANPHG as 'Ngày nhận phòng', PHONG.MAPHG as 'Mã phòng', PHONG.MALOAIPHG as 'Mã loại phòng', CTPHG.TIENDATPHG as 'Tiền đặt phòng'" +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -41,7 +41,7 @@ namespace Hotel.All_user_control
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            query = "select KHACHHANG.MAKH, KHACHHANG.KHOTEN, KHACHHANG.KSDT, KHACHHANG.QUOCTICH, KHACHHANG.KGIOITINH, KHACHHANG.KNGSINH, KHACHHANG.KCCCD, KHACHHANG.KDIACHI, HOADON.NGNHANPHG, PHONG.MAPHG, PHONG.MALOAIPHG, CTPHG.TIENDATPHG " +
+            query = "select KHACHHANG.MAKH as 'Mã khách hàng', KHACHHANG.KHOTEN as 'Họ tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc tịch', KHACHHANG.KGIOITINH as 'Giới tính', KHACHHANG.KNGSINH as 'Ngày sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa chỉ', HOADON.MAHD as 'Mã hóa đơn', HOADON.NGNHANPHG as 'Ngày nhận phòng', PHONG.MAPHG as 'Mã phòng', PHONG.MALOAIPHG as 'Mã loại phòng', CTPHG.TIENDATPHG as 'Tiền đặt phòng'" +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -59,6 +59,8 @@ namespace Hotel.All_user_control
                 id = guna2DataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtCName.Text = guna2DataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtRoom.Text = guna2DataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                clientID = guna2DataGridView1.Rows[e.RowIndex].Cells["Mã khách hàng"].Value.ToString();
+                reservationID = guna2DataGridView1.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString();
             }
         }
 
@@ -68,27 +70,18 @@ namespace Hotel.All_user_control
             {
                 if (MessageBox.Show("Bạn có chắc chắn không?", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    String cdate = txtCheckOutDate.Text;
                     query = "update KHACHHANG " +
                             "set KHACHHANG.STAYING = 0" +
-                            "where KHOTEN = '" + txtCName.Text + "'; " +
+                            "where MAKH = '" + clientID + "'; " +
                             "update HOADON " +
-                            "set NGTHANHTOAN = '" + cdate + "'" +
-                            "where MAHD = ( " +
-                                            "select top 1 MAHD " +
-                                            "from HOADON, KHACHHANG " +
-                                            "where HOADON.MAKH = KHACHHANG.MAKH " +
-                                            "and HOADON.MAKH = '" + txtCName.Text + "'"+
-                                            "order by HOADON.MAHD desc"+
-                                            ")";
+                            "set NGTHANHTOAN = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "'" +
+                            ", NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "'" +
+                            "where MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thanh Toán Thành Công");
                     receipt rc = new receipt();
-                    background br = new background();
-                    br.Show();
-                    rc.ShowDialog();
+                    rc.Show();
                     UC_CheckOut_Load(this, null);
                     clearAll();
-                    br.Hide();
                 }
             }
             else
@@ -116,6 +109,31 @@ namespace Hotel.All_user_control
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
                 fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRoom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
