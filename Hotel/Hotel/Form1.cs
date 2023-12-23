@@ -41,7 +41,7 @@ namespace Hotel
                             "and TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
             DataSet ds1 = fn.getData(query1);
             int position = 0;
-            if (ds.Tables[0].Rows.Count !=0 || (txbUsername.Text=="admin"&&txbPassword.Text =="admin"))
+            if (ds.Tables[0].Rows.Count != 0 || (txbUsername.Text == "admin" && txbPassword.Text == "admin"))
             {
                 labelError.Visible = false;
                 if (ds1.Tables[0].Rows.Count > 0)

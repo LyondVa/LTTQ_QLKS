@@ -22,7 +22,7 @@ namespace Hotel.All_user_control
 
         private void txtSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(txtSearch.SelectedIndex == 0)
+            if (txtSearch.SelectedIndex == 0)
             {
                 query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
@@ -32,7 +32,7 @@ namespace Hotel.All_user_control
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
-            else if(txtSearch.SelectedIndex == 1)
+            else if (txtSearch.SelectedIndex == 1)
             {
                 query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
@@ -56,7 +56,7 @@ namespace Hotel.All_user_control
             }
 
         }
-        private void getRecord (string query)
+        private void getRecord(string query)
         {
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];

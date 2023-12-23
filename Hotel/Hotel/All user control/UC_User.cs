@@ -32,7 +32,7 @@ namespace Hotel.All_user_control
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
+            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
                     "where NHANVIEN.MANV = TAIKHOAN.MANV " +
                     "order by NHANVIEN.MANV ASC";
@@ -63,15 +63,17 @@ namespace Hotel.All_user_control
             Int64 sal = Convert.ToInt64(dgv.Rows[0].Cells[11].Value);
             string salary = sal.ToString();
             EditUserName edun = new EditUserName(id, name, cccd, gender, dob, mobile, address, email, username, password, position, salary);
-
+            background br = new background();
+            br.Show();
             edun.ShowDialog();
             edun.Focus();
             setEmployee(guna2DataGridView1);
+            br.Hide();
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
+            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
                     "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like '" + tbSearch.Text + "%' " +
                     "order by NHANVIEN.MANV asc";
@@ -92,8 +94,11 @@ namespace Hotel.All_user_control
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             AddEmployee ae = new AddEmployee();
+            background br = new background();
+            br.Show();
             ae.ShowDialog();
             setEmployee(guna2DataGridView1);
+            br.Hide() ;
         }
     }
 }

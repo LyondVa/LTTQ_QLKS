@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -133,17 +148,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="All user control\F_AddService.cs">
+    <Compile Include="SmallForm\F_AddService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="All user control\F_AddService.Designer.cs">
+    <Compile Include="SmallForm\F_AddService.Designer.cs">
       <DependentUpon>F_AddService.cs</DependentUpon>
     </Compile>
-    <Compile Include="All user control\UC_Chartt.cs">
+    <Compile Include="All user control\UC_Chart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="All user control\UC_Chartt.Designer.cs">
-      <DependentUpon>UC_Chartt.cs</DependentUpon>
+    <Compile Include="All user control\UC_Chart.Designer.cs">
+      <DependentUpon>UC_Chart.cs</DependentUpon>
     </Compile>
     <Compile Include="All user control\UC_CustomerInfo.cs">
       <SubType>UserControl</SubType>
@@ -188,12 +203,6 @@
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="RoomControls\RoomFunction.cs" />
-    <Compile Include="RoomControls\UC_AddRoomType.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RoomControls\UC_AddRoomType.Designer.cs">
-      <DependentUpon>UC_AddRoomType.cs</DependentUpon>
-    </Compile>
     <Compile Include="All user control\UC_CheckOut.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,6 +281,12 @@
     <Compile Include="RoomControls\UC_RoomUnitOccupied.Designer.cs">
       <DependentUpon>UC_RoomUnitOccupied.cs</DependentUpon>
     </Compile>
+    <Compile Include="SmallForm\background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\background.Designer.cs">
+      <DependentUpon>background.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\Profit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,11 +357,11 @@
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCode\Global.cs" />
-    <EmbeddedResource Include="All user control\F_AddService.resx">
+    <EmbeddedResource Include="SmallForm\F_AddService.resx">
       <DependentUpon>F_AddService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="All user control\UC_Chartt.resx">
-      <DependentUpon>UC_Chartt.cs</DependentUpon>
+    <EmbeddedResource Include="All user control\UC_Chart.resx">
+      <DependentUpon>UC_Chart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_CustomerInfo.resx">
       <DependentUpon>UC_CustomerInfo.cs</DependentUpon>
@@ -368,9 +383,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoomControls\F_UpdateRoom.resx">
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\UC_AddRoomType.resx">
-      <DependentUpon>UC_AddRoomType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_CheckOut.resx">
       <DependentUpon>UC_CheckOut.cs</DependentUpon>
@@ -435,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallForm\background.resx">
+      <DependentUpon>background.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
@@ -509,6 +524,17 @@
     <None Include="Resources\CheckMark.png" />
     <None Include="Resources\CrossMark.png" />
     <None Include="Resources\Clean.png" />
+    <Content Include="DTB\QLKS_Remote.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DTB\QLKS.sql" />
+    <Content Include="DTB\QLKS_Remote_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>QLKS_Remote.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\410740361_1316315606432240_7681944513452618063_n.png" />
+    <None Include="Resources\413170077_1281254999934748_4364759743660170356_n.png" />
+    <Content Include="Resources\Background.png" />
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />
     <None Include="Resources\PlusMark.png" />
@@ -517,7 +543,16 @@
     <None Include="Resources\Thiết kế chưa có tên.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

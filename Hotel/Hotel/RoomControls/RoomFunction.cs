@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Hotel.SmallForm;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -64,8 +65,11 @@ namespace Hotel.RoomControls
         public void UnitClick(UC_RoomUnitBase room)
         {
             F_RoomInfo roomInfo = new F_RoomInfo(room);
-            roomInfo.Show();
+            background br = new background();
+            br.Show();
+            roomInfo.ShowDialog();
             roomInfo.Focus();
+            br.Hide();
         }
     }
 }

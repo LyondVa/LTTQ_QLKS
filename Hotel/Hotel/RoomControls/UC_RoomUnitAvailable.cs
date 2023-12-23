@@ -27,11 +27,11 @@ namespace Hotel.RoomControls
             this.lBRoomTypeID.Text = roomTypeID;
             if (cleanStatus == "Đã dọn")
             {
-                pBCleanStatus.Image = Resources.Clean;
+                pBCleanStatus.Image = Resources.CleanIcon;
             }
             else
             {
-                pBCleanStatus.Image = Resources.Unclean;
+                pBCleanStatus.Image = Resources.UncleanIcon;
             }
             //pBRoomStatus.Image = imageList[1];
         }

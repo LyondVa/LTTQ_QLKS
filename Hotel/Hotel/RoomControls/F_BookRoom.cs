@@ -70,11 +70,11 @@ namespace Hotel.RoomControls
             //dGVAvailableRoom.ColumnCount = 2;
 
             //dGVAvailableRoom.Columns[0].Name = "MAPHG";
-            dGVAvailableRoom.Columns[0].HeaderText = "Mã phòng";
+            dGVAvailableRoom.Columns[0].HeaderText = "Phòng";
             //dGVAvailableRoom.Columns[0].DataPropertyName = "MAPHG";
 
             //dGVAvailableRoom.Columns[1].Name = "MALOAIPHG";
-            dGVAvailableRoom.Columns[1].HeaderText = "Mã loại phòng";
+            dGVAvailableRoom.Columns[1].HeaderText = "Loại phòng";
             //dGVAvailableRoom.Columns[1].DataPropertyName = "MALOAIPHG";
 
             DataGridViewImageColumn dGVARImgCol = new DataGridViewImageColumn();
@@ -89,11 +89,11 @@ namespace Hotel.RoomControls
             dGVSelectedRoom.ColumnCount = 2;
 
             dGVSelectedRoom.Columns[0].Name = "MAPHG";
-            dGVSelectedRoom.Columns[0].HeaderText = "MÃ phòng";
+            dGVSelectedRoom.Columns[0].HeaderText = "Phòng";
             dGVSelectedRoom.Columns[0].DataPropertyName = "MAPHG";
 
             dGVSelectedRoom.Columns[1].Name = "MALOAIPHG";
-            dGVSelectedRoom.Columns[1].HeaderText = "Mã loại phòng";
+            dGVSelectedRoom.Columns[1].HeaderText = "Loại phòng";
             dGVSelectedRoom.Columns[1].DataPropertyName = "MALOAIPHG";
 
             DataGridViewImageColumn dGVSRImgCol = new DataGridViewImageColumn();

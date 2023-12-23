@@ -39,19 +39,19 @@ namespace Hotel.All_user_control
             RefreshDataGridView();
         }
 
-        private void tSLAdd_Click(object sender, EventArgs e)
+        private void bTAdd_Click(object sender, EventArgs e)
         {
             F_AddRoom form = new F_AddRoom(dS);
             form.Show();
         }
 
-        private void tSLUpdate_Click(object sender, EventArgs e)
+        private void bTUpdate_Click(object sender, EventArgs e)
         {
             F_UpdateRoom form = new F_UpdateRoom(dS, dGVRoom);
             form.Show();
         }
 
-        private void tSLDelete_Click(object sender, EventArgs e)
+        private void bTDelete_Click(object sender, EventArgs e)
         {
             if(dGVRoom.SelectedCells.Count == 0)
             {
@@ -78,14 +78,5 @@ namespace Hotel.All_user_control
             (dGVRoom.DataSource as DataTable).DefaultView.RowFilter = string.Format("MAPHG LIKE '%"+tBSearch.Text+"%'", tBSearch.Text);
         }
 
-        private void dGVRoom_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dGVRoom.SelectedCells.Count > 0)
-            {
-                int selectedRowIndex = dGVRoom.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dGVRoom.Rows[selectedRowIndex];
-                tP_tBNote.Text = selectedRow.Cells["GHICHU"].Value.ToString();
-            }
-        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Hotel.All_user_control;
+using Hotel.SmallForm;
 
 namespace Hotel.RoomControls
 {
@@ -27,32 +28,33 @@ namespace Hotel.RoomControls
         {
             InitializeComponent();
             ButtonSet(room);
+            LabelSet(room);
             this.roomID = room.RoomID;
             this.reservationID = room.ReservationID;
             this.cleanStatus = room.CleanStatus;
             this.roomStatus = room.RoomStatus;
-            this.note = room.Note;
-            if (room is UC_RoomUnitBooked || room is UC_RoomUnitOccupied)
+            this.note = room.Note; if (room is UC_RoomUnitBooked || room is UC_RoomUnitOccupied)
             {
                 PropertiesLoad();
                 lBBookClient.Text = dS.Tables[0].Rows[0]["KHOTEN"].ToString();
-                lBBookEmployee.Text = dS.Tables[0].Rows[0]["NHOTEN"].ToString();
                 lBcheckInDate.Text = room.CheckInDate.Substring(0, 10);
                 lBCheckOutTime.Text = room.CheckOutDate.Substring(0, 10);
 
                 ServicesLoad();
                 dGVService.DataSource = dSService.Tables[0];
                 dGVService.Columns["TENDV"].HeaderText = "Tên dịch vụ";
-                dGVService.Columns["SOLUONG"].HeaderText = "Số lượng";
+                dGVService.Columns["SOLUONG"].HeaderText = "SL";
                 dGVService.Columns["THOIGIANSD"].HeaderText = "thời gian sử dụng";
             }
             else
             {
-                lBBookClient.Text = "";
-                lBBookEmployee.Text = "";
-                lBcheckInDate.Text = "";
-                lBCheckOutTime.Text = "";
+                dGVService.Columns.Add("TENDV", "Dịch vụ");
+                dGVService.Columns.Add("SOLUONG", "SL");
+                dGVService.Columns.Add("THOIGIANSD", "Thời gian sử dụng");
             }
+            dGVService.Columns["TENDV"].Width = 100;
+            dGVService.Columns["SOLUONG"].Width = 50;
+            EventHub.ServicesUpdated += ServicesLoad;
         }
         private void F_RoomInfo_Load(object sender, EventArgs e)
         {
@@ -77,11 +79,10 @@ namespace Hotel.RoomControls
         }
         private void PropertiesLoad()
         {
-            query = "select KHOTEN, NHOTEN " +
+            query = "select KHOTEN " +
                     "from CTPHG " +
                     "left join HOADON on CTPHG.MAHD = HOADON.MAHD " +
                     "left join KHACHHANG on HOADON.MAKH = KHACHHANG.MAKH " +
-                    "left join NHANVIEN on HOADON.MANV = NHANVIEN.MANV " +
                     "where CTPHG.MAHD = '" + reservationID + "'";
             dS = fn.getData(query);
         }
@@ -92,6 +93,15 @@ namespace Hotel.RoomControls
                     "inner join DICHVU on CTDV.MADV = DICHVU.MADV " +
                     "where CTDV.MAHD = '" + reservationID + "' and CTDV.MAPHG = '" + roomID + "'";
             dSService = fn.getData(query);
+        }
+        private void LabelSet(UC_RoomUnitBase room)
+        {
+            if (room is UC_RoomUnitMaintenance || room is UC_RoomUnitAvailable)
+            {
+                pNCheckInDate.Visible = false;
+                pNCheckOutDate.Visible = false;
+                pNClientName.Visible = false;
+            }
         }
         private void ButtonSet(UC_RoomUnitBase room)
         {
@@ -129,8 +139,11 @@ namespace Hotel.RoomControls
         {
             F_BookRoom bR = new F_BookRoom();
             this.Close();
-            bR.Show();
+            background br2 = new background();
+            br2.Show();
+            bR.ShowDialog();
             bR.Focus();
+            br2.Hide();
         }
 
         private void bTUpdate_Click(object sender, EventArgs e)
@@ -152,6 +165,7 @@ namespace Hotel.RoomControls
                 }
             }
         }
+
         private void bTCheckIn_Click(object sender, EventArgs e)
         {
             DialogResult dR = MessageBox.Show("Xác nhận nhận phòng?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -160,7 +174,7 @@ namespace Hotel.RoomControls
                 try
                 {
                     query = "update HOADON " +
-                            "set NGNHANPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat)+"' " +
+                            "set NGNHANPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat) + "' " +
                             "from HOADON " +
                             "where NGNHANPHGTHAT is null and HOADON.MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thành công");
@@ -182,7 +196,7 @@ namespace Hotel.RoomControls
                 try
                 {
                     query = "update HOADON " +
-                            "set NGTRPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat)+"' " +
+                            "set NGTRPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat) + "' " +
                             "from HOADON " +
                             "where NGTRPHGTHAT is null and HOADON.MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thành công");

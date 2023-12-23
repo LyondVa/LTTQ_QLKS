@@ -52,8 +52,11 @@ namespace Hotel.All_user_control
         private void btAdd_Click(object sender, EventArgs e)
         {
             AddCustomer addCustomer = new AddCustomer();
+            background br = new background();
+            br.Show();
             addCustomer.ShowDialog();
             setCustomerInfo(dgvCustomerInfo);
+            br.Hide();
         }
 
         private void dgvCustomerInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,9 +72,13 @@ namespace Hotel.All_user_control
             string address = selectedRow.Cells[7].Value.ToString();
             string email = selectedRow.Cells[8].Value.ToString();
             EditCustomer ec = new EditCustomer(id, name, nationality, cccd, gender, dob, phone, address, email);
+            background br = new background();
+            br.Show();
             ec.ShowDialog();
+
             ec.Focus();
             setCustomerInfo(dgvCustomerInfo);
+            br.Hide();
         }
 
         private void lBSearch_Click(object sender, EventArgs e)

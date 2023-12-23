@@ -73,6 +73,36 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background {
+            get {
+                object obj = ResourceManager.GetObject("Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Background_Form {
+            get {
+                object obj = ResourceManager.GetObject("Background_Form", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BackGround_SmallForm {
+            get {
+                object obj = ResourceManager.GetObject("BackGround_SmallForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_and_Black_Modern_Illustration_UI_Login_Page_Desktop_Prototype {
             get {
                 object obj = ResourceManager.GetObject("Blue and Black Modern Illustration UI Login Page Desktop Prototype", resourceCulture);
@@ -113,9 +143,9 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Clean {
+        internal static System.Drawing.Bitmap CleanIcon {
             get {
-                object obj = ResourceManager.GetObject("Clean", resourceCulture);
+                object obj = ResourceManager.GetObject("CleanIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +213,9 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Unclean {
+        internal static System.Drawing.Bitmap UncleanIcon {
             get {
-                object obj = ResourceManager.GetObject("Unclean", resourceCulture);
+                object obj = ResourceManager.GetObject("UncleanIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

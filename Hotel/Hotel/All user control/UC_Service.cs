@@ -41,8 +41,11 @@ namespace Hotel.All_user_control
         private void btAdd_Click(object sender, EventArgs e)
         {
             AddService addService = new AddService();
+            background br = new background();
+            br.Show();
             addService.ShowDialog();
             setService(dgvServiceInfo);
+            br.Hide();
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
@@ -63,9 +66,13 @@ namespace Hotel.All_user_control
             Int64 p = Convert.ToInt64(selectedRow.Cells[2].Value);
             string price = p.ToString();
             EditService es = new EditService(id, name, price);
+            background br = new background();
+            br.Show();
             es.ShowDialog();
             es.Focus();
+
             setService(dgvServiceInfo);
+            br.Hide();
         }
     }
 }

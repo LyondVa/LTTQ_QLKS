@@ -46,5 +46,26 @@ namespace Hotel.RoomControls
         {
             rFn.SetRoomID(0, cBRoomID, ds, cBFloor.Text);
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (cBRoomTypeID.Text == "" || cBRoomStatus.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                query = "insert into PHONG values('P" + cBFloor.Text + cBRoomID.Text + "','" + cBRoomTypeID.Text + "','" + cBRoomStatus.Text + "','" + Convert.ToInt16(cBFloor.Text) + "','','" + cBCleanStatus.Text + "')";
+                string msg = "Thêm Thành công";
+                fn.setData(query, msg);
+                EventHub.OnDatabaseUpdated();
+                this.Close();
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
