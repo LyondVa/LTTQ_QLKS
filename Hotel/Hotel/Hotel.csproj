@@ -533,13 +533,13 @@
     <None Include="Resources\CheckMark.png" />
     <None Include="Resources\CrossMark.png" />
     <None Include="Resources\Clean.png" />
-    <Content Include="DTB\QLKS.mdf">
+    <Content Include="DTB\QLKS_Remote.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DTB\QLKS.sql" />
-    <Content Include="DTB\QLKS_log.ldf">
+    <Content Include="DTB\QLKS_Remote_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLKS.mdf</DependentUpon>
+      <DependentUpon>QLKS_Remote.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />

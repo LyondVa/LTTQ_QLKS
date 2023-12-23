@@ -15,9 +15,9 @@ namespace Hotel
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS.mdf;Integrated Security=True";
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS_Remote.mdf;Database = QLKS;Integrated Security=True";
             return con;
-        }//
+        }//C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LyondVa\LTTQ_QLKS\Hotel\Hotel\DTB\QLKS_Remote.mdf
         //Data Source=DESKTOP-QEN4LJI ;Initial Catalog=QLKS;Integrated Security=True
         public DataSet getData(string query)
         {
