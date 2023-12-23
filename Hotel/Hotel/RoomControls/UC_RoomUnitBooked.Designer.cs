@@ -89,7 +89,7 @@
             // 
             // pBCleanStatus
             // 
-            this.pBCleanStatus.Image = global::Hotel.Properties.Resources.Clean;
+            this.pBCleanStatus.Image = global::Hotel.Properties.Resources.CleanIcon;
             this.pBCleanStatus.ImageRotate = 0F;
             this.pBCleanStatus.Location = new System.Drawing.Point(14, 84);
             this.pBCleanStatus.Name = "pBCleanStatus";

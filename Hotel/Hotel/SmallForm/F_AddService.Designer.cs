@@ -241,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Hotel.Properties.Resources._410740361_1316315606432240_7681944513452618063_n;
+            this.BackgroundImage = global::Hotel.Properties.Resources.BackGround_SmallForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(623, 357);
             this.ControlBox = false;
