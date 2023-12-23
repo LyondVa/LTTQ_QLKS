@@ -516,5 +516,8 @@
     <Content Include="Resources\hóa đơn.png" />
     <None Include="Resources\Thiết kế chưa có tên.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
