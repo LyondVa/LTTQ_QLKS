@@ -1,4 +1,0 @@
-ERD
-https://lucid.app/lucidchart/invitations/accept/inv_08d9855b-d485-41f1-8cd9-93666edc1ada
-//Data diagram
-https://lucid.app/lucidchart/invitations/accept/inv_4142237b-d2a3-49e8-8058-a35d22c4bcce
