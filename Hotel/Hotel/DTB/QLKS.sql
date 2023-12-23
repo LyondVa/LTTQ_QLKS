@@ -138,11 +138,10 @@ BEGIN
 	RETURN -1
 END
 GO
-
 -- Sample data for NHANVIEN table
 INSERT INTO NHANVIEN (NHOTEN, NSDT, NGIOITINH, NEMAIL, CHUCVU, LUONG, NCCCD, NDIACHI, NNGSINH)
 VALUES
-(N'Nguyễn Văn A', '0987654321', 'Nam', 'nguyenvana@gmail.com', 1, N'Giám đốc', 20000000, '123456789', N'Số 1, Đường 1, Quận 1, TP.HCM', '1980-01-01'),
+(N'Nguyễn Văn A', '0987654321', 'Nam', 'nguyenvana@gmail.com', N'Giám đốc', 20000000, '123456789', N'Số 1, Đường 1, Quận 1, TP.HCM', '1980-01-01'),
 (N'Trần Thị B', '0912345678', N'Nữ', 'tranb@gmail.com', N'Phó giám đốc', 15000000, '987654321', N'Số 2, Đường 2, Quận 2, TP.HCM', '1982-02-02'),
 (N'Lê Văn C', '0934567890', 'Nam', 'levanc@gmail.com', N'Quản lý', 10000000, '456789123', N'Số 3, Đường 3, Quận 3, TP.HCM', '1984-03-03'),
 (N'Phạm Thị D', '0967890123', N'Nữ', 'phamd@gmail.com', N'Nhân viên', 7000000, '789123456', N'Số 4, Đường 4, Quận 4, TP.HCM', '1986-04-04'),
