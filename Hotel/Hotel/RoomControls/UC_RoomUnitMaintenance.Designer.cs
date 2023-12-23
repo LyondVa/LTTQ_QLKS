@@ -34,12 +34,10 @@
             this.pBRoomStatus = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pBCleanStatus = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.pBClean = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pBRoomStatus)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBClean)).BeginInit();
             this.SuspendLayout();
             // 
             // lBRoomID
@@ -47,9 +45,9 @@
             this.lBRoomID.AutoSize = true;
             this.lBRoomID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBRoomID.ForeColor = System.Drawing.Color.White;
-            this.lBRoomID.Location = new System.Drawing.Point(12, 24);
+            this.lBRoomID.Location = new System.Drawing.Point(11, 19);
             this.lBRoomID.Name = "lBRoomID";
-            this.lBRoomID.Size = new System.Drawing.Size(63, 25);
+            this.lBRoomID.Size = new System.Drawing.Size(51, 20);
             this.lBRoomID.TabIndex = 0;
             this.lBRoomID.Text = "label1";
             this.lBRoomID.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
@@ -59,9 +57,9 @@
             this.lBRoomTypeID.AutoSize = true;
             this.lBRoomTypeID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBRoomTypeID.ForeColor = System.Drawing.Color.White;
-            this.lBRoomTypeID.Location = new System.Drawing.Point(12, 67);
+            this.lBRoomTypeID.Location = new System.Drawing.Point(11, 54);
             this.lBRoomTypeID.Name = "lBRoomTypeID";
-            this.lBRoomTypeID.Size = new System.Drawing.Size(63, 25);
+            this.lBRoomTypeID.Size = new System.Drawing.Size(51, 20);
             this.lBRoomTypeID.TabIndex = 1;
             this.lBRoomTypeID.Text = "label2";
             this.lBRoomTypeID.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
@@ -69,10 +67,9 @@
             // pBRoomStatus
             // 
             this.pBRoomStatus.ImageRotate = 0F;
-            this.pBRoomStatus.Location = new System.Drawing.Point(135, 15);
-            this.pBRoomStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBRoomStatus.Location = new System.Drawing.Point(120, 12);
             this.pBRoomStatus.Name = "pBRoomStatus";
-            this.pBRoomStatus.Size = new System.Drawing.Size(112, 125);
+            this.pBRoomStatus.Size = new System.Drawing.Size(100, 100);
             this.pBRoomStatus.TabIndex = 8;
             this.pBRoomStatus.TabStop = false;
             this.pBRoomStatus.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
@@ -81,40 +78,26 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Controls.Add(this.pBCleanStatus);
-            this.panel1.Controls.Add(this.pBClean);
             this.panel1.Controls.Add(this.lBRoomID);
             this.panel1.Controls.Add(this.lBRoomTypeID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(81, 162);
+            this.panel1.Size = new System.Drawing.Size(72, 130);
             this.panel1.TabIndex = 7;
             this.panel1.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
             // 
             // pBCleanStatus
             // 
+            this.pBCleanStatus.Image = global::Hotel.Properties.Resources.Clean;
             this.pBCleanStatus.ImageRotate = 0F;
-            this.pBCleanStatus.Location = new System.Drawing.Point(46, 124);
-            this.pBCleanStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBCleanStatus.Location = new System.Drawing.Point(14, 84);
             this.pBCleanStatus.Name = "pBCleanStatus";
-            this.pBCleanStatus.Size = new System.Drawing.Size(32, 35);
-            this.pBCleanStatus.TabIndex = 8;
+            this.pBCleanStatus.Size = new System.Drawing.Size(28, 28);
+            this.pBCleanStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBCleanStatus.TabIndex = 7;
             this.pBCleanStatus.TabStop = false;
             this.pBCleanStatus.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
-            // 
-            // pBClean
-            // 
-            this.pBClean.Image = global::Hotel.Properties.Resources.Clean;
-            this.pBClean.ImageRotate = 0F;
-            this.pBClean.Location = new System.Drawing.Point(3, 124);
-            this.pBClean.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pBClean.Name = "pBClean";
-            this.pBClean.Size = new System.Drawing.Size(32, 35);
-            this.pBClean.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBClean.TabIndex = 7;
-            this.pBClean.TabStop = false;
-            this.pBClean.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
             // 
             // guna2Elipse1
             // 
@@ -123,19 +106,18 @@
             // 
             // UC_RoomUnitMaintenance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(238)))), ((int)(((byte)(236)))));
             this.Controls.Add(this.pBRoomStatus);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_RoomUnitMaintenance";
             this.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pBRoomStatus)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBClean)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,7 +129,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox pBRoomStatus;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2PictureBox pBCleanStatus;
-        private Guna.UI2.WinForms.Guna2PictureBox pBClean;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

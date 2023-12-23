@@ -203,12 +203,6 @@
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="RoomControls\RoomFunction.cs" />
-    <Compile Include="RoomControls\UC_AddRoomType.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RoomControls\UC_AddRoomType.Designer.cs">
-      <DependentUpon>UC_AddRoomType.cs</DependentUpon>
-    </Compile>
     <Compile Include="All user control\UC_CheckOut.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -390,9 +384,6 @@
     <EmbeddedResource Include="RoomControls\F_UpdateRoom.resx">
       <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RoomControls\UC_AddRoomType.resx">
-      <DependentUpon>UC_AddRoomType.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_CheckOut.resx">
       <DependentUpon>UC_CheckOut.cs</DependentUpon>
     </EmbeddedResource>
@@ -541,6 +532,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QLKS_Remote.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\410740361_1316315606432240_7681944513452618063_n.png" />
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />
     <None Include="Resources\PlusMark.png" />

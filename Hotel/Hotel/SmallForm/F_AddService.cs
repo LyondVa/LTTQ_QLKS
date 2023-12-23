@@ -94,10 +94,11 @@ namespace Hotel.All_user_control
         {
             foreach(DataRow dR in dSS.Tables[0].Rows)
             {
-                query = "insert into CTDV values('" + reservationID+"','"+dR["MADV"]+"',"+dR["SOLUONG"] + ",'"+DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") +"','" + roomID + "')";
+                query = "insert into CTDV(MAHD, MADV, SOLUONG, THOIGIANSD, MAPHG) values('" + reservationID+"','"+dR["MADV"]+"',"+dR["SOLUONG"] + ",'"+DateTime.Now.ToString("yyyy'-'MM'-'dd hh':'mm':'ss") +"','" + roomID + "')";
                 fn.setDataNoMsg(query);
-                EventHub.OnServicesUpdated();
             }
+            EventHub.OnServicesUpdated();
+            this.Close();
         }
 
         private void dGVServiceSelected_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -109,6 +110,11 @@ namespace Hotel.All_user_control
             dSS.Tables[0].Rows.RemoveAt(e.RowIndex);
             dSA.Tables[0].Rows.Add(dR);
             dGVServiceSelection.Sort(dGVServiceSelection.Columns["TENDV"], ListSortDirection.Ascending);
+        }
+
+        private void bTExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
