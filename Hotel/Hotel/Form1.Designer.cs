@@ -95,7 +95,7 @@
             // txbUsername
             // 
             this.txbUsername.BackColor = System.Drawing.Color.Transparent;
-            this.txbUsername.BorderRadius = 15;
+            this.txbUsername.BorderRadius = 10;
             this.txbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbUsername.DefaultText = "";
             this.txbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

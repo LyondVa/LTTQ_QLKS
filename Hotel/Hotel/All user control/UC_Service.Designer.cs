@@ -54,9 +54,9 @@
             this.btExport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btExport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btExport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.btExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btExport.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btExport.ForeColor = System.Drawing.Color.White;
-            this.btExport.Location = new System.Drawing.Point(590, 165);
+            this.btExport.Location = new System.Drawing.Point(590, 170);
             this.btExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btExport.Name = "btExport";
             this.btExport.Size = new System.Drawing.Size(180, 45);
@@ -160,7 +160,7 @@
             this.btAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.btAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btAdd.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btAdd.ForeColor = System.Drawing.Color.White;
             this.btAdd.Location = new System.Drawing.Point(590, 510);
             this.btAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

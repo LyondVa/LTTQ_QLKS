@@ -271,7 +271,7 @@ namespace Hotel.RoomControls
             // bTCheckIn
             // 
             this.bTCheckIn.BackColor = System.Drawing.Color.Transparent;
-            this.bTCheckIn.BorderRadius = 15;
+            this.bTCheckIn.BorderRadius = 10;
             this.bTCheckIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTCheckIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTCheckIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -291,7 +291,7 @@ namespace Hotel.RoomControls
             // bTCheckOut
             // 
             this.bTCheckOut.BackColor = System.Drawing.Color.Transparent;
-            this.bTCheckOut.BorderRadius = 15;
+            this.bTCheckOut.BorderRadius = 10;
             this.bTCheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTCheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTCheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -311,7 +311,7 @@ namespace Hotel.RoomControls
             // bTBook
             // 
             this.bTBook.BackColor = System.Drawing.Color.Transparent;
-            this.bTBook.BorderRadius = 15;
+            this.bTBook.BorderRadius = 10;
             this.bTBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -331,7 +331,7 @@ namespace Hotel.RoomControls
             // bTUpdate
             // 
             this.bTUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.bTUpdate.BorderRadius = 15;
+            this.bTUpdate.BorderRadius = 10;
             this.bTUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -350,7 +350,7 @@ namespace Hotel.RoomControls
             // bTExit
             // 
             this.bTExit.BackColor = System.Drawing.Color.Transparent;
-            this.bTExit.BorderRadius = 15;
+            this.bTExit.BorderRadius = 10;
             this.bTExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -369,7 +369,7 @@ namespace Hotel.RoomControls
             // bTCancel
             // 
             this.bTCancel.BackColor = System.Drawing.Color.Transparent;
-            this.bTCancel.BorderRadius = 15;
+            this.bTCancel.BorderRadius = 10;
             this.bTCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -416,7 +416,7 @@ namespace Hotel.RoomControls
             // bTService
             // 
             this.bTService.BackColor = System.Drawing.Color.Transparent;
-            this.bTService.BorderRadius = 15;
+            this.bTService.BorderRadius = 10;
             this.bTService.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTService.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTService.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

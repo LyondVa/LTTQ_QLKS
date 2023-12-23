@@ -154,11 +154,11 @@
     <Compile Include="SmallForm\F_AddService.Designer.cs">
       <DependentUpon>F_AddService.cs</DependentUpon>
     </Compile>
-    <Compile Include="All user control\UC_Chartt.cs">
+    <Compile Include="All user control\UC_Chart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="All user control\UC_Chartt.Designer.cs">
-      <DependentUpon>UC_Chartt.cs</DependentUpon>
+    <Compile Include="All user control\UC_Chart.Designer.cs">
+      <DependentUpon>UC_Chart.cs</DependentUpon>
     </Compile>
     <Compile Include="All user control\UC_CustomerInfo.cs">
       <SubType>UserControl</SubType>
@@ -360,8 +360,8 @@
     <EmbeddedResource Include="SmallForm\F_AddService.resx">
       <DependentUpon>F_AddService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="All user control\UC_Chartt.resx">
-      <DependentUpon>UC_Chartt.cs</DependentUpon>
+    <EmbeddedResource Include="All user control\UC_Chart.resx">
+      <DependentUpon>UC_Chart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_CustomerInfo.resx">
       <DependentUpon>UC_CustomerInfo.cs</DependentUpon>

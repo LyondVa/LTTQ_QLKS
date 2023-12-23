@@ -168,7 +168,7 @@
             // bTExit
             // 
             this.bTExit.BackColor = System.Drawing.Color.Transparent;
-            this.bTExit.BorderRadius = 15;
+            this.bTExit.BorderRadius = 10;
             this.bTExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -186,7 +186,7 @@
             // bTAdd
             // 
             this.bTAdd.BackColor = System.Drawing.Color.Transparent;
-            this.bTAdd.BorderRadius = 15;
+            this.bTAdd.BorderRadius = 10;
             this.bTAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.bTAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.bTAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

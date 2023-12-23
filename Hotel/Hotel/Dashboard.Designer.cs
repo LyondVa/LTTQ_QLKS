@@ -58,7 +58,7 @@
             this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
             this.uC_CustomerDetail1 = new Hotel.All_user_control.UC_CustomerDetail();
             this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
-            this.uC_Chartt1 = new Hotel.All_user_control.UC_Chartt();
+            this.uC_Chartt1 = new Hotel.All_user_control.UC_Chart();
             this.uC_User1 = new Hotel.All_user_control.UC_User();
             this.uC_CustomerInfo1 = new Hotel.All_user_control.UC_CustomerInfo();
             this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
@@ -527,7 +527,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button btMoney;
-        private All_user_control.UC_Chartt uC_Chartt1;
+        private All_user_control.UC_Chart uC_Chartt1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse8;
         private Guna.UI2.WinForms.Guna2Button bTRoomGrid;
         private Guna.UI2.WinForms.Guna2Button btService;

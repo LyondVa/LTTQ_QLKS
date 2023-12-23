@@ -49,7 +49,7 @@
             this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
             this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
             this.uC_Service1 = new Hotel.All_user_control.UC_Service();
-            this.uC_Chartt1 = new Hotel.All_user_control.UC_Chartt();
+            this.uC_Chartt1 = new Hotel.All_user_control.UC_Chart();
             this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
             this.uC_User1 = new Hotel.All_user_control.UC_User();
             this.uC_Employee21 = new Hotel.All_user_control.UC_Employee2();
@@ -540,7 +540,7 @@
         private All_user_control.UC_CustomerDetail uC_CustomerDetail1;
         private All_user_control.UC_CustomerInfo uC_CustomerInfo1;
         private All_user_control.UC_Service uC_Service1;
-        private All_user_control.UC_Chartt uC_Chartt1;
+        private All_user_control.UC_Chart uC_Chartt1;
         private All_user_control.UC_RoomManagement uC_RoomManagement1;
         private All_user_control.UC_Employee uC_Employee1;
         private All_user_control.UC_CheckOut uC_CheckOut1;

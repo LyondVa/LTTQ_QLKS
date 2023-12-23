@@ -12,12 +12,12 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Hotel.All_user_control
 {
-    public partial class UC_Chartt : UserControl
+    public partial class UC_Chart : UserControl
     {
         function fn = new function();
         string query;
         string query2;
-        public UC_Chartt()
+        public UC_Chart()
         {
             InitializeComponent();
             setLabel();
@@ -167,6 +167,5 @@ namespace Hotel.All_user_control
             cbNam.Text = "Năm 2021";
             cbThang.Text = "Tháng 1";
         }
-
     }
 }
