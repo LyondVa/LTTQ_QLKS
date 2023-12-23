@@ -32,7 +32,7 @@ namespace Hotel.All_user_control
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
+            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
                     "where NHANVIEN.MANV = TAIKHOAN.MANV " +
                     "order by NHANVIEN.MANV ASC";
@@ -73,7 +73,7 @@ namespace Hotel.All_user_control
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Tên Nhân Viên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
+            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
                     "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like '" + tbSearch.Text + "%' " +
                     "order by NHANVIEN.MANV asc";

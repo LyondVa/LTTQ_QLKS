@@ -29,7 +29,7 @@ namespace Hotel.All_user_control
 
         private void UC_CheckOut_Load(object sender, EventArgs e)
         {
-            query = "select KHACHHANG.MAKH as 'Mã khách hàng', KHACHHANG.KHOTEN as 'Họ tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc tịch', KHACHHANG.KGIOITINH as 'Giới tính', KHACHHANG.KNGSINH as 'Ngày sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa chỉ', HOADON.MAHD as 'Mã hóa đơn', HOADON.NGNHANPHG as 'Ngày nhận phòng', PHONG.MAPHG as 'Mã phòng', PHONG.MALOAIPHG as 'Mã loại phòng', CTPHG.TIENDATPHG as 'Tiền đặt phòng'" +
+            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa Chỉ', HOADON.MAHD as 'Mã Hóa Đơn', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng'" +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -41,7 +41,7 @@ namespace Hotel.All_user_control
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            query = "select KHACHHANG.MAKH as 'Mã khách hàng', KHACHHANG.KHOTEN as 'Họ tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc tịch', KHACHHANG.KGIOITINH as 'Giới tính', KHACHHANG.KNGSINH as 'Ngày sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa chỉ', HOADON.MAHD as 'Mã hóa đơn', HOADON.NGNHANPHG as 'Ngày nhận phòng', PHONG.MAPHG as 'Mã phòng', PHONG.MALOAIPHG as 'Mã loại phòng', CTPHG.TIENDATPHG as 'Tiền đặt phòng'" +
+            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa Chỉ', HOADON.MAHD as 'Mã Hóa Đơn', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng'" +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
