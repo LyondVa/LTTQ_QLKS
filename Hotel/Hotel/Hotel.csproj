@@ -148,10 +148,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="All user control\F_AddService.cs">
+    <Compile Include="SmallForm\F_AddService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="All user control\F_AddService.Designer.cs">
+    <Compile Include="SmallForm\F_AddService.Designer.cs">
       <DependentUpon>F_AddService.cs</DependentUpon>
     </Compile>
     <Compile Include="All user control\UC_Chartt.cs">
@@ -363,7 +363,7 @@
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCode\Global.cs" />
-    <EmbeddedResource Include="All user control\F_AddService.resx">
+    <EmbeddedResource Include="SmallForm\F_AddService.resx">
       <DependentUpon>F_AddService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="All user control\UC_Chartt.resx">

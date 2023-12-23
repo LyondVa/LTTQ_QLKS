@@ -7,17 +7,20 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace Hotel
 {
     class function
     {
+        string dtbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QLKS_Remote.mdf");
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS_Remote.mdf;Database = QLKS;Integrated Security=True";
+            con.ConnectionString = @"Data Source=LYON ;Initial Catalog=QLKS;Integrated Security=True";
             return con;
-        }//C:\Users\fopop\OneDrive - Trường ĐH CNTT - University of Information Technology\GitHub\LyondVa\LTTQ_QLKS\Hotel\Hotel\DTB\QLKS_Remote.mdf
+        }
+        //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS_Remote.mdf;Integrated Security=True";
         //Data Source=DESKTOP-QEN4LJI ;Initial Catalog=QLKS;Integrated Security=True
         public DataSet getData(string query)
         {
