@@ -17,10 +17,17 @@ namespace Hotel.SmallForm
 {
     public partial class receipt : Form
     {
-        public receipt()
+        public receipt(string ten, string mahd, string ngayxuat, double tien)
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(430, 590);
+            label6.Text = mahd;
+            label2.Text = ngayxuat;
+            label1.Text = ten;
+            label3.Text = tien.ToString();
+            label4.Text = (tien * 0.10).ToString();
+            label5.Text = (tien *1.1).ToString();
+
         }
         public void ExportToPdf(string outputPath)
         {

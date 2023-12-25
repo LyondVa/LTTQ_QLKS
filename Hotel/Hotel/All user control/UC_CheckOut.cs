@@ -89,7 +89,14 @@ namespace Hotel.All_user_control
                             ", NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "'" +
                             "where MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thanh Toán Thành Công");
+                    query = "select KHOTEN from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '"+clientID+"'";
+                    string x1 = fn.getData2(query);
+                    query = "select MAHD from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
+                    string x2 = fn.getData2(query);
+                    query = "select NGXUATHD from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
+
                     receipt rc = new receipt();
+
                     rc.Show();
                     UC_CheckOut_Load(this, null);
                     clearAll();
