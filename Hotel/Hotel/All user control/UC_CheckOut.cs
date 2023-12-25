@@ -20,14 +20,14 @@ namespace Hotel.All_user_control
         {
             InitializeComponent();
             txtCheckOutDate.Value = DateTime.Now;
+            EventHub.DatabaseUpdated += RefreshData;
         }
 
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void UC_CheckOut_Load(object sender, EventArgs e)
+        private void RefreshData()
         {
             query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa Chỉ', HOADON.MAHD as 'Mã Hóa Đơn', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng'" +
                     "from KHACHHANG " +
@@ -35,6 +35,17 @@ namespace Hotel.All_user_control
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
                     "where KHACHHANG.STAYING = 1";
+            DataSet ds = fn.getData(query);
+            guna2DataGridView1.DataSource = ds.Tables[0];
+        }
+        private void UC_CheckOut_Load(object sender, EventArgs e)
+        {
+            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa Chỉ', HOADON.MAHD as 'Mã Hóa Đơn', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng'" +
+                    "from KHACHHANG " +
+                    "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
+                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
+                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where KHACHHANG.STAYING = 1 and NGTRPHGTHAT != null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
@@ -46,7 +57,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.STAYING = 0";
+                    "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.STAYING = 1 and NGTRPHGTHAT != null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
 

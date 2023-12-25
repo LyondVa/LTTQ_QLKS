@@ -17,7 +17,7 @@ namespace Hotel
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=DESKTOP-QEN4LJI ;Initial Catalog=QLKS;Integrated Security=True";
+            con.ConnectionString = @"Data Source=LYON;Initial Catalog=QLKS;Integrated Security=True";
             return con;
         }
         //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS_Remote.mdf;Integrated Security=True";
@@ -190,23 +190,28 @@ namespace Hotel
         }
 
     }
-        public static class EventHub
+    public static class EventHub
+    {
+        // Define the delegate for the event
+        public delegate void DatabaseUpdatedEventHandler();
+        // Define the static event based on the delegate
+        public static event DatabaseUpdatedEventHandler DatabaseUpdated;
+        public static event DatabaseUpdatedEventHandler ServicesUpdated;
+        public static event DatabaseUpdatedEventHandler ClientUpdated;
+
+        // Static method to raise the event
+        public static void OnDatabaseUpdated()
         {
-            // Define the delegate for the event
-            public delegate void DatabaseUpdatedEventHandler();
-            // Define the static event based on the delegate
-            public static event DatabaseUpdatedEventHandler DatabaseUpdated;
-            public static event DatabaseUpdatedEventHandler ServicesUpdated;
-
-            // Static method to raise the event
-            public static void OnDatabaseUpdated()
-            {
-                DatabaseUpdated?.Invoke();
-            }
-            public static void OnServicesUpdated()
-            {
-                ServicesUpdated?.Invoke();
-            }
+            DatabaseUpdated?.Invoke();
         }
+        public static void OnServicesUpdated()
+        {
+            ServicesUpdated?.Invoke();
+        }
+        public static void OnClientUpdated()
+        {
+            ClientUpdated?.Invoke();
+        }
+    }
 
-    } 
+}

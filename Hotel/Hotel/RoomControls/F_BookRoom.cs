@@ -191,6 +191,10 @@ namespace Hotel.RoomControls
                     tBClientName.Text = dR[0]["KHOTEN"].ToString();
                     bTClientRegistration.Enabled = false;
                 }
+                else
+                {
+                    bTClientRegistration.Enabled=true;
+                }
             }
         }
 

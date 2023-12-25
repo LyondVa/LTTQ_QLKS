@@ -31,9 +31,9 @@ namespace Hotel.RoomControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pBRoomID = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBRoomID = new System.Windows.Forms.Label();
@@ -96,20 +96,18 @@ namespace Hotel.RoomControls
             // 
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(45, 38);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(40, 30);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(27, 29);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(24, 24);
             this.guna2PictureBox1.TabIndex = 13;
             this.guna2PictureBox1.TabStop = false;
             // 
             // pBRoomID
             // 
             this.pBRoomID.ImageRotate = 0F;
-            this.pBRoomID.Location = new System.Drawing.Point(470, 131);
-            this.pBRoomID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBRoomID.Location = new System.Drawing.Point(418, 105);
             this.pBRoomID.Name = "pBRoomID";
-            this.pBRoomID.Size = new System.Drawing.Size(25, 28);
+            this.pBRoomID.Size = new System.Drawing.Size(22, 22);
             this.pBRoomID.TabIndex = 6;
             this.pBRoomID.TabStop = false;
             // 
@@ -120,10 +118,10 @@ namespace Hotel.RoomControls
             this.lBRoomID.Dock = System.Windows.Forms.DockStyle.Left;
             this.lBRoomID.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lBRoomID.ForeColor = System.Drawing.Color.White;
-            this.lBRoomID.Location = new System.Drawing.Point(72, 38);
+            this.lBRoomID.Location = new System.Drawing.Point(64, 30);
             this.lBRoomID.Margin = new System.Windows.Forms.Padding(0);
             this.lBRoomID.Name = "lBRoomID";
-            this.lBRoomID.Size = new System.Drawing.Size(124, 32);
+            this.lBRoomID.Size = new System.Drawing.Size(102, 28);
             this.lBRoomID.TabIndex = 9;
             this.lBRoomID.Text = "Mã Phòng";
             // 
@@ -140,15 +138,15 @@ namespace Hotel.RoomControls
             this.tBNote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBNote.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBNote.Location = new System.Drawing.Point(639, 331);
-            this.tBNote.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tBNote.Location = new System.Drawing.Point(568, 265);
+            this.tBNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tBNote.Multiline = true;
             this.tBNote.Name = "tBNote";
-            this.tBNote.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tBNote.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tBNote.PasswordChar = '\0';
             this.tBNote.PlaceholderText = "";
             this.tBNote.SelectedText = "";
-            this.tBNote.Size = new System.Drawing.Size(222, 125);
+            this.tBNote.Size = new System.Drawing.Size(197, 100);
             this.tBNote.TabIndex = 0;
             // 
             // label5
@@ -157,9 +155,9 @@ namespace Hotel.RoomControls
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(640, 115);
+            this.label5.Location = new System.Drawing.Point(569, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(202, 32);
+            this.label5.Size = new System.Drawing.Size(165, 28);
             this.label5.TabIndex = 5;
             this.label5.Text = "Trạng thái phòng:";
             // 
@@ -176,10 +174,9 @@ namespace Hotel.RoomControls
             this.cBRoomStatus.Items.AddRange(new object[] {
             "Bình thường",
             "Bảo trì"});
-            this.cBRoomStatus.Location = new System.Drawing.Point(639, 154);
-            this.cBRoomStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cBRoomStatus.Location = new System.Drawing.Point(568, 123);
             this.cBRoomStatus.Name = "cBRoomStatus";
-            this.cBRoomStatus.Size = new System.Drawing.Size(221, 36);
+            this.cBRoomStatus.Size = new System.Drawing.Size(197, 36);
             this.cBRoomStatus.TabIndex = 6;
             // 
             // dGVService
@@ -188,30 +185,29 @@ namespace Hotel.RoomControls
             this.dGVService.AllowUserToDeleteRows = false;
             this.dGVService.AllowUserToResizeColumns = false;
             this.dGVService.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVService.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVService.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVService.DefaultCellStyle = dataGridViewCellStyle3;
             this.dGVService.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.dGVService.Location = new System.Drawing.Point(44, 114);
-            this.dGVService.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dGVService.Location = new System.Drawing.Point(39, 91);
             this.dGVService.Name = "dGVService";
             this.dGVService.ReadOnly = true;
             this.dGVService.RowHeadersVisible = false;
@@ -219,7 +215,7 @@ namespace Hotel.RoomControls
             this.dGVService.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dGVService.RowTemplate.Height = 24;
             this.dGVService.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVService.Size = new System.Drawing.Size(456, 344);
+            this.dGVService.Size = new System.Drawing.Size(405, 275);
             this.dGVService.TabIndex = 7;
             this.dGVService.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.dGVService.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -257,10 +253,9 @@ namespace Hotel.RoomControls
             this.cBCleanStatus.Items.AddRange(new object[] {
             "Đã dọn",
             "Chưa dọn"});
-            this.cBCleanStatus.Location = new System.Drawing.Point(639, 255);
-            this.cBCleanStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cBCleanStatus.Location = new System.Drawing.Point(568, 204);
             this.cBCleanStatus.Name = "cBCleanStatus";
-            this.cBCleanStatus.Size = new System.Drawing.Size(221, 36);
+            this.cBCleanStatus.Size = new System.Drawing.Size(197, 36);
             this.cBCleanStatus.TabIndex = 11;
             // 
             // label3
@@ -269,9 +264,9 @@ namespace Hotel.RoomControls
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(640, 216);
+            this.label3.Location = new System.Drawing.Point(569, 173);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(226, 32);
+            this.label3.Size = new System.Drawing.Size(184, 28);
             this.label3.TabIndex = 10;
             this.label3.Text = "Tình trạng dọn dẹp:";
             // 
@@ -287,10 +282,9 @@ namespace Hotel.RoomControls
             this.bTCheckIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTCheckIn.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTCheckIn.ForeColor = System.Drawing.Color.White;
-            this.bTCheckIn.Location = new System.Drawing.Point(11, 12);
-            this.bTCheckIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bTCheckIn.Location = new System.Drawing.Point(10, 10);
             this.bTCheckIn.Name = "bTCheckIn";
-            this.bTCheckIn.Size = new System.Drawing.Size(169, 51);
+            this.bTCheckIn.Size = new System.Drawing.Size(150, 40);
             this.bTCheckIn.TabIndex = 3;
             this.bTCheckIn.Text = "Nhận phòng";
             this.bTCheckIn.Visible = false;
@@ -308,10 +302,9 @@ namespace Hotel.RoomControls
             this.bTCheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTCheckOut.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTCheckOut.ForeColor = System.Drawing.Color.White;
-            this.bTCheckOut.Location = new System.Drawing.Point(11, 12);
-            this.bTCheckOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bTCheckOut.Location = new System.Drawing.Point(10, 10);
             this.bTCheckOut.Name = "bTCheckOut";
-            this.bTCheckOut.Size = new System.Drawing.Size(169, 51);
+            this.bTCheckOut.Size = new System.Drawing.Size(150, 40);
             this.bTCheckOut.TabIndex = 4;
             this.bTCheckOut.Text = "Thanh toán";
             this.bTCheckOut.Visible = false;
@@ -329,10 +322,9 @@ namespace Hotel.RoomControls
             this.bTBook.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTBook.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTBook.ForeColor = System.Drawing.Color.White;
-            this.bTBook.Location = new System.Drawing.Point(11, 12);
-            this.bTBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bTBook.Location = new System.Drawing.Point(10, 10);
             this.bTBook.Name = "bTBook";
-            this.bTBook.Size = new System.Drawing.Size(169, 51);
+            this.bTBook.Size = new System.Drawing.Size(150, 40);
             this.bTBook.TabIndex = 6;
             this.bTBook.Text = "Đặt phòng";
             this.bTBook.Visible = false;
@@ -350,10 +342,9 @@ namespace Hotel.RoomControls
             this.bTUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTUpdate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTUpdate.ForeColor = System.Drawing.Color.White;
-            this.bTUpdate.Location = new System.Drawing.Point(11, 12);
-            this.bTUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bTUpdate.Location = new System.Drawing.Point(10, 10);
             this.bTUpdate.Name = "bTUpdate";
-            this.bTUpdate.Size = new System.Drawing.Size(169, 51);
+            this.bTUpdate.Size = new System.Drawing.Size(150, 40);
             this.bTUpdate.TabIndex = 7;
             this.bTUpdate.Text = "Cập nhật";
             this.bTUpdate.Click += new System.EventHandler(this.bTUpdate_Click);
@@ -370,10 +361,9 @@ namespace Hotel.RoomControls
             this.bTExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTExit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTExit.ForeColor = System.Drawing.Color.White;
-            this.bTExit.Location = new System.Drawing.Point(11, 12);
-            this.bTExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bTExit.Location = new System.Drawing.Point(10, 10);
             this.bTExit.Name = "bTExit";
-            this.bTExit.Size = new System.Drawing.Size(169, 51);
+            this.bTExit.Size = new System.Drawing.Size(150, 40);
             this.bTExit.TabIndex = 8;
             this.bTExit.Text = "Thoát";
             this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
@@ -390,10 +380,9 @@ namespace Hotel.RoomControls
             this.bTCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTCancel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTCancel.ForeColor = System.Drawing.Color.White;
-            this.bTCancel.Location = new System.Drawing.Point(11, 12);
-            this.bTCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bTCancel.Location = new System.Drawing.Point(10, 10);
             this.bTCancel.Name = "bTCancel";
-            this.bTCancel.Size = new System.Drawing.Size(169, 51);
+            this.bTCancel.Size = new System.Drawing.Size(150, 40);
             this.bTCancel.TabIndex = 9;
             this.bTCancel.Text = "Hủy phòng";
             this.bTCancel.Visible = false;
@@ -410,21 +399,19 @@ namespace Hotel.RoomControls
             this.pNButton.Controls.Add(this.pNBTUpdate);
             this.pNButton.Controls.Add(this.pNBTExit);
             this.pNButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pNButton.Location = new System.Drawing.Point(0, 474);
-            this.pNButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNButton.Location = new System.Drawing.Point(0, 380);
             this.pNButton.Name = "pNButton";
-            this.pNButton.Size = new System.Drawing.Size(922, 88);
+            this.pNButton.Size = new System.Drawing.Size(820, 70);
             this.pNButton.TabIndex = 12;
             // 
             // pNBTService
             // 
             this.pNBTService.Controls.Add(this.bTService);
             this.pNBTService.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTService.Location = new System.Drawing.Point(-415, 0);
-            this.pNBTService.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNBTService.Location = new System.Drawing.Point(-370, 0);
             this.pNBTService.Name = "pNBTService";
-            this.pNBTService.Padding = new System.Windows.Forms.Padding(11, 12, 11, 25);
-            this.pNBTService.Size = new System.Drawing.Size(191, 88);
+            this.pNBTService.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.pNBTService.Size = new System.Drawing.Size(170, 70);
             this.pNBTService.TabIndex = 16;
             this.pNBTService.Visible = false;
             // 
@@ -440,10 +427,9 @@ namespace Hotel.RoomControls
             this.bTService.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTService.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTService.ForeColor = System.Drawing.Color.White;
-            this.bTService.Location = new System.Drawing.Point(11, 12);
-            this.bTService.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bTService.Location = new System.Drawing.Point(10, 10);
             this.bTService.Name = "bTService";
-            this.bTService.Size = new System.Drawing.Size(169, 51);
+            this.bTService.Size = new System.Drawing.Size(150, 40);
             this.bTService.TabIndex = 4;
             this.bTService.Text = "Dịch Vụ";
             this.bTService.Visible = false;
@@ -454,11 +440,10 @@ namespace Hotel.RoomControls
             this.pNBTCheckIn.BackColor = System.Drawing.Color.Transparent;
             this.pNBTCheckIn.Controls.Add(this.bTCheckIn);
             this.pNBTCheckIn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTCheckIn.Location = new System.Drawing.Point(-224, 0);
-            this.pNBTCheckIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNBTCheckIn.Location = new System.Drawing.Point(-200, 0);
             this.pNBTCheckIn.Name = "pNBTCheckIn";
-            this.pNBTCheckIn.Padding = new System.Windows.Forms.Padding(11, 12, 11, 25);
-            this.pNBTCheckIn.Size = new System.Drawing.Size(191, 88);
+            this.pNBTCheckIn.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.pNBTCheckIn.Size = new System.Drawing.Size(170, 70);
             this.pNBTCheckIn.TabIndex = 13;
             this.pNBTCheckIn.Visible = false;
             // 
@@ -467,11 +452,10 @@ namespace Hotel.RoomControls
             this.pNBTCancel.BackColor = System.Drawing.Color.Transparent;
             this.pNBTCancel.Controls.Add(this.bTCancel);
             this.pNBTCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTCancel.Location = new System.Drawing.Point(-33, 0);
-            this.pNBTCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNBTCancel.Location = new System.Drawing.Point(-30, 0);
             this.pNBTCancel.Name = "pNBTCancel";
-            this.pNBTCancel.Padding = new System.Windows.Forms.Padding(11, 12, 11, 25);
-            this.pNBTCancel.Size = new System.Drawing.Size(191, 88);
+            this.pNBTCancel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.pNBTCancel.Size = new System.Drawing.Size(170, 70);
             this.pNBTCancel.TabIndex = 17;
             this.pNBTCancel.Visible = false;
             // 
@@ -480,11 +464,10 @@ namespace Hotel.RoomControls
             this.pNBTCheckOut.BackColor = System.Drawing.Color.Transparent;
             this.pNBTCheckOut.Controls.Add(this.bTCheckOut);
             this.pNBTCheckOut.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTCheckOut.Location = new System.Drawing.Point(158, 0);
-            this.pNBTCheckOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNBTCheckOut.Location = new System.Drawing.Point(140, 0);
             this.pNBTCheckOut.Name = "pNBTCheckOut";
-            this.pNBTCheckOut.Padding = new System.Windows.Forms.Padding(11, 12, 11, 25);
-            this.pNBTCheckOut.Size = new System.Drawing.Size(191, 88);
+            this.pNBTCheckOut.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.pNBTCheckOut.Size = new System.Drawing.Size(170, 70);
             this.pNBTCheckOut.TabIndex = 15;
             this.pNBTCheckOut.Visible = false;
             // 
@@ -493,11 +476,10 @@ namespace Hotel.RoomControls
             this.pNBTBook.BackColor = System.Drawing.Color.Transparent;
             this.pNBTBook.Controls.Add(this.bTBook);
             this.pNBTBook.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTBook.Location = new System.Drawing.Point(349, 0);
-            this.pNBTBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNBTBook.Location = new System.Drawing.Point(310, 0);
             this.pNBTBook.Name = "pNBTBook";
-            this.pNBTBook.Padding = new System.Windows.Forms.Padding(11, 12, 11, 25);
-            this.pNBTBook.Size = new System.Drawing.Size(191, 88);
+            this.pNBTBook.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.pNBTBook.Size = new System.Drawing.Size(170, 70);
             this.pNBTBook.TabIndex = 13;
             this.pNBTBook.Visible = false;
             // 
@@ -506,11 +488,10 @@ namespace Hotel.RoomControls
             this.pNBTUpdate.BackColor = System.Drawing.Color.Transparent;
             this.pNBTUpdate.Controls.Add(this.bTUpdate);
             this.pNBTUpdate.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTUpdate.Location = new System.Drawing.Point(540, 0);
-            this.pNBTUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNBTUpdate.Location = new System.Drawing.Point(480, 0);
             this.pNBTUpdate.Name = "pNBTUpdate";
-            this.pNBTUpdate.Padding = new System.Windows.Forms.Padding(11, 12, 11, 25);
-            this.pNBTUpdate.Size = new System.Drawing.Size(191, 88);
+            this.pNBTUpdate.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.pNBTUpdate.Size = new System.Drawing.Size(170, 70);
             this.pNBTUpdate.TabIndex = 13;
             // 
             // pNBTExit
@@ -518,11 +499,10 @@ namespace Hotel.RoomControls
             this.pNBTExit.BackColor = System.Drawing.Color.Transparent;
             this.pNBTExit.Controls.Add(this.bTExit);
             this.pNBTExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTExit.Location = new System.Drawing.Point(731, 0);
-            this.pNBTExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNBTExit.Location = new System.Drawing.Point(650, 0);
             this.pNBTExit.Name = "pNBTExit";
-            this.pNBTExit.Padding = new System.Windows.Forms.Padding(11, 12, 11, 25);
-            this.pNBTExit.Size = new System.Drawing.Size(191, 88);
+            this.pNBTExit.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.pNBTExit.Size = new System.Drawing.Size(170, 70);
             this.pNBTExit.TabIndex = 14;
             // 
             // guna2Panel1
@@ -534,9 +514,8 @@ namespace Hotel.RoomControls
             this.guna2Panel1.Controls.Add(this.bTRoomID);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(922, 105);
+            this.guna2Panel1.Size = new System.Drawing.Size(820, 84);
             this.guna2Panel1.TabIndex = 15;
             // 
             // pNClientName
@@ -544,11 +523,10 @@ namespace Hotel.RoomControls
             this.pNClientName.Controls.Add(this.lBBookClient);
             this.pNClientName.Controls.Add(this.pBBookClient);
             this.pNClientName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pNClientName.Location = new System.Drawing.Point(693, 0);
-            this.pNClientName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNClientName.Location = new System.Drawing.Point(615, 0);
             this.pNClientName.Name = "pNClientName";
-            this.pNClientName.Padding = new System.Windows.Forms.Padding(11, 38, 11, 38);
-            this.pNClientName.Size = new System.Drawing.Size(231, 105);
+            this.pNClientName.Padding = new System.Windows.Forms.Padding(10, 30, 10, 30);
+            this.pNClientName.Size = new System.Drawing.Size(205, 84);
             this.pNClientName.TabIndex = 5;
             // 
             // lBBookClient
@@ -558,9 +536,9 @@ namespace Hotel.RoomControls
             this.lBBookClient.Dock = System.Windows.Forms.DockStyle.Left;
             this.lBBookClient.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lBBookClient.ForeColor = System.Drawing.Color.White;
-            this.lBBookClient.Location = new System.Drawing.Point(38, 38);
+            this.lBBookClient.Location = new System.Drawing.Point(34, 30);
             this.lBBookClient.Name = "lBBookClient";
-            this.lBBookClient.Size = new System.Drawing.Size(163, 32);
+            this.lBBookClient.Size = new System.Drawing.Size(131, 28);
             this.lBBookClient.TabIndex = 12;
             this.lBBookClient.Text = "Tên khách đặt";
             // 
@@ -568,10 +546,9 @@ namespace Hotel.RoomControls
             // 
             this.pBBookClient.Dock = System.Windows.Forms.DockStyle.Left;
             this.pBBookClient.ImageRotate = 0F;
-            this.pBBookClient.Location = new System.Drawing.Point(11, 38);
-            this.pBBookClient.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBBookClient.Location = new System.Drawing.Point(10, 30);
             this.pBBookClient.Name = "pBBookClient";
-            this.pBBookClient.Size = new System.Drawing.Size(27, 29);
+            this.pBBookClient.Size = new System.Drawing.Size(24, 24);
             this.pBBookClient.TabIndex = 8;
             this.pBBookClient.TabStop = false;
             // 
@@ -580,11 +557,10 @@ namespace Hotel.RoomControls
             this.pNCheckOutDate.Controls.Add(this.lBCheckOutTime);
             this.pNCheckOutDate.Controls.Add(this.guna2PictureBox2);
             this.pNCheckOutDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pNCheckOutDate.Location = new System.Drawing.Point(462, 0);
-            this.pNCheckOutDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNCheckOutDate.Location = new System.Drawing.Point(410, 0);
             this.pNCheckOutDate.Name = "pNCheckOutDate";
-            this.pNCheckOutDate.Padding = new System.Windows.Forms.Padding(11, 38, 11, 38);
-            this.pNCheckOutDate.Size = new System.Drawing.Size(231, 105);
+            this.pNCheckOutDate.Padding = new System.Windows.Forms.Padding(10, 30, 10, 30);
+            this.pNCheckOutDate.Size = new System.Drawing.Size(205, 84);
             this.pNCheckOutDate.TabIndex = 4;
             // 
             // lBCheckOutTime
@@ -594,9 +570,9 @@ namespace Hotel.RoomControls
             this.lBCheckOutTime.Dock = System.Windows.Forms.DockStyle.Left;
             this.lBCheckOutTime.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lBCheckOutTime.ForeColor = System.Drawing.Color.White;
-            this.lBCheckOutTime.Location = new System.Drawing.Point(38, 38);
+            this.lBCheckOutTime.Location = new System.Drawing.Point(34, 30);
             this.lBCheckOutTime.Name = "lBCheckOutTime";
-            this.lBCheckOutTime.Size = new System.Drawing.Size(182, 32);
+            this.lBCheckOutTime.Size = new System.Drawing.Size(151, 28);
             this.lBCheckOutTime.TabIndex = 16;
             this.lBCheckOutTime.Text = "Ngày trả phòng";
             // 
@@ -604,10 +580,9 @@ namespace Hotel.RoomControls
             // 
             this.guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(11, 38);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(10, 30);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(27, 29);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(24, 24);
             this.guna2PictureBox2.TabIndex = 15;
             this.guna2PictureBox2.TabStop = false;
             // 
@@ -616,11 +591,10 @@ namespace Hotel.RoomControls
             this.pNCheckInDate.Controls.Add(this.lBcheckInDate);
             this.pNCheckInDate.Controls.Add(this.pBBookDate);
             this.pNCheckInDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pNCheckInDate.Location = new System.Drawing.Point(231, 0);
-            this.pNCheckInDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pNCheckInDate.Location = new System.Drawing.Point(205, 0);
             this.pNCheckInDate.Name = "pNCheckInDate";
-            this.pNCheckInDate.Padding = new System.Windows.Forms.Padding(11, 38, 11, 38);
-            this.pNCheckInDate.Size = new System.Drawing.Size(231, 105);
+            this.pNCheckInDate.Padding = new System.Windows.Forms.Padding(10, 30, 10, 30);
+            this.pNCheckInDate.Size = new System.Drawing.Size(205, 84);
             this.pNCheckInDate.TabIndex = 3;
             // 
             // lBcheckInDate
@@ -630,9 +604,9 @@ namespace Hotel.RoomControls
             this.lBcheckInDate.Dock = System.Windows.Forms.DockStyle.Left;
             this.lBcheckInDate.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lBcheckInDate.ForeColor = System.Drawing.Color.White;
-            this.lBcheckInDate.Location = new System.Drawing.Point(38, 38);
+            this.lBcheckInDate.Location = new System.Drawing.Point(34, 30);
             this.lBcheckInDate.Name = "lBcheckInDate";
-            this.lBcheckInDate.Size = new System.Drawing.Size(208, 32);
+            this.lBcheckInDate.Size = new System.Drawing.Size(170, 28);
             this.lBcheckInDate.TabIndex = 11;
             this.lBcheckInDate.Text = "Ngày nhận phòng";
             // 
@@ -640,10 +614,9 @@ namespace Hotel.RoomControls
             // 
             this.pBBookDate.Dock = System.Windows.Forms.DockStyle.Left;
             this.pBBookDate.ImageRotate = 0F;
-            this.pBBookDate.Location = new System.Drawing.Point(11, 38);
-            this.pBBookDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pBBookDate.Location = new System.Drawing.Point(10, 30);
             this.pBBookDate.Name = "pBBookDate";
-            this.pBBookDate.Size = new System.Drawing.Size(27, 29);
+            this.pBBookDate.Size = new System.Drawing.Size(24, 24);
             this.pBBookDate.TabIndex = 7;
             this.pBBookDate.TabStop = false;
             // 
@@ -653,10 +626,9 @@ namespace Hotel.RoomControls
             this.bTRoomID.Controls.Add(this.guna2PictureBox1);
             this.bTRoomID.Dock = System.Windows.Forms.DockStyle.Left;
             this.bTRoomID.Location = new System.Drawing.Point(0, 0);
-            this.bTRoomID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bTRoomID.Name = "bTRoomID";
-            this.bTRoomID.Padding = new System.Windows.Forms.Padding(45, 38, 11, 38);
-            this.bTRoomID.Size = new System.Drawing.Size(231, 105);
+            this.bTRoomID.Padding = new System.Windows.Forms.Padding(40, 30, 10, 30);
+            this.bTRoomID.Size = new System.Drawing.Size(205, 84);
             this.bTRoomID.TabIndex = 1;
             // 
             // label1
@@ -665,9 +637,9 @@ namespace Hotel.RoomControls
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(534, 348);
+            this.label1.Location = new System.Drawing.Point(475, 278);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 32);
+            this.label1.Size = new System.Drawing.Size(85, 28);
             this.label1.TabIndex = 16;
             this.label1.Text = "Ghi Chú:";
             // 
@@ -678,11 +650,11 @@ namespace Hotel.RoomControls
             // 
             // F_RoomInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Hotel.Properties.Resources.BackGround_SmallForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(922, 562);
+            this.ClientSize = new System.Drawing.Size(820, 450);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Panel1);
@@ -696,7 +668,6 @@ namespace Hotel.RoomControls
             this.Controls.Add(this.cBRoomStatus);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "F_RoomInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomInfo";

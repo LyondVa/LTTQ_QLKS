@@ -176,7 +176,11 @@ namespace Hotel.RoomControls
                     query = "update HOADON " +
                             "set NGNHANPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat) + "' " +
                             "from HOADON " +
-                            "where NGNHANPHGTHAT is null and HOADON.MAHD = '" + reservationID + "'";
+                            "where NGNHANPHGTHAT is null and HOADON.MAHD = '" + reservationID + "';" +
+                            "update KHACHHANG " +
+                            "set STAYING = 1 " +
+                            "from KHACHHANG, HOADON " +
+                            "where HOADON.MAHD = '" + reservationID + "';";
                     fn.setData(query, "Thành công");
                     EventHub.OnDatabaseUpdated();
                     this.Close();
@@ -198,7 +202,11 @@ namespace Hotel.RoomControls
                     query = "update HOADON " +
                             "set NGTRPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat) + "' " +
                             "from HOADON " +
-                            "where NGTRPHGTHAT is null and HOADON.MAHD = '" + reservationID + "'";
+                            "where NGTRPHGTHAT is null and HOADON.MAHD = '" + reservationID + "';" +
+                            "update KHACHHANG " +
+                            "set STAYING = 0 " +
+                            "from KHACHHANG, HOADON " +
+                            "where HOADON.MAHD = '" + reservationID + "';";
                     fn.setData(query, "Thành công");
                     EventHub.OnDatabaseUpdated();
                     this.Close();

@@ -24,7 +24,7 @@ namespace Hotel.All_user_control
         {
             if (txtSearch.SelectedIndex == 0)
             {
-                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select distinct KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -34,7 +34,7 @@ namespace Hotel.All_user_control
             }
             else if (txtSearch.SelectedIndex == 1)
             {
-                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select distinct KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -45,7 +45,7 @@ namespace Hotel.All_user_control
             }
             else if (txtSearch.SelectedIndex == 2)
             {
-                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select distinct KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
