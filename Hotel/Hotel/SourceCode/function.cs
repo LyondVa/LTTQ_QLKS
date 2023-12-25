@@ -17,7 +17,7 @@ namespace Hotel
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LYON;Initial Catalog=QLKS;Integrated Security=True";
+            con.ConnectionString = @"Data Source=DESKTOP-QEN4LJI;Initial Catalog=QLKS;Integrated Security=True";
             return con;
         }
         //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS_Remote.mdf;Integrated Security=True";
@@ -157,20 +157,12 @@ namespace Hotel
             // Sử dụng try-catch để xử lý các lỗi có thể xảy ra
             try
             {
-                // Thực hiện truy vấn và lấy dữ liệu
-                // Đây là nơi bạn sử dụng ADO.NET hoặc ORM để thực hiện truy vấn
-                // Ví dụ: sử dụng SqlConnection, SqlCommand, SqlDataReader (nếu bạn sử dụng ADO.NET)
-
-                // Ví dụ ADO.NET
                 using (SqlConnection connection = getConnection())
                 {
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Thực hiện truy vấn và lấy dữ liệu
                         object queryResult = command.ExecuteScalar();
-
-                        // Kiểm tra xem có dữ liệu không trước khi gán giá trị
                         if (queryResult != null)
                         {
                             // Chuyển đổi kết quả sang kiểu string và gán vào biến result

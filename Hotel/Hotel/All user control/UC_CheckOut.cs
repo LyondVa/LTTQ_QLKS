@@ -94,8 +94,11 @@ namespace Hotel.All_user_control
                     query = "select MAHD from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
                     string x2 = fn.getData2(query);
                     query = "select NGXUATHD from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
+                    string x3 = fn.getData2(query); 
+                    query = query = "select TONGTIEN from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
+                    string x4 = fn.getData2(query);
 
-                    receipt rc = new receipt();
+                    receipt rc = new receipt(x1,x2,x3,double.Parse(x4));
 
                     rc.Show();
                     UC_CheckOut_Load(this, null);
