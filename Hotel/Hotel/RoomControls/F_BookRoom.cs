@@ -1,5 +1,6 @@
 ﻿using Hotel.All_user_control;
 using Hotel.Properties;
+using Hotel.SmallForm;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -200,12 +201,7 @@ namespace Hotel.RoomControls
 
         private void bTClientRegistration_Click(object sender, EventArgs e)
         {
-            Form cusResForm = new Form();
-            UC_CustomerRes customerRes = new UC_CustomerRes(tBClientID.Text);
-            cusResForm.Size = new System.Drawing.Size(1050, 650);
-            cusResForm.Text = "Thêm khách hàng";
-            cusResForm.Controls.Add(customerRes);
-            cusResForm.Controls[0].Dock = DockStyle.Fill;
+            AddCustomer cusResForm = new AddCustomer(tBClientID.Text);
             cusResForm.Show();
             cusResForm.Focus();
             //query = 

@@ -21,6 +21,12 @@ namespace Hotel.SmallForm
             InitializeComponent();
             txtBirth.Value = DateTime.Now;
         }
+        public AddCustomer(string reservationID)
+        {
+            InitializeComponent();
+            txtBirth.Value = DateTime.Now;
+            tbCCCD.Text = reservationID;
+        }
 
         private void btEsc_Click(object sender, EventArgs e)
         {
@@ -42,6 +48,7 @@ namespace Hotel.SmallForm
                 query = "INSERT INTO KHACHHANG (KHOTEN, QUOCTICH, KCCCD, KNGSINH, KGIOITINH, KSDT, KDIACHI, KEMAIL) VALUES " +
                         "( N'" + name + "', N'" + nationality + "', '" + cccd + "', '" + dob + "', N'" + gender + "', '" + phone + "', N'" + address + "', N'" + email + "')";
                 fn.setData(query, "Thêm Khách Hàng Thành Công!");
+                EventHub.OnServicesUpdated();
                 this.Close();
             }
             else
