@@ -59,8 +59,8 @@ namespace Hotel
                 Home dash = new Home(position,x);
                 this.Hide();
                 receipt t = new receipt("ng", "ng", "ng", 40000);
-                t.Show();
-                //dash.Show();
+                //t.Show();
+                dash.Show();
                 Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();
             }
             else
