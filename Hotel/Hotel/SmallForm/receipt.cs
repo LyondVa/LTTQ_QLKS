@@ -20,6 +20,7 @@ namespace Hotel.SmallForm
         public receipt()
         {
             InitializeComponent();
+            this.Size = new System.Drawing.Size(430, 590);
         }
         public void ExportToPdf(string outputPath)
         {

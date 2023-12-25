@@ -69,7 +69,7 @@
             // txbPassword
             // 
             this.txbPassword.BackColor = System.Drawing.Color.Transparent;
-            this.txbPassword.BorderRadius = 18;
+            this.txbPassword.BorderRadius = 15;
             this.txbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbPassword.DefaultText = "";
             this.txbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -95,7 +95,7 @@
             // txbUsername
             // 
             this.txbUsername.BackColor = System.Drawing.Color.Transparent;
-            this.txbUsername.BorderRadius = 10;
+            this.txbUsername.BorderRadius = 15;
             this.txbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txbUsername.DefaultText = "";
             this.txbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -143,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Hotel.Properties.Resources.Blue_and_Black_Modern_Illustration_UI_Login_Page_Desktop_Prototype__1_;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1125, 550);
             this.Controls.Add(this.btnExit);

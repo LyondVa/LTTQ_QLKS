@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_RoomManagement));
             this.tBSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dGVRoom = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,14 +53,14 @@
             this.tBSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBSearch.Location = new System.Drawing.Point(30, 170);
-            this.tBSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.tBSearch.Location = new System.Drawing.Point(34, 212);
+            this.tBSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBSearch.Name = "tBSearch";
             this.tBSearch.PasswordChar = '\0';
             this.tBSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.tBSearch.PlaceholderText = "";
             this.tBSearch.SelectedText = "";
-            this.tBSearch.Size = new System.Drawing.Size(340, 40);
+            this.tBSearch.Size = new System.Drawing.Size(382, 50);
             this.tBSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tBSearch.TabIndex = 2;
             this.tBSearch.TextChanged += new System.EventHandler(this.tBSearch_TextChanged);
@@ -70,37 +71,37 @@
             this.dGVRoom.AllowUserToDeleteRows = false;
             this.dGVRoom.AllowUserToResizeColumns = false;
             this.dGVRoom.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.dGVRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.dGVRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dGVRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dGVRoom.ColumnHeadersHeight = 35;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVRoom.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVRoom.DefaultCellStyle = dataGridViewCellStyle6;
             this.dGVRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.dGVRoom.Location = new System.Drawing.Point(30, 250);
+            this.dGVRoom.Location = new System.Drawing.Point(34, 312);
             this.dGVRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGVRoom.Name = "dGVRoom";
             this.dGVRoom.ReadOnly = true;
             this.dGVRoom.RowHeadersVisible = false;
             this.dGVRoom.RowHeadersWidth = 60;
             this.dGVRoom.RowTemplate.Height = 24;
-            this.dGVRoom.Size = new System.Drawing.Size(740, 250);
+            this.dGVRoom.Size = new System.Drawing.Size(832, 312);
             this.dGVRoom.TabIndex = 4;
             this.dGVRoom.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.dGVRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -131,9 +132,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 70);
+            this.label1.Location = new System.Drawing.Point(24, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 50);
+            this.label1.Size = new System.Drawing.Size(382, 60);
             this.label1.TabIndex = 3;
             this.label1.Text = "Danh sách phòng";
             // 
@@ -149,9 +150,10 @@
             this.bTAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTAdd.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTAdd.ForeColor = System.Drawing.Color.White;
-            this.bTAdd.Location = new System.Drawing.Point(590, 510);
+            this.bTAdd.Location = new System.Drawing.Point(664, 638);
+            this.bTAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bTAdd.Name = "bTAdd";
-            this.bTAdd.Size = new System.Drawing.Size(180, 45);
+            this.bTAdd.Size = new System.Drawing.Size(202, 56);
             this.bTAdd.TabIndex = 8;
             this.bTAdd.Text = "Thêm Phòng";
             this.bTAdd.Click += new System.EventHandler(this.bTAdd_Click);
@@ -168,19 +170,20 @@
             this.bTUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTUpdate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTUpdate.ForeColor = System.Drawing.Color.White;
-            this.bTUpdate.Location = new System.Drawing.Point(404, 510);
+            this.bTUpdate.Location = new System.Drawing.Point(454, 638);
+            this.bTUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bTUpdate.Name = "bTUpdate";
-            this.bTUpdate.Size = new System.Drawing.Size(180, 45);
+            this.bTUpdate.Size = new System.Drawing.Size(202, 56);
             this.bTUpdate.TabIndex = 9;
             this.bTUpdate.Text = "Sửa Phòng";
             this.bTUpdate.Click += new System.EventHandler(this.bTUpdate_Click);
             // 
             // UC_RoomManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::Hotel.Properties.Resources.Background;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.bTUpdate);
             this.Controls.Add(this.bTAdd);
@@ -190,7 +193,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_RoomManagement";
-            this.Size = new System.Drawing.Size(800, 620);
+            this.Size = new System.Drawing.Size(900, 775);
             ((System.ComponentModel.ISupportInitialize)(this.dGVRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

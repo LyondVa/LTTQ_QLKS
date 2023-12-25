@@ -14,10 +14,11 @@ namespace Hotel
     public partial class Home : Form
     {
         int position;
-        public Home(int x)
+        public Home(int x, string y)
         {
             InitializeComponent();
             position = x;
+            label2.Text = y;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -152,7 +153,7 @@ namespace Hotel
                 panel3.Location = new Point(200, 0);
                 panel3.Size = s;
                 panel1.Size = new Size(200, 730);
-                panel2.Location = new Point(-1, 174);
+                panel2.Location = new Point(-1, 193);
                 panel2.Size = new Size(200, 490);
                 pictureBox1.Size = s;
                 uC_RoomGrid1.Size = s;
@@ -166,6 +167,11 @@ namespace Hotel
                 uC_User1.Size = s;
                 nutTo = true;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,5 +53,10 @@ namespace Hotel.SmallForm
             setEmployee(guna2DataGridView1);
 
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

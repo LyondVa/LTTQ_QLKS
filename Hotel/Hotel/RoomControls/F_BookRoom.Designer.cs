@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,6 +51,7 @@
             this.dTPCheckInDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dTPCheckOutDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dGVAvailableRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVSelectedRoom)).BeginInit();
             this.SuspendLayout();
@@ -65,10 +67,10 @@
             this.bTExit.FillColor = System.Drawing.Color.White;
             this.bTExit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.bTExit.Location = new System.Drawing.Point(437, 446);
+            this.bTExit.Location = new System.Drawing.Point(505, 564);
             this.bTExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bTExit.Name = "bTExit";
-            this.bTExit.Size = new System.Drawing.Size(184, 45);
+            this.bTExit.Size = new System.Drawing.Size(207, 56);
             this.bTExit.TabIndex = 0;
             this.bTExit.Text = "Thoát";
             this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
@@ -79,9 +81,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(336, 89);
+            this.label1.Location = new System.Drawing.Point(391, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 28);
+            this.label1.Size = new System.Drawing.Size(213, 32);
             this.label1.TabIndex = 7;
             this.label1.Text = "Ngày nhận phòng:";
             // 
@@ -91,9 +93,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(336, 173);
+            this.label2.Location = new System.Drawing.Point(391, 218);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 28);
+            this.label2.Size = new System.Drawing.Size(187, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "Ngày trả phòng:";
             // 
@@ -108,9 +110,10 @@
             this.bTAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTAdd.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTAdd.ForeColor = System.Drawing.Color.White;
-            this.bTAdd.Location = new System.Drawing.Point(226, 446);
+            this.bTAdd.Location = new System.Drawing.Point(267, 564);
+            this.bTAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bTAdd.Name = "bTAdd";
-            this.bTAdd.Size = new System.Drawing.Size(184, 45);
+            this.bTAdd.Size = new System.Drawing.Size(207, 56);
             this.bTAdd.TabIndex = 1;
             this.bTAdd.Text = "Thêm";
             this.bTAdd.Click += new System.EventHandler(this.bTAdd_Click);
@@ -121,9 +124,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 268);
+            this.label3.Location = new System.Drawing.Point(24, 337);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 28);
+            this.label3.Size = new System.Drawing.Size(209, 32);
             this.label3.TabIndex = 9;
             this.label3.Text = "Phòng đang trống";
             // 
@@ -133,9 +136,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(336, 268);
+            this.label4.Location = new System.Drawing.Point(391, 337);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 28);
+            this.label4.Size = new System.Drawing.Size(176, 32);
             this.label4.TabIndex = 10;
             this.label4.Text = "Phòng đã chọn";
             // 
@@ -150,13 +153,13 @@
             this.tBClientID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBClientID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBClientID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBClientID.Location = new System.Drawing.Point(12, 121);
-            this.tBClientID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tBClientID.Location = new System.Drawing.Point(27, 153);
+            this.tBClientID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tBClientID.Name = "tBClientID";
             this.tBClientID.PasswordChar = '\0';
             this.tBClientID.PlaceholderText = "";
             this.tBClientID.SelectedText = "";
-            this.tBClientID.Size = new System.Drawing.Size(288, 48);
+            this.tBClientID.Size = new System.Drawing.Size(324, 60);
             this.tBClientID.TabIndex = 11;
             this.tBClientID.TextChanged += new System.EventHandler(this.tBClientID_TextChanged);
             // 
@@ -166,9 +169,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 89);
+            this.label5.Location = new System.Drawing.Point(27, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 28);
+            this.label5.Size = new System.Drawing.Size(79, 32);
             this.label5.TabIndex = 12;
             this.label5.Text = "CCCD:";
             // 
@@ -183,9 +186,10 @@
             this.bTClientRegistration.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTClientRegistration.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.bTClientRegistration.ForeColor = System.Drawing.Color.White;
-            this.bTClientRegistration.Location = new System.Drawing.Point(12, 446);
+            this.bTClientRegistration.Location = new System.Drawing.Point(27, 564);
+            this.bTClientRegistration.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bTClientRegistration.Name = "bTClientRegistration";
-            this.bTClientRegistration.Size = new System.Drawing.Size(184, 45);
+            this.bTClientRegistration.Size = new System.Drawing.Size(207, 56);
             this.bTClientRegistration.TabIndex = 13;
             this.bTClientRegistration.Text = "Đăng Ký";
             this.bTClientRegistration.Click += new System.EventHandler(this.bTClientRegistration_Click);
@@ -216,7 +220,8 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dGVAvailableRoom.DefaultCellStyle = dataGridViewCellStyle9;
             this.dGVAvailableRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.dGVAvailableRoom.Location = new System.Drawing.Point(12, 299);
+            this.dGVAvailableRoom.Location = new System.Drawing.Point(27, 376);
+            this.dGVAvailableRoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dGVAvailableRoom.Name = "dGVAvailableRoom";
             this.dGVAvailableRoom.ReadOnly = true;
             this.dGVAvailableRoom.RowHeadersVisible = false;
@@ -224,7 +229,7 @@
             this.dGVAvailableRoom.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dGVAvailableRoom.RowTemplate.Height = 24;
             this.dGVAvailableRoom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVAvailableRoom.Size = new System.Drawing.Size(288, 127);
+            this.dGVAvailableRoom.Size = new System.Drawing.Size(324, 159);
             this.dGVAvailableRoom.TabIndex = 15;
             this.dGVAvailableRoom.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.dGVAvailableRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -276,7 +281,8 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dGVSelectedRoom.DefaultCellStyle = dataGridViewCellStyle12;
             this.dGVSelectedRoom.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
-            this.dGVSelectedRoom.Location = new System.Drawing.Point(341, 299);
+            this.dGVSelectedRoom.Location = new System.Drawing.Point(397, 376);
+            this.dGVSelectedRoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dGVSelectedRoom.Name = "dGVSelectedRoom";
             this.dGVSelectedRoom.ReadOnly = true;
             this.dGVSelectedRoom.RowHeadersVisible = false;
@@ -284,7 +290,7 @@
             this.dGVSelectedRoom.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dGVSelectedRoom.RowTemplate.Height = 24;
             this.dGVSelectedRoom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dGVSelectedRoom.Size = new System.Drawing.Size(288, 127);
+            this.dGVSelectedRoom.Size = new System.Drawing.Size(324, 159);
             this.dGVSelectedRoom.TabIndex = 16;
             this.dGVSelectedRoom.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WetAsphalt;
             this.dGVSelectedRoom.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
@@ -322,14 +328,14 @@
             this.tBClientName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBClientName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBClientName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tBClientName.Location = new System.Drawing.Point(17, 204);
-            this.tBClientName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tBClientName.Location = new System.Drawing.Point(32, 257);
+            this.tBClientName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tBClientName.Name = "tBClientName";
             this.tBClientName.PasswordChar = '\0';
             this.tBClientName.PlaceholderText = "";
             this.tBClientName.ReadOnly = true;
             this.tBClientName.SelectedText = "";
-            this.tBClientName.Size = new System.Drawing.Size(283, 48);
+            this.tBClientName.Size = new System.Drawing.Size(318, 60);
             this.tBClientName.TabIndex = 17;
             // 
             // label6
@@ -338,9 +344,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 172);
+            this.label6.Location = new System.Drawing.Point(27, 217);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 28);
+            this.label6.Size = new System.Drawing.Size(190, 32);
             this.label6.TabIndex = 18;
             this.label6.Text = "Tên Khách hàng:";
             // 
@@ -350,12 +356,12 @@
             this.dTPCheckInDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dTPCheckInDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dTPCheckInDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPCheckInDate.Location = new System.Drawing.Point(341, 123);
+            this.dTPCheckInDate.Location = new System.Drawing.Point(397, 156);
             this.dTPCheckInDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTPCheckInDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dTPCheckInDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dTPCheckInDate.Name = "dTPCheckInDate";
-            this.dTPCheckInDate.Size = new System.Drawing.Size(288, 46);
+            this.dTPCheckInDate.Size = new System.Drawing.Size(324, 58);
             this.dTPCheckInDate.TabIndex = 63;
             this.dTPCheckInDate.Value = new System.DateTime(2023, 11, 26, 12, 41, 10, 404);
             // 
@@ -365,12 +371,12 @@
             this.dTPCheckOutDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dTPCheckOutDate.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dTPCheckOutDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dTPCheckOutDate.Location = new System.Drawing.Point(341, 206);
+            this.dTPCheckOutDate.Location = new System.Drawing.Point(397, 260);
             this.dTPCheckOutDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dTPCheckOutDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dTPCheckOutDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dTPCheckOutDate.Name = "dTPCheckOutDate";
-            this.dTPCheckOutDate.Size = new System.Drawing.Size(288, 46);
+            this.dTPCheckOutDate.Size = new System.Drawing.Size(324, 58);
             this.dTPCheckOutDate.TabIndex = 64;
             this.dTPCheckOutDate.Value = new System.DateTime(2023, 11, 26, 12, 41, 10, 404);
             // 
@@ -380,19 +386,24 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 32);
+            this.label7.Location = new System.Drawing.Point(27, 42);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 41);
+            this.label7.Size = new System.Drawing.Size(200, 48);
             this.label7.TabIndex = 65;
             this.label7.Text = "Đặt Phòng";
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 15;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // F_BookRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Hotel.Properties.Resources.BackGround_SmallForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(645, 508);
+            this.ClientSize = new System.Drawing.Size(751, 652);
             this.ControlBox = false;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dTPCheckOutDate);
@@ -412,6 +423,7 @@
             this.Controls.Add(this.bTAdd);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "F_BookRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BookRoom";
@@ -440,5 +452,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dTPCheckInDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dTPCheckOutDate;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

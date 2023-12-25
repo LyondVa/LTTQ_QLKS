@@ -46,6 +46,7 @@
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
             this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
             this.uC_Service1 = new Hotel.All_user_control.UC_Service();
@@ -66,6 +67,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.label1);
@@ -79,9 +81,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(50, 38);
+            this.pictureBox2.Location = new System.Drawing.Point(61, 48);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 101);
+            this.pictureBox2.Size = new System.Drawing.Size(86, 87);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -109,7 +111,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(68, 142);
+            this.label1.Location = new System.Drawing.Point(128, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 28);
             this.label1.TabIndex = 8;
@@ -129,7 +131,7 @@
             this.panel2.Controls.Add(this.btAddroom);
             this.panel2.Controls.Add(this.bTRoomGrid);
             this.panel2.Controls.Add(this.btHome);
-            this.panel2.Location = new System.Drawing.Point(-1, 174);
+            this.panel2.Location = new System.Drawing.Point(-1, 193);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 495);
@@ -393,12 +395,26 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(56, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 30);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "label2";
             // 
             // uC_CheckOut1
             // 
             this.uC_CheckOut1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_CheckOut1.BackgroundImage")));
             this.uC_CheckOut1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_CheckOut1.Location = new System.Drawing.Point(0, 0);
+            this.uC_CheckOut1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uC_CheckOut1.Name = "uC_CheckOut1";
             this.uC_CheckOut1.Size = new System.Drawing.Size(900, 690);
             this.uC_CheckOut1.TabIndex = 9;
@@ -427,6 +443,7 @@
             this.uC_Chartt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uC_Chartt1.BackgroundImage")));
             this.uC_Chartt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.uC_Chartt1.Location = new System.Drawing.Point(0, 0);
+            this.uC_Chartt1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uC_Chartt1.Name = "uC_Chartt1";
             this.uC_Chartt1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.uC_Chartt1.Size = new System.Drawing.Size(900, 690);
@@ -548,5 +565,6 @@
         private RoomControls.UC_RoomGrid uC_RoomGrid1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

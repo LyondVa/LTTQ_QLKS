@@ -65,8 +65,19 @@ namespace Hotel.All_user_control
                     chart1.Series["Doanh Thu"].Points.AddXY("Tiền Dịch Vụ", ds.Tables[0].Rows[0]["TIENDICHVU"]);
 
                     // Hiển thị giá trị phần trăm bên trong mỗi phần tử của biểu đồ tròn
-                    chart1.Series["Doanh Thu"].IsValueShownAsLabel = false;
+                    chart1.Series["Doanh Thu"].IsValueShownAsLabel = true;
                     chart1.Series["Doanh Thu"].Label = "#PERCENT{P0}";
+
+                    // Hiển thị chú thích (legend) và đặt tên cho chú thích
+                    chart1.Legends.Add("Legend");
+                    chart1.Legends["Legend"].Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+                    chart1.Legends["Legend"].Alignment = StringAlignment.Center; // Căn giữa chú thích
+
+                    // Gán tên cho chú thích
+                    chart1.Series["Doanh Thu"].LegendText = "#AXISLABEL";
+
+                    // Đặt màu trắng cho số trong biểu đồ
+                    chart1.Series["Doanh Thu"].LabelForeColor = System.Drawing.Color.White;
 
                     chart1.DataBind();
                 }
@@ -79,7 +90,6 @@ namespace Hotel.All_user_control
             {
                 MessageBox.Show("Không có dữ liệu trả về từ truy vấn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
 
             chart2.DataSource = fn.getData(query);
 

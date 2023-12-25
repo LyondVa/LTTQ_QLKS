@@ -524,14 +524,7 @@
     <None Include="Resources\CheckMark.png" />
     <None Include="Resources\CrossMark.png" />
     <None Include="Resources\Clean.png" />
-    <Content Include="DTB\QLKS_Remote.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="DTB\QLKS.sql" />
-    <Content Include="DTB\QLKS_Remote_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLKS_Remote.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\410740361_1316315606432240_7681944513452618063_n.png" />
     <None Include="Resources\413170077_1281254999934748_4364759743660170356_n.png" />
     <Content Include="Resources\Background.png" />

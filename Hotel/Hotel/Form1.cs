@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.SmallForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,7 +54,9 @@ namespace Hotel
                 }
                 if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
                     position = 1;
-                Home dash = new Home(position);
+                string tempQuery = "select NHOTEN from NHANVIEN, TAIKHOAN where NHANVIEN.MANV = TAIKHOAN.MANV and TENTK ='" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
+                string x = fn.getData2(tempQuery);
+                Home dash = new Home(position,x);
                 this.Hide();
                 dash.Show();
                 Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();
