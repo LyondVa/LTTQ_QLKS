@@ -34,7 +34,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 1 and NGTRPHGTHAT != null";
+                    "where KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
@@ -45,7 +45,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 1 and NGTRPHGTHAT != null";
+                    "where KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
@@ -57,7 +57,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.STAYING = 1 and NGTRPHGTHAT != null";
+                    "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
 

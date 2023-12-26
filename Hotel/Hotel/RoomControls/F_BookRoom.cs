@@ -112,7 +112,7 @@ namespace Hotel.RoomControls
                             "from PHONG p " +
                             "left join CTPHG c on p.MAPHG = c.MAPHG " +
                             "left join HOADON d on c.MAHD = d.MAHD " +
-                            "where c.MAPHG is null or dbo.CHECKROOM(p.MAPHG, '"+checkInDate+"','"+checkOutDate+"') = 1";
+                            "where (c.MAPHG is null or dbo.CHECKROOM(p.MAPHG, '"+checkInDate+"','"+checkOutDate+"') = 1) and TRANGTHAI = N'Bình thường'";
             dSA = fn.getData(queryR);
             dGVAvailableRoom.DataSource = dSA.Tables[0];
             dSS.Tables[0].Rows.Clear();
@@ -176,7 +176,11 @@ namespace Hotel.RoomControls
                 query = "INSERT INTO CTPHG(MAPHG, MAHD) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString()+ "')";
                 fn.setDataNoMsg(query);
             }
-            query = "\r\nUPDATE KHACHHANG\r\nSET STAYING = 1\r\nFROM KHACHHANG, HOADON\r\nWHERE KHACHHANG.MAKH = HOADON.MAKH\r\nAND MAHD = '" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString() + "'";
+            query = "UPDATE KHACHHANG " +
+                    "SET STAYING = 1 " +
+                    "FROM KHACHHANG, HOADON " +
+                    "WHERE KHACHHANG.MAKH = HOADON.MAKH " +
+                    "AND MAHD = '" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString() + "'";
             fn.setDataNoMsg(query);
             EventHub.OnDatabaseUpdated();
             this.Close();
