@@ -173,7 +173,7 @@ namespace Hotel.RoomControls
             dSTemp2 = fn.getData(query);
             foreach (DataRow dR in dSS.Tables[0].Rows)
             {
-                query = "INSERT INTO CTPHG(MAPHG, MAHD, TIENDATPHG) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString()+ "'," + 7000 + ")";
+                query = "INSERT INTO CTPHG(MAPHG, MAHD) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString()+ "')";
                 fn.setDataNoMsg(query);
             }
             EventHub.OnDatabaseUpdated();
