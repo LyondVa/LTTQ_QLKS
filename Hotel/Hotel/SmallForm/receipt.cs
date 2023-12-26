@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace Hotel.SmallForm
 {
     public partial class receipt : Form
     {
+        string query;
+        function fn;
         Bitmap memoryImage;
         public receipt(string ten, string mahd, string ngayxuat, double tien)
         {
@@ -29,6 +32,9 @@ namespace Hotel.SmallForm
             label3.Text = tien.ToString();
             label4.Text = (tien * 0.10).ToString();
             label5.Text = (tien *1.1).ToString();
+            query = "select TENDV as MOTA, cast(GIADV as decimal) as 'DONGIA', CAST((dbo.TONGTIENDICHVU(MAHD, DICHVU.MADV) / GIADV) AS DECIMAL) AS SOLUONG, cast(dbo.TONGTIENDICHVU(MAHD, DICHVU.MADV) as decimal) as 'THANHTIEN'\r\nfrom DICHVU, CTDV\r\nwhere DICHVU.MADV = CTDV.MADV\r\nand MAHD = 'HD00001'\r\nUNION\r\nSELECT (N'Phòng ' + PHONG.MAPHG) as MOTA, CAST(GIADEM AS DECIMAL), '1' as SOLUONG, CAST(TIENDATPHG AS DECIMAL) as THANHTIEN\r\nFROM PHONG, LOAIPHONG, CTPHG\r\nWHERE PHONG.MALOAIPHG = LOAIPHONG.MALOAIPHG AND CTPHG.MAPHG = PHONG.MAPHG\r\nAND MAHD = 'HD00001'";
+            DataSet ds = fn.getData(query);
+            guna2DataGridView1.DataSource = ds.Tables[0];
 
         }
 
