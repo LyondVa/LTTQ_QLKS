@@ -15,12 +15,13 @@ namespace Hotel.All_user_control
     {
         function fn = new function();
         string query;
-        string clientID, reservationID;
+        string clientID, reservationID, id;
         public UC_CheckOut()
         {
             InitializeComponent();
             txtCheckOutDate.Value = DateTime.Now;
             EventHub.DatabaseUpdated += RefreshData;
+            EventHub.ServicesUpdated += RefreshData;
         }
 
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -29,22 +30,18 @@ namespace Hotel.All_user_control
         }
         private void RefreshData()
         {
-            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa Chỉ', HOADON.MAHD as 'Mã Hóa Đơn', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng'" +
+            query = "select HOADON.MAHD as 'Mã Hóa Đơn', KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', HOADON.NGTRPHG as 'Ngày trả phòng', cast(HOADON.TONGTIEN as decimal) as 'Tổng tiền' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
-                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
-                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
                     "where KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
         private void UC_CheckOut_Load(object sender, EventArgs e)
         {
-            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa Chỉ', HOADON.MAHD as 'Mã Hóa Đơn', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng'" +
+            query = "select HOADON.MAHD as 'Mã Hóa Đơn', KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', HOADON.NGTRPHG as 'Ngày trả phòng', cast(HOADON.TONGTIEN as decimal) as 'Tổng tiền' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
-                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
-                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
                     "where KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
@@ -52,29 +49,14 @@ namespace Hotel.All_user_control
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.KSDT as 'SDT', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KDIACHI as 'Địa Chỉ', HOADON.MAHD as 'Mã Hóa Đơn', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng'" +
+            query = "select HOADON.MAHD as 'Mã Hóa Đơn', KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', HOADON.NGTRPHG as 'Ngày trả phòng', cast(HOADON.TONGTIEN as decimal) as 'Tổng tiền' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
-                    "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
-                    "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
                     "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
 
         }
-        string id;
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (guna2DataGridView1.Rows[e.RowIndex].Cells[e.RowIndex].Value != null)
-            {
-                id = guna2DataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtCName.Text = guna2DataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtRoom.Text = guna2DataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                clientID = guna2DataGridView1.Rows[e.RowIndex].Cells["Mã khách hàng"].Value.ToString();
-                reservationID = guna2DataGridView1.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString();
-            }
-        }
-
         private void btCheckOut_Click(object sender, EventArgs e)
         {
             if (txtCName.Text != "")
@@ -113,7 +95,7 @@ namespace Hotel.All_user_control
         public void clearAll()
         {
             txtCName.Clear();
-            txtRoom.Clear();
+            txtReservationID.Clear();
             txtName.Clear();
             txtCheckOutDate.ResetText();
         }
@@ -131,30 +113,20 @@ namespace Hotel.All_user_control
                 fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
             }
         }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void txtRoom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            if (guna2DataGridView1.Rows[e.RowIndex].Cells[e.RowIndex].Value != null)
+            {
+                id = guna2DataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtCName.Text = guna2DataGridView1.Rows[e.RowIndex].Cells["Họ tên"].Value.ToString();
+                txtReservationID.Text = guna2DataGridView1.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString();
+                clientID = guna2DataGridView1.Rows[e.RowIndex].Cells["Mã khách hàng"].Value.ToString();
+                reservationID = guna2DataGridView1.Rows[e.RowIndex].Cells["Mã hóa đơn"].Value.ToString();
+            }
         }
     }
 }

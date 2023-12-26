@@ -46,8 +46,8 @@ namespace Hotel.SmallForm
             int resolution = 50;
 
             // Chú ý rằng bạn có thể cần điều chỉnh giá trị 20 và 50 này tùy thuộc vào vị trí cụ thể của DataGridView trên Form
-            int xOffset = 0;
-            int yOffset = 0;
+            //int xOffset = 0;
+            //int yOffset = 0;
 
             // Sử dụng kích thước của phần hiển thị thực sự của DataGridView
             Size s = new Size(dataGridView.DisplayRectangle.Width , dataGridView.DisplayRectangle.Height );

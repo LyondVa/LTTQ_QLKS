@@ -1,4 +1,5 @@
 ﻿using Hotel.RoomControls;
+using Hotel.SmallForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace Hotel.All_user_control
 
         private void bTUpdate_Click(object sender, EventArgs e)
         {
-            F_UpdateRoom form = new F_UpdateRoom(dS, dGVRoom);
+            F_UpdateRoom form = new F_UpdateRoom(dS);
             form.Show();
         }
 
@@ -71,6 +72,20 @@ namespace Hotel.All_user_control
                     EventHub.OnDatabaseUpdated();
                 }
             }
+        }
+
+        private void dGVRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
+            F_UpdateRoom uR = new F_UpdateRoom(dS, dS.Tables[0].Rows[e.RowIndex]["MAPHG"].ToString());
+            background bg = new background();
+            bg.Show();
+            uR.ShowDialog();
+            uR.Focus();
+            bg.Hide();
         }
 
         private void tBSearch_TextChanged(object sender, EventArgs e)

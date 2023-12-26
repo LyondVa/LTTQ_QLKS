@@ -48,7 +48,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.uC_CheckOut1 = new Hotel.All_user_control.UC_CheckOut();
-            this.uC_Employee1 = new Hotel.All_user_control.UC_Employee();
             this.uC_Service1 = new Hotel.All_user_control.UC_Service();
             this.uC_Chartt1 = new Hotel.All_user_control.UC_Chart();
             this.uC_RoomManagement1 = new Hotel.All_user_control.UC_RoomManagement();
@@ -372,7 +371,6 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.uC_CheckOut1);
-            this.panel3.Controls.Add(this.uC_Employee1);
             this.panel3.Controls.Add(this.uC_Service1);
             this.panel3.Controls.Add(this.uC_Chartt1);
             this.panel3.Controls.Add(this.uC_RoomManagement1);
@@ -418,15 +416,6 @@
             this.uC_CheckOut1.Name = "uC_CheckOut1";
             this.uC_CheckOut1.Size = new System.Drawing.Size(900, 690);
             this.uC_CheckOut1.TabIndex = 9;
-            // 
-            // uC_Employee1
-            // 
-            this.uC_Employee1.ForeColor = System.Drawing.Color.Black;
-            this.uC_Employee1.Location = new System.Drawing.Point(0, 0);
-            this.uC_Employee1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.uC_Employee1.Name = "uC_Employee1";
-            this.uC_Employee1.Size = new System.Drawing.Size(900, 690);
-            this.uC_Employee1.TabIndex = 8;
             // 
             // uC_Service1
             // 
@@ -559,7 +548,6 @@
         private All_user_control.UC_Service uC_Service1;
         private All_user_control.UC_Chart uC_Chartt1;
         private All_user_control.UC_RoomManagement uC_RoomManagement1;
-        private All_user_control.UC_Employee uC_Employee1;
         private All_user_control.UC_CheckOut uC_CheckOut1;
         private System.Windows.Forms.Label label1;
         private RoomControls.UC_RoomGrid uC_RoomGrid1;

@@ -59,8 +59,12 @@ namespace Hotel.All_user_control
             br.Hide();
         }
 
-        private void dgvCustomerInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCustomerInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
             DataGridViewRow selectedRow = dgvCustomerInfo.Rows[e.RowIndex];
             string id = selectedRow.Cells[0].Value.ToString();
             string name = selectedRow.Cells[1].Value.ToString();

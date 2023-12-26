@@ -35,9 +35,7 @@ namespace Hotel
             uC_RoomManagement1.Visible = false;
             uC_Chartt1.Visible = false;
             uC_Employee21.Visible = false;
-            uC_Employee1.Visible = false;
             uC_Service1.Visible = false;
-            uC_Employee1.Visible = false;
             uC_RoomGrid1.Visible = false;
             btHome.PerformClick();
             Position();

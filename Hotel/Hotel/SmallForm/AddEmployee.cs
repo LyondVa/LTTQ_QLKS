@@ -42,7 +42,7 @@ namespace Hotel.SmallForm
                       + "(N'" + name + "','" + cccd + "',N'" + gender + "','" + dob + "','" + mobile + "',N'" + address + "',N'" + email + "',N'" + position + "'," + salary + ")";
                 fn.setData(query, "Thêm Nhân Viên Thành Công!");
                 query = "declare @id nvarchar(10); select @id = MANV from NHANVIEN where NCCCD = '"+cccd+"'; insert into TAIKHOAN (MANV, TENTK, MATKHAU) values (@id,'" + username + "','" + password + "')";
-                fn.setData(query, "Thêm Tài Khoản Thành Công!");
+                fn.setDataNoMsg(query);
                 this.Close();
             }
             else

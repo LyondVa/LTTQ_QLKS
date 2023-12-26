@@ -16,7 +16,6 @@ namespace Hotel.All_user_control
     {
         function fn = new function();
         string query;
-        string query2;
         public UC_Chart()
         {
             InitializeComponent();

@@ -39,18 +39,19 @@
             this.cBCleanStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.bTUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.bTExit = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lBStatus
             // 
+            this.lBStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lBStatus.AutoSize = true;
             this.lBStatus.BackColor = System.Drawing.Color.Transparent;
             this.lBStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBStatus.ForeColor = System.Drawing.Color.White;
-            this.lBStatus.Location = new System.Drawing.Point(22, 151);
+            this.lBStatus.Location = new System.Drawing.Point(22, 155);
             this.lBStatus.Name = "lBStatus";
             this.lBStatus.Size = new System.Drawing.Size(98, 28);
             this.lBStatus.TabIndex = 36;
@@ -58,11 +59,12 @@
             // 
             // lBRoomTypeID
             // 
+            this.lBRoomTypeID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lBRoomTypeID.AutoSize = true;
             this.lBRoomTypeID.BackColor = System.Drawing.Color.Transparent;
             this.lBRoomTypeID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBRoomTypeID.ForeColor = System.Drawing.Color.White;
-            this.lBRoomTypeID.Location = new System.Drawing.Point(192, 81);
+            this.lBRoomTypeID.Location = new System.Drawing.Point(201, 81);
             this.lBRoomTypeID.Name = "lBRoomTypeID";
             this.lBRoomTypeID.Size = new System.Drawing.Size(140, 28);
             this.lBRoomTypeID.TabIndex = 32;
@@ -94,9 +96,11 @@
             this.cBRoomID.Name = "cBRoomID";
             this.cBRoomID.Size = new System.Drawing.Size(136, 36);
             this.cBRoomID.TabIndex = 45;
+            this.cBRoomID.SelectedIndexChanged += new System.EventHandler(this.cBRoomID_SelectedIndexChanged);
             // 
             // cBRoomTypeID
             // 
+            this.cBRoomTypeID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cBRoomTypeID.BackColor = System.Drawing.Color.Transparent;
             this.cBRoomTypeID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cBRoomTypeID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -105,13 +109,14 @@
             this.cBRoomTypeID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cBRoomTypeID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBRoomTypeID.ItemHeight = 30;
-            this.cBRoomTypeID.Location = new System.Drawing.Point(198, 110);
+            this.cBRoomTypeID.Location = new System.Drawing.Point(207, 110);
             this.cBRoomTypeID.Name = "cBRoomTypeID";
             this.cBRoomTypeID.Size = new System.Drawing.Size(136, 36);
             this.cBRoomTypeID.TabIndex = 48;
             // 
             // cBRoomStatus
             // 
+            this.cBRoomStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cBRoomStatus.BackColor = System.Drawing.Color.Transparent;
             this.cBRoomStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cBRoomStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -123,7 +128,7 @@
             this.cBRoomStatus.Items.AddRange(new object[] {
             "Trống",
             "Bảo trì"});
-            this.cBRoomStatus.Location = new System.Drawing.Point(27, 179);
+            this.cBRoomStatus.Location = new System.Drawing.Point(27, 183);
             this.cBRoomStatus.Name = "cBRoomStatus";
             this.cBRoomStatus.Size = new System.Drawing.Size(136, 36);
             this.cBRoomStatus.StartIndex = 0;
@@ -131,6 +136,7 @@
             // 
             // cBCleanStatus
             // 
+            this.cBCleanStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cBCleanStatus.BackColor = System.Drawing.Color.Transparent;
             this.cBCleanStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cBCleanStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -142,7 +148,7 @@
             this.cBCleanStatus.Items.AddRange(new object[] {
             "Đã dọn",
             "Chưa dọn"});
-            this.cBCleanStatus.Location = new System.Drawing.Point(198, 179);
+            this.cBCleanStatus.Location = new System.Drawing.Point(207, 183);
             this.cBCleanStatus.Name = "cBCleanStatus";
             this.cBCleanStatus.Size = new System.Drawing.Size(135, 36);
             this.cBCleanStatus.StartIndex = 0;
@@ -150,11 +156,12 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(192, 151);
+            this.label1.Location = new System.Drawing.Point(201, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 28);
             this.label1.TabIndex = 50;
@@ -165,43 +172,45 @@
             this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // guna2Button1
+            // bTUpdate
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(23, 235);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(140, 37);
-            this.guna2Button1.TabIndex = 52;
-            this.guna2Button1.Text = "Cập Nhật";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.bTUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bTUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.bTUpdate.BorderRadius = 10;
+            this.bTUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
+            this.bTUpdate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTUpdate.ForeColor = System.Drawing.Color.White;
+            this.bTUpdate.Location = new System.Drawing.Point(23, 239);
+            this.bTUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bTUpdate.Name = "bTUpdate";
+            this.bTUpdate.Size = new System.Drawing.Size(140, 37);
+            this.bTUpdate.TabIndex = 52;
+            this.bTUpdate.Text = "Cập Nhật";
+            this.bTUpdate.Click += new System.EventHandler(this.bTUpdate_Click);
             // 
-            // guna2Button2
+            // bTExit
             // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.guna2Button2.Location = new System.Drawing.Point(198, 235);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(135, 37);
-            this.guna2Button2.TabIndex = 53;
-            this.guna2Button2.Text = "Thoát";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.bTExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bTExit.BackColor = System.Drawing.Color.Transparent;
+            this.bTExit.BorderRadius = 10;
+            this.bTExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTExit.FillColor = System.Drawing.Color.White;
+            this.bTExit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
+            this.bTExit.Location = new System.Drawing.Point(207, 239);
+            this.bTExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bTExit.Name = "bTExit";
+            this.bTExit.Size = new System.Drawing.Size(135, 37);
+            this.bTExit.TabIndex = 53;
+            this.bTExit.Text = "Thoát";
+            this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
             // 
             // label2
             // 
@@ -221,11 +230,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(364, 299);
+            this.ClientSize = new System.Drawing.Size(370, 304);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.bTExit);
+            this.Controls.Add(this.bTUpdate);
             this.Controls.Add(this.cBCleanStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cBRoomStatus);
@@ -254,8 +263,8 @@
         private Guna.UI2.WinForms.Guna2ComboBox cBCleanStatus;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button bTUpdate;
+        private Guna.UI2.WinForms.Guna2Button bTExit;
         private System.Windows.Forms.Label label2;
     }
 }

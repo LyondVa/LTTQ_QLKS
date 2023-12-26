@@ -163,7 +163,7 @@
             this.dgvCustomerInfo.ThemeStyle.RowsStyle.Height = 28;
             this.dgvCustomerInfo.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
             this.dgvCustomerInfo.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvCustomerInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerInfo_CellContentClick);
+            this.dgvCustomerInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerInfo_CellClick);
             // 
             // btAdd
             // 

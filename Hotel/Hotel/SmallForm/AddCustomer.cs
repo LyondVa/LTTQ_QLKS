@@ -40,7 +40,7 @@ namespace Hotel.SmallForm
                 string name = tbName.Text;
                 string nationality = tbNationality.Text;
                 string cccd = tbCCCD.Text;
-                string dob = txtBirth.Text;
+                string dob = txtBirth.Value.ToString(Global.dateFormat);
                 string gender = cbGender.Text;
                 string phone = tbPhone.Text;
                 string address = tbAddress.Text;

@@ -18,12 +18,20 @@ namespace Hotel.RoomControls
         string query;
         function fn = new function();
         RoomFunction rFn = new RoomFunction();
-        public F_UpdateRoom(DataSet ds, Guna2DataGridView dGV)
+        public F_UpdateRoom(DataSet ds)
         {
             InitializeComponent();
             this.ds = ds;
             rFn.SetRoomTypeID(cBRoomTypeID);
             rFn.SetRoomID(1, cBRoomID, ds);
+        }
+        public F_UpdateRoom(DataSet ds, string roomid)
+        {
+            InitializeComponent();
+            this.ds = ds;
+            rFn.SetRoomTypeID(cBRoomTypeID);
+            rFn.SetRoomID(1, cBRoomID, ds);
+            cBRoomID.SelectedIndex = cBRoomID.Items.IndexOf(roomid);
         }
         private void bTExit_Click(object sender, EventArgs e)
         {
@@ -56,36 +64,14 @@ namespace Hotel.RoomControls
             }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void cBRoomID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cBRoomID.Text == "" || cBRoomTypeID.Text == "" || cBRoomTypeID.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập tất cả các trường", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                string column = "MAPHG";
-                if (rFn.FindInDataset(ds, cBRoomID.Text, column) == null)
-                {
-                    MessageBox.Show("Không tìm thấy mã phòng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    query = "update PHONG " +
-                            "set MALOAIPHG = '" + cBRoomTypeID.Text + "', TRANGTHAI = '" + cBRoomStatus.Text + "' " +
-                            "where MAPHG = '" + cBRoomID.Text + "'";
-                    string msg = "Cập nhật Thành công";
-                    fn.setData(query, msg);
-                    EventHub.OnDatabaseUpdated();
-                    this.Close();
-                }
-            }
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            DataSet ds = new DataSet();
+            query = "select MALOAIPHG " +
+                    "from PHONG " +
+                    "where MAPHG = '" + cBRoomID.Text + "'";
+            ds = fn.getData(query);
+            cBRoomTypeID.Text = ds.Tables[0].Rows[0][0].ToString();
         }
     }
 }

@@ -157,6 +157,7 @@ namespace Hotel.RoomControls
                             "set TRANGTHAI = N'" + cBRoomStatus.Text + "', DONDEP = N'" + cBCleanStatus.Text + "' " +
                             "where MAPHG = '" + roomID + "'";
                     fn.setData(query, "Cập nhật thành công");
+                    this.Close();
                     EventHub.OnDatabaseUpdated();
                 }
                 catch (Exception ex)
@@ -221,8 +222,12 @@ namespace Hotel.RoomControls
         private void bTService_Click(object sender, EventArgs e)
         {
             F_AddService serviceForm = new F_AddService(roomID, reservationID);
-            serviceForm.Show();
+            this.Close();
+            background br2 = new background();
+            br2.Show();
+            serviceForm.ShowDialog();
             serviceForm.Focus();
+            br2.Hide();
         }
 
         private void bTCancel_Click(object sender, EventArgs e)
@@ -247,6 +252,7 @@ namespace Hotel.RoomControls
                             "where MAHD = '" + tempMAHD + "'";
                     fn.setData(query, "Thành công");
                     EventHub.OnDatabaseUpdated();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

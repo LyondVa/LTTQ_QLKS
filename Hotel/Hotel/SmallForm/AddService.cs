@@ -21,12 +21,11 @@ namespace Hotel.SmallForm
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            if (txtID.Text != "" && txtName.Text != "" && txtPrice.Text != "")
+            if (txtName.Text != "" && txtPrice.Text != "")
             {
-                string id = txtID.Text;
                 string name = txtName.Text;
                 Int64 price = Convert.ToInt64(txtPrice.Text);
-                query = "INSERT INTO DICHVU (MADV, TENDV, GIADV) VALUES ('" + id + "', N'" + name + "', " + price + ")";
+                query = "INSERT INTO DICHVU (TENDV, GIADV) VALUES (N'" + name + "', " + price + ")";
                 fn.setData(query, "Thêm Dịch Vụ Thành Công!");
                 this.Close();
             }
