@@ -176,6 +176,8 @@ namespace Hotel.RoomControls
                 query = "INSERT INTO CTPHG(MAPHG, MAHD) VALUES ('" + dR["MAPHG"].ToString() + "','" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString()+ "')";
                 fn.setDataNoMsg(query);
             }
+            query = "\r\nUPDATE KHACHHANG\r\nSET STAYING = 1\r\nFROM KHACHHANG, HOADON\r\nWHERE KHACHHANG.MAKH = HOADON.MAKH\r\nAND MAHD = '" + dSTemp2.Tables[0].Rows[0]["MAHD"].ToString() + "'";
+            fn.setDataNoMsg(query);
             EventHub.OnDatabaseUpdated();
             this.Close();
         }
