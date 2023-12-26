@@ -24,10 +24,12 @@ namespace Hotel.RoomControls
         public UC_RoomGrid()
         {
             InitializeComponent();
+            SuspendLayout();
             TableLayoutPanelScrollbars();
             PopulateGrid(1);
             EventHub.DatabaseUpdated += UpdateGrid;
             dTPFilter.Value = DateTime.Now;
+            ResumeLayout();
         }
         private void UpdateGrid()
         {
@@ -396,6 +398,7 @@ namespace Hotel.RoomControls
 
         private void cBTime_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SuspendLayout();
             SearchTimeConversion();
             PopulateList();
             LoadRoomStatus();

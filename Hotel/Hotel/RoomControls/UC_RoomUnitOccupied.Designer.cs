@@ -111,6 +111,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(158)))), ((int)(((byte)(151)))));
             this.Controls.Add(this.pBRoomStatus);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_RoomUnitOccupied";
             this.Click += new System.EventHandler(this.UC_RoomUnitOccupied_Click);

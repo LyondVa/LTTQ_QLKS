@@ -35,6 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DoubleBuffered = true;
             this.Name = "UC_RoomUnitBase";
             this.Size = new System.Drawing.Size(230, 130);
             this.Load += new System.EventHandler(this.UC_RoomUnitBase_Load);

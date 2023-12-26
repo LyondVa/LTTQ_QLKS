@@ -85,7 +85,7 @@ namespace Hotel.All_user_control
                 dR["MADV"] = dGVServiceSelection.Rows[e.RowIndex].Cells["MADV"].Value.ToString();
                 dR["TENDV"] = dGVServiceSelection.Rows[e.RowIndex].Cells["TENDV"].Value.ToString();
                 dR["SOLUONG"] = dGVServiceSelection.Rows[e.RowIndex].Cells["SOLUONG"].Value;
-                dSA.Tables[0].Rows.RemoveAt(e.RowIndex);
+                dGVServiceSelection.Rows.RemoveAt(e.RowIndex);
                 dSS.Tables[0].Rows.Add(dR);
                 dGVServiceSelected.Sort(dGVServiceSelected.Columns["TENDV"], ListSortDirection.Ascending);
             }
@@ -107,7 +107,7 @@ namespace Hotel.All_user_control
             dR["MADV"] = dGVServiceSelected.Rows[e.RowIndex].Cells["MADV"].Value.ToString();
             dR["TENDV"] = dGVServiceSelected.Rows[e.RowIndex].Cells["TENDV"].Value.ToString();
             dR["SOLUONG"] = dGVServiceSelected.Rows[e.RowIndex].Cells["SOLUONG"].Value;
-            dSS.Tables[0].Rows.RemoveAt(e.RowIndex);
+            dGVServiceSelected.Rows.RemoveAt(e.RowIndex);
             dSA.Tables[0].Rows.Add(dR);
             dGVServiceSelection.Sort(dGVServiceSelection.Columns["TENDV"], ListSortDirection.Ascending);
         }
