@@ -142,7 +142,7 @@ namespace Hotel.RoomControls
             this.tBNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tBNote.Multiline = true;
             this.tBNote.Name = "tBNote";
-            this.tBNote.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tBNote.Padding = new System.Windows.Forms.Padding(3);
             this.tBNote.PasswordChar = '\0';
             this.tBNote.PlaceholderText = "";
             this.tBNote.SelectedText = "";
