@@ -15,5 +15,11 @@ namespace Hotel
             get { return _globalEmID; }
             set { _globalEmID = value; }
         }
+        private static string _globalEmName;
+        public static string globalEmName
+        {
+            get { return _globalEmName; }
+            set { _globalEmName = value; }
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace Hotel.All_user_control
         {
             query = "SELECT MAKH as 'Mã Khách Hàng', KHOTEN as 'Họ Tên', QUOCTICH as 'Quốc Tịch', KCCCD as 'CCCD', KGIOITINH as 'Giới Tính', KNGSINH as 'Ngày Sinh', KSDT as 'Số Điện Thoại', KDIACHI as 'Địa Chỉ', KEMAIL as 'Email' " +
                     "FROM KHACHHANG " +
-                    "WHERE KHOTEN like '%" + tbSearch.Text + "%' " +
+                    "WHERE KHOTEN like N'%" + tbSearch.Text.Trim() + "%' " +
                     "ORDER BY MAKH ASC";
             DataSet ds = fn.getData(query);
             dgvCustomerInfo.DataSource = ds.Tables[0];

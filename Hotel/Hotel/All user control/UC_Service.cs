@@ -58,8 +58,12 @@ namespace Hotel.All_user_control
             dgvServiceInfo.DataSource = ds.Tables[0];
         }
 
-        private void dgvServiceInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvServiceInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
             DataGridViewRow selectedRow = dgvServiceInfo.Rows[e.RowIndex];
             string id = selectedRow.Cells[0].Value.ToString();
             string name = selectedRow.Cells[1].Value.ToString();
@@ -72,6 +76,16 @@ namespace Hotel.All_user_control
             es.Focus();
 
             setService(dgvServiceInfo);
+            br.Hide();
+        }
+
+        private void bTUpdate_Click(object sender, EventArgs e)
+        {
+            EditService es = new EditService();
+            background br = new background();
+            br.Show();
+            es.ShowDialog();
+            es.Focus();
             br.Hide();
         }
     }

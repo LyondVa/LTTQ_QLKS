@@ -20,12 +20,6 @@ namespace Hotel
         {
             InitializeComponent();
         }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -33,46 +27,42 @@ namespace Hotel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            query = "select TENTK, MATKHAU, MANV " +
-                    "from TAIKHOAN where TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
-            DataSet ds = fn.getData(query);
-            string query1 = "select CHUCVU " +
-                            "from NHANVIEN, TAIKHOAN " +
-                            "where NHANVIEN.MANV = TAIKHOAN.MANV " +
-                            "and TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
-            DataSet ds1 = fn.getData(query1);
             int position = 0;
-            if (ds.Tables[0].Rows.Count != 0 || (txbUsername.Text == "admin" && txbPassword.Text == "admin"))
+            if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
             {
-                labelError.Visible = false;
-                if (ds1.Tables[0].Rows.Count > 0)
-                {
-                    if (ds1.Tables[0].Rows[0]["CHUCVU"].ToString() == "Quản lý")
-                    {
-                        position = 1;
-                    }
-                }
-                if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
-                    position = 1;
-                string tempQuery = "select NHOTEN from NHANVIEN, TAIKHOAN where NHANVIEN.MANV = TAIKHOAN.MANV and TENTK ='" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
-                string x = fn.getData2(tempQuery);
-                Home dash = new Home(position,x);
+                position = 1;
+                Global.globalEmID = "admin";
+                Global.globalEmName = "admin";
+                Home dashboard = new Home(position, Global.globalEmName);
+                dashboard.Show();
                 this.Hide();
-                //receipt t = new receipt("ng", "ng", "ng", 40000);
-                //t.Show();
-                dash.Show();
-                Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();
             }
             else
             {
-                labelError.Visible = true;
-                txbPassword.Clear();
+                query = "select TENTK, MATKHAU, TAIKHOAN.MANV, NHOTEN, CHUCVU " +
+                        "from TAIKHOAN, NHANVIEN " +
+                        "where TAIKHOAN.MANV = NHANVIEN.MANV " +
+                        "and TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
+                DataSet ds = fn.getData(query);
+                if (ds.Tables[0].Rows.Count != 0)
+                {
+                    labelError.Visible = false;
+                    if (ds.Tables[0].Rows[0]["CHUCVU"].ToString() == "Quản lý")
+                    {
+                        position = 1;
+                    }
+                    Global.globalEmName = ds.Tables[0].Rows[0]["NHOTEN"].ToString();
+                    Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();
+                    Home dashboard = new Home(position, Global.globalEmName);
+                    dashboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    labelError.Visible = true;
+                    txbPassword.Clear();
+                }
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

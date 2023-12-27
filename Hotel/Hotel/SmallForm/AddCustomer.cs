@@ -16,6 +16,7 @@ namespace Hotel.SmallForm
         RoomFunction rFn = new RoomFunction();
         function fn = new function();
         string query;
+        bool cccdError = false, sdtError = false;
         public AddCustomer()
         {
             InitializeComponent();
@@ -64,6 +65,46 @@ namespace Hotel.SmallForm
             if(rFn.FindInDataset(dS, tbCCCD.Text,"KCCCD") != null)
             {
                 btAdd.Enabled = false;
+                sdtError = true;
+                errorProvider1.SetError(tbCCCD, "CCCD Không được trùng");
+            }
+            else
+            {
+                if (!cccdError)
+                {
+                    btAdd.Enabled = true;
+                }
+                sdtError = false;
+                errorProvider1.SetError(tbCCCD, null);
+            }
+        }
+
+        private void tbPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbPhone_TextChanged(object sender, EventArgs e)
+        {
+            query = "select KSDT from KHACHHANG";
+            dS = fn.getData(query);
+            if (rFn.FindInDataset(dS, tbPhone.Text, "KSDT") != null)
+            {
+                btAdd.Enabled = false;
+                cccdError = true;
+                errorProvider1.SetError(tbPhone, "SDT Không được trùng");
+            }
+            else
+            {
+                if(!sdtError) 
+                {
+                    btAdd.Enabled = true;
+                }
+                cccdError = false;
+                errorProvider1.SetError(tbPhone, null);
             }
         }
     }

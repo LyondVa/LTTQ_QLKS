@@ -50,6 +50,8 @@
             this.btEsc = new Guna.UI2.WinForms.Guna2Button();
             this.btAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +80,7 @@
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName.Location = new System.Drawing.Point(45, 105);
             this.tbName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbName.MaxLength = 50;
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderText = "Nhập Họ Tên";
@@ -112,6 +115,7 @@
             this.tbNationality.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbNationality.Location = new System.Drawing.Point(45, 187);
             this.tbNationality.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbNationality.MaxLength = 50;
             this.tbNationality.Name = "tbNationality";
             this.tbNationality.PasswordChar = '\0';
             this.tbNationality.PlaceholderText = "Nhập Quốc Tịch";
@@ -173,6 +177,7 @@
             this.tbCCCD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCCCD.Location = new System.Drawing.Point(46, 269);
             this.tbCCCD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbCCCD.MaxLength = 12;
             this.tbCCCD.Name = "tbCCCD";
             this.tbCCCD.PasswordChar = '\0';
             this.tbCCCD.PlaceholderText = "Nhập CCCD";
@@ -241,6 +246,7 @@
             this.tbPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPhone.Location = new System.Drawing.Point(612, 185);
             this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbPhone.MaxLength = 10;
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.PasswordChar = '\0';
             this.tbPhone.PlaceholderText = "Nhập Số Điện Thoại";
@@ -248,6 +254,8 @@
             this.tbPhone.Size = new System.Drawing.Size(497, 50);
             this.tbPhone.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbPhone.TabIndex = 66;
+            this.tbPhone.TextChanged += new System.EventHandler(this.tbPhone_TextChanged);
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
             // 
             // label8
             // 
@@ -275,6 +283,7 @@
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAddress.Location = new System.Drawing.Point(612, 264);
             this.tbAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbAddress.MaxLength = 100;
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderText = "Nhập Địa Chỉ";
@@ -309,6 +318,7 @@
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbEmail.Location = new System.Drawing.Point(615, 349);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbEmail.MaxLength = 50;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
             this.tbEmail.PlaceholderText = "Nhập Email";
@@ -373,6 +383,10 @@
             this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -404,6 +418,7 @@
             this.Name = "AddCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCustomer";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,5 +446,6 @@
         private Guna.UI2.WinForms.Guna2Button btEsc;
         private Guna.UI2.WinForms.Guna2Button btAdd;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

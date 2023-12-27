@@ -54,7 +54,7 @@ namespace Hotel.RoomControls
                 else
                 {
                     query = "update PHONG " +
-                            "set MALOAIPHG = '" + cBRoomTypeID.Text + "', TRANGTHAI = '" + cBRoomStatus.Text + "' " +
+                            "set MALOAIPHG = '" + cBRoomTypeID.Text + "', TRANGTHAI = N'" + cBRoomStatus.Text + "', DONDEP = N'" + cBCleanStatus.Text + "'" +
                             "where MAPHG = '" + cBRoomID.Text + "'";
                     string msg = "Cập nhật Thành công";
                     fn.setData(query, msg);
@@ -67,11 +67,14 @@ namespace Hotel.RoomControls
         private void cBRoomID_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            query = "select MALOAIPHG " +
+            query = "select MALOAIPHG, TRANGTHAI, DONDEP " +
                     "from PHONG " +
                     "where MAPHG = '" + cBRoomID.Text + "'";
             ds = fn.getData(query);
-            cBRoomTypeID.Text = ds.Tables[0].Rows[0][0].ToString();
+            DataRow dr = ds.Tables[0].Rows[0];
+            cBRoomTypeID.SelectedIndex = cBRoomTypeID.Items.IndexOf(dr["MALOAIPHG"].ToString());
+            cBRoomStatus.SelectedIndex = cBRoomStatus.Items.IndexOf(dr["TRANGTHAI"].ToString());
+            cBCleanStatus.SelectedIndex = cBCleanStatus.Items.IndexOf(dr["DONDEP"].ToString());
         }
     }
 }

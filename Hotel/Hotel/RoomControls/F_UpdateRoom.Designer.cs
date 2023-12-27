@@ -59,12 +59,12 @@
             // 
             // lBRoomTypeID
             // 
-            this.lBRoomTypeID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lBRoomTypeID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lBRoomTypeID.AutoSize = true;
             this.lBRoomTypeID.BackColor = System.Drawing.Color.Transparent;
             this.lBRoomTypeID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBRoomTypeID.ForeColor = System.Drawing.Color.White;
-            this.lBRoomTypeID.Location = new System.Drawing.Point(201, 81);
+            this.lBRoomTypeID.Location = new System.Drawing.Point(211, 81);
             this.lBRoomTypeID.Name = "lBRoomTypeID";
             this.lBRoomTypeID.Size = new System.Drawing.Size(140, 28);
             this.lBRoomTypeID.TabIndex = 32;
@@ -76,7 +76,7 @@
             this.lBRoomID.BackColor = System.Drawing.Color.Transparent;
             this.lBRoomID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBRoomID.ForeColor = System.Drawing.Color.White;
-            this.lBRoomID.Location = new System.Drawing.Point(22, 81);
+            this.lBRoomID.Location = new System.Drawing.Point(22, 80);
             this.lBRoomID.Name = "lBRoomID";
             this.lBRoomID.Size = new System.Drawing.Size(103, 28);
             this.lBRoomID.TabIndex = 31;
@@ -94,13 +94,13 @@
             this.cBRoomID.ItemHeight = 30;
             this.cBRoomID.Location = new System.Drawing.Point(27, 110);
             this.cBRoomID.Name = "cBRoomID";
-            this.cBRoomID.Size = new System.Drawing.Size(136, 36);
+            this.cBRoomID.Size = new System.Drawing.Size(170, 36);
             this.cBRoomID.TabIndex = 45;
             this.cBRoomID.SelectedIndexChanged += new System.EventHandler(this.cBRoomID_SelectedIndexChanged);
             // 
             // cBRoomTypeID
             // 
-            this.cBRoomTypeID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cBRoomTypeID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cBRoomTypeID.BackColor = System.Drawing.Color.Transparent;
             this.cBRoomTypeID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cBRoomTypeID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -109,9 +109,9 @@
             this.cBRoomTypeID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cBRoomTypeID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBRoomTypeID.ItemHeight = 30;
-            this.cBRoomTypeID.Location = new System.Drawing.Point(207, 110);
+            this.cBRoomTypeID.Location = new System.Drawing.Point(217, 110);
             this.cBRoomTypeID.Name = "cBRoomTypeID";
-            this.cBRoomTypeID.Size = new System.Drawing.Size(136, 36);
+            this.cBRoomTypeID.Size = new System.Drawing.Size(170, 36);
             this.cBRoomTypeID.TabIndex = 48;
             // 
             // cBRoomStatus
@@ -126,17 +126,18 @@
             this.cBRoomStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cBRoomStatus.ItemHeight = 30;
             this.cBRoomStatus.Items.AddRange(new object[] {
-            "Trống",
+            "Bình thường",
             "Bảo trì"});
             this.cBRoomStatus.Location = new System.Drawing.Point(27, 183);
             this.cBRoomStatus.Name = "cBRoomStatus";
-            this.cBRoomStatus.Size = new System.Drawing.Size(136, 36);
+            this.cBRoomStatus.Size = new System.Drawing.Size(170, 36);
             this.cBRoomStatus.StartIndex = 0;
             this.cBRoomStatus.TabIndex = 49;
+            this.cBRoomStatus.Tag = "150,40";
             // 
             // cBCleanStatus
             // 
-            this.cBCleanStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cBCleanStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cBCleanStatus.BackColor = System.Drawing.Color.Transparent;
             this.cBCleanStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cBCleanStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -148,20 +149,20 @@
             this.cBCleanStatus.Items.AddRange(new object[] {
             "Đã dọn",
             "Chưa dọn"});
-            this.cBCleanStatus.Location = new System.Drawing.Point(207, 183);
+            this.cBCleanStatus.Location = new System.Drawing.Point(217, 183);
             this.cBCleanStatus.Name = "cBCleanStatus";
-            this.cBCleanStatus.Size = new System.Drawing.Size(135, 36);
+            this.cBCleanStatus.Size = new System.Drawing.Size(170, 36);
             this.cBCleanStatus.StartIndex = 0;
             this.cBCleanStatus.TabIndex = 51;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(201, 155);
+            this.label1.Location = new System.Drawing.Point(212, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 28);
             this.label1.TabIndex = 50;
@@ -184,17 +185,18 @@
             this.bTUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.bTUpdate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bTUpdate.ForeColor = System.Drawing.Color.White;
-            this.bTUpdate.Location = new System.Drawing.Point(23, 239);
+            this.bTUpdate.Location = new System.Drawing.Point(101, 248);
             this.bTUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bTUpdate.Name = "bTUpdate";
-            this.bTUpdate.Size = new System.Drawing.Size(140, 37);
+            this.bTUpdate.Size = new System.Drawing.Size(140, 36);
             this.bTUpdate.TabIndex = 52;
+            this.bTUpdate.Tag = "150,40";
             this.bTUpdate.Text = "Cập Nhật";
             this.bTUpdate.Click += new System.EventHandler(this.bTUpdate_Click);
             // 
             // bTExit
             // 
-            this.bTExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bTExit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bTExit.BackColor = System.Drawing.Color.Transparent;
             this.bTExit.BorderRadius = 10;
             this.bTExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -204,10 +206,10 @@
             this.bTExit.FillColor = System.Drawing.Color.White;
             this.bTExit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bTExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.bTExit.Location = new System.Drawing.Point(207, 239);
+            this.bTExit.Location = new System.Drawing.Point(247, 248);
             this.bTExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bTExit.Name = "bTExit";
-            this.bTExit.Size = new System.Drawing.Size(135, 37);
+            this.bTExit.Size = new System.Drawing.Size(140, 36);
             this.bTExit.TabIndex = 53;
             this.bTExit.Text = "Thoát";
             this.bTExit.Click += new System.EventHandler(this.bTExit_Click);
@@ -230,7 +232,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(370, 304);
+            this.ClientSize = new System.Drawing.Size(414, 304);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bTExit);

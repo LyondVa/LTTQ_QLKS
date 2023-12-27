@@ -35,7 +35,7 @@ namespace Hotel.All_user_control
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', NNGSINH as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' from NHANVIEN where NHOTEN like '" + tbSearch.Text + "%' ORDER BY MANV ASC";
+            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', NNGSINH as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' from NHANVIEN where NHOTEN like N'" + tbSearch.Text + "%' ORDER BY MANV ASC";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }

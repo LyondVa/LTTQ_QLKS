@@ -18,13 +18,13 @@ namespace Hotel.All_user_control
         {
             InitializeComponent();
             setCDetail(guna2DataGridView1);
+            EventHub.DatabaseUpdated += RefreshWithSearch;
         }
-
-        private void txtSearch_SelectedIndexChanged(object sender, EventArgs e)
+        private void RefreshWithSearch()
         {
             if (txtSearch.SelectedIndex == 0)
             {
-                query = "select distinct KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên',  PHONG.MAPHG as 'Mã Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -34,7 +34,7 @@ namespace Hotel.All_user_control
             }
             else if (txtSearch.SelectedIndex == 1)
             {
-                query = "select distinct KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên',  PHONG.MAPHG as 'Mã Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -45,7 +45,7 @@ namespace Hotel.All_user_control
             }
             else if (txtSearch.SelectedIndex == 2)
             {
-                query = "select distinct KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên',  PHONG.MAPHG as 'Mã Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -54,7 +54,10 @@ namespace Hotel.All_user_control
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
-
+        }
+        private void txtSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshWithSearch();
         }
         private void getRecord(string query)
         {
@@ -65,7 +68,7 @@ namespace Hotel.All_user_control
         private void setCDetail(DataGridView dgv)
         {
             txtSearch.SelectedIndex = 0;
-            query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
+            query = query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên',  PHONG.MAPHG as 'Mã Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
@@ -86,34 +89,34 @@ namespace Hotel.All_user_control
         {
             if (txtSearch.SelectedIndex == 0)
             {
-                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên',  PHONG.MAPHG as 'Mã Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "where KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
             else if (txtSearch.SelectedIndex == 1)
             {
-                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên',  PHONG.MAPHG as 'Mã Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 1 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "where KHACHHANG.STAYING = 1 and KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
             else if (txtSearch.SelectedIndex == 2)
             {
-                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', KHACHHANG.QUOCTICH as 'Quốc Tịch', KHACHHANG.KCCCD as 'CCCD', KHACHHANG.KGIOITINH as 'Giới Tính', KHACHHANG.KNGSINH as 'Ngày Sinh', KHACHHANG.KSDT as 'Số Điện Thoại', KHACHHANG.KDIACHI as 'Địa Chỉ', KHACHHANG.KEMAIL as 'Email', PHONG.MAPHG as 'Mã Phòng', PHONG.MALOAIPHG as 'Mã Loại Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', CTPHG.TIENDATPHG as 'Tiền Đặt Phòng' " +
+                query = "select KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên',  PHONG.MAPHG as 'Mã Phòng', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', cast(CTPHG.TIENDATPHG as decimal) as 'Tiền Đặt Phòng' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 0 and KHACHHANG.KHOTEN like '%" + tbNameSearch.Text + "%' " +
+                    "where KHACHHANG.STAYING = 0 and KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }

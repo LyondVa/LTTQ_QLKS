@@ -14,6 +14,10 @@ namespace Hotel.SmallForm
     {
         function fn = new function();
         string query;
+        public EditService()
+        {
+            InitializeComponent();
+        }
         public EditService(string id, string name, string price)
         {
             InitializeComponent();

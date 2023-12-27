@@ -1,15 +1,21 @@
 ﻿using Hotel.SmallForm;
 using iText.Layout.Element;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Hotel.All_user_control
 {
@@ -40,8 +46,31 @@ namespace Hotel.All_user_control
             dgv.DataSource = ds.Tables[0];
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tbSearch_TextChanged(object sender, EventArgs e)
         {
+            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
+                    "from NHANVIEN, TAIKHOAN " +
+                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like N'" + tbSearch.Text.Trim() + "%' " +
+                    "order by NHANVIEN.MANV asc";
+            DataSet ds = fn.getData(query);
+            guna2DataGridView1.DataSource = ds.Tables[0];
+        }
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            AddEmployee ae = new AddEmployee();
+            background br = new background();
+            br.Show();
+            ae.ShowDialog();
+            setEmployee(guna2DataGridView1);
+            br.Hide();
+        }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
             DataGridViewRow selectedRow = guna2DataGridView1.Rows[e.RowIndex];
             string id = selectedRow.Cells[0].Value.ToString();
             query = "SELECT NHANVIEN.MANV, NHOTEN, NCCCD, NGIOITINH, NNGSINH, NSDT, NDIACHI, NEMAIL, TENTK, MATKHAU, CHUCVU, LUONG" +
@@ -71,34 +100,15 @@ namespace Hotel.All_user_control
             br.Hide();
         }
 
-        private void tbSearch_TextChanged(object sender, EventArgs e)
+        private void bTUpdate_Click(object sender, EventArgs e)
         {
-            query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
-                    "from NHANVIEN, TAIKHOAN " +
-                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like '" + tbSearch.Text + "%' " +
-                    "order by NHANVIEN.MANV asc";
-            DataSet ds = fn.getData(query);
-            guna2DataGridView1.DataSource = ds.Tables[0];
-        }
-
-        private void UC_User_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        //
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            AddEmployee ae = new AddEmployee();
+            EditUserName edun = new EditUserName();
             background br = new background();
             br.Show();
-            ae.ShowDialog();
+            edun.ShowDialog();
+            edun.Focus();
             setEmployee(guna2DataGridView1);
-            br.Hide() ;
+            br.Hide();
         }
     }
 }

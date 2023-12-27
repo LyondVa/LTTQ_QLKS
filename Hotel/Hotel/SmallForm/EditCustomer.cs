@@ -44,7 +44,8 @@ namespace Hotel.SmallForm
         {
             if (tbID.Text != "" && tbName.Text != "" && tbNationality.Text != "" && tbCCCD.Text != "" && txtBirth.Text != "" && cbGender.Text != "" && tbPhone.Text != "" && tbAddress.Text != "" && tbEmail.Text != "")
             {
-                query = "UPDATE KHACHHANG " +
+                query = "SET DATEFORMAT DMY; " +
+                        "UPDATE KHACHHANG " +
                         "SET KHOTEN = N'" + tbName.Text + "', QUOCTICH = N'" + tbNationality.Text +
                         "', KCCCD = '" + tbCCCD.Text + "', KNGSINH = '" + txtBirth.Text + "', KGIOITINH = N'" + cbGender.Text +
                         "', KSDT = '" + tbPhone.Text + "', KDIACHI = N'" + tbAddress.Text + "', KEMAIL = N'" + tbEmail.Text + "' " +

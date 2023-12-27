@@ -116,7 +116,6 @@
             this.txbUsername.SelectedText = "";
             this.txbUsername.Size = new System.Drawing.Size(442, 55);
             this.txbUsername.TabIndex = 3;
-            this.txbUsername.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // btnExit
             // 

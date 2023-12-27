@@ -43,13 +43,21 @@ namespace Hotel.All_user_control
         private void bTAdd_Click(object sender, EventArgs e)
         {
             F_AddRoom form = new F_AddRoom(dS);
-            form.Show();
+            background bg = new background();
+            bg.Show();
+            form.ShowDialog();
+            form.Focus();
+            bg.Hide();
         }
 
         private void bTUpdate_Click(object sender, EventArgs e)
         {
             F_UpdateRoom form = new F_UpdateRoom(dS);
-            form.Show();
+            background bg = new background();
+            bg.Show();
+            form.ShowDialog();
+            form.Focus();
+            bg.Hide();
         }
 
         private void bTDelete_Click(object sender, EventArgs e)

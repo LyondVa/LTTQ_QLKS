@@ -52,7 +52,7 @@ namespace Hotel.All_user_control
             query = "select HOADON.MAHD as 'Mã Hóa Đơn', KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', HOADON.NGTRPHG as 'Ngày trả phòng', cast(HOADON.TONGTIEN as decimal) as 'Tổng tiền' " +
                     "from KHACHHANG " +
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
-                    "where KHOTEN like '" + txtName.Text + "%' and KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
+                    "where KHOTEN like N'" + txtName.Text + "%' and KHACHHANG.STAYING = 1 and NGTRPHGTHAT is null";
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
 

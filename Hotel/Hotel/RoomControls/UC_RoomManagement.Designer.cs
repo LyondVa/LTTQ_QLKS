@@ -36,7 +36,6 @@
             this.dGVRoom = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.bTAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.bTUpdate = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVRoom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +44,7 @@
             this.tBSearch.BackColor = System.Drawing.Color.Transparent;
             this.tBSearch.BorderRadius = 30;
             this.tBSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tBSearch.DefaultText = "Nhập Mã Phòng";
+            this.tBSearch.DefaultText = "";
             this.tBSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tBSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tBSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -54,11 +53,11 @@
             this.tBSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tBSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tBSearch.Location = new System.Drawing.Point(30, 170);
-            this.tBSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tBSearch.Name = "tBSearch";
             this.tBSearch.PasswordChar = '\0';
             this.tBSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.tBSearch.PlaceholderText = "";
+            this.tBSearch.PlaceholderText = "Nhập Mã Phòng";
             this.tBSearch.SelectedText = "";
             this.tBSearch.Size = new System.Drawing.Size(340, 40);
             this.tBSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -158,25 +157,6 @@
             this.bTAdd.Text = "Thêm Phòng";
             this.bTAdd.Click += new System.EventHandler(this.bTAdd_Click);
             // 
-            // bTUpdate
-            // 
-            this.bTUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bTUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.bTUpdate.BorderRadius = 10;
-            this.bTUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.bTUpdate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.bTUpdate.ForeColor = System.Drawing.Color.White;
-            this.bTUpdate.Location = new System.Drawing.Point(404, 510);
-            this.bTUpdate.Name = "bTUpdate";
-            this.bTUpdate.Size = new System.Drawing.Size(180, 45);
-            this.bTUpdate.TabIndex = 9;
-            this.bTUpdate.Text = "Sửa Phòng";
-            this.bTUpdate.Click += new System.EventHandler(this.bTUpdate_Click);
-            // 
             // UC_RoomManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,7 +164,6 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.bTUpdate);
             this.Controls.Add(this.bTAdd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tBSearch);
@@ -204,6 +183,5 @@
         private Guna.UI2.WinForms.Guna2TextBox tBSearch;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button bTAdd;
-        private Guna.UI2.WinForms.Guna2Button bTUpdate;
     }
 }

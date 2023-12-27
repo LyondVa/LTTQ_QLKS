@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,8 @@ namespace Hotel.SmallForm
     {
         function fn = new function();
         string query;
+        bool cccdError = false, sdtError = false, usernameError = false;
+        DataSet ds = new DataSet();
         public AddEmployee()
         {
             InitializeComponent();
@@ -56,9 +59,89 @@ namespace Hotel.SmallForm
             this.Close();
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void txtUsername_TextChanged(object sender, EventArgs e)
         {
+            query = "select TENTK " +
+                    "from TAIKHOAN " +
+                    "where TENTK = '" + txtUsername.Text + "'";
+            ds = fn.getData(query);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                usernameError = true;
+                bTAdd.Enabled=false;
+                errorProvider1.SetError(txtUsername, "Tên tài khoản không được trùng");
+            }
+            else
+            {
+                usernameError=false;
+                if(!cccdError && !sdtError)
+                {
+                    bTAdd.Enabled = true;
+                }
+                errorProvider1.SetError(txtUsername, null);
+            }
+        }
 
+        private void txtCCCD_TextChanged(object sender, EventArgs e)
+        {
+            query = "select NCCCD " +
+                    "from NHANVIEN " +
+                    "where NCCCD = '" + txtCCCD.Text + "'";
+            ds = fn.getData(query);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                cccdError = true;
+                bTAdd.Enabled = false;
+                errorProvider1.SetError(txtCCCD, "CCCD không được trùng");
+            }
+            else
+            {
+                cccdError = false;
+                if (!usernameError && !sdtError)
+                {
+                    bTAdd.Enabled = true;
+                }
+                errorProvider1.SetError(txtCCCD, null);
+            }
+        }
+
+        private void txtMobile_TextChanged(object sender, EventArgs e)
+        {
+            query = "select NSDT " +
+                    "from NHANVIEN " +
+                    "where NSDT = '" + txtMobile.Text + "'";
+            ds = fn.getData(query);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                sdtError = true;
+                bTAdd.Enabled = false;
+                errorProvider1.SetError(txtMobile, "SDT không được trùng");
+            }
+            else
+            {
+                sdtError = false;
+                if (!usernameError && !cccdError)
+                {
+                    bTAdd.Enabled = true;
+                }
+                errorProvider1.SetError(txtMobile, null);
+            }
+        }
+
+        private void txtMobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

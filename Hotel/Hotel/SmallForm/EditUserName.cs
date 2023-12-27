@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Hotel.SmallForm
 {
@@ -14,6 +16,12 @@ namespace Hotel.SmallForm
     {
         function fn = new function();
         string query;
+        bool cccdError = false, sdtError = false;
+        DataSet ds = new DataSet();
+        public EditUserName()
+        {
+            InitializeComponent();
+        }
         public EditUserName(string id, string name, string cccd, string gender, string dob, string mobile, string address, string email, string username, string password, string position, string salary)
         {
             InitializeComponent();
@@ -21,7 +29,7 @@ namespace Hotel.SmallForm
             tbName.Text = name;
             tbCCCD.Text = cccd;
             cbGender.Text = gender;
-            tpBirth.Text = dob;
+            dTPBirthdate.Text = dob;
             tbMobile.Text = mobile;
             tbAddress.Text = address;
             tbEmail.Text = email;
@@ -51,15 +59,15 @@ namespace Hotel.SmallForm
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (tbId.Text != "" && tbName.Text != "" && tbCCCD.Text != "" && cbGender.Text != "" && tpBirth.Text != "" && tbMobile.Text != "" && tbAddress.Text != "" && tbEmail.Text != "" && tbUsername.Text != "" && tbPassword.Text != "" && cbPosition.Text != "" && tbSalary.Text != "")
+            if (tbId.Text != "" && tbName.Text != "" && tbCCCD.Text != "" && cbGender.Text != "" && dTPBirthdate.Text != "" && tbMobile.Text != "" && tbAddress.Text != "" && tbEmail.Text != "" && tbUsername.Text != "" && tbPassword.Text != "" && cbPosition.Text != "" && tbSalary.Text != "")
             {
                 query = "UPDATE NHANVIEN " +
                         "SET NHOTEN = N'" + tbName.Text + "', NCCCD = '" + tbCCCD.Text + "', NGIOITINH = N'" + cbGender.Text +
-                        "', NNGSINH = '" + tpBirth.Text + "', NSDT = '" + tbMobile.Text + "', NDIACHI = N'" + tbAddress.Text +
+                        "', NNGSINH = '" + dTPBirthdate.Value.ToString(Global.dateFormat) + "', NSDT = '" + tbMobile.Text + "', NDIACHI = N'" + tbAddress.Text +
                         "', NEMAIL = N'" + tbEmail.Text + "', CHUCVU = N'" + cbPosition.Text + "', LUONG = " + Convert.ToInt64(tbSalary.Text) +
                         " WHERE MANV = '" + tbId.Text + "'\n" +
                         "UPDATE TAIKHOAN " +
-                        "SET TENTK = '" + tbUsername.Text + "', MATKHAU = '" + tbPassword.Text +
+                        "SET MATKHAU = '" + tbPassword.Text +
                         "' WHERE MANV = '" + tbId.Text + "'";
                 fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
                 this.Close();
@@ -83,6 +91,67 @@ namespace Hotel.SmallForm
         private void tbName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbCCCD_TextChanged(object sender, EventArgs e)
+        {
+            query = "select NCCCD " +
+                    "from NHANVIEN " +
+                    "where NCCCD = '" + tbCCCD.Text + "' and MANV != '" + tbId.Text+"'";
+            ds = fn.getData(query);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                cccdError = true;
+                btUpdate.Enabled = false;
+                errorProvider1.SetError(tbCCCD, "CCCD không được trùng");
+            }
+            else
+            {
+                cccdError = false;
+                if (!sdtError)
+                {
+                    btUpdate.Enabled = true;
+                }
+                errorProvider1.SetError(tbCCCD, null);
+            }
+        }
+
+        private void tbMobile_TextChanged(object sender, EventArgs e)
+        {
+            query = "select NSDT " +
+                    "from NHANVIEN " +
+                    "where NSDT = '" + tbMobile.Text + "'and MANV != '" + tbId.Text + "'";
+            ds = fn.getData(query);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                sdtError = true;
+                btUpdate.Enabled = false;
+                errorProvider1.SetError(tbMobile, "SDT không được trùng");
+            }
+            else
+            {
+                sdtError = false;
+                if (!cccdError)
+                {
+                    btUpdate.Enabled = true;
+                }
+                errorProvider1.SetError(tbMobile, null);
+            }
+        }
+        private void tbMobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
