@@ -66,13 +66,14 @@
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.txtSearch.ItemHeight = 30;
             this.txtSearch.Items.AddRange(new object[] {
-            "All Customers Details",
-            "In Hotel Customer",
-            "CheckOut Customer "});
+            "Tất cả khách hàng",
+            "Khách hàng đang thuê",
+            "Khách hàng không thuê"});
             this.txtSearch.Location = new System.Drawing.Point(400, 170);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(300, 36);
+            this.txtSearch.StartIndex = 0;
             this.txtSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSearch.TabIndex = 4;
             this.txtSearch.SelectedIndexChanged += new System.EventHandler(this.txtSearch_SelectedIndexChanged);

@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Hotel.Properties;
 using Hotel.SmallForm;
 using iText.Layout.Element;
 using System;
@@ -21,8 +22,21 @@ namespace Hotel.All_user_control
         {
             InitializeComponent();
             setService(dgvServiceInfo);
+            AddDeleteColumn();
         }
-        public void setService(DataGridView dgv)
+        private void AddDeleteColumn()
+        {
+            DataGridViewImageColumn dGVImgCol = new DataGridViewImageColumn();
+            dGVImgCol.Name = "REMOVE";
+            dGVImgCol.HeaderText = "Xóa";
+            dGVImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dGVImgCol.Image = Resources.CrossMark;
+            dGVImgCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dGVImgCol.Width = 50;
+            dgvServiceInfo.Columns.Insert(dgvServiceInfo.ColumnCount, dGVImgCol);
+            dgvServiceInfo.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        }
+        private void setService(DataGridView dgv)
         {
             query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', cast(GIADV as decimal) as 'Giá'" +
                     "FROM DICHVU " +
@@ -64,10 +78,14 @@ namespace Hotel.All_user_control
             {
                 return;
             }
+            if(e.ColumnIndex == dgvServiceInfo.Columns["REMOVE"].Index)
+            {
+
+            }
             DataGridViewRow selectedRow = dgvServiceInfo.Rows[e.RowIndex];
-            string id = selectedRow.Cells[0].Value.ToString();
-            string name = selectedRow.Cells[1].Value.ToString();
-            Int64 p = Convert.ToInt64(selectedRow.Cells[2].Value);
+            string id = selectedRow.Cells["Mã Dịch Vụ"].Value.ToString();
+            string name = selectedRow.Cells["Tên Dịch Vụ"].Value.ToString();
+            Int64 p = Convert.ToInt64(selectedRow.Cells["Giá"].Value);
             string price = p.ToString();
             EditService es = new EditService(id, name, price);
             background br = new background();
