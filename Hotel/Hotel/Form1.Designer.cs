@@ -82,6 +82,8 @@
             this.txbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbPassword.IconLeft")));
             this.txbPassword.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txbPassword.IconRight = ((System.Drawing.Image)(resources.GetObject("txbPassword.IconRight")));
+            this.txbPassword.IconRightSize = new System.Drawing.Size(40, 40);
             this.txbPassword.Location = new System.Drawing.Point(48, 294);
             this.txbPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbPassword.Name = "txbPassword";

@@ -45,7 +45,7 @@ namespace Hotel
         {
             if (position == 2)
             {
-                btEmploy.Visible = false;
+                btMoney.Visible = false;
                 btUser.Visible = false;
             }
         }
