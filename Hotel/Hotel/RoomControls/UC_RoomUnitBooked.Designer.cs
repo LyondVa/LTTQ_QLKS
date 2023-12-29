@@ -31,11 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.lBRoomID = new System.Windows.Forms.Label();
             this.lBRoomTypeID = new System.Windows.Forms.Label();
-            this.pBRoomStatus = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pBCleanStatus = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pBRoomStatus)).BeginInit();
+            this.lbSpace = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).BeginInit();
             this.SuspendLayout();
@@ -63,16 +62,6 @@
             this.lBRoomTypeID.TabIndex = 1;
             this.lBRoomTypeID.Text = "label2";
             this.lBRoomTypeID.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
-            // 
-            // pBRoomStatus
-            // 
-            this.pBRoomStatus.ImageRotate = 0F;
-            this.pBRoomStatus.Location = new System.Drawing.Point(115, 13);
-            this.pBRoomStatus.Name = "pBRoomStatus";
-            this.pBRoomStatus.Size = new System.Drawing.Size(100, 100);
-            this.pBRoomStatus.TabIndex = 8;
-            this.pBRoomStatus.TabStop = false;
-            this.pBRoomStatus.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
             // panel1
             // 
@@ -104,18 +93,28 @@
             this.guna2Elipse1.BorderRadius = 10;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // lbSpace
+            // 
+            this.lbSpace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSpace.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSpace.ForeColor = System.Drawing.Color.White;
+            this.lbSpace.Location = new System.Drawing.Point(72, 0);
+            this.lbSpace.Name = "lbSpace";
+            this.lbSpace.Size = new System.Drawing.Size(158, 130);
+            this.lbSpace.TabIndex = 10;
+            this.lbSpace.Text = "label1";
+            this.lbSpace.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UC_RoomUnitBooked
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.pBRoomStatus);
+            this.Controls.Add(this.lbSpace);
             this.Controls.Add(this.panel1);
-            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_RoomUnitBooked";
             this.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pBRoomStatus)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBCleanStatus)).EndInit();
@@ -127,9 +126,9 @@
 
         private System.Windows.Forms.Label lBRoomID;
         private System.Windows.Forms.Label lBRoomTypeID;
-        private Guna.UI2.WinForms.Guna2PictureBox pBRoomStatus;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2PictureBox pBCleanStatus;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.Label lbSpace;
     }
 }
