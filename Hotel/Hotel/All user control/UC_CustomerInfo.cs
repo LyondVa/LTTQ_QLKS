@@ -92,15 +92,15 @@ namespace Hotel.All_user_control
             else
             {
                 DataGridViewRow selectedRow = dgvCustomerInfo.Rows[e.RowIndex];
-                string id = selectedRow.Cells[0].Value.ToString();
-                string name = selectedRow.Cells[1].Value.ToString();
-                string nationality = selectedRow.Cells[2].Value.ToString();
-                string cccd = selectedRow.Cells[3].Value.ToString();
-                string gender = selectedRow.Cells[4].Value.ToString();
-                string dob = selectedRow.Cells[5].Value.ToString();
-                string phone = selectedRow.Cells[6].Value.ToString();
-                string address = selectedRow.Cells[7].Value.ToString();
-                string email = selectedRow.Cells[8].Value.ToString();
+                string id = selectedRow.Cells["Mã Khách Hàng"].Value.ToString();
+                string name = selectedRow.Cells["Họ Tên"].Value.ToString();
+                string nationality = selectedRow.Cells["Quốc Tịch"].Value.ToString();
+                string cccd = selectedRow.Cells["CCCD"].Value.ToString();
+                string gender = selectedRow.Cells["Giới Tính"].Value.ToString();
+                string dob = selectedRow.Cells["Ngày Sinh"].Value.ToString();
+                string phone = selectedRow.Cells["Số Điện Thoại"].Value.ToString();
+                string address = selectedRow.Cells["Địa Chỉ"].Value.ToString();
+                string email = selectedRow.Cells["Email"].Value.ToString();
                 EditCustomer ec = new EditCustomer(id, name, nationality, cccd, gender, dob, phone, address, email);
                 background br = new background();
                 br.Show();

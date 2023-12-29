@@ -19,6 +19,7 @@ namespace Hotel.SmallForm
     {
         function fn = new function();
         DataSet ds = new DataSet();
+        Bitmap MemoryImage;
         string query, reservationID;
         double taxRate = 0.1;
         public F_Receipt(string reservationID)
@@ -28,7 +29,8 @@ namespace Hotel.SmallForm
             SetBillingInfo();
             SetBillTotal();
             SetDataGridView();
-            printDocument1.PrintPage += PrintDocument1_PrintPage;
+            //printDocument1.PrintPage += PrintDocument1_PrintPage;
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
         }
 
         private void SetDataGridView()
@@ -64,7 +66,7 @@ namespace Hotel.SmallForm
             ds = fn.getData(query);
             lbReservationID.Text = reservationID;
             lbCustomerName.Text = ds.Tables[0].Rows[0]["KHOTEN"].ToString();
-            lbReceiptDate.Text = DateTime.Now.Date.ToString();
+            lbReceiptDate.Text = DateTime.Now.ToString().Substring(0, 10);
         }
 
         private void btExit_Click(object sender, EventArgs e)
@@ -85,13 +87,12 @@ namespace Hotel.SmallForm
             lbTax.Text = taxRate.ToString();
             lbAfterTaxTotal.Text = (Double.Parse(lbBillTotal.Text) * taxRate).ToString();
         }
-        private void PrintDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             Bitmap bmp = new Bitmap(pnBackground.Width, pnBackground.Height);
             pnBackground.DrawToBitmap(bmp, RestoreBounds);
             float scale = Math.Min(e.MarginBounds.Width / bmp.Width, e.MarginBounds.Height / bmp.Height);
-            Rectangle imageBounds = new Rectangle(
-                (int)(e.MarginBounds.Width / 2 - bmp.Width * scale / 2),
+            Rectangle imageBounds = new Rectangle((int)(e.MarginBounds.Width / 2 - bmp.Width * scale / 2),
                 (int)(e.MarginBounds.Height / 2 - bmp.Height * scale / 2),
                 (int)(bmp.Width * scale),
                 (int)(bmp.Height * scale));
