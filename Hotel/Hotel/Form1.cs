@@ -16,10 +16,11 @@ namespace Hotel
     {
         function fn = new function();
         string query;
-        int txtPassFlag = 1;
+        int txtPassFlag = 0;
         public Form1()
         {
             InitializeComponent();
+            txbPassword.UseSystemPasswordChar = true;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -67,18 +68,26 @@ namespace Hotel
 
         private void txbPassword_IconRightClick(object sender, EventArgs e)
         {
-            if(txbPassword.PasswordChar == '●')
+
+            if (txtPassFlag == 0)
             {
+                
                 txbPassword.IconRight = Resources.ClosedEye;
-                txbPassword.PasswordChar = '\0';
+                txbPassword.UseSystemPasswordChar = false;
                 txtPassFlag = 1;
             }
             else
             {
                 txbPassword.IconRight = Resources.OpenEye;
-                txbPassword.PasswordChar = '●';
+                txbPassword.UseSystemPasswordChar= true;
+
                 txtPassFlag = 0;
             }
+        }
+
+        private void txbUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

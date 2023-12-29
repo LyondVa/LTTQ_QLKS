@@ -16,7 +16,7 @@ namespace Hotel
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LYON;Initial Catalog=QLKS;Integrated Security=True";
+            con.ConnectionString = @"Data Source=DESKTOP-QEN4LJI;Initial Catalog=QLKS;Integrated Security=True";
             return con;
         }
         //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS_Remote.mdf;Integrated Security=True";
