@@ -188,7 +188,8 @@ namespace Hotel
         // Define the static event based on the delegate
         public static event DatabaseUpdatedEventHandler DatabaseUpdated;
         public static event DatabaseUpdatedEventHandler ServicesUpdated;
-        public static event DatabaseUpdatedEventHandler ClientUpdated;
+        public static event DatabaseUpdatedEventHandler CustomerUpdated;
+        public static event DatabaseUpdatedEventHandler EmployeeUpdated;
 
         // Static method to raise the event
         public static void OnDatabaseUpdated()
@@ -199,9 +200,13 @@ namespace Hotel
         {
             ServicesUpdated?.Invoke();
         }
-        public static void OnClientUpdated()
+        public static void OnCustomerUpdated()
         {
-            ClientUpdated?.Invoke();
+            CustomerUpdated?.Invoke();
+        }
+        public static void OnEmployeeUpdated()
+        {
+            EmployeeUpdated?.Invoke();
         }
     }
 

@@ -17,6 +17,12 @@ namespace Hotel
         public Home(int x, string y)
         {
             InitializeComponent();
+            if(Global.globalPermission == 1)
+            {
+                btEmploy.Visible = true;
+                btUser.Visible = true;
+                btMoney.Visible = true;
+            }
             position = x;
             label2.Text = y;
         }
@@ -127,6 +133,8 @@ namespace Hotel
         {
             if (nutTo == true)
             {
+                label1.Visible = false;
+                label2.Visible = false;
                 Size s = new Size(1059, 690);
                 panel3.Location = new Point(45, 0);
                 panel3.Size = s;
@@ -147,6 +155,8 @@ namespace Hotel
             }
             else
             {
+                label1.Visible = true;
+                label2.Visible = true;
                 Size s = new Size(900, 690);
                 panel3.Location = new Point(200, 0);
                 panel3.Size = s;

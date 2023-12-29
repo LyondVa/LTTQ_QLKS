@@ -29,6 +29,7 @@ namespace Hotel.All_user_control
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where HOATDONG = 1 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -39,7 +40,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 1 " +
+                    "where KHACHHANG.STAYING = 1 and HOATDONG = 1 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -50,7 +51,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 0" +
+                    "where KHACHHANG.STAYING = 0 and HOATDONG = 1 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -73,6 +74,7 @@ namespace Hotel.All_user_control
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
+                    "where HOATDONG = 1 " +
                     "order by KHACHHANG.MAKH ASC";
             getRecord(query);
         }
@@ -94,7 +96,7 @@ namespace Hotel.All_user_control
                     "left join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "left join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "left join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' " +
+                    "where KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' and HOATDONG = 1 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -105,7 +107,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 1 and KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' " +
+                    "where KHACHHANG.STAYING = 1 and KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' and HOATDONG = 1 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }
@@ -116,7 +118,7 @@ namespace Hotel.All_user_control
                     "inner join HOADON on KHACHHANG.MAKH = HOADON.MAKH " +
                     "inner join CTPHG on HOADON.MAHD = CTPHG.MAHD " +
                     "inner join PHONG on CTPHG.MAPHG = PHONG.MAPHG " +
-                    "where KHACHHANG.STAYING = 0 and KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' " +
+                    "where KHACHHANG.STAYING = 0 and KHACHHANG.KHOTEN like N'%" + tbNameSearch.Text.Trim() + "%' and HOATDONG = 1 " +
                     "order by KHACHHANG.MAKH ASC";
                 getRecord(query);
             }

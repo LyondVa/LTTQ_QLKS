@@ -153,6 +153,16 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ClosedEye {
+            get {
+                object obj = ResourceManager.GetObject("ClosedEye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CrossMark {
             get {
                 object obj = ResourceManager.GetObject("CrossMark", resourceCulture);
@@ -193,6 +203,16 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OpenEye {
+            get {
+                object obj = ResourceManager.GetObject("OpenEye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlusMark {
             get {
                 object obj = ResourceManager.GetObject("PlusMark", resourceCulture);
@@ -203,9 +223,29 @@ namespace Hotel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ReceiptBackground {
+            get {
+                object obj = ResourceManager.GetObject("ReceiptBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Thiết_kế_chưa_có_tên {
             get {
                 object obj = ResourceManager.GetObject("Thiết kế chưa có tên", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrashBin {
+            get {
+                object obj = ResourceManager.GetObject("TrashBin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

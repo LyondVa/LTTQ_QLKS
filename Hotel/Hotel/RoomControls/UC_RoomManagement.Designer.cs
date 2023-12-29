@@ -155,6 +155,7 @@
             this.bTAdd.Size = new System.Drawing.Size(180, 45);
             this.bTAdd.TabIndex = 8;
             this.bTAdd.Text = "Thêm Phòng";
+            this.bTAdd.Visible = false;
             this.bTAdd.Click += new System.EventHandler(this.bTAdd_Click);
             // 
             // UC_RoomManagement

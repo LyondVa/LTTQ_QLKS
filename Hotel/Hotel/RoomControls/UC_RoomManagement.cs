@@ -20,6 +20,10 @@ namespace Hotel.All_user_control
         public UC_RoomManagement()
         {
             InitializeComponent();
+            if(Global.globalPermission == 1)
+            {
+                bTAdd.Visible = true;
+            }
             EventHub.DatabaseUpdated += RefreshDataGridView;
             this.Load += UC_RoomManagement_Load;
         }

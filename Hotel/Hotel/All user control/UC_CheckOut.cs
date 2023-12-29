@@ -67,20 +67,21 @@ namespace Hotel.All_user_control
                             "set KHACHHANG.STAYING = 0" +
                             "where MAKH = '" + clientID + "'; " +
                             "update HOADON " +
-                            "set NGTHANHTOAN = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "'" +
-                            ", NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "'" +
+                            "set NGTHANHTOAN = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
+                            "NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
+                            "NGXUATHD = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "' " +
                             "where MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thanh Toán Thành Công");
-                    query = "select KHOTEN from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '"+clientID+"'";
-                    string x1 = fn.getData2(query);
-                    query = "select MAHD from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
-                    string x2 = fn.getData2(query);
-                    query = "select NGXUATHD from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
-                    string x3 = fn.getData2(query); 
-                    query = query = "select TONGTIEN from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
-                    string x4 = fn.getData2(query);
+                    //query = "select KHOTEN from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '"+clientID+"'";
+                    //string x1 = fn.getData2(query);
+                    //query = "select NGXUATHD from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '" + clientID + "'";
+                    //string x3 = fn.getData2(query); 
+                    //query = query = "select TONGTIEN from HOADON where MAHD = '" + reservationID + "'";
+                    //string x4 = fn.getData2(query);
 
-                    receipt rc = new receipt(x1,x2,x3,double.Parse(x4));
+                    //receipt rc = new receipt(x1,reservationID,x3,double.Parse(x4));
+
+                    F_Receipt rc = new F_Receipt(reservationID);
 
                     rc.Show();
                     UC_CheckOut_Load(this, null);

@@ -71,16 +71,17 @@
             this.txtPosition.ForeColor = System.Drawing.Color.Black;
             this.txtPosition.ItemHeight = 30;
             this.txtPosition.Items.AddRange(new object[] {
-            "Quản Lý",
-            "Lễ Tân",
-            "Nhân Viên Kĩ Thuật",
-            "Bảo Vệ",
-            "Tạp Vụ"});
+            "Quản lý",
+            "Lễ tân",
+            "Nhân viên kĩ thuật",
+            "Bảo vệ",
+            "Tạp vụ"});
             this.txtPosition.Location = new System.Drawing.Point(677, 479);
             this.txtPosition.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(539, 36);
             this.txtPosition.TabIndex = 35;
+            this.txtPosition.SelectedIndexChanged += new System.EventHandler(this.txtPosition_SelectedIndexChanged);
             // 
             // label10
             // 

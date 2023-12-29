@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Hotel.SmallForm
 {
@@ -28,7 +29,7 @@ namespace Hotel.SmallForm
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if ( txtName.Text != "" && txtCCCD.Text != "" && cbGender.Text != "" && txtBirth.Text != "" && txtMobile.Text != "" && txtAddress.Text != "" && txtEmail.Text != "" && txtUsername.Text != "" && txtPassword.Text != "" && txtPosition.Text != "" && txtSalary.Text != "")
+            if (txtName.Text != "" && txtCCCD.Text != "" && cbGender.Text != "" && txtBirth.Text != "" && txtMobile.Text != "" && txtAddress.Text != "" && txtEmail.Text != "" && txtUsername.Text != "" && txtPassword.Text != "" && txtPosition.Text != "" && txtSalary.Text != "")
             {
                 string name = txtName.Text;
                 string cccd = txtCCCD.Text;
@@ -44,8 +45,11 @@ namespace Hotel.SmallForm
                 query = "insert into NHANVIEN ( NHOTEN, NCCCD, NGIOITINH, NNGSINH, NSDT, NDIACHI, NEMAIL, CHUCVU, LUONG) values "
                       + "(N'" + name + "','" + cccd + "',N'" + gender + "','" + dob + "','" + mobile + "',N'" + address + "',N'" + email + "',N'" + position + "'," + salary + ")";
                 fn.setData(query, "Thêm Nhân Viên Thành Công!");
-                query = "declare @id nvarchar(10); select @id = MANV from NHANVIEN where NCCCD = '"+cccd+"'; insert into TAIKHOAN (MANV, TENTK, MATKHAU) values (@id,'" + username + "','" + password + "')";
-                fn.setDataNoMsg(query);
+                if (txtPosition.Text == "Quản lý" || txtPosition.Text == "Lễ tân")
+                {
+                    query = "declare @id nvarchar(10); select @id = MANV from NHANVIEN where NCCCD = '" + cccd + "'; insert into TAIKHOAN (MANV, TENTK, MATKHAU) values (@id,'" + username + "','" + password + "')";
+                    fn.setDataNoMsg(query);
+                }
                 this.Close();
             }
             else
@@ -68,13 +72,13 @@ namespace Hotel.SmallForm
             if (ds.Tables[0].Rows.Count > 0)
             {
                 usernameError = true;
-                bTAdd.Enabled=false;
+                bTAdd.Enabled = false;
                 errorProvider1.SetError(txtUsername, "Tên tài khoản không được trùng");
             }
             else
             {
-                usernameError=false;
-                if(!cccdError && !sdtError)
+                usernameError = false;
+                if (!cccdError && !sdtError)
                 {
                     bTAdd.Enabled = true;
                 }
@@ -125,6 +129,20 @@ namespace Hotel.SmallForm
                     bTAdd.Enabled = true;
                 }
                 errorProvider1.SetError(txtMobile, null);
+            }
+        }
+
+        private void txtPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtPosition.Text != "Quản lý" && txtPosition.Text != "Lễ tân")
+            {
+                txtUsername.Enabled = false;
+                txtPassword.Enabled = false;
+            }
+            else
+            {
+                txtUsername.Enabled = true;
+                txtPassword.Enabled = true;
             }
         }
 

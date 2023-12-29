@@ -1,4 +1,5 @@
-﻿using Hotel.SmallForm;
+﻿using Hotel.Properties;
+using Hotel.SmallForm;
 using iText.Layout.Element;
 using Microsoft.Office.Interop.Excel;
 using System;
@@ -23,12 +24,26 @@ namespace Hotel.All_user_control
     {
         function fn = new function();
         string query;
+        DataSet ds;
         public UC_User()
         {
             InitializeComponent();
-            setEmployee(guna2DataGridView1);
+            setEmployee();
+            AddDeleteColumn();
+            EventHub.EmployeeUpdated += setEmployee;
         }
-
+        private void AddDeleteColumn()
+        {
+            DataGridViewImageColumn dGVImgCol = new DataGridViewImageColumn();
+            dGVImgCol.Name = "REMOVE";
+            dGVImgCol.HeaderText = "Xóa";
+            dGVImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dGVImgCol.Image = Resources.TrashBin;
+            dGVImgCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dGVImgCol.Width = 50;
+            guna2DataGridView1.Columns.Insert(guna2DataGridView1.ColumnCount, dGVImgCol);
+            guna2DataGridView1.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -36,23 +51,23 @@ namespace Hotel.All_user_control
                 fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
             }
         }
-        public void setEmployee(DataGridView dgv)
+        public void setEmployee()
         {
             query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
-                    "where NHANVIEN.MANV = TAIKHOAN.MANV " +
+                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHANVIEN.HOATDONG = 1" +
                     "order by NHANVIEN.MANV ASC";
-            DataSet ds = fn.getData(query);
-            dgv.DataSource = ds.Tables[0];
+            ds = fn.getData(query);
+            guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
             query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
-                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like N'" + tbSearch.Text.Trim() + "%' " +
+                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like N'" + tbSearch.Text.Trim() + "%' and NHANVIEN.HOATDONG = 1" +
                     "order by NHANVIEN.MANV asc";
-            DataSet ds = fn.getData(query);
+            ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -61,7 +76,7 @@ namespace Hotel.All_user_control
             background br = new background();
             br.Show();
             ae.ShowDialog();
-            setEmployee(guna2DataGridView1);
+            setEmployee();
             br.Hide();
         }
 
@@ -71,35 +86,54 @@ namespace Hotel.All_user_control
             {
                 return;
             }
-            DataGridViewRow selectedRow = guna2DataGridView1.Rows[e.RowIndex];
-            string id = selectedRow.Cells[0].Value.ToString();
-            query = "SELECT NHANVIEN.MANV, NHOTEN, NCCCD, NGIOITINH, NNGSINH, NSDT, NDIACHI, NEMAIL, TENTK, MATKHAU, CHUCVU, LUONG" +
-                    " FROM NHANVIEN, TAIKHOAN WHERE NHANVIEN.MANV = '" + id + "' AND TAIKHOAN.MANV = '" + id + "'";
-            DataSet ds = fn.getData(query);
-            DataGridView dgv = new DataGridView();
-            dgv = guna2DataGridView2;
-            dgv.DataSource = ds.Tables[0];
-            string name = dgv.Rows[0].Cells[1].Value.ToString();
-            string cccd = dgv.Rows[0].Cells[2].Value.ToString();
-            string gender = dgv.Rows[0].Cells[3].Value.ToString();
-            string dob = dgv.Rows[0].Cells[4].Value.ToString();
-            string mobile = dgv.Rows[0].Cells[5].Value.ToString();
-            string address = dgv.Rows[0].Cells[6].Value.ToString();
-            string email = dgv.Rows[0].Cells[7].Value.ToString();
-            string username = dgv.Rows[0].Cells[8].Value.ToString();
-            string password = dgv.Rows[0].Cells[9].Value.ToString();
-            string position = dgv.Rows[0].Cells[10].Value.ToString();
-            Int64 sal = Convert.ToInt64(dgv.Rows[0].Cells[11].Value);
-            string salary = sal.ToString();
-            EditUserName edun = new EditUserName(id, name, cccd, gender, dob, mobile, address, email, username, password, position, salary);
-            background br = new background();
-            br.Show();
-            edun.ShowDialog();
-            edun.Focus();
-            setEmployee(guna2DataGridView1);
-            br.Hide();
+            if (e.ColumnIndex == guna2DataGridView1.Columns["REMOVE"].Index)
+            {
+                DeactivateEmployee(sender, e);
+            }
+            else
+            {
+                DataGridViewRow selectedRow = guna2DataGridView1.Rows[e.RowIndex];
+                string id = selectedRow.Cells[0].Value.ToString();
+                query = "SELECT NHANVIEN.MANV, NHOTEN, NCCCD, NGIOITINH, NNGSINH, NSDT, NDIACHI, NEMAIL, TENTK, MATKHAU, CHUCVU, LUONG" +
+                        " FROM NHANVIEN, TAIKHOAN WHERE NHANVIEN.MANV = '" + id + "' AND TAIKHOAN.MANV = '" + id + "'";
+                DataSet ds = fn.getData(query);
+                DataGridView dgv = new DataGridView();
+                dgv = guna2DataGridView2;
+                dgv.DataSource = ds.Tables[0];
+                string name = dgv.Rows[0].Cells[1].Value.ToString();
+                string cccd = dgv.Rows[0].Cells[2].Value.ToString();
+                string gender = dgv.Rows[0].Cells[3].Value.ToString();
+                string dob = dgv.Rows[0].Cells[4].Value.ToString();
+                string mobile = dgv.Rows[0].Cells[5].Value.ToString();
+                string address = dgv.Rows[0].Cells[6].Value.ToString();
+                string email = dgv.Rows[0].Cells[7].Value.ToString();
+                string username = dgv.Rows[0].Cells[8].Value.ToString();
+                string password = dgv.Rows[0].Cells[9].Value.ToString();
+                string position = dgv.Rows[0].Cells[10].Value.ToString();
+                Int64 sal = Convert.ToInt64(dgv.Rows[0].Cells[11].Value);
+                string salary = sal.ToString();
+                EditUserName edun = new EditUserName(id, name, cccd, gender, dob, mobile, address, email, username, password, position, salary);
+                background br = new background();
+                br.Show();
+                edun.ShowDialog();
+                edun.Focus();
+                setEmployee();
+                br.Hide();
+            }
         }
+        private void DeactivateEmployee(object sender, DataGridViewCellEventArgs e)
+        {
 
+            DialogResult dr = MessageBox.Show("Xác nhận xóa nhân viên?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                string employeeID = ds.Tables[0].Rows[e.RowIndex]["Mã Nhân Viên"].ToString();
+                query = "update NHANVIEN set HOATDONG = 0 where MANV = '" + employeeID + "'; " +
+                        "update TAIKHOAN set HOATDONG = 0 where MANV = '" + employeeID + "'";
+                fn.setDataNoMsg(query);
+                EventHub.OnEmployeeUpdated();
+            }
+        }
         private void bTUpdate_Click(object sender, EventArgs e)
         {
             EditUserName edun = new EditUserName();
@@ -107,7 +141,7 @@ namespace Hotel.All_user_control
             br.Show();
             edun.ShowDialog();
             edun.Focus();
-            setEmployee(guna2DataGridView1);
+            setEmployee();
             br.Hide();
         }
     }

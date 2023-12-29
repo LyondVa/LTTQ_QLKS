@@ -1,4 +1,5 @@
-﻿using Hotel.SmallForm;
+﻿using Hotel.Properties;
+using Hotel.SmallForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace Hotel
     {
         function fn = new function();
         string query;
-
+        int txtPassFlag = 1;
         public Form1()
         {
             InitializeComponent();
@@ -27,13 +28,12 @@ namespace Hotel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int position = 0;
             if (txbUsername.Text == "admin" && txbPassword.Text == "admin")
             {
-                position = 1;
+                Global.globalPermission = 1;
                 Global.globalEmID = "admin";
                 Global.globalEmName = "admin";
-                Home dashboard = new Home(position, Global.globalEmName);
+                Home dashboard = new Home(Global.globalPermission, Global.globalEmName);
                 dashboard.Show();
                 this.Hide();
             }
@@ -42,18 +42,18 @@ namespace Hotel
                 query = "select TENTK, MATKHAU, TAIKHOAN.MANV, NHOTEN, CHUCVU " +
                         "from TAIKHOAN, NHANVIEN " +
                         "where TAIKHOAN.MANV = NHANVIEN.MANV " +
-                        "and TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "'";
+                        "and TENTK = '" + txbUsername.Text + "' and MATKHAU = '" + txbPassword.Text + "' and TAIKHOAN.HOATDONG = 1";
                 DataSet ds = fn.getData(query);
                 if (ds.Tables[0].Rows.Count != 0)
                 {
                     labelError.Visible = false;
                     if (ds.Tables[0].Rows[0]["CHUCVU"].ToString() == "Quản lý")
                     {
-                        position = 1;
+                        Global.globalPermission = 1;
                     }
                     Global.globalEmName = ds.Tables[0].Rows[0]["NHOTEN"].ToString();
                     Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();
-                    Home dashboard = new Home(position, Global.globalEmName);
+                    Home dashboard = new Home(Global.globalPermission, Global.globalEmName);
                     dashboard.Show();
                     this.Hide();
                 }
@@ -62,6 +62,22 @@ namespace Hotel
                     labelError.Visible = true;
                     txbPassword.Clear();
                 }
+            }
+        }
+
+        private void txbPassword_IconRightClick(object sender, EventArgs e)
+        {
+            if(txbPassword.PasswordChar == '●')
+            {
+                txbPassword.IconRight = Resources.ClosedEye;
+                txbPassword.PasswordChar = '\0';
+                txtPassFlag = 1;
+            }
+            else
+            {
+                txbPassword.IconRight = Resources.OpenEye;
+                txbPassword.PasswordChar = '●';
+                txtPassFlag = 0;
             }
         }
     }

@@ -16,27 +16,34 @@ namespace Hotel.All_user_control
     {
         function fn = new function();
         string query;
+        DataSet ds;
         public UC_Employee2()
         {
             InitializeComponent();
-            setEmployee(guna2DataGridView1);
+            setEmployee();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        public void setEmployee(DataGridView dgv)
+        public void setEmployee()
         {
-            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', NNGSINH as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' FROM NHANVIEN ORDER BY MANV ASC";
-            DataSet ds = fn.getData(query);
-            dgv.DataSource = ds.Tables[0];
+            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', CONVERT(DATE, NNGSINH) as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' " +
+                    "FROM NHANVIEN " +
+                    "WHERE HOATDONG = 1" +
+                    "ORDER BY MANV ASC";
+            ds = fn.getData(query);
+            guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', NNGSINH as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' from NHANVIEN where NHOTEN like N'" + tbSearch.Text + "%' ORDER BY MANV ASC";
-            DataSet ds = fn.getData(query);
+            query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', CONVERT(DATE, NNGSINH) as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' " +
+                    "from NHANVIEN " +
+                    "where NHOTEN like N'" + tbSearch.Text + "%' and HOATDONG = 1" +
+                    "ORDER BY MANV ASC";
+            ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
@@ -47,25 +54,9 @@ namespace Hotel.All_user_control
                 fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
             }
         }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void removeSelectedRow()
-        {
-
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UC_Employee2_Load(object sender, EventArgs e)
         {
-            setEmployee(guna2DataGridView1);
+            setEmployee();
         }
     }
 }

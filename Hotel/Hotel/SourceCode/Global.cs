@@ -8,8 +8,8 @@ namespace Hotel
 {
     static class Global
     {
-        private static string _globalEmID;
         public static string dateFormat = "yyyy'-'MM'-'dd hh':'mm':'ss";
+        private static string _globalEmID;
         public static string globalEmID
         {
             get { return _globalEmID; }
@@ -20,6 +20,12 @@ namespace Hotel
         {
             get { return _globalEmName; }
             set { _globalEmName = value; }
+        }
+        private static int _globalPermission = 0;
+        public static int globalPermission
+        {
+            get { return _globalPermission; }
+            set { _globalPermission = value; }
         }
     }
 }

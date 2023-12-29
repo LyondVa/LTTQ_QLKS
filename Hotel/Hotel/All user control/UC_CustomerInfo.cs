@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Hotel.Properties;
 using Hotel.SmallForm;
 using iText.Layout.Element;
 using System;
@@ -17,18 +18,37 @@ namespace Hotel.All_user_control
     {
         function fn = new function();
         string query;
+        DataSet ds;
         public UC_CustomerInfo()
         {
             InitializeComponent();
-            setCustomerInfo(dgvCustomerInfo);
+            setCustomerInfo();
+            if(Global.globalPermission == 1)
+            {
+                AddDeleteColumn();
+            }
+            EventHub.CustomerUpdated += setCustomerInfo;
         }
-        public void setCustomerInfo(DataGridView dgv)
+        private void AddDeleteColumn()
         {
-            query = "SELECT MAKH as 'Mã Khách Hàng', KHOTEN as 'Họ Tên', QUOCTICH as 'Quốc Tịch', KCCCD as 'CCCD', KGIOITINH as 'Giới Tính', KNGSINH as 'Ngày Sinh', KSDT as 'Số Điện Thoại', KDIACHI as 'Địa Chỉ', KEMAIL as 'Email' " +
+            DataGridViewImageColumn dGVImgCol = new DataGridViewImageColumn();
+            dGVImgCol.Name = "REMOVE";
+            dGVImgCol.HeaderText = "Xóa";
+            dGVImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dGVImgCol.Image = Resources.TrashBin;
+            dGVImgCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dGVImgCol.Width = 50;
+            dgvCustomerInfo.Columns.Insert(dgvCustomerInfo.ColumnCount, dGVImgCol);
+            dgvCustomerInfo.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        }
+        public void setCustomerInfo()
+        {
+            query = "SELECT MAKH as 'Mã Khách Hàng', KHOTEN as 'Họ Tên', QUOCTICH as 'Quốc Tịch', KCCCD as 'CCCD', KGIOITINH as 'Giới Tính', convert(DATE, KNGSINH) as 'Ngày Sinh', KSDT as 'Số Điện Thoại', KDIACHI as 'Địa Chỉ', KEMAIL as 'Email' " +
                     "FROM KHACHHANG " +
+                    "where HOATDONG = 1 " +
                     "ORDER BY MAKH ASC";
-            DataSet ds = fn.getData(query);
-            dgv.DataSource = ds.Tables[0];
+            ds = fn.getData(query);
+            dgvCustomerInfo.DataSource = ds.Tables[0];
         }
 
         private void btExport_Click(object sender, EventArgs e)
@@ -41,11 +61,11 @@ namespace Hotel.All_user_control
 
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
-            query = "SELECT MAKH as 'Mã Khách Hàng', KHOTEN as 'Họ Tên', QUOCTICH as 'Quốc Tịch', KCCCD as 'CCCD', KGIOITINH as 'Giới Tính', KNGSINH as 'Ngày Sinh', KSDT as 'Số Điện Thoại', KDIACHI as 'Địa Chỉ', KEMAIL as 'Email' " +
+            query = "SELECT MAKH as 'Mã Khách Hàng', KHOTEN as 'Họ Tên', QUOCTICH as 'Quốc Tịch', KCCCD as 'CCCD', KGIOITINH as 'Giới Tính', convert(DATE, KNGSINH) as 'Ngày Sinh', KSDT as 'Số Điện Thoại', KDIACHI as 'Địa Chỉ', KEMAIL as 'Email' " +
                     "FROM KHACHHANG " +
-                    "WHERE KHOTEN like N'%" + tbSearch.Text.Trim() + "%' " +
+                    "WHERE KHOTEN like N'%" + tbSearch.Text.Trim() + "%' and HOATDONG = 1 " +
                     "ORDER BY MAKH ASC";
-            DataSet ds = fn.getData(query);
+          ds = fn.getData(query);
             dgvCustomerInfo.DataSource = ds.Tables[0];
         }
 
@@ -55,7 +75,7 @@ namespace Hotel.All_user_control
             background br = new background();
             br.Show();
             addCustomer.ShowDialog();
-            setCustomerInfo(dgvCustomerInfo);
+            setCustomerInfo();
             br.Hide();
         }
 
@@ -65,29 +85,43 @@ namespace Hotel.All_user_control
             {
                 return;
             }
-            DataGridViewRow selectedRow = dgvCustomerInfo.Rows[e.RowIndex];
-            string id = selectedRow.Cells[0].Value.ToString();
-            string name = selectedRow.Cells[1].Value.ToString();
-            string nationality = selectedRow.Cells[2].Value.ToString();
-            string cccd = selectedRow.Cells[3].Value.ToString();
-            string gender = selectedRow.Cells[4].Value.ToString();
-            string dob = selectedRow.Cells[5].Value.ToString();
-            string phone = selectedRow.Cells[6].Value.ToString();
-            string address = selectedRow.Cells[7].Value.ToString();
-            string email = selectedRow.Cells[8].Value.ToString();
-            EditCustomer ec = new EditCustomer(id, name, nationality, cccd, gender, dob, phone, address, email);
-            background br = new background();
-            br.Show();
-            ec.ShowDialog();
+            if (e.ColumnIndex == dgvCustomerInfo.Columns["REMOVE"].Index)
+            {
+                DeactivateCustomer(sender, e);
+            }
+            else
+            {
+                DataGridViewRow selectedRow = dgvCustomerInfo.Rows[e.RowIndex];
+                string id = selectedRow.Cells[0].Value.ToString();
+                string name = selectedRow.Cells[1].Value.ToString();
+                string nationality = selectedRow.Cells[2].Value.ToString();
+                string cccd = selectedRow.Cells[3].Value.ToString();
+                string gender = selectedRow.Cells[4].Value.ToString();
+                string dob = selectedRow.Cells[5].Value.ToString();
+                string phone = selectedRow.Cells[6].Value.ToString();
+                string address = selectedRow.Cells[7].Value.ToString();
+                string email = selectedRow.Cells[8].Value.ToString();
+                EditCustomer ec = new EditCustomer(id, name, nationality, cccd, gender, dob, phone, address, email);
+                background br = new background();
+                br.Show();
+                ec.ShowDialog();
 
-            ec.Focus();
-            setCustomerInfo(dgvCustomerInfo);
-            br.Hide();
+                ec.Focus();
+                setCustomerInfo();
+                br.Hide();
+            }
         }
-
-        private void lBSearch_Click(object sender, EventArgs e)
+        private void DeactivateCustomer(object sender, DataGridViewCellEventArgs e)
         {
 
+            DialogResult dr = MessageBox.Show("Xác nhận xóa khách hàng?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                string customerID = ds.Tables[0].Rows[e.RowIndex]["Mã Khách Hàng"].ToString();
+                query = "update KHACHHANG set HOATDONG = 0 where MAKH = '" + customerID + "'";
+                fn.setDataNoMsg(query);
+                EventHub.OnCustomerUpdated();
+            }
         }
     }
 }
