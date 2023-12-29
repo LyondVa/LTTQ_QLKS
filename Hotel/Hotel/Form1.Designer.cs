@@ -47,10 +47,10 @@
             this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(92, 293);
+            this.btnLogin.Location = new System.Drawing.Point(104, 366);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(305, 55);
+            this.btnLogin.Size = new System.Drawing.Size(343, 69);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -60,11 +60,11 @@
             this.labelError.AutoSize = true;
             this.labelError.BackColor = System.Drawing.Color.Transparent;
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(141, 382);
+            this.labelError.Location = new System.Drawing.Point(135, 478);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(193, 16);
+            this.labelError.Size = new System.Drawing.Size(287, 20);
             this.labelError.TabIndex = 6;
-            this.labelError.Text = "Wrong Username Or Password";
+            this.labelError.Text = "Tài Khoản Hoặc Mật Khẩu Không Đúng";
             this.labelError.Visible = false;
             // 
             // txbPassword
@@ -84,15 +84,14 @@
             this.txbPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbPassword.IconLeft")));
             this.txbPassword.IconLeftSize = new System.Drawing.Size(30, 30);
             this.txbPassword.IconRight = global::Hotel.Properties.Resources.ClosedEye;
-            this.txbPassword.Location = new System.Drawing.Point(43, 235);
-            this.txbPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPassword.Location = new System.Drawing.Point(48, 294);
+            this.txbPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.PasswordChar = '●';
-            this.txbPassword.PlaceholderText = "Password";
+            this.txbPassword.PasswordChar = '\0';
+            this.txbPassword.PlaceholderText = "Nhập Mật Khẩu";
             this.txbPassword.SelectedText = "";
-            this.txbPassword.Size = new System.Drawing.Size(393, 44);
+            this.txbPassword.Size = new System.Drawing.Size(442, 55);
             this.txbPassword.TabIndex = 4;
-            this.txbPassword.UseSystemPasswordChar = true;
             this.txbPassword.IconRightClick += new System.EventHandler(this.txbPassword_IconRightClick);
             // 
             // txbUsername
@@ -111,14 +110,15 @@
             this.txbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbUsername.IconLeft = ((System.Drawing.Image)(resources.GetObject("txbUsername.IconLeft")));
             this.txbUsername.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txbUsername.Location = new System.Drawing.Point(43, 152);
-            this.txbUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txbUsername.Location = new System.Drawing.Point(48, 190);
+            this.txbUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.PasswordChar = '\0';
-            this.txbUsername.PlaceholderText = "Username";
+            this.txbUsername.PlaceholderText = "Nhập Tài Khoản";
             this.txbUsername.SelectedText = "";
-            this.txbUsername.Size = new System.Drawing.Size(393, 44);
+            this.txbUsername.Size = new System.Drawing.Size(442, 55);
             this.txbUsername.TabIndex = 3;
+            this.txbUsername.TextChanged += new System.EventHandler(this.txbUsername_TextChanged);
             // 
             // btnExit
             // 
@@ -132,23 +132,23 @@
             this.btnExit.ForeColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = global::Hotel.Properties.Resources.cancel_50px;
             this.btnExit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnExit.Location = new System.Drawing.Point(949, 1);
+            this.btnExit.Location = new System.Drawing.Point(1068, 1);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnExit.Size = new System.Drawing.Size(52, 43);
+            this.btnExit.Size = new System.Drawing.Size(58, 54);
             this.btnExit.TabIndex = 0;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Form1
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1000, 440);
+            this.ClientSize = new System.Drawing.Size(1125, 550);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.labelError);
