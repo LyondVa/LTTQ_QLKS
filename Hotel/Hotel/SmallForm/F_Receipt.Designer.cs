@@ -35,6 +35,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Receipt));
             this.pnBackground = new Guna.UI2.WinForms.Guna2Panel();
             this.pnReceipt = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnReceiptInfo = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbCustomerName = new System.Windows.Forms.Label();
+            this.lbReceiptDate = new System.Windows.Forms.Label();
+            this.lbReservationID = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnFlavorText = new Guna.UI2.WinForms.Guna2Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.pnMisc2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -56,13 +63,6 @@
             this.dgvBillingInfo = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.pnMisc1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnReceiptInfo = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbCustomerName = new System.Windows.Forms.Label();
-            this.lbReceiptDate = new System.Windows.Forms.Label();
-            this.lbReservationID = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnHotelnfo1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.btExit = new Guna.UI2.WinForms.Guna2Button();
             this.pnBackground.SuspendLayout();
             this.pnReceipt.SuspendLayout();
+            this.pnReceiptInfo.SuspendLayout();
             this.pnFlavorText.SuspendLayout();
             this.pnMisc2.SuspendLayout();
             this.pnGratuities.SuspendLayout();
@@ -83,7 +84,6 @@
             this.pnBillingInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillingInfo)).BeginInit();
             this.pnMisc1.SuspendLayout();
-            this.pnReceiptInfo.SuspendLayout();
             this.pnHotelnfo1.SuspendLayout();
             this.pnButtons.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +99,7 @@
             this.pnBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnBackground.Location = new System.Drawing.Point(0, 0);
             this.pnBackground.Name = "pnBackground";
-            this.pnBackground.Size = new System.Drawing.Size(584, 914);
+            this.pnBackground.Size = new System.Drawing.Size(580, 910);
             this.pnBackground.TabIndex = 0;
             // 
             // pnReceipt
@@ -119,8 +119,77 @@
             this.pnReceipt.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnReceipt.Location = new System.Drawing.Point(50, 60);
             this.pnReceipt.Name = "pnReceipt";
-            this.pnReceipt.Size = new System.Drawing.Size(484, 734);
+            this.pnReceipt.Size = new System.Drawing.Size(480, 730);
             this.pnReceipt.TabIndex = 0;
+            // 
+            // pnReceiptInfo
+            // 
+            this.pnReceiptInfo.BackColor = System.Drawing.Color.White;
+            this.pnReceiptInfo.Controls.Add(this.lbCustomerName);
+            this.pnReceiptInfo.Controls.Add(this.lbReceiptDate);
+            this.pnReceiptInfo.Controls.Add(this.lbReservationID);
+            this.pnReceiptInfo.Controls.Add(this.label4);
+            this.pnReceiptInfo.Controls.Add(this.label3);
+            this.pnReceiptInfo.Controls.Add(this.label2);
+            this.pnReceiptInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnReceiptInfo.Location = new System.Drawing.Point(234, 0);
+            this.pnReceiptInfo.Name = "pnReceiptInfo";
+            this.pnReceiptInfo.Size = new System.Drawing.Size(226, 125);
+            this.pnReceiptInfo.TabIndex = 2;
+            // 
+            // lbCustomerName
+            // 
+            this.lbCustomerName.AutoSize = true;
+            this.lbCustomerName.Location = new System.Drawing.Point(6, 81);
+            this.lbCustomerName.Name = "lbCustomerName";
+            this.lbCustomerName.Size = new System.Drawing.Size(98, 17);
+            this.lbCustomerName.TabIndex = 5;
+            this.lbCustomerName.Text = "Tên khách hàng";
+            // 
+            // lbReceiptDate
+            // 
+            this.lbReceiptDate.AutoSize = true;
+            this.lbReceiptDate.Location = new System.Drawing.Point(114, 48);
+            this.lbReceiptDate.Name = "lbReceiptDate";
+            this.lbReceiptDate.Size = new System.Drawing.Size(89, 17);
+            this.lbReceiptDate.TabIndex = 4;
+            this.lbReceiptDate.Text = "Ngày xuất HD";
+            // 
+            // lbReservationID
+            // 
+            this.lbReservationID.AutoSize = true;
+            this.lbReservationID.Location = new System.Drawing.Point(114, 32);
+            this.lbReservationID.Name = "lbReservationID";
+            this.lbReservationID.Size = new System.Drawing.Size(80, 17);
+            this.lbReservationID.TabIndex = 3;
+            this.lbReservationID.Text = "Mã hóa đơn";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Khách hàng:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Ngày xuất HD:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Hóa đơn:";
             // 
             // pnFlavorText
             // 
@@ -156,20 +225,18 @@
             this.pnMisc2.Controls.Add(this.pnHotelInfo2);
             this.pnMisc2.Location = new System.Drawing.Point(10, 578);
             this.pnMisc2.Name = "pnMisc2";
-            this.pnMisc2.Size = new System.Drawing.Size(464, 130);
+            this.pnMisc2.Size = new System.Drawing.Size(460, 126);
             this.pnMisc2.TabIndex = 6;
             // 
             // pnGratuities
             // 
-            this.pnGratuities.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnGratuities.BackColor = System.Drawing.Color.White;
             this.pnGratuities.Controls.Add(this.label19);
             this.pnGratuities.Controls.Add(this.label20);
-            this.pnGratuities.Location = new System.Drawing.Point(250, 0);
+            this.pnGratuities.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnGratuities.Location = new System.Drawing.Point(234, 0);
             this.pnGratuities.Name = "pnGratuities";
-            this.pnGratuities.Size = new System.Drawing.Size(214, 130);
+            this.pnGratuities.Size = new System.Drawing.Size(226, 126);
             this.pnGratuities.TabIndex = 2;
             // 
             // label19
@@ -196,15 +263,13 @@
             // 
             // pnHotelInfo2
             // 
-            this.pnHotelInfo2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnHotelInfo2.BackColor = System.Drawing.Color.White;
             this.pnHotelInfo2.Controls.Add(this.label21);
             this.pnHotelInfo2.Controls.Add(this.label22);
+            this.pnHotelInfo2.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnHotelInfo2.Location = new System.Drawing.Point(0, 0);
             this.pnHotelInfo2.Name = "pnHotelInfo2";
-            this.pnHotelInfo2.Size = new System.Drawing.Size(234, 130);
+            this.pnHotelInfo2.Size = new System.Drawing.Size(234, 126);
             this.pnHotelInfo2.TabIndex = 1;
             // 
             // label21
@@ -232,7 +297,7 @@
             this.guna2Separator2.FillThickness = 3;
             this.guna2Separator2.Location = new System.Drawing.Point(10, 562);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(482, 10);
+            this.guna2Separator2.Size = new System.Drawing.Size(460, 10);
             this.guna2Separator2.TabIndex = 5;
             // 
             // pnBillingTotal
@@ -247,15 +312,15 @@
             this.pnBillingTotal.Controls.Add(this.label15);
             this.pnBillingTotal.Controls.Add(this.label13);
             this.pnBillingTotal.Controls.Add(this.label14);
-            this.pnBillingTotal.Location = new System.Drawing.Point(10, 479);
+            this.pnBillingTotal.Location = new System.Drawing.Point(10, 490);
             this.pnBillingTotal.Name = "pnBillingTotal";
-            this.pnBillingTotal.Size = new System.Drawing.Size(464, 61);
+            this.pnBillingTotal.Size = new System.Drawing.Size(460, 66);
             this.pnBillingTotal.TabIndex = 4;
             // 
             // lbAfterTaxTotal
             // 
             this.lbAfterTaxTotal.AutoSize = true;
-            this.lbAfterTaxTotal.Location = new System.Drawing.Point(380, 45);
+            this.lbAfterTaxTotal.Location = new System.Drawing.Point(390, 42);
             this.lbAfterTaxTotal.Name = "lbAfterTaxTotal";
             this.lbAfterTaxTotal.Size = new System.Drawing.Size(50, 17);
             this.lbAfterTaxTotal.TabIndex = 11;
@@ -264,7 +329,7 @@
             // lbTax
             // 
             this.lbTax.AutoSize = true;
-            this.lbTax.Location = new System.Drawing.Point(380, 29);
+            this.lbTax.Location = new System.Drawing.Point(390, 26);
             this.lbTax.Name = "lbTax";
             this.lbTax.Size = new System.Drawing.Size(50, 17);
             this.lbTax.TabIndex = 10;
@@ -273,7 +338,7 @@
             // lbBillTotal
             // 
             this.lbBillTotal.AutoSize = true;
-            this.lbBillTotal.Location = new System.Drawing.Point(380, 13);
+            this.lbBillTotal.Location = new System.Drawing.Point(390, 10);
             this.lbBillTotal.Name = "lbBillTotal";
             this.lbBillTotal.Size = new System.Drawing.Size(50, 17);
             this.lbBillTotal.TabIndex = 9;
@@ -282,7 +347,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(301, 45);
+            this.label15.Location = new System.Drawing.Point(311, 42);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 17);
             this.label15.TabIndex = 8;
@@ -291,7 +356,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(301, 29);
+            this.label13.Location = new System.Drawing.Point(311, 26);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 17);
             this.label13.TabIndex = 7;
@@ -300,7 +365,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(301, 13);
+            this.label14.Location = new System.Drawing.Point(311, 10);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 17);
             this.label14.TabIndex = 6;
@@ -310,9 +375,9 @@
             // 
             this.pnBillingInfo.BackColor = System.Drawing.SystemColors.Control;
             this.pnBillingInfo.Controls.Add(this.dgvBillingInfo);
-            this.pnBillingInfo.Location = new System.Drawing.Point(10, 296);
+            this.pnBillingInfo.Location = new System.Drawing.Point(10, 307);
             this.pnBillingInfo.Name = "pnBillingInfo";
-            this.pnBillingInfo.Size = new System.Drawing.Size(480, 177);
+            this.pnBillingInfo.Size = new System.Drawing.Size(460, 177);
             this.pnBillingInfo.TabIndex = 3;
             // 
             // dgvBillingInfo
@@ -362,7 +427,7 @@
             this.dgvBillingInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvBillingInfo.RowTemplate.Height = 24;
             this.dgvBillingInfo.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvBillingInfo.Size = new System.Drawing.Size(480, 177);
+            this.dgvBillingInfo.Size = new System.Drawing.Size(460, 177);
             this.dgvBillingInfo.TabIndex = 0;
             this.dgvBillingInfo.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.WhiteGrid;
             this.dgvBillingInfo.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -391,9 +456,9 @@
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(79)))), ((int)(((byte)(239)))));
             this.guna2Separator1.FillThickness = 3;
-            this.guna2Separator1.Location = new System.Drawing.Point(10, 280);
+            this.guna2Separator1.Location = new System.Drawing.Point(10, 291);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(480, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(460, 10);
             this.guna2Separator1.TabIndex = 2;
             // 
             // pnMisc1
@@ -404,99 +469,26 @@
             this.pnMisc1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnMisc1.Controls.Add(this.pnReceiptInfo);
             this.pnMisc1.Controls.Add(this.pnHotelnfo1);
-            this.pnMisc1.Location = new System.Drawing.Point(10, 144);
+            this.pnMisc1.Location = new System.Drawing.Point(10, 160);
             this.pnMisc1.Name = "pnMisc1";
-            this.pnMisc1.Size = new System.Drawing.Size(464, 114);
+            this.pnMisc1.Size = new System.Drawing.Size(460, 125);
             this.pnMisc1.TabIndex = 1;
-            // 
-            // pnReceiptInfo
-            // 
-            this.pnReceiptInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnReceiptInfo.BackColor = System.Drawing.Color.White;
-            this.pnReceiptInfo.Controls.Add(this.lbCustomerName);
-            this.pnReceiptInfo.Controls.Add(this.lbReceiptDate);
-            this.pnReceiptInfo.Controls.Add(this.lbReservationID);
-            this.pnReceiptInfo.Controls.Add(this.label4);
-            this.pnReceiptInfo.Controls.Add(this.label3);
-            this.pnReceiptInfo.Controls.Add(this.label2);
-            this.pnReceiptInfo.Location = new System.Drawing.Point(250, 0);
-            this.pnReceiptInfo.Name = "pnReceiptInfo";
-            this.pnReceiptInfo.Size = new System.Drawing.Size(214, 114);
-            this.pnReceiptInfo.TabIndex = 2;
-            // 
-            // lbCustomerName
-            // 
-            this.lbCustomerName.AutoSize = true;
-            this.lbCustomerName.Location = new System.Drawing.Point(6, 89);
-            this.lbCustomerName.Name = "lbCustomerName";
-            this.lbCustomerName.Size = new System.Drawing.Size(98, 17);
-            this.lbCustomerName.TabIndex = 5;
-            this.lbCustomerName.Text = "Tên khách hàng";
-            // 
-            // lbReceiptDate
-            // 
-            this.lbReceiptDate.AutoSize = true;
-            this.lbReceiptDate.Location = new System.Drawing.Point(114, 56);
-            this.lbReceiptDate.Name = "lbReceiptDate";
-            this.lbReceiptDate.Size = new System.Drawing.Size(89, 17);
-            this.lbReceiptDate.TabIndex = 4;
-            this.lbReceiptDate.Text = "Ngày xuất HD";
-            // 
-            // lbReservationID
-            // 
-            this.lbReservationID.AutoSize = true;
-            this.lbReservationID.Location = new System.Drawing.Point(114, 40);
-            this.lbReservationID.Name = "lbReservationID";
-            this.lbReservationID.Size = new System.Drawing.Size(80, 17);
-            this.lbReservationID.TabIndex = 3;
-            this.lbReservationID.Text = "Mã hóa đơn";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Khách hàng:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Ngày xuất HD:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Hóa đơn:";
             // 
             // pnHotelnfo1
             // 
-            this.pnHotelnfo1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnHotelnfo1.BackColor = System.Drawing.Color.White;
             this.pnHotelnfo1.Controls.Add(this.label9);
             this.pnHotelnfo1.Controls.Add(this.label8);
+            this.pnHotelnfo1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnHotelnfo1.Location = new System.Drawing.Point(0, 0);
             this.pnHotelnfo1.Name = "pnHotelnfo1";
-            this.pnHotelnfo1.Size = new System.Drawing.Size(234, 114);
+            this.pnHotelnfo1.Size = new System.Drawing.Size(234, 125);
             this.pnHotelnfo1.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 41);
+            this.label9.Location = new System.Drawing.Point(4, 32);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(187, 85);
             this.label9.TabIndex = 7;
@@ -507,7 +499,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 18);
+            this.label8.Location = new System.Drawing.Point(3, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 23);
             this.label8.TabIndex = 6;
@@ -542,9 +534,9 @@
             this.pnButtons.Controls.Add(this.btPrint);
             this.pnButtons.Controls.Add(this.btExit);
             this.pnButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnButtons.Location = new System.Drawing.Point(0, 850);
+            this.pnButtons.Location = new System.Drawing.Point(0, 846);
             this.pnButtons.Name = "pnButtons";
-            this.pnButtons.Size = new System.Drawing.Size(584, 64);
+            this.pnButtons.Size = new System.Drawing.Size(580, 64);
             this.pnButtons.TabIndex = 1;
             // 
             // btPrint
@@ -559,7 +551,7 @@
             this.btPrint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.btPrint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPrint.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btPrint.Location = new System.Drawing.Point(215, 7);
+            this.btPrint.Location = new System.Drawing.Point(211, 7);
             this.btPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btPrint.Name = "btPrint";
             this.btPrint.Size = new System.Drawing.Size(180, 45);
@@ -579,7 +571,7 @@
             this.btExit.FillColor = System.Drawing.Color.White;
             this.btExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.btExit.Location = new System.Drawing.Point(401, 7);
+            this.btExit.Location = new System.Drawing.Point(397, 7);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(180, 45);
             this.btExit.TabIndex = 53;
@@ -591,7 +583,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(584, 914);
+            this.ClientSize = new System.Drawing.Size(580, 910);
             this.ControlBox = false;
             this.Controls.Add(this.pnButtons);
             this.Controls.Add(this.pnBackground);
@@ -605,6 +597,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnBackground.ResumeLayout(false);
             this.pnReceipt.ResumeLayout(false);
+            this.pnReceiptInfo.ResumeLayout(false);
+            this.pnReceiptInfo.PerformLayout();
             this.pnFlavorText.ResumeLayout(false);
             this.pnMisc2.ResumeLayout(false);
             this.pnGratuities.ResumeLayout(false);
@@ -616,8 +610,6 @@
             this.pnBillingInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillingInfo)).EndInit();
             this.pnMisc1.ResumeLayout(false);
-            this.pnReceiptInfo.ResumeLayout(false);
-            this.pnReceiptInfo.PerformLayout();
             this.pnHotelnfo1.ResumeLayout(false);
             this.pnHotelnfo1.PerformLayout();
             this.pnButtons.ResumeLayout(false);
