@@ -82,8 +82,11 @@ namespace Hotel.RoomControls
             dGVARImgCol.Name = "ADD";
             dGVARImgCol.HeaderText = "Thêm";
             dGVARImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dGVARImgCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dGVARImgCol.Width = 50;
             dGVARImgCol.Image = Resources.PlusMark;
             dGVAvailableRoom.Columns.Insert(2, dGVARImgCol);
+            dGVAvailableRoom.Columns["ADD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //DGVImageColumnIni();
 
             dGVSelectedRoom.AutoGenerateColumns = false;
@@ -102,7 +105,10 @@ namespace Hotel.RoomControls
             dGVSRImgCol.HeaderText = "Xóa";
             dGVSRImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             dGVSRImgCol.Image = Resources.CrossMark;
+            dGVSRImgCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dGVSRImgCol.Width = 50;
             dGVSelectedRoom.Columns.Insert(2,dGVSRImgCol);
+            dGVSelectedRoom.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dGVSelectedRoom.DataSource = dSS.Tables[0];
         }

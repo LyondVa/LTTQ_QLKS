@@ -122,9 +122,6 @@ namespace Hotel.RoomControls
             }
             else if (room is UC_RoomUnitOccupied)
             {
-                pNBTCheckOut.Visible = true;
-                bTCheckOut.Visible = true;
-                pNBTCheckOut.Dock = DockStyle.Right;
                 pNBTService.Visible = true;
                 bTService.Visible = true;
                 pNBTService.Dock = DockStyle.Right;
@@ -169,6 +166,11 @@ namespace Hotel.RoomControls
 
         private void bTCheckIn_Click(object sender, EventArgs e)
         {
+            if(cBCleanStatus.SelectedIndex == 1)
+            {
+                MessageBox.Show("Phòng chưa dọn!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DialogResult dR = MessageBox.Show("Xác nhận nhận phòng?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dR == DialogResult.Yes)
             {
@@ -193,31 +195,36 @@ namespace Hotel.RoomControls
             }
         }
 
-        private void bTCheckOut_Click(object sender, EventArgs e)
-        {
-            DialogResult dR = MessageBox.Show("Xác nhận thanh toán?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dR == DialogResult.Yes)
-            {
-                try
-                {
-                    query = "update HOADON " +
-                            "set NGTRPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat) + "' " +
-                            "from HOADON " +
-                            "where NGTRPHGTHAT is null and HOADON.MAHD = '" + reservationID + "';" +
-                            "update KHACHHANG " +
-                            "set STAYING = 0 " +
-                            "from KHACHHANG, HOADON " +
-                            "where HOADON.MAHD = '" + reservationID + "';";
-                    fn.setData(query, "Thành công");
-                    EventHub.OnDatabaseUpdated();
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
+        //private void bTCheckOut_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult dR = MessageBox.Show("Xác nhận thanh toán?", "Thông tin phòng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        //    if (dR == DialogResult.Yes)
+        //    {
+        //        try
+        //        {
+        //            query = "update HOADON " +
+        //                    "set NGTRPHGTHAT = '" + DateTime.Now.ToString(Global.dateFormat) + "' " +
+        //                    "from HOADON " +
+        //                    "where NGTRPHGTHAT is null and HOADON.MAHD = '" + reservationID + "';" +
+        //                    "update KHACHHANG " +
+        //                    "set STAYING = 0 " +
+        //                    "from KHACHHANG, HOADON " +
+        //                    "where HOADON.MAHD = '" + reservationID + "';" +
+        //                    "update PHONG " +
+        //                    "set DONDEP = N'Chưa dọn' " +
+        //                    "from PHONG, CTPHG " +
+        //                    "where PHONG.MAPHG = CTPHG.MAPHG " +
+        //                    "and MAHD = '" + reservationID +"'";
+        //            fn.setData(query, "Thành công");
+        //            EventHub.OnDatabaseUpdated();
+        //            this.Close();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //        }
+        //    }
+        //}
 
         private void bTService_Click(object sender, EventArgs e)
         {

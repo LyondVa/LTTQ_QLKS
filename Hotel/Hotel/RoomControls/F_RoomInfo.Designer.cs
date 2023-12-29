@@ -31,9 +31,9 @@ namespace Hotel.RoomControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pBRoomID = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBRoomID = new System.Windows.Forms.Label();
@@ -44,7 +44,6 @@ namespace Hotel.RoomControls
             this.cBCleanStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bTCheckIn = new Guna.UI2.WinForms.Guna2Button();
-            this.bTCheckOut = new Guna.UI2.WinForms.Guna2Button();
             this.bTBook = new Guna.UI2.WinForms.Guna2Button();
             this.bTUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.bTExit = new Guna.UI2.WinForms.Guna2Button();
@@ -54,7 +53,6 @@ namespace Hotel.RoomControls
             this.bTService = new Guna.UI2.WinForms.Guna2Button();
             this.pNBTCheckIn = new Guna.UI2.WinForms.Guna2Panel();
             this.pNBTCancel = new Guna.UI2.WinForms.Guna2Panel();
-            this.pNBTCheckOut = new Guna.UI2.WinForms.Guna2Panel();
             this.pNBTBook = new Guna.UI2.WinForms.Guna2Panel();
             this.pNBTUpdate = new Guna.UI2.WinForms.Guna2Panel();
             this.pNBTExit = new Guna.UI2.WinForms.Guna2Panel();
@@ -78,7 +76,6 @@ namespace Hotel.RoomControls
             this.pNBTService.SuspendLayout();
             this.pNBTCheckIn.SuspendLayout();
             this.pNBTCancel.SuspendLayout();
-            this.pNBTCheckOut.SuspendLayout();
             this.pNBTBook.SuspendLayout();
             this.pNBTUpdate.SuspendLayout();
             this.pNBTExit.SuspendLayout();
@@ -185,27 +182,27 @@ namespace Hotel.RoomControls
             this.dGVService.AllowUserToDeleteRows = false;
             this.dGVService.AllowUserToResizeColumns = false;
             this.dGVService.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dGVService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dGVService.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVService.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVService.DefaultCellStyle = dataGridViewCellStyle6;
             this.dGVService.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.dGVService.Location = new System.Drawing.Point(39, 91);
             this.dGVService.Name = "dGVService";
@@ -286,29 +283,9 @@ namespace Hotel.RoomControls
             this.bTCheckIn.Name = "bTCheckIn";
             this.bTCheckIn.Size = new System.Drawing.Size(150, 40);
             this.bTCheckIn.TabIndex = 3;
-            this.bTCheckIn.Text = "Nhận phòng";
+            this.bTCheckIn.Text = "Nhận";
             this.bTCheckIn.Visible = false;
             this.bTCheckIn.Click += new System.EventHandler(this.bTCheckIn_Click);
-            // 
-            // bTCheckOut
-            // 
-            this.bTCheckOut.BackColor = System.Drawing.Color.Transparent;
-            this.bTCheckOut.BorderRadius = 10;
-            this.bTCheckOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTCheckOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTCheckOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTCheckOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTCheckOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bTCheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
-            this.bTCheckOut.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.bTCheckOut.ForeColor = System.Drawing.Color.White;
-            this.bTCheckOut.Location = new System.Drawing.Point(10, 10);
-            this.bTCheckOut.Name = "bTCheckOut";
-            this.bTCheckOut.Size = new System.Drawing.Size(150, 40);
-            this.bTCheckOut.TabIndex = 4;
-            this.bTCheckOut.Text = "Thanh toán";
-            this.bTCheckOut.Visible = false;
-            this.bTCheckOut.Click += new System.EventHandler(this.bTCheckOut_Click);
             // 
             // bTBook
             // 
@@ -326,7 +303,7 @@ namespace Hotel.RoomControls
             this.bTBook.Name = "bTBook";
             this.bTBook.Size = new System.Drawing.Size(150, 40);
             this.bTBook.TabIndex = 6;
-            this.bTBook.Text = "Đặt phòng";
+            this.bTBook.Text = "Đặt ";
             this.bTBook.Visible = false;
             this.bTBook.Click += new System.EventHandler(this.bTBook_Click);
             // 
@@ -384,7 +361,7 @@ namespace Hotel.RoomControls
             this.bTCancel.Name = "bTCancel";
             this.bTCancel.Size = new System.Drawing.Size(150, 40);
             this.bTCancel.TabIndex = 9;
-            this.bTCancel.Text = "Hủy phòng";
+            this.bTCancel.Text = "Hủy ";
             this.bTCancel.Visible = false;
             this.bTCancel.Click += new System.EventHandler(this.bTCancel_Click);
             // 
@@ -394,7 +371,6 @@ namespace Hotel.RoomControls
             this.pNButton.Controls.Add(this.pNBTService);
             this.pNButton.Controls.Add(this.pNBTCheckIn);
             this.pNButton.Controls.Add(this.pNBTCancel);
-            this.pNButton.Controls.Add(this.pNBTCheckOut);
             this.pNButton.Controls.Add(this.pNBTBook);
             this.pNButton.Controls.Add(this.pNBTUpdate);
             this.pNButton.Controls.Add(this.pNBTExit);
@@ -408,7 +384,7 @@ namespace Hotel.RoomControls
             // 
             this.pNBTService.Controls.Add(this.bTService);
             this.pNBTService.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTService.Location = new System.Drawing.Point(-370, 0);
+            this.pNBTService.Location = new System.Drawing.Point(-200, 0);
             this.pNBTService.Name = "pNBTService";
             this.pNBTService.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.pNBTService.Size = new System.Drawing.Size(170, 70);
@@ -440,7 +416,7 @@ namespace Hotel.RoomControls
             this.pNBTCheckIn.BackColor = System.Drawing.Color.Transparent;
             this.pNBTCheckIn.Controls.Add(this.bTCheckIn);
             this.pNBTCheckIn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTCheckIn.Location = new System.Drawing.Point(-200, 0);
+            this.pNBTCheckIn.Location = new System.Drawing.Point(-30, 0);
             this.pNBTCheckIn.Name = "pNBTCheckIn";
             this.pNBTCheckIn.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.pNBTCheckIn.Size = new System.Drawing.Size(170, 70);
@@ -452,24 +428,12 @@ namespace Hotel.RoomControls
             this.pNBTCancel.BackColor = System.Drawing.Color.Transparent;
             this.pNBTCancel.Controls.Add(this.bTCancel);
             this.pNBTCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTCancel.Location = new System.Drawing.Point(-30, 0);
+            this.pNBTCancel.Location = new System.Drawing.Point(140, 0);
             this.pNBTCancel.Name = "pNBTCancel";
             this.pNBTCancel.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.pNBTCancel.Size = new System.Drawing.Size(170, 70);
             this.pNBTCancel.TabIndex = 17;
             this.pNBTCancel.Visible = false;
-            // 
-            // pNBTCheckOut
-            // 
-            this.pNBTCheckOut.BackColor = System.Drawing.Color.Transparent;
-            this.pNBTCheckOut.Controls.Add(this.bTCheckOut);
-            this.pNBTCheckOut.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pNBTCheckOut.Location = new System.Drawing.Point(140, 0);
-            this.pNBTCheckOut.Name = "pNBTCheckOut";
-            this.pNBTCheckOut.Padding = new System.Windows.Forms.Padding(10, 10, 10, 20);
-            this.pNBTCheckOut.Size = new System.Drawing.Size(170, 70);
-            this.pNBTCheckOut.TabIndex = 15;
-            this.pNBTCheckOut.Visible = false;
             // 
             // pNBTBook
             // 
@@ -679,7 +643,6 @@ namespace Hotel.RoomControls
             this.pNBTService.ResumeLayout(false);
             this.pNBTCheckIn.ResumeLayout(false);
             this.pNBTCancel.ResumeLayout(false);
-            this.pNBTCheckOut.ResumeLayout(false);
             this.pNBTBook.ResumeLayout(false);
             this.pNBTUpdate.ResumeLayout(false);
             this.pNBTExit.ResumeLayout(false);
@@ -711,7 +674,6 @@ namespace Hotel.RoomControls
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button bTCheckIn;
-        private Guna.UI2.WinForms.Guna2Button bTCheckOut;
         private Guna.UI2.WinForms.Guna2Button bTBook;
         private Guna.UI2.WinForms.Guna2Button bTUpdate;
         private Guna.UI2.WinForms.Guna2Button bTExit;
@@ -721,7 +683,6 @@ namespace Hotel.RoomControls
         private Guna.UI2.WinForms.Guna2Panel pNBTExit;
         private Guna.UI2.WinForms.Guna2Panel pNBTCheckIn;
         private Guna.UI2.WinForms.Guna2Panel pNBTBook;
-        private Guna.UI2.WinForms.Guna2Panel pNBTCheckOut;
         private Guna.UI2.WinForms.Guna2Panel pNBTService;
         private Guna.UI2.WinForms.Guna2Panel pNBTCancel;
         private Guna.UI2.WinForms.Guna2Button bTService;

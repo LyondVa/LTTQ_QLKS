@@ -70,7 +70,12 @@ namespace Hotel.All_user_control
                             "set NGTHANHTOAN = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
                             "NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
                             "NGXUATHD = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "' " +
-                            "where MAHD = '" + reservationID + "'";
+                            "where MAHD = '" + reservationID + "'" +
+                            "update PHONG " +
+                            "set DONDEP = N'Chưa dọn' " +
+                            "from PHONG, CTPHG " +
+                            "where PHONG.MAPHG = CTPHG.MAPHG " +
+                            "and MAHD = '" + reservationID + "'";
                     fn.setData(query, "Thanh Toán Thành Công");
                     //query = "select KHOTEN from KHACHHANG k join HOADON h on k.MAKH = h.MAKH where k.MAKH = '"+clientID+"'";
                     //string x1 = fn.getData2(query);
