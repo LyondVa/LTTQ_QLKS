@@ -21,8 +21,8 @@ namespace Hotel.SmallForm
     {
         string query;
         function fn;
-        Bitmap memoryImage;
-        DataSet ds;
+        private Bitmap memoryImage;
+        private Size s;
         public receipt(string ten, string mahd, string ngayxuat, double tien)
         {
             InitializeComponent();
@@ -42,60 +42,17 @@ namespace Hotel.SmallForm
                     "FROM PHONG, LOAIPHONG, CTPHG " +
                     "WHERE PHONG.MALOAIPHG = LOAIPHONG.MALOAIPHG AND CTPHG.MAPHG = PHONG.MAPHG " +
                     "AND MAHD = '" + mahd + "'";
-            ds = fn.getData(query);
+            DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
 
         }
 
-        private void CaptureDataGridView(DataGridView dataGridView)
-        {
-            Graphics myGraphics = this.CreateGraphics();
-
-            // Đặt độ phân giải thấp (ví dụ: 300 pixels/inch)
-            int resolution = 50;
-
-            // Chú ý rằng bạn có thể cần điều chỉnh giá trị 20 và 50 này tùy thuộc vào vị trí cụ thể của DataGridView trên Form
-            //int xOffset = 0;
-            //int yOffset = 0;
-
-            // Sử dụng kích thước của phần hiển thị thực sự của DataGridView
-            Size s = new Size(dataGridView.DisplayRectangle.Width, dataGridView.DisplayRectangle.Height);
-
-            System.Drawing.Point locationOnForm = dataGridView.Location;
-            System.Drawing.Point locationOnScreen = dataGridView.PointToScreen(locationOnForm);
-            System.Drawing.Point locationOnClient = this.PointToClient(locationOnScreen);
-
-            // Đặt kích thước và độ phân giải của hình chụp
-            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
-            memoryImage.SetResolution(resolution, resolution);
-
-            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
-
-            // Chú ý rằng bạn sử dụng Location của DataGridView trên Form
-            memoryGraphics.CopyFromScreen(300, 0, 0, 0, s);
-        }
+       
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(memoryImage, 0, 0);
         }
-        private void ReleaseObject(object obj)
-        {
-            try
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
-            }
-            catch (Exception ex)
-            {
-                obj = null;
-                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
-            }
-            finally
-            {
-                GC.Collect();
-            }
-        }
-
+        
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             PaperSize customPaperSize = new PaperSize("CustomSize", 1500, 1000); // Đặt kích thước tùy chỉnh theo ý bạn
@@ -117,7 +74,25 @@ namespace Hotel.SmallForm
             }
         }
 
+        private void CaptureDataGridView(DataGridView dataGridView)
+        {
+            Graphics myGraphics = this.CreateGraphics();
 
+            int resolution = 117;
+            int xOffset = -233;
+            int yOffset = 26;
+            Size s = new Size(dataGridView.DisplayRectangle.Width + 400, dataGridView.DisplayRectangle.Height + 165);
+
+            System.Drawing.Point locationOnForm = dataGridView.Location;
+            System.Drawing.Point locationOnScreen = dataGridView.PointToScreen(locationOnForm);
+            System.Drawing.Point locationOnClient = this.PointToClient(locationOnScreen);
+
+            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
+            memoryImage.SetResolution(resolution, resolution);
+
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            memoryGraphics.CopyFromScreen(locationOnClient.X - xOffset, locationOnClient.Y - yOffset, 0, 0, s);
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Close();
