@@ -21,6 +21,8 @@ namespace Hotel
         {
             InitializeComponent();
             txbPassword.UseSystemPasswordChar = true;
+
+            txbPassword.IconRight = Resources.OpenEye;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -48,9 +50,13 @@ namespace Hotel
                 if (ds.Tables[0].Rows.Count != 0)
                 {
                     labelError.Visible = false;
-                    if (ds.Tables[0].Rows[0]["CHUCVU"].ToString() == "Quản lý")
+                    if (ds.Tables[0].Rows[0]["CHUCVU"].ToString() == "Quản lý"|| ds.Tables[0].Rows[0]["CHUCVU"].ToString() =="Giám đốc")
                     {
                         Global.globalPermission = 1;
+                    }
+                    else
+                    {
+                        Global.globalPermission = 2;
                     }
                     Global.globalEmName = ds.Tables[0].Rows[0]["NHOTEN"].ToString();
                     Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();

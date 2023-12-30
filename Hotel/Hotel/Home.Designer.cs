@@ -126,7 +126,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(110, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 23);
+            this.label1.Size = new System.Drawing.Size(101, 28);
             this.label1.TabIndex = 8;
             this.label1.Text = "Đăng xuất";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,7 +172,6 @@
             this.btMoney.TabIndex = 8;
             this.btMoney.Text = "Doanh Thu";
             this.btMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btMoney.Visible = false;
             this.btMoney.Click += new System.EventHandler(this.btMoney_Click);
             // 
             // btUser
@@ -196,7 +195,6 @@
             this.btUser.TabIndex = 5;
             this.btUser.Text = "Quản Lý Nhân Viên";
             this.btUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btUser.Visible = false;
             this.btUser.Click += new System.EventHandler(this.btUser_Click);
             // 
             // btEmploy
@@ -220,7 +218,6 @@
             this.btEmploy.TabIndex = 4;
             this.btEmploy.Text = "Thông Tin Nhân Viên";
             this.btEmploy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btEmploy.Visible = false;
             this.btEmploy.Click += new System.EventHandler(this.btEmploy_Click);
             // 
             // btService
