@@ -17,14 +17,16 @@ namespace Hotel
         public Home(int x, string y)
         {
             InitializeComponent();
-            if(Global.globalPermission == 1)
-            {
-                btEmploy.Visible = true;
-                btUser.Visible = true;
-                btMoney.Visible = true;
-            }
+            //if (Global.globalPermission == 1)
+            //{
+            //    btEmploy.Visible = true;
+            //    btUser.Visible = true;
+            //    btMoney.Visible = true;
+            //}
             position = x;
             label2.Text = y;
+
+            Position();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

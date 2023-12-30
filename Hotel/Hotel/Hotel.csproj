@@ -148,6 +148,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SmallForm\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallForm\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\F_AddService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCode\Global.cs" />
+    <EmbeddedResource Include="SmallForm\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\F_AddService.resx">
       <DependentUpon>F_AddService.cs</DependentUpon>
     </EmbeddedResource>
