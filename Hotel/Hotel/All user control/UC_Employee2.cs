@@ -23,6 +23,7 @@ namespace Hotel.All_user_control
             InitializeComponent();
             setEmployee();
             manv = Global.globalEmID;
+            EventHub.EmployeeUpdated += setEmployee;
 
         }
         string pass;
