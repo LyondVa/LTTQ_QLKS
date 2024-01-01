@@ -29,6 +29,7 @@ namespace Hotel.SmallForm
             timeEnd.Value = DateTime.Now;
             timeStart.CustomFormat = "MM / yy";
             timeEnd.CustomFormat = "MM / yy";
+            guna2Button3.PerformClick();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,8 +38,11 @@ namespace Hotel.SmallForm
         }
         public void setEmployee(DataGridView dgv)
         {
-            query = "SELECT thang as N'Tháng', nam as N'Năm', tienPhong as N'Tiền Phòng', tienDichVu as N'Tiền Dịch Vụ', tienLuong as N'Đã Chi', tongNhap as N'Thu Vào', tienDoanhThu as N'Doanh Thu' FROM doanhthu WHERE thang >= 'Tháng " + timeStart.Value.Month + "' AND nam >= 'Năm " + timeStart.Value.Year + "' AND thang <= 'Tháng " + timeEnd.Value.Month + "' AND nam <= 'Năm " + timeEnd.Value.Year + "'";
-            DataSet ds = fn.getData(query);
+            query = "SELECT thang AS N'Tháng', nam AS N'Năm', tienPhong AS N'Tiền Phòng', tienDichVu AS N'Tiền Dịch Vụ', tienLuong AS N'Đã Chi', tongNhap AS N'Thu Vào', tienDoanhThu AS N'Doanh Thu' FROM doanhthu WHERE " +
+                        "((nam = 'Năm " + timeStart.Value.Year + "' AND thang >= 'Tháng " + timeStart.Value.Month + "') OR " +
+                        "(nam > 'Năm " + timeStart.Value.Year + "' AND nam < 'Năm " + timeEnd.Value.Year + "') OR " +
+                        "(nam = 'Năm " + timeEnd.Value.Year + "' AND thang <= 'Tháng " + timeEnd.Value.Month + "')) OR " +
+                        "(nam = 'Năm " + timeStart.Value.Year + "' AND nam = 'Năm " + timeEnd.Value.Year + "' AND thang >= 'Tháng " + timeStart.Value.Month + "' AND thang <= 'Tháng " + timeEnd.Value.Month + "')"; DataSet ds = fn.getData(query);
             dgv.DataSource = ds.Tables[0];
         }
 
@@ -106,6 +110,14 @@ namespace Hotel.SmallForm
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawImage(memoryImage, 0, 0);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
+            }
         }
     }
 }
