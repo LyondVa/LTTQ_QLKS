@@ -31,9 +31,9 @@ namespace Hotel.RoomControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pBRoomID = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lBRoomID = new System.Windows.Forms.Label();
@@ -92,10 +92,12 @@ namespace Hotel.RoomControls
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2PictureBox1.Image = global::Hotel.Properties.Resources.Door;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(40, 30);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 13;
             this.guna2PictureBox1.TabStop = false;
             // 
@@ -182,27 +184,27 @@ namespace Hotel.RoomControls
             this.dGVService.AllowUserToDeleteRows = false;
             this.dGVService.AllowUserToResizeColumns = false;
             this.dGVService.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.dGVService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGVService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dGVService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGVService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dGVService.ColumnHeadersHeight = 20;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dGVService.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGVService.DefaultCellStyle = dataGridViewCellStyle3;
             this.dGVService.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.dGVService.Location = new System.Drawing.Point(39, 91);
             this.dGVService.Name = "dGVService";
@@ -495,24 +497,26 @@ namespace Hotel.RoomControls
             // 
             // lBBookClient
             // 
-            this.lBBookClient.AutoSize = true;
+            this.lBBookClient.AutoEllipsis = true;
             this.lBBookClient.BackColor = System.Drawing.Color.Transparent;
             this.lBBookClient.Dock = System.Windows.Forms.DockStyle.Left;
             this.lBBookClient.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lBBookClient.ForeColor = System.Drawing.Color.White;
             this.lBBookClient.Location = new System.Drawing.Point(34, 30);
             this.lBBookClient.Name = "lBBookClient";
-            this.lBBookClient.Size = new System.Drawing.Size(131, 28);
+            this.lBBookClient.Size = new System.Drawing.Size(131, 24);
             this.lBBookClient.TabIndex = 12;
             this.lBBookClient.Text = "Tên khách đặt";
             // 
             // pBBookClient
             // 
             this.pBBookClient.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pBBookClient.Image = global::Hotel.Properties.Resources.Person;
             this.pBBookClient.ImageRotate = 0F;
             this.pBBookClient.Location = new System.Drawing.Point(10, 30);
             this.pBBookClient.Name = "pBBookClient";
             this.pBBookClient.Size = new System.Drawing.Size(24, 24);
+            this.pBBookClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBBookClient.TabIndex = 8;
             this.pBBookClient.TabStop = false;
             // 
@@ -543,10 +547,12 @@ namespace Hotel.RoomControls
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2PictureBox2.Image = global::Hotel.Properties.Resources.Return;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(10, 30);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 15;
             this.guna2PictureBox2.TabStop = false;
             // 
@@ -577,10 +583,12 @@ namespace Hotel.RoomControls
             // pBBookDate
             // 
             this.pBBookDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pBBookDate.Image = global::Hotel.Properties.Resources.Calendar;
             this.pBBookDate.ImageRotate = 0F;
             this.pBBookDate.Location = new System.Drawing.Point(10, 30);
             this.pBBookDate.Name = "pBBookDate";
             this.pBBookDate.Size = new System.Drawing.Size(24, 24);
+            this.pBBookDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBBookDate.TabIndex = 7;
             this.pBBookDate.TabStop = false;
             // 
@@ -648,7 +656,6 @@ namespace Hotel.RoomControls
             this.pNBTExit.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.pNClientName.ResumeLayout(false);
-            this.pNClientName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBBookClient)).EndInit();
             this.pNCheckOutDate.ResumeLayout(false);
             this.pNCheckOutDate.PerformLayout();

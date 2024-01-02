@@ -78,6 +78,7 @@ namespace Hotel.All_user_control
             ae.ShowDialog();
             setEmployee();
             br.Hide();
+            EventHub.OnEmployeeUpdated();
         }
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -27,5 +27,11 @@ namespace Hotel
             get { return _globalPermission; }
             set { _globalPermission = value; }
         }
+        private static int _isAdmin = 0;
+        public static int isAdmin
+        {
+            get { return _isAdmin; }
+            set { _isAdmin = value; }
+        }   
     }
 }

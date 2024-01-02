@@ -521,11 +521,15 @@
     <None Include="Resources\413170077_1281254999934748_4364759743660170356_n.png" />
     <Content Include="Resources\Background.png" />
     <None Include="Resources\ClosedEye.png" />
+    <None Include="Resources\Calendar.png" />
     <Content Include="Resources\dangnhap.jpg" />
     <Content Include="Resources\dangNhap1.png" />
     <None Include="Resources\PlusMark.png" />
     <None Include="Resources\OpenEye.png" />
     <None Include="Resources\ReceiptBackground.jpg" />
+    <None Include="Resources\Person.png" />
+    <None Include="Resources\Return.png" />
+    <None Include="Resources\Door.png" />
     <Content Include="Resources\sửa đăng nhập.png" />
     <Content Include="Resources\hóa đơn.png" />
     <None Include="Resources\Thiết kế chưa có tên.png" />

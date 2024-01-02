@@ -40,6 +40,7 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // btEsc
@@ -74,7 +75,7 @@
             this.btDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
             this.btDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDelete.ForeColor = System.Drawing.Color.White;
-            this.btDelete.Location = new System.Drawing.Point(263, 353);
+            this.btDelete.Location = new System.Drawing.Point(292, 353);
             this.btDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(135, 37);
@@ -200,6 +201,26 @@
             this.label1.TabIndex = 74;
             this.label1.Text = "Chi Tiết Dịch Vụ";
             // 
+            // btUpdate
+            // 
+            this.btUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btUpdate.BorderRadius = 10;
+            this.btUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(124)))), ((int)(((byte)(78)))));
+            this.btUpdate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUpdate.ForeColor = System.Drawing.Color.White;
+            this.btUpdate.Location = new System.Drawing.Point(151, 353);
+            this.btUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(135, 37);
+            this.btUpdate.TabIndex = 75;
+            this.btUpdate.Text = "Cập nhật";
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
             // EditService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,6 +228,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(597, 412);
+            this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label11);
@@ -238,5 +260,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtID;
+        private Guna.UI2.WinForms.Guna2Button btUpdate;
     }
 }

@@ -416,7 +416,7 @@
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(121, 38);
             this.btUpdate.TabIndex = 91;
-            this.btUpdate.Text = "Sửa ";
+            this.btUpdate.Text = "Cập nhật";
             this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // guna2Elipse1
