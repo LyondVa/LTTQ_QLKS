@@ -134,6 +134,11 @@ namespace Hotel.RoomControls
         }
         private void bTBook_Click(object sender, EventArgs e)
         {
+            if(Global.isAdmin == 1)
+            {
+                MessageBox.Show("Vui lòng dùng tài khoản nhân viên để đặt phòng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             F_BookRoom bR = new F_BookRoom();
             this.Close();
             background br2 = new background();

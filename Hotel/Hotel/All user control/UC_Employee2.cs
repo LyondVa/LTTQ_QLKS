@@ -64,7 +64,7 @@ namespace Hotel.All_user_control
         {
             query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', CONVERT(DATE, NNGSINH) as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' " +
                     "from NHANVIEN " +
-                    "where NHOTEN like N'" + tbSearch.Text + "%' and HOATDONG = 1" +
+                    "where NHOTEN like N'%" + tbSearch.Text + "%' and HOATDONG = 1" +
                     "ORDER BY MANV ASC";
             ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];

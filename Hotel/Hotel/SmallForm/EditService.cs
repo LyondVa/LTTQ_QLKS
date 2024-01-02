@@ -46,10 +46,11 @@ namespace Hotel.SmallForm
         {
             if (MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                query = "DELETE FROM DICHVU " +
+                query = "update NHANVIEN set HOATDONG = 0 " +
                         "WHERE MADV = '" + txtID.Text + "'";
                 fn.setData(query, "Thông Tin Dịch Vụ Đã Được Xóa!");
                 this.Close();
+                EventHub.OnServicesUpdated();
             }
         }
 

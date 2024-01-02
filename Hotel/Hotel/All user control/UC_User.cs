@@ -29,20 +29,7 @@ namespace Hotel.All_user_control
         {
             InitializeComponent();
             setEmployee();
-            AddDeleteColumn();
             EventHub.EmployeeUpdated += setEmployee;
-        }
-        private void AddDeleteColumn()
-        {
-            DataGridViewImageColumn dGVImgCol = new DataGridViewImageColumn();
-            dGVImgCol.Name = "REMOVE";
-            dGVImgCol.HeaderText = "Xóa";
-            dGVImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            dGVImgCol.Image = Resources.TrashBin;
-            dGVImgCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dGVImgCol.Width = 50;
-            guna2DataGridView1.Columns.Insert(guna2DataGridView1.ColumnCount, dGVImgCol);
-            guna2DataGridView1.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -65,7 +52,7 @@ namespace Hotel.All_user_control
         {
             query = "select NHANVIEN.MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', TENTK as 'Username', MATKHAU as 'Password', CHUCVU as 'Chức Vụ' " +
                     "from NHANVIEN, TAIKHOAN " +
-                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like N'" + tbSearch.Text.Trim() + "%' and NHANVIEN.HOATDONG = 1" +
+                    "where NHANVIEN.MANV = TAIKHOAN.MANV and NHOTEN like N'%" + tbSearch.Text.Trim() + "%' and NHANVIEN.HOATDONG = 1" +
                     "order by NHANVIEN.MANV asc";
             ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
@@ -87,10 +74,6 @@ namespace Hotel.All_user_control
             {
                 return;
             }
-            if (e.ColumnIndex == guna2DataGridView1.Columns["REMOVE"].Index)
-            {
-                DeactivateEmployee(sender, e);
-            }
             else
             {
                 DataGridViewRow selectedRow = guna2DataGridView1.Rows[e.RowIndex];
@@ -101,16 +84,16 @@ namespace Hotel.All_user_control
                 DataGridView dgv = new DataGridView();
                 dgv = guna2DataGridView2;
                 dgv.DataSource = ds.Tables[0];
-                string name = dgv.Rows[0].Cells[1].Value.ToString();
-                string cccd = dgv.Rows[0].Cells[2].Value.ToString();
-                string gender = dgv.Rows[0].Cells[3].Value.ToString();
-                string dob = dgv.Rows[0].Cells[4].Value.ToString();
-                string mobile = dgv.Rows[0].Cells[5].Value.ToString();
-                string address = dgv.Rows[0].Cells[6].Value.ToString();
-                string email = dgv.Rows[0].Cells[7].Value.ToString();
-                string username = dgv.Rows[0].Cells[8].Value.ToString();
-                string password = dgv.Rows[0].Cells[9].Value.ToString();
-                string position = dgv.Rows[0].Cells[10].Value.ToString();
+                string name = dgv.Rows[0].Cells["NHOTEN"].Value.ToString();
+                string cccd = dgv.Rows[0].Cells["NCCCD"].Value.ToString();
+                string gender = dgv.Rows[0].Cells["NGIOITINH"].Value.ToString();
+                string dob = dgv.Rows[0].Cells["NNGSINH"].Value.ToString();
+                string mobile = dgv.Rows[0].Cells["NSDT"].Value.ToString();
+                string address = dgv.Rows[0].Cells["NDIACHI"].Value.ToString();
+                string email = dgv.Rows[0].Cells["NEMAIL"].Value.ToString();
+                string username = dgv.Rows[0].Cells["TENTK"].Value.ToString();
+                string password = dgv.Rows[0].Cells["MATKHAU"].Value.ToString();
+                string position = dgv.Rows[0].Cells["CHUCVU"].Value.ToString();
                 Int64 sal = Convert.ToInt64(dgv.Rows[0].Cells[11].Value);
                 string salary = sal.ToString();
                 EditUserName edun = new EditUserName(id, name, cccd, gender, dob, mobile, address, email, username, password, position, salary);

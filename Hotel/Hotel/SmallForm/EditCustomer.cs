@@ -63,10 +63,11 @@ namespace Hotel.SmallForm
         {
             if (MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                query = "DELETE FROM KHACHHANG " +
+                query = "update KHACHHANG set HOATDONG = 0 " +
                         "WHERE MAKH = '" + tbID.Text + "'";
                 fn.setData(query, "Thông Tin Khách Hàng Đã Được Xóa!");
                 this.Close();
+                EventHub.OnCustomerUpdated();
             }
         }
 

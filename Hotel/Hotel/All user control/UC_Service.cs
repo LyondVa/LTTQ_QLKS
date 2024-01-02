@@ -23,24 +23,7 @@ namespace Hotel.All_user_control
         {
             InitializeComponent();
             setService();
-            if (Global.globalPermission == 1)
-            {
-                AddDeleteColumn();
-                btAdd.Visible = true;
-            }
             EventHub.ServicesUpdated += setService;
-        }
-        private void AddDeleteColumn()
-        {
-            DataGridViewImageColumn dGVImgCol = new DataGridViewImageColumn();
-            dGVImgCol.Name = "REMOVE";
-            dGVImgCol.HeaderText = "Xóa";
-            dGVImgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            dGVImgCol.Image = Resources.TrashBin;
-            dGVImgCol.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dGVImgCol.Width = 50;
-            dgvServiceInfo.Columns.Insert(dgvServiceInfo.ColumnCount, dGVImgCol);
-            dgvServiceInfo.Columns["REMOVE"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
         private void setService()
         {
@@ -84,10 +67,6 @@ namespace Hotel.All_user_control
             if(e.RowIndex == -1)
             {
                 return;
-            }
-            if(e.ColumnIndex == dgvServiceInfo.Columns["REMOVE"].Index)
-            {
-                DeactivateService(sender, e);
             }
             else
             {

@@ -48,12 +48,13 @@ namespace Hotel.SmallForm
         {
             if (MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
             {
-                query = "DELETE FROM TAIKHOAN " +
+                query = "update TAIKHOAN set HOATDONG = 0 " +
                         "WHERE MANV = '" + tbId.Text + "'\n" +
-                        "Delete from NHANVIEN " +
+                        "update NHANVIEN set HOATDONG = 0 " +
                         "where MANV = '" + tbId.Text + "'";
                 fn.setData(query, "Thông Tin Nhân Viên Đã Được Xóa!");
                 this.Close();
+                EventHub.OnEmployeeUpdated();
             }
         }
 

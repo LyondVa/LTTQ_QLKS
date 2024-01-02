@@ -36,6 +36,7 @@ namespace Hotel
                 Global.globalPermission = 1;
                 Global.globalEmID = "admin";
                 Global.globalEmName = "admin";
+                Global.isAdmin = 1;
                 Home dashboard = new Home(Global.globalPermission, Global.globalEmName);
                 dashboard.Show();
                 this.Hide();
@@ -60,6 +61,7 @@ namespace Hotel
                     }
                     Global.globalEmName = ds.Tables[0].Rows[0]["NHOTEN"].ToString();
                     Global.globalEmID = ds.Tables[0].Rows[0]["MANV"].ToString();
+                    Global.isAdmin = 0;
                     Home dashboard = new Home(Global.globalPermission, Global.globalEmName);
                     dashboard.Show();
                     this.Hide();
