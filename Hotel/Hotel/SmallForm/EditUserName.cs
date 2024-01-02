@@ -72,6 +72,7 @@ namespace Hotel.SmallForm
                         "' WHERE MANV = '" + tbId.Text + "'";
                 fn.setData(query, "Sửa Thông Tin Nhân Viên Thành Công!");
                 this.Close();
+                EventHub.OnEmployeeUpdated();
             }
             else
             {

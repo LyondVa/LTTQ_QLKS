@@ -49,7 +49,7 @@ namespace Hotel.SmallForm
                 query = "INSERT INTO KHACHHANG (KHOTEN, QUOCTICH, KCCCD, KNGSINH, KGIOITINH, KSDT, KDIACHI, KEMAIL) VALUES " +
                         "( N'" + name + "', N'" + nationality + "', '" + cccd + "', '" + dob + "', N'" + gender + "', '" + phone + "', N'" + address + "', N'" + email + "')";
                 fn.setData(query, "Thêm Khách Hàng Thành Công!");
-                EventHub.OnServicesUpdated();
+                EventHub.OnCustomerUpdated();
                 this.Close();
             }
             else

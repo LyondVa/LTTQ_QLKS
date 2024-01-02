@@ -27,7 +27,7 @@ namespace Hotel.All_user_control
 
         }
         string pass;
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
             {
