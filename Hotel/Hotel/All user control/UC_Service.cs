@@ -24,6 +24,14 @@ namespace Hotel.All_user_control
             InitializeComponent();
             setService();
             EventHub.ServicesUpdated += setService;
+            if(Global.globalPermission == 1)
+            {
+                btAdd.Visible = true;
+            }
+            else
+            {
+                btAdd.Visible = false;
+            }
         }
         private void setService()
         {

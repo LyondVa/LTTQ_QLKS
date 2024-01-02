@@ -55,6 +55,7 @@ namespace Hotel
             {
                 btMoney.Visible = false;
                 btUser.Visible = false;
+                btEmploy.Visible = false;
             }
         }
 

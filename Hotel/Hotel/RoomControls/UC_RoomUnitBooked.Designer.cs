@@ -104,6 +104,7 @@
             this.lbSpace.TabIndex = 10;
             this.lbSpace.Text = "label1";
             this.lbSpace.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbSpace.Click += new System.EventHandler(this.UC_RoomUnitBooked_Click);
             // 
             // UC_RoomUnitBooked
             // 

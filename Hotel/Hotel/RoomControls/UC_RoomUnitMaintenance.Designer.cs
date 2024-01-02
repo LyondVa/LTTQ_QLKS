@@ -104,6 +104,7 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Bảo Trì";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.UC_RoomUnitMaintenance_Click);
             // 
             // UC_RoomUnitMaintenance
             // 

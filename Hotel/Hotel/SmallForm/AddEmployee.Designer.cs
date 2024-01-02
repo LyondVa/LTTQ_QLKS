@@ -81,7 +81,6 @@
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(539, 36);
             this.txtPosition.TabIndex = 35;
-            this.txtPosition.SelectedIndexChanged += new System.EventHandler(this.txtPosition_SelectedIndexChanged);
             // 
             // label10
             // 
