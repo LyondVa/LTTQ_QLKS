@@ -16,49 +16,30 @@ namespace Hotel.SmallForm
     {
         string query;
         function fn = new function();
+        DataSet ds = new DataSet();
         private Bitmap memoryImage;
         private Size s;
         public Profit()
         {
             InitializeComponent();
+            RefreshData();
+            SetDGV();
         }
 
-        private void Profit_Load(object sender, EventArgs e)
+        public void RefreshData()
         {
-            timeStart.Value = new DateTime(2004, 1, 1);
-            timeEnd.Value = DateTime.Now;
-            timeStart.CustomFormat = "MM / yy";
-            timeEnd.CustomFormat = "MM / yy";
-            guna2Button3.PerformClick();
+            query = "EXEC DBO.CHITIETDOANHTHUTUNGTHANG @NAM = " + Convert.ToInt16(cbYear.Text) + "";
+            ds = fn.getData(query);
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SetDGV()
         {
-
-        }
-        public void setEmployee(DataGridView dgv)
-        {
-            query = "SELECT thang AS N'Tháng', nam AS N'Năm', tienPhong AS N'Tiền Phòng', tienDichVu AS N'Tiền Dịch Vụ', tienLuong AS N'Đã Chi', tongNhap AS N'Thu Vào', tienDoanhThu AS N'Doanh Thu' FROM doanhthu WHERE " +
-                        "((nam = 'Năm " + timeStart.Value.Year + "' AND thang >= 'Tháng " + timeStart.Value.Month + "') OR " +
-                        "(nam > 'Năm " + timeStart.Value.Year + "' AND nam < 'Năm " + timeEnd.Value.Year + "') OR " +
-                        "(nam = 'Năm " + timeEnd.Value.Year + "' AND thang <= 'Tháng " + timeEnd.Value.Month + "')) OR " +
-                        "(nam = 'Năm " + timeStart.Value.Year + "' AND nam = 'Năm " + timeEnd.Value.Year + "' AND thang >= 'Tháng " + timeStart.Value.Month + "' AND thang <= 'Tháng " + timeEnd.Value.Month + "')"; DataSet ds = fn.getData(query);
-            dgv.DataSource = ds.Tables[0];
-        }
-
-        private void timeStart_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timeEnd_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            setEmployee(guna2DataGridView1);
-
+            guna2DataGridView1.DataSource = ds.Tables[0];
+            guna2DataGridView1.Columns["THANG"].HeaderText = "Tháng";
+            guna2DataGridView1.Columns["PHONG"].HeaderText = "Tiền Phòng";
+            guna2DataGridView1.Columns["DICHVU"].HeaderText = "Tiền Dịch Vụ";
+            guna2DataGridView1.Columns["LUONG"].HeaderText = "Tiền Lương";
+            guna2DataGridView1.Columns["DOANHTHU"].HeaderText = "Doanh Thu";
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -68,48 +49,38 @@ namespace Hotel.SmallForm
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            PaperSize customPaperSize = new PaperSize("CustomSize", 1500, 1000); // Đặt kích thước tùy chỉnh theo ý bạn
-            printDocument1.DefaultPageSettings.PaperSize = customPaperSize;
-            printDocument1.DefaultPageSettings.Landscape = true;
-            try
-            {
-                if (printDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    this.Refresh();
-                    CaptureDataGridView(guna2DataGridView1);
-                    printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("In hóa đơn", 0, 0);
-                    printDocument1.Print();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Thông báo");
-            }
-        }
-
-        private void CaptureDataGridView(DataGridView dataGridView)
-        {
-            Graphics myGraphics = this.CreateGraphics();
-
-            int resolution = 117;
-            int xOffset = -233;
-            int yOffset = 26;
-            Size s = new Size(dataGridView.DisplayRectangle.Width + 400, dataGridView.DisplayRectangle.Height + 165);
-
-            System.Drawing.Point locationOnForm = dataGridView.Location;
-            System.Drawing.Point locationOnScreen = dataGridView.PointToScreen(locationOnForm);
-            System.Drawing.Point locationOnClient = this.PointToClient(locationOnScreen);
-
-            memoryImage = new Bitmap(s.Width, s.Height, myGraphics);
-            memoryImage.SetResolution(resolution, resolution);
-
-            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
-            memoryGraphics.CopyFromScreen(locationOnClient.X - xOffset, locationOnClient.Y - yOffset, 0, 0, s);
+            Print();
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            e.Graphics.DrawImage(memoryImage, 0, 0);
+            pnDGV.AutoSize = true;
+            guna2DataGridView1.AutoSize = true;
+            guna2DataGridView1.ScrollBars = ScrollBars.None;
+
+            Bitmap bmp = new Bitmap(pnDGV.Width, pnDGV.Height);
+            pnDGV.DrawToBitmap(bmp, RestoreBounds);
+            float scale = Math.Min(e.MarginBounds.Width / bmp.Width, e.MarginBounds.Height / bmp.Height);
+            Rectangle imageBounds = new Rectangle((int)(e.MarginBounds.Width / 2 - bmp.Width * scale / 2),
+                (int)(e.MarginBounds.Height / 2 - bmp.Height * scale / 2),
+                (int)(bmp.Width * scale),
+                (int)(bmp.Height * scale));
+            e.Graphics.DrawImage(bmp, imageBounds);
+
+            pnDGV.AutoSize = false;
+            guna2DataGridView1.AutoSize = false;
+            guna2DataGridView1.ScrollBars = ScrollBars.Vertical;
+        }
+
+        private void Print()
+        {
+            printDialog1.Document = printDocument1;
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+            printDocument1.Dispose();
+            printDialog1.Dispose();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -118,6 +89,11 @@ namespace Hotel.SmallForm
             {
                 fn.ToExcel(guna2DataGridView1, saveFileDialog1.FileName);
             }
+        }
+
+        private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }

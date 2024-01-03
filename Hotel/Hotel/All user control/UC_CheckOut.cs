@@ -68,8 +68,7 @@ namespace Hotel.All_user_control
                             "where MAKH = '" + clientID + "'; " +
                             "update HOADON " +
                             "set NGTHANHTOAN = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
-                            "NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
-                            "NGXUATHD = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "' " +
+                            "NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "' " +
                             "where MAHD = '" + reservationID + "'" +
                             "update PHONG " +
                             "set DONDEP = N'Chưa dọn' " +
