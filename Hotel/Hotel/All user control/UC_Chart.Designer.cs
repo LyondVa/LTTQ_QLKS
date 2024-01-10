@@ -337,7 +337,7 @@
             this.cbNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbNam.Name = "cbNam";
             this.cbNam.Size = new System.Drawing.Size(530, 36);
-            this.cbNam.StartIndex = 1;
+            this.cbNam.StartIndex = 0;
             this.cbNam.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbNam.TabIndex = 1;
             // 
