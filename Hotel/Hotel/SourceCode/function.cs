@@ -13,14 +13,29 @@ namespace Hotel
 {
     class function
     {
+        public string dtbName = "";
         protected SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LYON;Initial Catalog=QLKS_DEMO;Integrated Security=True";
+            con.ConnectionString = @"Data Source=" + dtbName + ";Initial Catalog=QLKS;Integrated Security=True;;Connection Timeout=5";
             return con;
         }
         //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DTB\QLKS_Remote.mdf;Integrated Security=True";
         //Data Source=DESKTOP-QEN4LJI ;Initial Catalog=QLKS;Integrated Security=True
+        public int TestConnection()
+        {
+            SqlConnection con = getConnection();
+            try
+            {
+                con.Open();
+                con.Close();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
         public DataSet getData(string query)
         {
             try
