@@ -51,9 +51,9 @@
             this.Th.ForeColor = System.Drawing.Color.White;
             this.Th.Location = new System.Drawing.Point(24, 88);
             this.Th.Name = "Th";
-            this.Th.Size = new System.Drawing.Size(414, 60);
+            this.Th.Size = new System.Drawing.Size(445, 60);
             this.Th.TabIndex = 2;
-            this.Th.Text = "Chi Tiết Đặt Phòng";
+            this.Th.Text = "Chi Tiết Khách Hàng";
             // 
             // txtSearch
             // 
