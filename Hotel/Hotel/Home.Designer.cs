@@ -193,7 +193,7 @@
             this.btUser.Name = "btUser";
             this.btUser.Size = new System.Drawing.Size(200, 50);
             this.btUser.TabIndex = 5;
-            this.btUser.Text = "Quản Lý Nhân Viên";
+            this.btUser.Text = "Quản Lý Tài Khoản";
             this.btUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btUser.Click += new System.EventHandler(this.btUser_Click);
             // 
@@ -285,7 +285,7 @@
             this.btCustomerDetail.Name = "btCustomerDetail";
             this.btCustomerDetail.Size = new System.Drawing.Size(200, 50);
             this.btCustomerDetail.TabIndex = 3;
-            this.btCustomerDetail.Text = "Chi Tiết Khách Hàng";
+            this.btCustomerDetail.Text = "Chi Tiết Đặt Phòng";
             this.btCustomerDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btCustomerDetail.Click += new System.EventHandler(this.btCustomerDetail_Click);
             // 
