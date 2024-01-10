@@ -34,8 +34,7 @@ namespace Hotel.All_user_control
         {
             query = "SELECT DBO.TONGTIENPHONGTHANG(" + Convert.ToInt16(cbNam.Text.Substring(cbNam.Text.Length - 4)) + "," + Convert.ToInt16(cbThang.Text.Substring(cbThang.Text.Length - 2)) + ") AS 'PHONG', " +
                         "DBO.TONGTIENDICHVUTHANG(" + Convert.ToInt16(cbNam.Text.Substring(cbNam.Text.Length - 4)) + "," + Convert.ToInt16(cbThang.Text.Substring(cbThang.Text.Length - 2)) + ") AS 'DICHVU', " +
-                        "DBO.TONGTIENLUONGTHANG() AS 'LUONG', " +
-                        "DBO.TONGDOANHTHUTHANG(" + Convert.ToInt16(cbNam.Text.Substring(cbNam.Text.Length - 4)) + "," + Convert.ToInt16(cbThang.Text.Substring(cbThang.Text.Length - 2)) + ") AS 'DOANHTHU'";
+                        "DBO.TONGTIENLUONGTHANG() AS 'LUONG' ";
             dsMonth = fn.getData(query);
         }
 

@@ -68,6 +68,8 @@ namespace Hotel.All_user_control
                             "where MAKH = '" + clientID + "'; " +
                             "update HOADON " +
                             "set NGTHANHTOAN = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
+                            "NGXUATHD = '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "', " +
+                            "PHGTHUC = N'Thanh toán trực tiếp', " +
                             "NGTRPHGTHAT= '" + txtCheckOutDate.Value.ToString(Global.dateFormat) + "' " +
                             "where MAHD = '" + reservationID + "'" +
                             "update PHONG " +
@@ -90,6 +92,7 @@ namespace Hotel.All_user_control
                     rc.Show();
                     UC_CheckOut_Load(this, null);
                     clearAll();
+                    EventHub.OnDatabaseUpdated();
                 }
             }
             else
