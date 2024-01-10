@@ -62,7 +62,7 @@
             this.tbDTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbDTB.Name = "tbDTB";
             this.tbDTB.PasswordChar = '\0';
-            this.tbDTB.PlaceholderText = "Nhập Tên CSDL";
+            this.tbDTB.PlaceholderText = "Nhập Server";
             this.tbDTB.SelectedText = "";
             this.tbDTB.Size = new System.Drawing.Size(340, 45);
             this.tbDTB.TabIndex = 26;
@@ -75,9 +75,9 @@
             this.lBFloor.ForeColor = System.Drawing.Color.White;
             this.lBFloor.Location = new System.Drawing.Point(16, 106);
             this.lBFloor.Name = "lBFloor";
-            this.lBFloor.Size = new System.Drawing.Size(96, 28);
+            this.lBFloor.Size = new System.Drawing.Size(168, 28);
             this.lBFloor.TabIndex = 31;
-            this.lBFloor.Text = "Tên CSDL:";
+            this.lBFloor.Text = "Tên Server cục bộ:";
             // 
             // btAccess
             // 

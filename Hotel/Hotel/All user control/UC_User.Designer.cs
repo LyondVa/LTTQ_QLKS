@@ -219,9 +219,9 @@
             this.Th.ForeColor = System.Drawing.Color.Transparent;
             this.Th.Location = new System.Drawing.Point(21, 70);
             this.Th.Name = "Th";
-            this.Th.Size = new System.Drawing.Size(353, 50);
+            this.Th.Size = new System.Drawing.Size(343, 50);
             this.Th.TabIndex = 8;
-            this.Th.Text = "Quản Lý Nhân Viên";
+            this.Th.Text = "Quản Lý Tài Khoản";
             // 
             // guna2Button2
             // 
