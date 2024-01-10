@@ -148,6 +148,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DTB.Designer.cs">
+      <DependentUpon>DTB.cs</DependentUpon>
+    </Compile>
     <Compile Include="SmallForm\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,9 @@
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCode\Global.cs" />
+    <EmbeddedResource Include="DTB.resx">
+      <DependentUpon>DTB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SmallForm\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
