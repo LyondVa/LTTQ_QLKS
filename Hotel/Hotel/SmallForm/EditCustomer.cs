@@ -13,7 +13,7 @@ namespace Hotel.SmallForm
 {
     public partial class EditCustomer : Form
     {
-        function fn = new function();
+        internal function fn = new function();
         string query;
         public EditCustomer(string id, string name, string nationality, string cccd, string gender, string dob, string phone, string address, string email)
         {

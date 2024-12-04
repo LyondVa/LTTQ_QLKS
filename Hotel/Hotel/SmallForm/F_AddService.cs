@@ -17,7 +17,7 @@ namespace Hotel.All_user_control
         string query;
         DataSet dSS = new DataSet();
         DataSet dSA = new DataSet();
-        function fn = new function();
+        internal function fn = new function();
         string roomID;
         string reservationID;
         public F_AddService(string roomID, string reservationID)

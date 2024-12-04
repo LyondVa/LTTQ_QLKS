@@ -14,7 +14,7 @@ namespace Hotel.SmallForm
     {
         DataSet dS = new DataSet();
         RoomFunction rFn = new RoomFunction();
-        function fn = new function();
+        internal function fn = new function();
         string query;
         bool cccdError = false, sdtError = false;
         public AddCustomer()

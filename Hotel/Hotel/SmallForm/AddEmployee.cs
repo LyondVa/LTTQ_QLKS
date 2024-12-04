@@ -16,7 +16,7 @@ namespace Hotel.SmallForm
 {
     public partial class AddEmployee : Form
     {
-        function fn = new function();
+        internal function fn = new function();
         string query;
         bool cccdError = false, sdtError = false, usernameError = false;
         DataSet ds = new DataSet();

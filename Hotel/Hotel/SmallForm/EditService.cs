@@ -12,7 +12,7 @@ namespace Hotel.SmallForm
 {
     public partial class EditService : Form
     {
-        function fn = new function();
+        internal function fn = new function();
         string query;
         public EditService()
         {
