@@ -387,6 +387,7 @@
     <Compile Include="Test\SmallForm - Dung lam theo\F_AddServiceTest.cs" />
     <Compile Include="Test\SmallForm - Dung lam theo\F_ReceiptTest.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\FunctionTest.cs" />
+    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_RoomGridTest.cs" />
     <EmbeddedResource Include="DTB.resx">
       <DependentUpon>DTB.cs</DependentUpon>
     </EmbeddedResource>
