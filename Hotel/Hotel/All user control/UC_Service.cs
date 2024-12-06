@@ -16,7 +16,7 @@ namespace Hotel.All_user_control
 {
     public partial class UC_Service : UserControl
     {
-        function fn = new function();
+        public function fn = new function();
         string query;
         DataSet ds;
         public UC_Service()
@@ -60,7 +60,7 @@ namespace Hotel.All_user_control
             br.Hide();
         }
 
-        private void tbSearch_TextChanged(object sender, EventArgs e)
+        public void tbSearch_TextChanged(object sender, EventArgs e)
         {
             query = "SELECT MADV as 'Mã Dịch Vụ', TENDV as 'Tên Dịch Vụ', cast(GIADV as decimal) as 'Giá' " +
                     "FROM DICHVU " +
@@ -93,7 +93,7 @@ namespace Hotel.All_user_control
             }
         }
 
-        private void DeactivateService(object sender, DataGridViewCellEventArgs e)
+        public void DeactivateService(object sender, DataGridViewCellEventArgs e)
         {
             
             DialogResult dr = MessageBox.Show("Xác nhận xóa dịch vụ?","",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
@@ -105,6 +105,7 @@ namespace Hotel.All_user_control
                 EventHub.OnServicesUpdated();
             }
         }
+
         private void bTUpdate_Click(object sender, EventArgs e)
         {
             EditService es = new EditService();

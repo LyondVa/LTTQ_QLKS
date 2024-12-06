@@ -188,11 +188,11 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2TextBox tbSearch;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private System.Windows.Forms.Label Th;
+        public Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        public Guna.UI2.WinForms.Guna2TextBox tbSearch;
+        public Guna.UI2.WinForms.Guna2Button guna2Button1;
+        public System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        public Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        public System.Windows.Forms.Label Th;
     }
 }

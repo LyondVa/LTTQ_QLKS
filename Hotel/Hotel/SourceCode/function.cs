@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Hotel
 {
-    class function
+    public class function
     {
         public string dtbName = "";
         protected SqlConnection getConnection()
@@ -36,7 +36,7 @@ namespace Hotel
                 return 0;
             }
         }
-        public DataSet getData(string query)
+        public virtual DataSet getData(string query)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace Hotel
             return null;
         }
 
-        public void setData(string query, string message)
+        public virtual void setData(string query, string message)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace Hotel
                 MessageBox.Show(ex.Message);
             }
         }
-        public void setDataNoMsg(string query)
+        public virtual void setDataNoMsg(string query)
         {
             try
             {
@@ -164,7 +164,7 @@ namespace Hotel
                 GC.Collect();
             }
         }
-        public string getData2(string query)
+        public virtual string getData2(string query)
         {
             string result = ""; // Giá trị mặc định nếu không có dữ liệu
 

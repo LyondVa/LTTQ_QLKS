@@ -13,9 +13,9 @@ namespace Hotel.All_user_control
 {
     public partial class UC_CheckOut : UserControl
     {
-        function fn = new function();
+        public function fn = new function();
         string query;
-        string clientID, reservationID, id;
+        public string clientID, reservationID, id;
         public UC_CheckOut()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace Hotel.All_user_control
         {
 
         }
-        private void RefreshData()
+        public void RefreshData()
         {
             query = "select HOADON.MAHD as 'Mã Hóa Đơn', KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', HOADON.NGTRPHG as 'Ngày trả phòng', cast(HOADON.TONGTIEN as decimal) as 'Tổng tiền' " +
                     "from KHACHHANG " +
@@ -37,7 +37,7 @@ namespace Hotel.All_user_control
             DataSet ds = fn.getData(query);
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
-        private void UC_CheckOut_Load(object sender, EventArgs e)
+        public void UC_CheckOut_Load(object sender, EventArgs e)
         {
             query = "select HOADON.MAHD as 'Mã Hóa Đơn', KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', HOADON.NGTRPHG as 'Ngày trả phòng', cast(HOADON.TONGTIEN as decimal) as 'Tổng tiền' " +
                     "from KHACHHANG " +
@@ -47,7 +47,7 @@ namespace Hotel.All_user_control
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        public void txtName_TextChanged(object sender, EventArgs e)
         {
             query = "select HOADON.MAHD as 'Mã Hóa Đơn', KHACHHANG.MAKH as 'Mã Khách Hàng', KHACHHANG.KHOTEN as 'Họ Tên', HOADON.NGNHANPHG as 'Ngày Nhận Phòng', HOADON.NGTRPHG as 'Ngày trả phòng', cast(HOADON.TONGTIEN as decimal) as 'Tổng tiền' " +
                     "from KHACHHANG " +
@@ -57,7 +57,7 @@ namespace Hotel.All_user_control
             guna2DataGridView1.DataSource = ds.Tables[0];
 
         }
-        private void btCheckOut_Click(object sender, EventArgs e)
+        public void btCheckOut_Click(object sender, EventArgs e)
         {
             if (txtCName.Text != "")
             {

@@ -14,8 +14,8 @@ namespace Hotel.All_user_control
 {
     public partial class UC_Employee2 : UserControl
     {
-        function fn = new function();
-        string manv;
+        public function fn = new function();
+        public string manv;
         string query;
         DataSet ds;
         public UC_Employee2()
@@ -27,7 +27,7 @@ namespace Hotel.All_user_control
 
         }
         string pass;
-        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
             {
@@ -60,7 +60,7 @@ namespace Hotel.All_user_control
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
-        private void tbSearch_TextChanged(object sender, EventArgs e)
+        public void tbSearch_TextChanged(object sender, EventArgs e)
         {
             query = "SELECT MANV as 'Mã Nhân Viên', NHOTEN as 'Họ Tên', NCCCD as 'CCCD', NGIOITINH as 'Giới Tính', CONVERT(DATE, NNGSINH) as 'Ngày Sinh', NSDT as 'SDT', NDIACHI as 'Địa Chỉ', NEMAIL as'Email', CHUCVU as 'Chức Vụ', cast(LUONG as decimal) as 'Lương' " +
                     "from NHANVIEN " +
@@ -70,7 +70,8 @@ namespace Hotel.All_user_control
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        public SaveFileDialog SaveFileDialogInstance { get; set; } = new SaveFileDialog();
+        public void guna2Button1_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
