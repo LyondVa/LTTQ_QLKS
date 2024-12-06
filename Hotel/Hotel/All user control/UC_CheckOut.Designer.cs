@@ -334,18 +334,18 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private System.Windows.Forms.Label Th;
-        private Guna.UI2.WinForms.Guna2TextBox txtName;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2TextBox txtReservationID;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox txtCName;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btCheckOut;
-        private Guna.UI2.WinForms.Guna2DateTimePicker txtCheckOutDate;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        public Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        public System.Windows.Forms.Label Th;
+        public Guna.UI2.WinForms.Guna2TextBox txtName;
+        public Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        public Guna.UI2.WinForms.Guna2TextBox txtReservationID;
+        public System.Windows.Forms.Label label2;
+        public Guna.UI2.WinForms.Guna2TextBox txtCName;
+        public System.Windows.Forms.Label label1;
+        public Guna.UI2.WinForms.Guna2Button btCheckOut;
+        public Guna.UI2.WinForms.Guna2DateTimePicker txtCheckOutDate;
+        public System.Windows.Forms.Label label3;
+        public Guna.UI2.WinForms.Guna2Button guna2Button1;
+        public System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
