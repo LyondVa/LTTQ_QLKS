@@ -394,6 +394,8 @@
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_EmployeeManagementTests.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_RoomManagementTests.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_ServiceManagementTests.cs" />
+    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_RoomGridTest.cs" />
+
     <EmbeddedResource Include="DTB.resx">
       <DependentUpon>DTB.cs</DependentUpon>
     </EmbeddedResource>
