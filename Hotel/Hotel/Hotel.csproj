@@ -389,13 +389,19 @@
     <Compile Include="Test\SmallForm - Dung lam theo\EmployeeInformationTest.cs" />
     <Compile Include="Test\SmallForm - Dung lam theo\F_AddServiceTest.cs" />
     <Compile Include="Test\SmallForm - Dung lam theo\F_ReceiptTest.cs" />
+    <Compile Include="Test\SourceCode - Lam theo nay ne\Form1Test%28Login%29.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\FunctionTest.cs" />
+    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_ChartTest.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_CheckoutManagementTests.cs" />
+    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_CustomerDetailTests.cs" />
+    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_CustomerInfoTests.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_EmployeeManagementTests.cs" />
-    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_RoomManagementTests.cs" />
+    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_RoomManagementTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_ServiceManagementTests.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_RoomGridTest.cs" />
-
+    <Compile Include="Test\SourceCode - Lam theo nay ne\UC_UserTest.cs" />
     <EmbeddedResource Include="DTB.resx">
       <DependentUpon>DTB.cs</DependentUpon>
     </EmbeddedResource>

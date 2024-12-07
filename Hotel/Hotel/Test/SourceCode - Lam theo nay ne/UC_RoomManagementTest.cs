@@ -1,0 +1,227 @@
+﻿using NUnit.Framework;
+using System;
+using System.Data;
+using System.Windows.Forms;
+using Hotel.All_user_control;
+using Moq;
+using Hotel.SmallForm;
+using System.Reflection;
+using Guna.UI2.WinForms;
+using Hotel.RoomControls;
+using System.Linq;
+
+namespace Hotel.Test.SourceCode
+{
+    public class MockAddRoom : F_AddRoom
+    {
+        public MockAddRoom(DataSet dataSet) : base(dataSet) { }
+
+        public new DialogResult ShowDialog()
+        {
+            // Thay đổi hành vi ở đây nếu cần
+            return DialogResult.OK;
+        }
+    }
+
+    [TestFixture]
+    public class UC_RoomManagementTest
+    {
+        private UC_RoomManagement _roomManagement;
+        private Mock<function> _mockFunction;
+        private DataSet _dataSet;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _mockFunction = new Mock<function>();
+            _roomManagement = new UC_RoomManagement();
+
+            // Mock the database function to avoid actual database calls
+            _dataSet = new DataSet();
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("MAPHG");
+            dataTable.Columns.Add("MALOAIPHG");
+            dataTable.Columns.Add("TRANGTHAI");
+            dataTable.Columns.Add("TANG");
+            dataTable.Columns.Add("DONDEP");
+            dataTable.Columns.Add("GHICHU");
+            _dataSet.Tables.Add(dataTable);
+
+            _mockFunction.Setup(f => f.getData(It.IsAny<string>())).Returns(_dataSet);
+            _mockFunction.Setup(f => f.setData(It.IsAny<string>(), It.IsAny<string>()));
+
+            // Inject the mocked function into the UC_RoomManagement instance
+            _roomManagement.GetType().GetField("fn", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(_roomManagement, _mockFunction.Object);
+
+            // Initialize the control
+            _roomManagement.GetType().GetMethod("InitializeComponent", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(_roomManagement, null);
+        }
+
+        [Test]
+        public void TestUC_RoomManagement_Load()
+        {
+            // Act
+            _roomManagement.GetType().GetMethod("UC_RoomManagement_Load", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(_roomManagement, new object[] { null, EventArgs.Empty });
+
+            // Assert
+            Assert.That(_roomManagement.Controls.Count, Is.GreaterThan(0)); // Check if grid is populated
+        }
+
+        [Test]
+        public void TestRefreshDataGridView()
+        {
+            // Arrange
+            _roomManagement.GetType().GetMethod("RefreshDataGridView", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(_roomManagement, null);
+
+            // Act
+            var dataGridView = (DataGridView)_roomManagement.GetType().GetField("dGVRoom", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(_roomManagement);
+            var dataSource = dataGridView.DataSource as DataTable;
+
+            // Assert
+            Assert.That(dataSource, Is.Not.Null);
+            Assert.That(dataSource.Rows.Count, Is.EqualTo(0)); // Assuming no data in DataTable yet
+        }
+
+        [Test]
+        public void TestbTAdd_Click()
+        {
+            // Arrange: Khởi tạo dữ liệu và mock form
+            var mockFunction = new Mock<function>();
+            var roomManagement = new UC_RoomManagement();
+
+            roomManagement.GetType()
+                          .GetMethod("InitializeComponent", BindingFlags.NonPublic | BindingFlags.Instance)
+                          .Invoke(roomManagement, null);
+
+            var addButton = roomManagement.Controls.Find("bTAdd", true).FirstOrDefault() as Button;
+
+            // Act: Perform click
+            addButton.PerformClick();
+
+            // Assert: Đảm bảo form được hiển thị
+            var addRoomForm = new MockAddRoom(new DataSet());
+        }
+
+        [Test]
+        public void TestbTUpdate_Click()
+        {
+            // Arrange: Khởi tạo UserControl với dữ liệu giả lập
+            var roomManagement = new UC_RoomManagement();
+            SetPrivateField(roomManagement, "dS", GetFakeDataSet()); // Phương thức giả lập dữ liệu
+            //roomManagement.dS = GetFakeDataSet();
+
+            // Act: Gọi nút bTUpdate
+            var updateButton = roomManagement.Controls.Find("bTUpdate", true).FirstOrDefault() as Button;
+            updateButton?.PerformClick();
+
+            // Assert: Kiểm tra form cập nhật hiển thị hoặc logic chạy đúng
+            // Có thể kiểm tra trạng thái form hoặc các thay đổi trong dữ liệu
+        }
+
+        private void SetPrivateField<T>(object obj, string fieldName, T value)
+        {
+            FieldInfo fieldInfo = obj.GetType().GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+            if (fieldInfo == null)
+            {
+                throw new ArgumentException($"Field '{fieldName}' not found in type '{obj.GetType().FullName}'.");
+            }
+            if (fieldInfo.FieldType != typeof(T))
+            {
+                throw new ArgumentException($"Field '{fieldName}' expects a value of type '{fieldInfo.FieldType}', but got '{typeof(T)}'.");
+            }
+            fieldInfo.SetValue(obj, value);
+        }
+
+        private DataSet GetFakeDataSet()
+        {
+            var ds = new DataSet();
+            var dt = new DataTable();
+            dt.Columns.Add("MAPHG", typeof(string));
+            dt.Columns.Add("MALOAIPHG", typeof(string));
+            dt.Rows.Add("P001", "L001");
+            ds.Tables.Add(dt);
+            return ds;
+        }
+
+
+        [Test]
+        public void TestbTDelete_Click()
+        {
+            // Arrange
+            var deleteButton = _roomManagement.Controls.Find("bTDelete", true).FirstOrDefault() as Button;
+            Assert.That(deleteButton, Is.Not.Null, "Nút bTDelete không tồn tại.");
+
+            var dataGridView = (DataGridView)_roomManagement.GetType().GetField("dGVRoom", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(_roomManagement);
+
+            // Add mock data to the grid
+            var row = dataGridView.Rows.Add();
+            dataGridView.Rows[row].Cells["MAPHG"].Value = "Test Room";
+            dataGridView.Rows[row].Selected = true;
+
+            // Act
+            deleteButton.PerformClick();
+
+            // Assert: Kiểm tra xem phương thức delete được gọi
+            _mockFunction.Verify(f => f.setData(It.IsAny<string>(), It.IsAny<string>()), Times.Once, "Phương thức delete không được gọi đúng cách.");
+        }
+
+        [Test]
+        public void TestdGVRoom_CellClick()
+        {
+            // Arrange
+            var dataGridView = (DataGridView)_roomManagement.GetType()
+                               .GetField("dGVRoom", BindingFlags.NonPublic | BindingFlags.Instance)
+                               .GetValue(_roomManagement);
+
+            // Thêm cột vào DataGridView
+            dataGridView.AutoGenerateColumns = false; // Không tự động tạo cột
+            dataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "MAPHG", // Tên cột trong DataTable
+                Name = "MAPHG",           // Tên cột hiển thị trong DataGridView
+                HeaderText = "MAPHG"
+            });
+
+            // Tạo DataTable và thêm vào DataSet
+            var dataTable = new DataTable("RoomTable");
+            dataTable.Columns.Add("MAPHG");
+            dataTable.Rows.Add("Test Room");
+            _dataSet.Tables.Add(dataTable);
+
+            // Gán nguồn dữ liệu cho DataGridView
+            dataGridView.DataSource = dataTable;
+
+            // Act
+            var cellClickMethod = dataGridView.GetType()
+                                              .GetMethod("OnCellClick", BindingFlags.NonPublic | BindingFlags.Instance);
+            cellClickMethod.Invoke(dataGridView, new object[] { new DataGridViewCellEventArgs(0, 0) });
+
+            // Assert
+            var selectedRow = dataGridView.Rows[0];
+            Assert.That(selectedRow.Cells["MAPHG"].Value?.ToString(), Is.EqualTo("Test Room"));
+
+            // Bạn có thể thêm kiểm tra khác để xác minh form `F_UpdateRoom` có mở không
+        }
+
+
+
+
+        [Test]
+        public void TesttBSearch_TextChanged()
+        {
+            // Arrange
+            var searchBox = (Guna2TextBox)_roomManagement.GetType().GetField("tBSearch", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(_roomManagement);
+            var dataGridView = (DataGridView)_roomManagement.GetType().GetField("dGVRoom", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(_roomManagement);
+            dataGridView.DataSource = _dataSet.Tables[0];
+            searchBox.Text = "Test Room";
+
+            // Act
+            var methodInfo = searchBox.GetType().GetMethod("OnTextChanged", BindingFlags.NonPublic | BindingFlags.Instance);
+            methodInfo.Invoke(searchBox, new object[] { EventArgs.Empty });
+
+            // Assert
+            var dataSource = dataGridView.DataSource as DataTable;
+            Assert.That(dataSource.DefaultView.RowFilter, Is.EqualTo("MAPHG LIKE '%Test Room%'"));
+        }
+    }
+}

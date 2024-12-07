@@ -143,7 +143,7 @@ namespace Hotel.Test.SourceCode
 
             // Assert
             var searchTime = GetPrivateField<DateTime>(_roomGrid, "searchTime");
-            Assert.That(searchTime, Is.EqualTo(DateTime.Parse("2024-12-05 14:0:0")));
+            Assert.That(searchTime, Is.EqualTo(DateTime.Now.Date.AddHours(14)));
             Assert.That(_roomGrid.Controls, Is.Not.Null);
             Assert.That(_roomGrid.Controls.Count, Is.GreaterThan(0));
         }
