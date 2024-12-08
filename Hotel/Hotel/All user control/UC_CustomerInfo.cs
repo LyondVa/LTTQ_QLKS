@@ -16,7 +16,7 @@ namespace Hotel.All_user_control
 {
     public partial class UC_CustomerInfo : UserControl
     {
-        function fn = new function();
+        IFunction fn = new function();
         string query;
         DataSet ds;
         public UC_CustomerInfo()

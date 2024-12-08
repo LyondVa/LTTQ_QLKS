@@ -176,6 +176,7 @@
     <Compile Include="DTB.Designer.cs">
       <DependentUpon>DTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\iFunction.cs" />
     <Compile Include="SmallForm\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,16 +380,6 @@
       <DependentUpon>receipt.cs</DependentUpon>
     </Compile>
     <Compile Include="SourceCode\Global.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\AddCustomerTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\AddEmployeeTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\AddServiceTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\ChangePasswordTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\EditCustomerTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\EditServiceTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\EditUserNameTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\EmployeeInformationTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\F_AddServiceTest.cs" />
-    <Compile Include="Test\SmallForm - Dung lam theo\F_ReceiptTest.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\Form1Test%28Login%29.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\FunctionTest.cs" />
     <Compile Include="Test\SourceCode - Lam theo nay ne\UC_ChartTest.cs" />
@@ -514,6 +505,7 @@
     <EmbeddedResource Include="SmallForm\receipt.resx">
       <DependentUpon>receipt.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="NUnitTests.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -125,5 +125,6 @@ namespace Hotel.Test.SourceCode
             // Assert
             Assert.That(result, Is.Not.Null);
         }
+        
     }
 }

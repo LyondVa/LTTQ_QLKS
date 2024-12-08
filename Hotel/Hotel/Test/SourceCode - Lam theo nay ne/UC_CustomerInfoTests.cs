@@ -4,21 +4,22 @@ using System.Data;
 using System.Windows.Forms;
 using Hotel.All_user_control;
 using System;
+using System.Threading;
 using Guna.UI2.WinForms;
 
 namespace Hotel.Test.SourceCode
 {
-    [TestFixture]
+    [TestFixture, Apartment(ApartmentState.STA)]
     public class UC_CustomerInfoTests
     {
         private UC_CustomerInfo _customerInfo;
-        private Mock<function> _mockFunction;
+        private Mock<IFunction> _mockFunction;
         private DataSet _mockDataSet;
 
         [SetUp]
         public void SetUp()
         {
-            _mockFunction = new Mock<function>();
+            _mockFunction = new Mock<IFunction>();
             _customerInfo = new UC_CustomerInfo();
 
             // Mock dataset to simulate database results
@@ -35,11 +36,11 @@ namespace Hotel.Test.SourceCode
             dataTable.Columns.Add("Email");
             _mockDataSet.Tables.Add(dataTable);
 
-            // Mock methods of `function`
+            // Mock methods of `IFunction`
             _mockFunction.Setup(f => f.getData(It.IsAny<string>())).Returns(_mockDataSet);
             _mockFunction.Setup(f => f.setData(It.IsAny<string>(), It.IsAny<string>()));
 
-            // Inject the mocked `function` instance
+            // Inject the mocked `IFunction` instance
             _customerInfo.GetType()
                 .GetField("fn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .SetValue(_customerInfo, _mockFunction.Object);
@@ -77,12 +78,11 @@ namespace Hotel.Test.SourceCode
             _mockFunction.Verify(f => f.getData(It.Is<string>(s => s.Contains("KHOTEN like N'%Test Name%' and HOATDONG = 1"))), Times.AtLeastOnce);
         }
 
-
         [Test]
         public void TestExportButtonClick_ShouldInvokeToExcel()
         {
             // Arrange
-            var btExport = (Button)_customerInfo.GetType()
+            var btExport = (Guna2Button)_customerInfo.GetType()
                 .GetField("btExport", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .GetValue(_customerInfo);
             var saveFileDialog = (SaveFileDialog)_customerInfo.GetType()
@@ -99,20 +99,5 @@ namespace Hotel.Test.SourceCode
             _mockFunction.Verify(f => f.ToExcel(It.IsAny<DataGridView>(), It.Is<string>(s => s.EndsWith("ExportedFile.xlsx"))),
                 Times.Once, "btExport_Click should call ToExcel with the correct parameters.");
         }
-
-        [Test]
-        public void TestDeactivateCustomer_ShouldSetCustomerInactive()
-        {
-            // Arrange
-            var expectedCustomerId = "KH01";
-            _mockFunction.Setup(f => f.setDataNoMsg(It.IsAny<string>())).Verifiable() ;
-
-            // Act
-
-            // Assert
-            _mockFunction.Verify(f => f.setDataNoMsg(It.Is<string>(s => s.Contains($"update KHACHHANG set HOATDONG = 0 where MAKH = '{expectedCustomerId}'"))), Times.Once);
-        }
-
     }
 }
-

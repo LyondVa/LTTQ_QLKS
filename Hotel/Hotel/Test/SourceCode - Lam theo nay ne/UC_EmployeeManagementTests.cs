@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
 {
-    [TestFixture]
+    [TestFixture, Apartment(ApartmentState.STA)]
     public class UC_EmployeeManagementTests
     {
         private Mock<function> _mockFunction;

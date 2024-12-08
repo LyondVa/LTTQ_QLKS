@@ -6,11 +6,11 @@ using System.Windows.Forms;
 using System;
 using Guna.UI2.WinForms;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Forms.Design;
 
 namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
 {
-    [TestFixture]
 
     public static class TestHelperExtensions
     {
@@ -62,6 +62,7 @@ namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
             }
         }
     }
+    [TestFixture, Apartment(ApartmentState.STA)]
     public class UC_ServiceManagementTests
     {
         private Mock<function> _mockFunction;

@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Hotel
 {
-    public class function
+    public class function : IFunction
     {
         public string dtbName = "";
         protected SqlConnection getConnection()

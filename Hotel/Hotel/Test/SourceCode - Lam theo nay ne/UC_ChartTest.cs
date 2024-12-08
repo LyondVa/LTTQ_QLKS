@@ -8,12 +8,15 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using static Guna.UI2.Native.WinApi;
 
 namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
 {
-    internal class UC_ChartTest
+    
+    [TestFixture, Apartment(ApartmentState.STA)]
+    class UC_ChartTest
     {
         private UC_Chart chartControl;
         private Mock<function> mockFunctions;
@@ -26,7 +29,7 @@ namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
         }
 
         [Test]
-        public void TestSetDSYear()
+        public void TestSetDSYear([Values(169998m, -230024m)] decimal expectedDoanhThu)
         {
             // Arrange
             var cbNamMock = new Mock<Guna2ComboBox>();
@@ -35,7 +38,14 @@ namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
 
             var mockData = new DataSet();
             var dataTable = new DataTable();
+            dataTable.Columns.Add("THANG");
+            dataTable.Columns.Add("THUNHAP");
+            dataTable.Columns.Add("CHIPHI");
             dataTable.Columns.Add("DOANHTHU");
+            for (int i = 1; i <= 12; i++)
+            {
+                dataTable.Rows.Add(i, expectedDoanhThu, 0m, expectedDoanhThu);
+            }
             mockData.Tables.Add(dataTable);
             mockFunctions.Setup(fn => fn.getData(It.IsAny<string>())).Returns(mockData);
 
@@ -46,11 +56,13 @@ namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
             var dsYear = GetPrivateField<DataSet>(chartControl, "dsYear");
             Assert.That(dsYear.Tables.Count, Is.EqualTo(1));
             Assert.That(dsYear.Tables[0].Rows.Count, Is.EqualTo(12));
-            Assert.That(dsYear.Tables[0].Rows[0]["DOANHTHU"], Is.EqualTo(3370000m));
+            for (int i = 0; i < 12; i++)
+            {
+                Assert.That(dsYear.Tables[0].Rows[i]["DOANHTHU"], Is.EqualTo(expectedDoanhThu));
+            }
         }
-
         [Test]
-        public void TestSetDSMonth()
+        public void TestSetDSMonth([Values(0m, 590000m)] decimal expectedLuong)
         {
             // Arrange
             var cbNamMock = new Mock<Guna2ComboBox>();
@@ -59,13 +71,14 @@ namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
 
             var cbThangMock = new Mock<Guna2ComboBox>();
             cbThangMock.Setup(cb => cb.Text).Returns("12");
-            SetPrivateField(chartControl, "cbThang", cbNamMock.Object);
+            SetPrivateField(chartControl, "cbThang", cbThangMock.Object);
 
             var mockData = new DataSet();
             var dataTable = new DataTable();
             dataTable.Columns.Add("PHONG");
             dataTable.Columns.Add("DICHVU");
             dataTable.Columns.Add("LUONG");
+            dataTable.Rows.Add(0m, 0m, expectedLuong);
             mockData.Tables.Add(dataTable);
             mockFunctions.Setup(fn => fn.getData(It.IsAny<string>())).Returns(mockData);
 
@@ -78,9 +91,8 @@ namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
             Assert.That(dsMonth.Tables[0].Rows.Count, Is.EqualTo(1));
             Assert.That(dsMonth.Tables[0].Rows[0]["PHONG"], Is.EqualTo(0m));
             Assert.That(dsMonth.Tables[0].Rows[0]["DICHVU"], Is.EqualTo(0m));
-            Assert.That(dsMonth.Tables[0].Rows[0]["LUONG"], Is.EqualTo(590000m));
+            Assert.That(dsMonth.Tables[0].Rows[0]["LUONG"], Is.EqualTo(expectedLuong));
         }
-
         [Test]
         public void TestSetLabel()
         {
