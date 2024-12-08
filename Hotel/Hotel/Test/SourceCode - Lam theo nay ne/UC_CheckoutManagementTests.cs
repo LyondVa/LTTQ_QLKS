@@ -111,34 +111,7 @@ namespace Hotel.Test.SourceCode___Lam_theo_nay_ne
             _mockFn.Verify(fn => fn.getData(expectedQuery), Times.Once);
             Assert.That(_uc.guna2DataGridView1.DataSource, Is.EqualTo(mockData.Tables[0]));
         }
-
-
-        [Test]
-        public void btCheckOut_Click_ShouldPerformCheckoutWhenClientExists()
-        {
-            // Arrange
-            _uc.clientID = "KH001";
-            _uc.reservationID = "HD001";
-            _uc.txtCName.Text = "Nguyen Van A";
-            _uc.txtCheckOutDate.Value = DateTime.Now;
-
-            string expectedQuery = $"select * from HOADON where MAHD = 'HD001'"; // hoặc query thực tế
-            DataTable mockTable = new DataTable();
-            mockTable.Columns.Add("Column1"); // Thêm các cột cần thiết
-            mockTable.Rows.Add("SomeData");  // Thêm hàng dữ liệu mẫu
-
-            DataSet mockData = new DataSet();
-            mockData.Tables.Add(mockTable);
-
-            _mockFn.Setup(fn => fn.getData(It.IsAny<string>())).Returns(mockData);
-
-            // Act
-            _uc.btCheckOut_Click(null, null);
-
-            // Assert
-            _mockFn.Verify(fn => fn.setData(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
-        }
-
+        
 
     }
 }

@@ -47,7 +47,8 @@ namespace Hotel.Test.SourceCode
 
             // Initialize UI controls
             _customerInfo.GetType()
-                .GetMethod("InitializeComponent", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                .GetMethod("InitializeComponent",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .Invoke(_customerInfo, null);
         }
 
@@ -56,7 +57,8 @@ namespace Hotel.Test.SourceCode
         {
             // Act
             _customerInfo.GetType()
-                .GetMethod("setCustomerInfo", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance)
+                .GetMethod("setCustomerInfo",
+                    System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance)
                 .Invoke(_customerInfo, null);
 
             // Assert
@@ -68,14 +70,21 @@ namespace Hotel.Test.SourceCode
         public void TestSearchTextChanged_ShouldFilterResults()
         {
             // Arrange
-            var tbSearch = (Guna2TextBox)_customerInfo.GetType().GetField("tbSearch", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(_customerInfo);
+            var tbSearch = (Guna2TextBox)_customerInfo.GetType().GetField("tbSearch",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                .GetValue(_customerInfo);
             tbSearch.Text = "Test Name";
 
             // Act
-            _customerInfo.GetType().GetMethod("tbSearch_TextChanged", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).Invoke(_customerInfo, new object[] { tbSearch, EventArgs.Empty });
+            _customerInfo.GetType()
+                .GetMethod("tbSearch_TextChanged",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                .Invoke(_customerInfo, new object[] { tbSearch, EventArgs.Empty });
 
             // Assert
-            _mockFunction.Verify(f => f.getData(It.Is<string>(s => s.Contains("KHOTEN like N'%Test Name%' and HOATDONG = 1"))), Times.AtLeastOnce);
+            _mockFunction.Verify(
+                f => f.getData(It.Is<string>(s => s.Contains("KHOTEN like N'%Test Name%' and HOATDONG = 1"))),
+                Times.AtLeastOnce);
         }
 
         [Test]
@@ -83,20 +92,24 @@ namespace Hotel.Test.SourceCode
         {
             // Arrange
             var btExport = (Guna2Button)_customerInfo.GetType()
-                .GetField("btExport", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                .GetField("btExport",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .GetValue(_customerInfo);
             var saveFileDialog = (SaveFileDialog)_customerInfo.GetType()
-                .GetField("saveFileDialog1", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                .GetField("saveFileDialog1",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .GetValue(_customerInfo);
             saveFileDialog.FileName = "ExportedFile.xlsx";
 
             // Act
             _customerInfo.GetType()
-                .GetMethod("btExport_Click", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                .GetMethod("btExport_Click",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .Invoke(_customerInfo, new object[] { btExport, EventArgs.Empty });
 
             // Assert
-            _mockFunction.Verify(f => f.ToExcel(It.IsAny<DataGridView>(), It.Is<string>(s => s.EndsWith("ExportedFile.xlsx"))),
+            _mockFunction.Verify(
+                f => f.ToExcel(It.IsAny<DataGridView>(), It.Is<string>(s => s.EndsWith("ExportedFile.xlsx"))),
                 Times.Once, "btExport_Click should call ToExcel with the correct parameters.");
         }
     }

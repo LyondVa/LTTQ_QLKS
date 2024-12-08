@@ -14,7 +14,7 @@ namespace Hotel.All_user_control
 {
     public partial class UC_Employee2 : UserControl
     {
-        public function fn = new function();
+        public IFunction fn = new function();
         public string manv;
         string query;
         DataSet ds;
@@ -70,8 +70,8 @@ namespace Hotel.All_user_control
             guna2DataGridView1.DataSource = ds.Tables[0];
         }
 
-        public SaveFileDialog SaveFileDialogInstance { get; set; } = new SaveFileDialog();
-        public void guna2Button1_Click(object sender, EventArgs e)
+        
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {

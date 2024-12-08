@@ -212,8 +212,8 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btExport;
-        public Guna.UI2.WinForms.Guna2TextBox tbSearch;
-        public Guna.UI2.WinForms.Guna2DataGridView dgvServiceInfo;
+        private Guna.UI2.WinForms.Guna2TextBox tbSearch;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvServiceInfo;
         private Guna.UI2.WinForms.Guna2Button btAdd;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
