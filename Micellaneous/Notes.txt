@@ -1,2 +1,0 @@
-Access Permission  
-  Fully fleshed out login system with tiered accounts held on a seperate credential database
